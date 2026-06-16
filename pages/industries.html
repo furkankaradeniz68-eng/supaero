@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branchen — supAero Superb Hydraulics</title>
+  <meta name="description" content="supAero Hydrauliksysteme für Motorsport, Luftfahrt, UAV und Industrie.">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="../i18n/translations.js"></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+
+<div class="custom-cursor"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAV -->
+<nav id="nav" class="scrolled">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../Logos/supAero-WortLogo-W.png" alt="supAero" onerror="this.outerHTML='<span style=\'color:white;font-size:1.4rem;font-weight:900\'>sup<span style=\'color:#3B7FE8\'>A</span>ero</span>'">
+      </a>
+      <ul class="nav-links">
+        <li><a href="products.html" data-i18n="nav_products">Produkte</a></li>
+        <li><a href="industries.html" class="active" data-i18n="nav_industries">Branchen</a></li>
+        <li><a href="../index.html#about" data-i18n="nav_about">Über uns</a></li>
+        <li><a href="service.html" data-i18n="nav_service">Service</a></li>
+        <li><a href="catalog.html" data-i18n="nav_catalog">Katalog</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn"><span class="flag">🇩🇪</span><span class="lang-label">DE</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          <div class="lang-dropdown">
+            <div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div>
+            <div class="lang-option active" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div>
+            <div class="lang-option" data-lang="es"><span class="flag">🇪🇸</span> Español</div>
+            <div class="lang-option" data-lang="it"><span class="flag">🇮🇹</span> Italiano</div>
+            <div class="lang-option" data-lang="pt"><span class="flag">🇧🇷</span> Português</div>
+            <div class="lang-option" data-lang="zh"><span class="flag">🇨🇳</span> 中文</div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" data-i18n="nav_quote">Angebot anfragen</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span data-i18n="nav_industries">Branchen</span>
+      </div>
+      <div class="page-hero-label" data-i18n="industries_label">Branchen</div>
+      <h1 data-i18n="industries_title">Gebaut für extremste Anforderungen</h1>
+      <p data-i18n="industries_sub">Von der Formel bis zu unbemannten Luftfahrzeugen — unsere Flüssigkeitssysteme funktionieren dort, wo Versagen keine Option ist.</p>
+    </div>
+  </div>
+</div>
+
+<!-- INDUSTRIES DETAIL -->
+<section class="section" style="padding-top:4rem;">
+  <div class="container">
+    <div class="industry-page-grid">
+
+      <!-- Motorsport -->
+      <div class="industry-block reveal" id="motorsport">
+        <div class="industry-block-image">
+          <img src="../Kategorie Bilder/f1-8878648_1280.jpg" alt="Motorsport">
+        </div>
+        <div>
+          <div class="section-label" data-i18n="ind1_tag">Motorsport</div>
+          <h2 class="section-title" data-i18n="ind1_name">Racing &amp; Motorsport</h2>
+          <p class="section-sub" style="max-width:100%;">AN-Fittings und Schlauchleitungen aus unserem Haus werden von professionellen Rennteams weltweit eingesetzt — von der Tourenwagen-Rennserie bis zur Formel. Unsere Komponenten sind auf höchste Zuverlässigkeit bei extremen Temperaturen und Vibrationen ausgelegt.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;">
+            <div class="spec-item"><div class="spec-label">Anwendung</div><div class="spec-value">Kraftstoff, Öl, Bremse, Kupplung</div></div>
+            <div class="spec-item"><div class="spec-label">Temperaturen</div><div class="spec-value">-40°C bis +260°C</div></div>
+            <div class="spec-item"><div class="spec-label">Standard</div><div class="spec-value">AN / JIC 37° Flare</div></div>
+            <div class="spec-item"><div class="spec-label">Material</div><div class="spec-value">6061-T6 Aluminium, PTFE</div></div>
+          </div>
+          <div style="margin-top:2rem;">
+            <a href="products.html#236" class="btn btn-primary">Produkte ansehen <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aerospace -->
+      <div class="industry-block reverse reveal" id="aerospace">
+        <div class="industry-block-image">
+          <img src="../Kategorie Bilder/airplane-engine-side-view-close-up-green-filter-a-2025-01-07-10-33-34-utc-1.jpg" alt="Aerospace">
+        </div>
+        <div>
+          <div class="section-label" data-i18n="ind2_tag">Aerospace</div>
+          <h2 class="section-title" data-i18n="ind2_name">Luftfahrt</h2>
+          <p class="section-sub" style="max-width:100%;">Unsere Flüssigkeitssysteme erfüllen die höchsten Anforderungen der Luft- und Raumfahrt. Temperatur- und vibrationsbeständige Schläuche und Fittings für Flugzeuge, Hubschrauber und Triebwerksanwendungen — zuverlässig unter härtesten Bedingungen.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;">
+            <div class="spec-item"><div class="spec-label">Anwendung</div><div class="spec-value">Hydraulik, Kraftstoff, Öl</div></div>
+            <div class="spec-item"><div class="spec-label">Vibrationsfestigkeit</div><div class="spec-value">Mil-Spec geprüft</div></div>
+            <div class="spec-item"><div class="spec-label">Druck</div><div class="spec-value">Bis 250 bar</div></div>
+            <div class="spec-item"><div class="spec-label">Zertifizierung</div><div class="spec-value">ISO 9001:2015</div></div>
+          </div>
+          <div style="margin-top:2rem;">
+            <a href="contact.html" class="btn btn-primary">Anfrage stellen <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- UAV -->
+      <div class="industry-block reveal" id="uav">
+        <div class="industry-block-image">
+          <img src="../Kategorie Bilder/uav.PNG" alt="UAV" style="object-position:center 30%;">
+        </div>
+        <div>
+          <div class="section-label" data-i18n="ind3_tag">UAV</div>
+          <h2 class="section-title" data-i18n="ind3_name">Unmanned Aerial Vehicles</h2>
+          <p class="section-sub" style="max-width:100%;">Das Gewicht ist bei UAV-Systemen entscheidend. Unsere ultraleichten AN-Fittings und Schläuche sind speziell für Drohnen- und UAV-Plattformen entwickelt — minimales Gewicht, maximale Zuverlässigkeit und einfache Integration in kompakte Systeme.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;">
+            <div class="spec-item"><div class="spec-label">Gewicht</div><div class="spec-value">Ultraleicht, optimiert</div></div>
+            <div class="spec-item"><div class="spec-label">Anwendung</div><div class="spec-value">Kraftstoff, Hydraulik, Kühlung</div></div>
+            <div class="spec-item"><div class="spec-label">Integration</div><div class="spec-value">Kompakt, flex. Routing</div></div>
+            <div class="spec-item"><div class="spec-label">Kunden</div><div class="spec-value">Military, Zivil, Research</div></div>
+          </div>
+          <div style="margin-top:2rem;">
+            <a href="contact.html" class="btn btn-primary">Spezifikationen anfragen <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Industrial -->
+      <div class="industry-block reverse reveal" id="industrial">
+        <div class="industry-block-image">
+          <img src="../Kategorie Bilder/disassembled-tractor-parts-on-the-modern-tractor-f-2024-10-16-19-50-40-utc-1.jpg" alt="Industrie">
+        </div>
+        <div>
+          <div class="section-label" data-i18n="ind4_tag">Industrial</div>
+          <h2 class="section-title" data-i18n="ind4_name">Industrie &amp; OEM</h2>
+          <p class="section-sub" style="max-width:100%;">Skalierbare Flüssigkeitsübertragungslösungen für industrielle Maschinen, Fahrzeuge und OEM-Anwendungen. Ob Einzelteil oder Großserie — wir liefern zuverlässige Hydraulikkomponenten in der benötigten Menge und Qualität.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;">
+            <div class="spec-item"><div class="spec-label">Anwendung</div><div class="spec-value">Hydraulik, Pneumatik, Kühlung</div></div>
+            <div class="spec-item"><div class="spec-label">Stückzahl</div><div class="spec-value">Einzeln bis Großserie</div></div>
+            <div class="spec-item"><div class="spec-label">Norm</div><div class="spec-value">DIN, BSP, JIC, NPT</div></div>
+            <div class="spec-item"><div class="spec-label">Qualität</div><div class="spec-value">ISO 9001:2015</div></div>
+          </div>
+          <div style="margin-top:2rem;">
+            <a href="contact.html" class="btn btn-primary">OEM-Anfrage <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (reused) -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="../Logos/supAero-WortLogo-W.png" alt="supAero" style="height:38px;"></div>
+      <div>
+        <div class="footer-col-title" data-i18n="footer_col_pages">Seiten</div>
+        <ul class="footer-links">
+          <li><a href="../index.html" data-i18n="footer_home">Startseite</a></li>
+          <li><a href="products.html" data-i18n="nav_products">Produkte</a></li>
+          <li><a href="catalog.html" data-i18n="nav_catalog">Katalog</a></li>
+          <li><a href="service.html" data-i18n="nav_service">Service</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-i18n="footer_col_links">Links</div>
+        <ul class="footer-links">
+          <li><a href="imprint.html" data-i18n="footer_imprint">Impressum</a></li>
+          <li><a href="privacy.html" data-i18n="footer_privacy">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-i18n="footer_col_contact">Kontakt</div>
+        <ul class="footer-links">
+          <li><a href="mailto:info@supaero.de" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 4.5L7 8L13 4.5" stroke="currentColor" stroke-width="1.2"/></svg>info@supaero.de</a></li>
+          <li><a href="tel:+4963219374179" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2H6L7 5L5.5 5.5C6.4 7.3 7.7 8.6 9.5 9.5L10 8L13 9V11C13 11 11 13 8 11C5 9 2 6 2 3L4 2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>+49 6321-9374179</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-i18n="footer_copy">Copyright © 2025 supAero | Powered by supAero</span>
+      <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="scroll-top-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

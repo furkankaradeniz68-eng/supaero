@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service — supAero Superb Hydraulics</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../i18n/translations.js"></script>
+  <script src="../js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => q.closest('.faq-item').classList.toggle('open'));
+      });
+    });
+  </script>
+</head>
+<body>
+
+<div class="custom-cursor"></div>
+<div class="cursor-ring"></div>
+
+<nav id="nav" class="scrolled">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../Logos/supAero-WortLogo-W.png" alt="supAero" onerror="this.outerHTML='<span style=\'color:white;font-size:1.4rem;font-weight:900\'>sup<span style=\'color:#3B7FE8\'>A</span>ero</span>'"></a>
+      <ul class="nav-links">
+        <li><a href="products.html" data-i18n="nav_products">Produkte</a></li>
+        <li><a href="industries.html" data-i18n="nav_industries">Branchen</a></li>
+        <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+        <li><a href="service.html" class="active" data-i18n="nav_service">Service</a></li>
+        <li><a href="catalog.html" data-i18n="nav_catalog">Katalog</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn"><span class="flag">🇩🇪</span><span class="lang-label">DE</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          <div class="lang-dropdown">
+            <div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div>
+            <div class="lang-option active" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div>
+            <div class="lang-option" data-lang="es"><span class="flag">🇪🇸</span> Español</div>
+            <div class="lang-option" data-lang="it"><span class="flag">🇮🇹</span> Italiano</div>
+            <div class="lang-option" data-lang="pt"><span class="flag">🇧🇷</span> Português</div>
+            <div class="lang-option" data-lang="zh"><span class="flag">🇨🇳</span> 中文</div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" data-i18n="nav_quote">Angebot anfragen</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">›</span><span data-i18n="nav_service">Service</span></div>
+      <div class="page-hero-label" data-i18n="nav_service">Service</div>
+      <h1>Technischer Service &amp; Support</h1>
+      <p>Von der Beratung bis zur Sonderfertigung — wir begleiten Sie durch das gesamte Projekt.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section" style="padding-top:3rem;">
+  <div class="container">
+
+    <!-- Service Cards -->
+    <div class="section-label reveal">Was wir bieten</div>
+    <h2 class="section-title reveal" style="margin-bottom:3rem;">Unser Leistungsangebot</h2>
+    <div class="service-grid" style="margin-bottom:5rem;">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L13 8H19L14 12L16 18L11 14L6 18L8 12L3 8H9L11 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <div class="service-title">Technische Beratung</div>
+        <p class="service-desc">Unsere Ingenieure helfen bei der Auswahl der richtigen Komponenten — Fittingtyp, Schlauchserie, Konfiguration — für Ihre spezifische Anwendung.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 9h8M7 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="service-title">Angebotsanfragen</div>
+        <p class="service-desc">Individuelle Angebote für Einzelstücke und Großserien. Schnelle Rückmeldung, transparente Preisgestaltung, faire Konditionen.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M8 11l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="service-title">Custom Engineering</div>
+        <p class="service-desc">Maßgeschneiderte Sonderlösungen nach Ihren Zeichnungen oder Spezifikationen. Von Prototypen bis zur Serienfertigung.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 14l4-4 3 3 4-5 3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="service-title">Qualitätsprüfung</div>
+        <p class="service-desc">Alle Produkte werden nach ISO 9001:2015 Qualitätsstandards gefertigt und vor dem Versand geprüft. Prüfprotokolle auf Anfrage.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3v5M11 3L8 6M11 3l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M19 11H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M11 19v-5M11 19l-3-3M11 19l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="service-title">Schnelle Lieferung</div>
+        <p class="service-desc">Standardprodukte ab Lager lieferbar. Expresslieferung möglich. Weltweiter Versand an über 50 Länder.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 8h14M4 12h10M4 16h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="service-title">Technische Dokumentation</div>
+        <p class="service-desc">Vollständige Produktdokumentationen, CAD-Zeichnungen und Datenblätter. Download-Bereich im Katalog.</p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title" style="margin-bottom:2.5rem;">Häufig gestellte Fragen</h2>
+      <div style="max-width:800px;">
+        <div class="faq-item">
+          <div class="faq-question">Welche Mindestbestellmenge gilt?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer">Es gibt keine Mindestbestellmenge. Wir liefern ab einem Stück. Für Großmengen bieten wir attraktive Staffelpreise.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Wie lange dauert die Lieferung?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer">Lagerprodukte werden in der Regel innerhalb von 1–3 Werktagen geliefert. Expresslieferung (1–2 Tage) ist möglich. Sonderanfertigungen: 2–4 Wochen je nach Komplexität.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Fertigen Sie auch nach eigenen Zeichnungen?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer">Ja. Wir entwickeln und fertigen Sonderlösungen nach Ihren technischen Zeichnungen oder Spezifikationen — von Einzelprototypen bis zur Serienfertigung.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Welche Normen und Standards werden erfüllt?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer">Unsere Produkte erfüllen die gängigen Standards: AN/MS (US-Militär), JIC 37° Flare, BSP, DIN, NPT. Qualitätsmanagementsystem nach ISO 9001:2015 zertifiziert.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Gibt es eine Produktgarantie?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer">Ja. Alle supAero-Produkte haben eine umfassende Qualitätsgarantie. Bei Material- oder Fertigungsfehlern tauschen wir die Produkte kostenlos aus.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Wie erhalte ich ein Angebot?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer">Nutzen Sie unser Kontaktformular oder schreiben Sie uns direkt an info@supaero.de. Wir antworten in der Regel innerhalb von 24 Stunden mit einem detaillierten Angebot.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;margin-top:5rem;padding:3rem;background:var(--bg-card);border:1px solid var(--border-blue);border-radius:var(--radius-lg);" class="reveal">
+      <div class="section-label">Support kontaktieren</div>
+      <h3 style="font-size:1.75rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem;">Noch Fragen?</h3>
+      <p style="color:var(--gray-2);max-width:500px;margin:0 auto 2rem;line-height:1.7;">Unser technisches Team steht Ihnen gerne zur Verfügung.</p>
+      <a href="contact.html" class="btn btn-primary">Jetzt anfragen <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+    </div>
+
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="../Logos/supAero-WortLogo-W.png" alt="supAero" style="height:38px;"></div>
+      <div><div class="footer-col-title" data-i18n="footer_col_pages">Seiten</div><ul class="footer-links"><li><a href="../index.html" data-i18n="footer_home">Startseite</a></li><li><a href="products.html" data-i18n="nav_products">Produkte</a></li><li><a href="catalog.html" data-i18n="nav_catalog">Katalog</a></li><li><a href="service.html" data-i18n="nav_service">Service</a></li><li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li></ul></div>
+      <div><div class="footer-col-title" data-i18n="footer_col_links">Links</div><ul class="footer-links"><li><a href="imprint.html" data-i18n="footer_imprint">Impressum</a></li><li><a href="privacy.html" data-i18n="footer_privacy">Datenschutzerklärung</a></li></ul></div>
+      <div><div class="footer-col-title" data-i18n="footer_col_contact">Kontakt</div><ul class="footer-links"><li><a href="mailto:info@supaero.de" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 4.5L7 8L13 4.5" stroke="currentColor" stroke-width="1.2"/></svg>info@supaero.de</a></li><li><a href="tel:+4963219374179" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2H6L7 5L5.5 5.5C6.4 7.3 7.7 8.6 9.5 9.5L10 8L13 9V11C13 11 11 13 8 11C5 9 2 6 2 3L4 2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>+49 6321-9374179</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span class="footer-copy" data-i18n="footer_copy">Copyright © 2025 supAero | Powered by supAero</span><button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="scroll-top-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div>
+  </div>
+</footer>
+</body>
+</html>

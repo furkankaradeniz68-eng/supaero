@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>supAero — Superb Hydraulics | AN Fittings, Motorsport Hose & Connectors</title>
+  <meta name="description" content="High-performance AN fittings, braided hoses and hydraulic connectors for motorsport, aerospace, UAV and industrial applications. ISO 9001 certified.">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GSAP for premium animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Translations & Main JS -->
+  <script src="i18n/translations.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="custom-cursor"></div>
+<div class="cursor-ring"></div>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="/" class="nav-logo">
+        <img src="Logos/supAero-WortLogo-W.png" alt="supAero" onerror="this.style.cssText='color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif'; this.outerHTML='<span style=\'color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif\'>sup<span style=\'color:#3B7FE8\'>A</span>ero</span>'">
+      </a>
+
+      <!-- Main Links -->
+      <ul class="nav-links">
+        <li><a href="#products" data-i18n="nav_products">Products</a></li>
+        <li><a href="#industries" data-i18n="nav_industries">Industries</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="pages/service.html" data-i18n="nav_service">Service</a></li>
+        <li><a href="pages/catalog.html" data-i18n="nav_catalog">Catalog</a></li>
+        <li><a href="pages/contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+
+      <!-- Right side -->
+      <div class="nav-right">
+
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-btn" aria-label="Select Language">
+            <span class="flag">🇬🇧</span>
+            <span class="lang-label">EN</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="lang-dropdown">
+            <div class="lang-option active" data-lang="en">
+              <span class="flag">🇬🇧</span> English
+            </div>
+            <div class="lang-option" data-lang="de">
+              <span class="flag">🇩🇪</span> Deutsch
+            </div>
+            <div class="lang-option" data-lang="es">
+              <span class="flag">🇪🇸</span> Español
+            </div>
+            <div class="lang-option" data-lang="it">
+              <span class="flag">🇮🇹</span> Italiano
+            </div>
+            <div class="lang-option" data-lang="pt">
+              <span class="flag">🇧🇷</span> Português
+            </div>
+            <div class="lang-option" data-lang="zh">
+              <span class="flag">🇨🇳</span> 中文
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="pages/contact.html" class="btn btn-primary" data-i18n="nav_quote">Request Quote</a>
+
+        <!-- Mobile Toggle -->
+        <button class="nav-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Left: Content -->
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span data-i18n="hero_badge">ISO 9001 Certified · Superb Hydraulics</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="highlight" data-i18n="hero_title_1">Precision</span><br>
+          <span data-i18n="hero_title_2">Fluid Systems</span><br>
+          <span data-i18n="hero_title_3">Built to Win</span>
+        </h1>
+
+        <p class="hero-sub" data-i18n="hero_sub">
+          High-performance AN fittings, braided hoses and push-lock connectors for motorsport, aerospace, UAV and industrial applications.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">
+            <span data-i18n="hero_cta1">Explore Products</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="../supAero-Katalog-Final.pdf" class="btn btn-outline" target="_blank">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <path d="M7.5 2v8M7.5 10L4.5 7M7.5 10L10.5 7M2 13h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span data-i18n="hero_cta2">Download Catalog</span>
+          </a>
+        </div>
+
+        <div class="hero-specs">
+          <div class="hero-spec-item">
+            <div class="hero-spec-num" data-i18n="hero_spec1_num">15+</div>
+            <div class="hero-spec-label" data-i18n="hero_spec1_label">Years Experience</div>
+          </div>
+          <div class="hero-spec-item">
+            <div class="hero-spec-num" data-i18n="hero_spec2_num">200+</div>
+            <div class="hero-spec-label" data-i18n="hero_spec2_label">Products</div>
+          </div>
+          <div class="hero-spec-item">
+            <div class="hero-spec-num" data-i18n="hero_spec3_num">50+</div>
+            <div class="hero-spec-label" data-i18n="hero_spec3_label">Countries</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: 3D Product Visual -->
+      <div class="hero-visual">
+        <div class="hero-product-wrap">
+          <!-- Glow & Rings -->
+          <div class="hero-glow"></div>
+          <div class="hero-ring hero-ring-1"></div>
+          <div class="hero-ring hero-ring-2"></div>
+
+          <!-- Cycling product angles -->
+          <img class="product-angle active" src="Produktbilder/236/236-01.png" alt="236 AN Fitting Straight">
+          <img class="product-angle" src="Produktbilder/236/236-45.png" alt="236 AN Fitting 45°">
+          <img class="product-angle" src="Produktbilder/236/236-90.png" alt="236 AN Fitting 90°">
+          <img class="product-angle" src="Produktbilder/236/236-120.png" alt="236 AN Fitting 120°">
+          <img class="product-angle" src="Produktbilder/236/236-180.png" alt="236 AN Fitting 180°">
+
+          <!-- Spec Callouts -->
+          <div class="hero-callout hero-callout-1">
+            <span data-i18n="hero_callout1_label">Material</span>
+            <span class="callout-value" data-i18n="hero_callout1_val">6061-T6 Aluminium</span>
+          </div>
+          <div class="hero-callout hero-callout-2">
+            <span data-i18n="hero_callout2_label">Standard</span>
+            <span class="callout-value" data-i18n="hero_callout2_val">JIC 37° Flare</span>
+          </div>
+          <div class="hero-callout hero-callout-3">
+            <span data-i18n="hero_callout3_label">Finish</span>
+            <span class="callout-value" data-i18n="hero_callout3_val">Hard Anodized</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span data-i18n="hero_scroll">Scroll to explore</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TICKER
+══════════════════════════════════════════ -->
+<div id="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Motorsport</span>
+    <span class="ticker-item">Aerospace</span>
+    <span class="ticker-item">UAV Systems</span>
+    <span class="ticker-item">AN Fittings</span>
+    <span class="ticker-item">Braided Hose</span>
+    <span class="ticker-item">Push-Lock Connectors</span>
+    <span class="ticker-item">Industrial</span>
+    <span class="ticker-item">Hydraulic Systems</span>
+    <span class="ticker-item">ISO 9001</span>
+    <span class="ticker-item">Racing</span>
+    <span class="ticker-item">Superb Hydraulics</span>
+    <span class="ticker-item">JIC 37° Flare</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     INDUSTRIES
+══════════════════════════════════════════ -->
+<section id="industries" class="section">
+  <div class="container">
+
+    <div class="industries-header reveal">
+      <div class="section-label" data-i18n="industries_label">Industries</div>
+      <h2 class="section-title" data-i18n="industries_title">Built for the Most Demanding Environments</h2>
+      <p class="section-sub" data-i18n="industries_sub">From Formula racing to unmanned aerial vehicles — our fluid systems perform where failure is not an option.</p>
+    </div>
+
+    <div class="industries-grid">
+
+      <!-- Motorsport -->
+      <div class="industry-card">
+        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/f1-8878648_1280.jpg')"></div>
+        <div class="industry-card-overlay"></div>
+        <div class="industry-card-content">
+          <span class="industry-tag" data-i18n="ind1_tag">Motorsport</span>
+          <h3 class="industry-name" data-i18n="ind1_name">Racing & Motorsport</h3>
+          <p class="industry-desc" data-i18n="ind1_desc">AN fittings and hose assemblies trusted by professional racing teams worldwide.</p>
+          <a href="pages/industries.html#motorsport" class="industry-link" data-i18n="ind1_link">
+            Explore Motorsport
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Aerospace -->
+      <div class="industry-card">
+        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/airplane-engine-side-view-close-up-green-filter-a-2025-01-07-10-33-34-utc-1.jpg')"></div>
+        <div class="industry-card-overlay"></div>
+        <div class="industry-card-content">
+          <span class="industry-tag" data-i18n="ind2_tag">Aerospace</span>
+          <h3 class="industry-name" data-i18n="ind2_name">Aerospace</h3>
+          <p class="industry-desc" data-i18n="ind2_desc">Temperature and vibration-resistant fluid systems for aircraft and rotorcraft applications.</p>
+          <a href="pages/industries.html#aerospace" class="industry-link" data-i18n="ind2_link">
+            Explore Aerospace
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- UAV -->
+      <div class="industry-card">
+        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/uav.PNG'); background-position: center 30%;"></div>
+        <div class="industry-card-overlay"></div>
+        <div class="industry-card-content">
+          <span class="industry-tag" data-i18n="ind3_tag">UAV</span>
+          <h3 class="industry-name" data-i18n="ind3_name">Unmanned Aerial Vehicles</h3>
+          <p class="industry-desc" data-i18n="ind3_desc">Ultra-lightweight hydraulic and fuel systems engineered for UAV and drone platforms.</p>
+          <a href="pages/industries.html#uav" class="industry-link" data-i18n="ind3_link">
+            Explore UAV
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Industrial -->
+      <div class="industry-card">
+        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/disassembled-tractor-parts-on-the-modern-tractor-f-2024-10-16-19-50-40-utc-1.jpg')"></div>
+        <div class="industry-card-overlay"></div>
+        <div class="industry-card-content">
+          <span class="industry-tag" data-i18n="ind4_tag">Industrial</span>
+          <h3 class="industry-name" data-i18n="ind4_name">Industrial & OEM</h3>
+          <p class="industry-desc" data-i18n="ind4_desc">Scalable fluid transfer solutions for industrial machinery and OEM applications.</p>
+          <a href="pages/industries.html#industrial" class="industry-link" data-i18n="ind4_link">
+            Explore Industrial
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PRODUCTS
+══════════════════════════════════════════ -->
+<section id="products" class="section" style="background: var(--bg-2);">
+  <div class="container">
+
+    <div class="products-header">
+      <div class="products-header-row">
+        <div class="reveal">
+          <div class="section-label" data-i18n="products_label">Product Lines</div>
+          <h2 class="section-title" data-i18n="products_title">Precision Engineering, Every Angle</h2>
+          <p class="section-sub" data-i18n="products_sub">Complete range of AN fittings, hose assemblies and specialty connectors.</p>
+        </div>
+        <a href="pages/products.html" class="btn btn-outline reveal">
+          <span data-i18n="products_all">View All Products</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="products-track-wrap">
+      <div class="products-track">
+
+        <!-- 236 Series -->
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="Produktbilder/236/236-90.png" alt="Series 236 AN Fittings">
+          </div>
+          <div class="product-series" data-i18n="prod1_series">Series 236</div>
+          <div class="product-name" data-i18n="prod1_name">AN Swivel Fittings</div>
+          <p class="product-desc" data-i18n="prod1_desc">Classic blue/red anodized aluminium swivel fittings in JIC 37° flare. Available 0°–180°.</p>
+          <div class="product-tags">
+            <span class="product-tag">Motorsport</span>
+            <span class="product-tag">AN</span>
+            <span class="product-tag">JIC</span>
+          </div>
+        </div>
+
+        <!-- 536 Series -->
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="Produktbilder/536/536-90.png" alt="Series 536 Fittings">
+          </div>
+          <div class="product-series" data-i18n="prod2_series">Series 536</div>
+          <div class="product-name" data-i18n="prod2_name">Performance Fittings</div>
+          <p class="product-desc" data-i18n="prod2_desc">High-strength AN swivel fittings with integrated hose end. Multiple configurations.</p>
+          <div class="product-tags">
+            <span class="product-tag">AN</span>
+            <span class="product-tag">High-Perf</span>
+          </div>
+        </div>
+
+        <!-- S4 Series -->
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="Produktbilder/S4/S4090.png" alt="S4 Fittings">
+          </div>
+          <div class="product-series" data-i18n="prod3_series">S4 Series</div>
+          <div class="product-name" data-i18n="prod3_name">S4 Straight & Flare</div>
+          <p class="product-desc" data-i18n="prod3_desc">Straight, flare and push-on ends for versatile line routing. Motorsport proven.</p>
+          <div class="product-tags">
+            <span class="product-tag">Flare</span>
+            <span class="product-tag">Push-On</span>
+            <span class="product-tag">S4</span>
+          </div>
+        </div>
+
+        <!-- S7 Series -->
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="Produktbilder/S7 FL_PG/S7091FL.png" alt="S7 Premium Fittings">
+          </div>
+          <div class="product-series" data-i18n="prod4_series">S7 Series</div>
+          <div class="product-name" data-i18n="prod4_name">S7 Premium Line</div>
+          <p class="product-desc" data-i18n="prod4_desc">Premium S7 fittings with FL flare and PG push-on terminations for high-pressure systems.</p>
+          <div class="product-tags">
+            <span class="product-tag">Premium</span>
+            <span class="product-tag">High-Press.</span>
+            <span class="product-tag">S7</span>
+          </div>
+        </div>
+
+        <!-- Pro:Spec -->
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="Produktbilder/Pro:Spec/01.png" alt="Pro:Spec Connector">
+          </div>
+          <div class="product-series" data-i18n="prod5_series">Pro:Spec</div>
+          <div class="product-name" data-i18n="prod5_name">Pro:Spec Connector</div>
+          <p class="product-desc" data-i18n="prod5_desc">Rapid push-lock connector system. Tool-free assembly. Titanium anodized finish.</p>
+          <div class="product-tags">
+            <span class="product-tag">Push-Lock</span>
+            <span class="product-tag">Titanium</span>
+            <span class="product-tag">Quick</span>
+          </div>
+        </div>
+
+        <!-- Hoses -->
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="Produktbilder/Schläuche/S750.png" alt="Braided Hose Lines">
+          </div>
+          <div class="product-series" data-i18n="prod6_series">Hoses</div>
+          <div class="product-name" data-i18n="prod6_name">Braided Hose Lines</div>
+          <p class="product-desc" data-i18n="prod6_desc">Stainless steel braided PTFE hoses. Series 200, 210, S700, S710, S740, S750, 910.</p>
+          <div class="product-tags">
+            <span class="product-tag">PTFE</span>
+            <span class="product-tag">SS Braid</span>
+            <span class="product-tag">Hose</span>
+          </div>
+        </div>
+
+        <!-- Firesleeve -->
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="Produktbilder/Firesleeve.png" alt="Firesleeve">
+          </div>
+          <div class="product-series" data-i18n="prod7_series">Accessories</div>
+          <div class="product-name" data-i18n="prod7_name">Firesleeve & Protection</div>
+          <p class="product-desc" data-i18n="prod7_desc">Silicone firesleeve for thermal protection of hose assemblies. Available in red and grey.</p>
+          <div class="product-tags">
+            <span class="product-tag">Thermal</span>
+            <span class="product-tag">Silicone</span>
+            <span class="product-tag">Safety</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="products-nav">
+      <button id="prod-prev" aria-label="Previous">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button id="prod-next" aria-label="Next">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     STATS
+══════════════════════════════════════════ -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="15" data-i18n="stat1_num">15+</div>
+        <div class="stat-label" data-i18n="stat1_label">Years of Experience</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-number" data-target="200" data-i18n="stat2_num">200+</div>
+        <div class="stat-label" data-i18n="stat2_label">Products in Range</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-number" data-target="50" data-i18n="stat3_num">50+</div>
+        <div class="stat-label" data-i18n="stat3_label">Countries Served</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-number" data-i18n="stat4_num">ISO</div>
+        <div class="stat-label" data-i18n="stat4_label">9001 Certified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FEATURED PRODUCT DEEP-DIVE
+══════════════════════════════════════════ -->
+<section id="featured" class="section">
+  <div class="container">
+    <div class="featured-inner">
+
+      <!-- Left: Visual -->
+      <div class="featured-visual">
+        <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+          <div class="featured-glow"></div>
+          <img class="featured-main-img" id="featured-img" src="Produktbilder/236/236-01.png" alt="236 AN Fitting" style="transition: opacity 0.3s;">
+        </div>
+
+        <!-- Angle Thumbnails -->
+        <div class="featured-angles">
+          <div class="angle-thumb active">
+            <img src="Produktbilder/236/236-01.png" alt="0°">
+          </div>
+          <div class="angle-thumb">
+            <img src="Produktbilder/236/236-45.png" alt="45°">
+          </div>
+          <div class="angle-thumb">
+            <img src="Produktbilder/236/236-90.png" alt="90°">
+          </div>
+          <div class="angle-thumb">
+            <img src="Produktbilder/236/236-120.png" alt="120°">
+          </div>
+          <div class="angle-thumb">
+            <img src="Produktbilder/236/236-150.png" alt="150°">
+          </div>
+          <div class="angle-thumb">
+            <img src="Produktbilder/236/236-180.png" alt="180°">
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="featured-content">
+        <div class="section-label" data-i18n="featured_label">Spotlight</div>
+        <h2 class="section-title" data-i18n="featured_title">Series 236 AN Fittings</h2>
+        <p class="section-sub" data-i18n="featured_sub">Our flagship AN swivel fitting line — precision machined from 6061-T6 aluminium, hard anodized in signature blue and red. Available in 7 angles.</p>
+
+        <div class="featured-specs">
+          <div class="spec-item">
+            <div class="spec-label" data-i18n="feat_spec1_label">Material</div>
+            <div class="spec-value" data-i18n="feat_spec1_val">6061-T6 Aluminium</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label" data-i18n="feat_spec2_label">Thread</div>
+            <div class="spec-value" data-i18n="feat_spec2_val">JIC 37° Flare</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label" data-i18n="feat_spec3_label">Anodize</div>
+            <div class="spec-value" data-i18n="feat_spec3_val">Hard Anodized</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label" data-i18n="feat_spec4_label">Angles</div>
+            <div class="spec-value" style="font-size:0.8125rem;" data-i18n="feat_spec4_val">0° · 30° · 45° · 60° · 90° · 120° · 150° · 180°</div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <div style="font-size:0.8125rem; color:var(--gray-3); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.75rem;" data-i18n="feat_variants">Available in:</div>
+          <div class="featured-variants">
+            <span class="variant-chip blue" data-i18n="feat_blue">Blue/Red</span>
+            <span class="variant-chip black" data-i18n="feat_black">Black</span>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;">
+          <a href="pages/products.html#236" class="btn btn-primary">
+            <span data-i18n="feat_cta">View Full Range</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════ -->
+<section id="about" class="section" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="about-inner">
+
+      <!-- Left: Visual -->
+      <div class="about-visual">
+        <img class="about-image-main"
+          src="Kategorie Bilder/georg-eiermann-WNy9FkpNbVQ-unsplash.jpg"
+          onerror="this.src='Kategorie Bilder/carl-gelin-edU1KYVTqz4-unsplash.jpg'"
+          alt="supAero Engineering">
+        <div class="about-cert">
+          <img src="Logos/9001_eng_tc_p (1).png" alt="ISO 9001" onerror="this.style.display='none'">
+          <div class="about-cert-text">
+            <strong>ISO 9001:2015</strong>
+            <span>Quality Certified</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="about-content">
+        <div class="section-label" data-i18n="about_label">About supAero</div>
+        <h2 class="section-title" data-i18n="about_title">Superb Hydraulics, Engineered for Performance</h2>
+        <p class="section-sub" data-i18n="about_sub">Founded by engineers with motorsport DNA, supAero has been delivering precision fluid systems to professionals across Europe and beyond for over 15 years.</p>
+
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <div class="highlight-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M9 2L11 7H16L12 10.5L13.5 16L9 12.5L4.5 16L6 10.5L2 7H7L9 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="highlight-text">
+              <strong data-i18n="hl1_title">ISO 9001 Quality Management</strong>
+              <span data-i18n="hl1_desc">Every component manufactured to international quality standards.</span>
+            </div>
+          </div>
+          <div class="about-highlight">
+            <div class="highlight-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6 9L8 11L12 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="highlight-text">
+              <strong data-i18n="hl2_title">Motorsport Pedigree</strong>
+              <span data-i18n="hl2_desc">Products tested and proven at the highest levels of professional racing.</span>
+            </div>
+          </div>
+          <div class="about-highlight">
+            <div class="highlight-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M9 3V9L12.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="highlight-text">
+              <strong data-i18n="hl3_title">Custom Engineering</strong>
+              <span data-i18n="hl3_desc">Bespoke hydraulic solutions tailored to your exact specifications.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;">
+          <a href="pages/about.html" class="btn btn-outline">
+            <span data-i18n="about_cta">Learn More About Us</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════ -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="container">
+    <div class="cta-inner">
+      <h2 class="cta-title" data-i18n="cta_title">Ready to Spec Your Fluid System?</h2>
+      <p class="cta-sub" data-i18n="cta_sub">Talk to our engineers about your application. We'll recommend the right components for your performance requirements.</p>
+      <div class="cta-actions">
+        <a href="pages/contact.html" class="btn btn-primary">
+          <span data-i18n="cta_btn1">Contact Us</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="../supAero-Katalog-Final.pdf" class="btn btn-outline" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path d="M7.5 2v8M7.5 10L4.5 7M7.5 10L10.5 7M2 13h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span data-i18n="cta_btn2">Download Catalog</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <img src="Logos/supAero-WortLogo-W.png" alt="supAero"
+          onerror="this.outerHTML='<span style=&quot;color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif;margin-bottom:1.25rem;display:block&quot;>sup<span style=&quot;color:#3B7FE8&quot;>A</span>ero</span>'">
+      </div>
+
+      <!-- Seiten Column -->
+      <div>
+        <div class="footer-col-title" data-i18n="footer_col_pages">Seiten</div>
+        <ul class="footer-links">
+          <li><a href="index.html" data-i18n="footer_home">Startseite</a></li>
+          <li><a href="pages/products.html" data-i18n="nav_products">Produkte</a></li>
+          <li><a href="pages/catalog.html" data-i18n="nav_catalog">Katalog</a></li>
+          <li><a href="pages/service.html" data-i18n="nav_service">Service</a></li>
+          <li><a href="pages/contact.html" data-i18n="nav_contact">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column -->
+      <div>
+        <div class="footer-col-title" data-i18n="footer_col_links">Links</div>
+        <ul class="footer-links">
+          <li><a href="pages/imprint.html" data-i18n="footer_imprint">Impressum</a></li>
+          <li><a href="pages/privacy.html" data-i18n="footer_privacy">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontakt Column -->
+      <div>
+        <div class="footer-col-title" data-i18n="footer_col_contact">Kontakt</div>
+        <ul class="footer-links">
+          <li>
+            <a href="mailto:info@supaero.de" class="footer-contact-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M1 4.5L7 8L13 4.5" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+              info@supaero.de
+            </a>
+          </li>
+          <li>
+            <a href="tel:+4963219374179" class="footer-contact-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M4 2H6L7 5L5.5 5.5C6.4 7.3 7.7 8.6 9.5 9.5L10 8L13 9V11C13 11 11 13 8 11C5 9 2 6 2 3L4 2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+              </svg>
+              +49 6321-9374179
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy" data-i18n="footer_copy">Copyright © 2025 supAero | Powered by supAero</span>
+      <!-- Scroll to top -->
+      <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="scroll-top-btn" aria-label="Scroll to top">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
