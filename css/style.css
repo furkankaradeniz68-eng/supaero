@@ -817,17 +817,18 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .product-card:hover::before { opacity: 1; }
 
 .product-card-img {
-  height: 200px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
   position: relative;
-  padding: 1rem;
+  padding: 1.25rem;
+  box-sizing: border-box;
 }
 .product-card-img img {
-  width: 160px;
-  height: 160px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   transition: transform 0.5s;
   filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
@@ -1456,13 +1457,14 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .product-full-card:hover::before { opacity: 1; }
 
 .pfc-image {
-  height: 220px; background: var(--bg-2);
+  height: 240px; background: var(--bg-2);
   display: flex; align-items: center; justify-content: center;
   padding: 1.5rem; position: relative; overflow: hidden;
+  box-sizing: border-box;
 }
 .pfc-image img {
-  width: 170px;
-  height: 170px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 8px 20px rgba(0,0,0,.5));
   transition: transform .5s;
@@ -1491,11 +1493,12 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .angle-main-wrap {
   background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg);
   display: flex; align-items: center; justify-content: center;
-  min-height: 380px; position: relative; overflow: hidden;
+  height: 380px; position: relative; overflow: hidden;
+  padding: 2rem; box-sizing: border-box;
 }
 .angle-main-wrap img {
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 20px 50px rgba(0,0,0,.6)) drop-shadow(0 0 30px rgba(27,79,155,.25));
   transition: opacity .3s;
