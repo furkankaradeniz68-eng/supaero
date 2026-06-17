@@ -823,16 +823,18 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   justify-content: center;
   margin-bottom: 1.5rem;
   position: relative;
-  padding: 1.25rem;
+  overflow: hidden;
   box-sizing: border-box;
 }
 .product-card-img img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transform: scale(1.55);
   transition: transform 0.5s;
   filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
 }
+.product-card:hover .product-card-img img { transform: scale(1.65); }
 .product-card:hover .product-card-img img { transform: scale(1.08) translateY(-4px); }
 
 .product-series {
@@ -1459,17 +1461,18 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .pfc-image {
   height: 240px; background: var(--bg-2);
   display: flex; align-items: center; justify-content: center;
-  padding: 1.5rem; position: relative; overflow: hidden;
+  position: relative; overflow: hidden;
   box-sizing: border-box;
 }
 .pfc-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transform: scale(1.55);
   filter: drop-shadow(0 8px 20px rgba(0,0,0,.5));
   transition: transform .5s;
 }
-.product-full-card:hover .pfc-image img { transform: scale(1.07) translateY(-4px); }
+.product-full-card:hover .pfc-image img { transform: scale(1.65); }
 
 .pfc-body { padding: 1.5rem; }
 .pfc-series {
