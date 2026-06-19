@@ -663,7 +663,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 
 .industry-card {
   position: relative;
-  height: 420px;
+  height: 280px;
   overflow: hidden;
   cursor: pointer;
   background: var(--bg-2);

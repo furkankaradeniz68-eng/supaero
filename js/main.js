@@ -265,11 +265,27 @@ document.addEventListener('DOMContentLoaded', () => {
     ticker.innerHTML += ticker.innerHTML;
   }
 
-  // ── Variant chip toggle ─────────────────────
+  // ── Variant chip toggle + image swap ────────
+  const variantImages = {
+    blue:  ['Produktbilder/236/236-01.png','Produktbilder/236/236-45.png','Produktbilder/236/236-90.png','Produktbilder/236/236-120.png','Produktbilder/236/236-150.png','Produktbilder/236/236-180.png'],
+    black: ['Produktbilder/236/236-01-BLK.png','Produktbilder/236/236-45-BLK.png','Produktbilder/236/236-90-BLK.png','Produktbilder/236/236-120-BLK.png','Produktbilder/236/236-150-BLK.png','Produktbilder/236/236-180-BLK.png']
+  };
   document.querySelectorAll('.variant-chip').forEach(chip => {
     chip.addEventListener('click', () => {
       document.querySelectorAll('.variant-chip').forEach(c => c.classList.remove('selected'));
       chip.classList.add('selected');
+      const variant = chip.dataset.variant;
+      const imgs = variantImages[variant];
+      if (!imgs) return;
+      const thumbs = document.querySelectorAll('.featured-angles .angle-thumb');
+      const mainImg = document.getElementById('featured-img');
+      const activeIdx = [...thumbs].findIndex(t => t.classList.contains('active'));
+      const idx = activeIdx >= 0 ? activeIdx : 0;
+      thumbs.forEach((t, i) => { if (imgs[i]) t.querySelector('img').src = imgs[i]; });
+      if (mainImg && imgs[idx]) {
+        mainImg.style.opacity = '0';
+        setTimeout(() => { mainImg.src = imgs[idx]; mainImg.style.opacity = '1'; }, 200);
+      }
     });
   });
 

@@ -142,7 +142,7 @@ const TRANSLATIONS = {
     hero_title_3: "AN Fittings & Motorsport",
     hero_sub: "Hochleistungs-Hydraulic Systems – Leicht. Präzise. Zuverlässig.",
     hero_cta1: "Zu den Produkten",
-    hero_cta2: "Katalog herunterladen",
+    hero_cta2: "Katalog anfordern",
     hero_spec1_num: "15+",
     hero_spec1_label: "Jahre Erfahrung",
     hero_spec2_num: "200+",
