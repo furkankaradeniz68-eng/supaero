@@ -783,6 +783,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .products-track {
   display: flex;
   gap: 1.25rem;
+  align-items: flex-start;
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
 }
@@ -824,7 +825,8 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   margin-bottom: 1.5rem;
   position: relative;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 2px;
+  flex-shrink: 0;
 }
 .product-card-img-inner {
   width: 100%;
@@ -839,11 +841,11 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   backdrop-filter: blur(2px);
 }
 .product-card-img img {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: 50% 50%;
-  transform: scale(1.0);
+  transform: scale(1.3);
   transform-origin: 50% 50%;
 }
 /* S4 / S7 homepage carousel — more zoom */
