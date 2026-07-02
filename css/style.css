@@ -1520,7 +1520,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   display: flex; align-items: center; justify-content: center;
   position: relative;
   box-sizing: border-box;
-  padding: 2px;
+  padding: 1rem;
   flex-shrink: 0;
 }
 .pfc-image-inner {
@@ -1540,6 +1540,8 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   height: 100%;
   object-fit: contain;
   object-position: 50% 50%;
+  transform: scale(1.2);
+  transform-origin: 50% 50%;
 }
 
 .pfc-body { padding: 1.5rem; }
