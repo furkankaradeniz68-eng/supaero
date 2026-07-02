@@ -778,6 +778,8 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .products-track-wrap {
   position: relative;
   overflow: hidden;
+  padding-bottom: 1.5rem;
+  margin-bottom: -1.5rem;
 }
 
 .products-track {
@@ -1132,6 +1134,32 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .about-cert-text { font-size: 0.75rem; }
 .about-cert-text strong { display: block; font-weight: 700; margin-bottom: 0.1rem; }
 .about-cert-text span { color: var(--gray-2); }
+
+/* Floating ISO badge — homepage only */
+.iso-float-badge {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 900;
+  background: var(--bg-card);
+  border: 1px solid var(--border-blue);
+  border-radius: var(--radius);
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  cursor: default;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.iso-float-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+}
+.iso-float-badge img { height: 38px; width: auto; }
+.iso-float-text { font-size: 0.75rem; }
+.iso-float-text strong { display: block; font-weight: 700; margin-bottom: 0.1rem; }
+.iso-float-text span { color: var(--gray-2); }
 
 .about-image-main {
   width: 100%;
