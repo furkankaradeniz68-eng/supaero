@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="icon" type="image/png" href="Logos/supAero-bildlogo-W.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>supAero — Superb Hydraulics | AN Fittings, Motorsport Hose & Connectors</title>
@@ -13,7 +14,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
   <!-- Translations & Main JS -->
-  <script src="i18n/translations.js"></script>
+  <script src="i18n/translations.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -31,7 +32,7 @@
 
       <!-- Logo -->
       <a href="/" class="nav-logo">
-        <img src="Logos/supAero-WortLogo-W.png" alt="supAero" onerror="this.style.cssText='color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif'; this.outerHTML='<span style=\'color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif\'>sup<span style=\'color:#3B7FE8\'>A</span>ero</span>'">
+        <img src="Logos/supAero-WortLogo-W.webp" alt="supAero" onerror="this.style.cssText='color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif'; this.outerHTML='<span style=\'color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif\'>sup<span style=\'color:#3B7FE8\'>A</span>ero</span>'">
       </a>
 
       <!-- Main Links -->
@@ -157,11 +158,11 @@
           <div class="hero-ring hero-ring-2"></div>
 
           <!-- Cycling product angles -->
-          <img class="product-angle active" src="Produktbilder/web/236-01.png" alt="236 AN Fitting Straight">
-          <img class="product-angle" src="Produktbilder/web/236-45.png" alt="236 AN Fitting 45°">
-          <img class="product-angle" src="Produktbilder/web/236-90.png" alt="236 AN Fitting 90°">
-          <img class="product-angle" src="Produktbilder/web/236-120.png" alt="236 AN Fitting 120°">
-          <img class="product-angle" src="Produktbilder/web/236-180.png" alt="236 AN Fitting 180°">
+          <img loading="lazy" class="product-angle active" src="Produktbilder/web/236-01.webp" alt="236 AN Fitting Straight">
+          <img loading="lazy" class="product-angle" src="Produktbilder/web/236-45.webp" alt="236 AN Fitting 45°">
+          <img loading="lazy" class="product-angle" src="Produktbilder/web/236-90.webp" alt="236 AN Fitting 90°">
+          <img loading="lazy" class="product-angle" src="Produktbilder/web/236-120.webp" alt="236 AN Fitting 120°">
+          <img loading="lazy" class="product-angle" src="Produktbilder/web/236-180.webp" alt="236 AN Fitting 180°">
 
           <!-- Spec Callouts -->
           <div class="hero-callout hero-callout-1">
@@ -225,7 +226,7 @@
 
       <!-- Motorsport -->
       <div class="industry-card">
-        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/f1-8878648_1280.jpg')"></div>
+        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/f1-8878648_1280.webp')"></div>
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <span class="industry-tag" data-i18n="ind1_tag">Motorsport</span>
@@ -242,7 +243,7 @@
 
       <!-- Aerospace -->
       <div class="industry-card">
-        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/airplane-engine-side-view-close-up-green-filter-a-2025-01-07-10-33-34-utc-1.jpg')"></div>
+        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/airplane-engine-side-view-close-up-green-filter-a-2025-01-07-10-33-34-utc-1.webp')"></div>
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <span class="industry-tag" data-i18n="ind2_tag">Aerospace</span>
@@ -259,7 +260,7 @@
 
       <!-- UAV -->
       <div class="industry-card">
-        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/uav.PNG'); background-position: center 30%;"></div>
+        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/uav.webp'); background-position: center 30%;"></div>
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <span class="industry-tag" data-i18n="ind3_tag">UAV</span>
@@ -276,7 +277,7 @@
 
       <!-- Industrial -->
       <div class="industry-card">
-        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/disassembled-tractor-parts-on-the-modern-tractor-f-2024-10-16-19-50-40-utc-1.jpg')"></div>
+        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/disassembled-tractor-parts-on-the-modern-tractor-f-2024-10-16-19-50-40-utc-1.webp')"></div>
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <span class="industry-tag" data-i18n="ind4_tag">Industrial</span>
@@ -304,12 +305,12 @@
 
       <!-- Left: Visual -->
       <div class="about-visual">
-        <img class="about-image-main"
-          src="Kategorie Bilder/georg-eiermann-WNy9FkpNbVQ-unsplash.jpg"
+        <img fetchpriority="high" class="about-image-main"
+          src="Kategorie Bilder/georg-eiermann-WNy9FkpNbVQ-unsplash.webp"
           onerror="this.src='Kategorie Bilder/carl-gelin-edU1KYVTqz4-unsplash.jpg'"
           alt="supAero Engineering">
         <div class="about-cert">
-          <img src="Logos/9001_eng_tc_p (1).png" alt="ISO 9001" onerror="this.style.display='none'">
+          <img loading="lazy" src="Logos/9001_eng_tc_p (1).webp" alt="ISO 9001" onerror="this.style.display='none'">
           <div class="about-cert-text">
             <strong>ISO 9001</strong>
             <span>Quality Certified</span>
@@ -412,34 +413,34 @@
       <div class="featured-visual">
         <div style="position:relative; display:flex; align-items:center; justify-content:center;">
           <div class="featured-glow"></div>
-          <img class="featured-main-img" id="featured-img" src="Produktbilder/web/236-01.png" alt="236 AN Fitting" style="transition: opacity 0.3s;">
+          <img loading="lazy" class="featured-main-img" id="featured-img" src="Produktbilder/web/236-01.webp" alt="236 AN Fitting" style="transition: opacity 0.3s;">
         </div>
 
         <!-- Angle Thumbnails -->
         <div class="featured-angles">
           <div class="angle-thumb active">
             <span class="angle-badge">0°</span>
-            <img src="Produktbilder/web/236-01.png" alt="0°">
+            <img loading="lazy" src="Produktbilder/web/236-01.webp" alt="0°">
           </div>
           <div class="angle-thumb">
             <span class="angle-badge">45°</span>
-            <img src="Produktbilder/web/236-45.png" alt="45°">
+            <img loading="lazy" src="Produktbilder/web/236-45.webp" alt="45°">
           </div>
           <div class="angle-thumb">
             <span class="angle-badge">90°</span>
-            <img src="Produktbilder/web/236-90.png" alt="90°">
+            <img loading="lazy" src="Produktbilder/web/236-90.webp" alt="90°">
           </div>
           <div class="angle-thumb">
             <span class="angle-badge">120°</span>
-            <img src="Produktbilder/web/236-120.png" alt="120°">
+            <img loading="lazy" src="Produktbilder/web/236-120.webp" alt="120°">
           </div>
           <div class="angle-thumb">
             <span class="angle-badge">150°</span>
-            <img src="Produktbilder/web/236-150.png" alt="150°">
+            <img loading="lazy" src="Produktbilder/web/236-150.webp" alt="150°">
           </div>
           <div class="angle-thumb">
             <span class="angle-badge">180°</span>
-            <img src="Produktbilder/web/236-180.png" alt="180°">
+            <img loading="lazy" src="Produktbilder/web/236-180.webp" alt="180°">
           </div>
         </div>
       </div>
@@ -516,7 +517,7 @@
         <div class="product-card">
           <div class="product-card-img">
             <div class="product-card-img-inner">
-              <img src="Produktbilder/web/236-90.png" alt="Series 236 AN Fittings">
+              <img loading="lazy" src="Produktbilder/web/236-90.webp" alt="Series 236 AN Fittings">
             </div>
           </div>
           <div class="product-series" data-i18n="prod1_series">Series 236</div>
@@ -533,7 +534,7 @@
         <div class="product-card">
           <div class="product-card-img">
             <div class="product-card-img-inner">
-              <img src="Produktbilder/web/536-90.png" alt="Series 536 Fittings">
+              <img loading="lazy" src="Produktbilder/web/536-90.webp" alt="Series 536 Fittings">
             </div>
           </div>
           <div class="product-series" data-i18n="prod2_series">Series 536</div>
@@ -549,7 +550,7 @@
         <div class="product-card" data-product="s4">
           <div class="product-card-img">
             <div class="product-card-img-inner">
-              <img src="Produktbilder/web/S4090.png" alt="S4 Fittings">
+              <img loading="lazy" src="Produktbilder/web/S4090.webp" alt="S4 Fittings">
             </div>
           </div>
           <div class="product-series" data-i18n="prod3_series">S4 Series</div>
@@ -566,7 +567,7 @@
         <div class="product-card" data-product="s7">
           <div class="product-card-img">
             <div class="product-card-img-inner">
-              <img src="Produktbilder/web/S7091FL.png" alt="S7 Premium Fittings">
+              <img loading="lazy" src="Produktbilder/web/S7091FL.webp" alt="S7 Premium Fittings">
             </div>
           </div>
           <div class="product-series" data-i18n="prod4_series">S7 Series</div>
@@ -583,7 +584,7 @@
         <div class="product-card">
           <div class="product-card-img">
             <div class="product-card-img-inner">
-              <img src="Produktbilder/web/ProSpec-01.png" alt="Pro:Spec Connector">
+              <img loading="lazy" src="Produktbilder/web/ProSpec-01.webp" alt="Pro:Spec Connector">
             </div>
           </div>
           <div class="product-series" data-i18n="prod5_series">Pro:Spec</div>
@@ -600,7 +601,7 @@
         <div class="product-card">
           <div class="product-card-img">
             <div class="product-card-img-inner">
-              <img src="Produktbilder/web/S750.png" alt="Braided Hose Lines">
+              <img loading="lazy" src="Produktbilder/web/S750.webp" alt="Braided Hose Lines">
             </div>
           </div>
           <div class="product-series" data-i18n="prod6_series">Hoses</div>
@@ -617,7 +618,7 @@
         <div class="product-card">
           <div class="product-card-img">
             <div class="product-card-img-inner">
-              <img src="Produktbilder/web/Firesleeve.png" alt="Firesleeve">
+              <img loading="lazy" src="Produktbilder/web/Firesleeve.webp" alt="Firesleeve">
             </div>
           </div>
           <div class="product-series" data-i18n="prod7_series">Accessories</div>
@@ -721,7 +722,7 @@
 
       <!-- Brand Column -->
       <div class="footer-brand">
-        <img src="Logos/supAero-WortLogo-W.png" alt="supAero"
+        <img src="Logos/supAero-WortLogo-W.webp" alt="supAero"
           onerror="this.outerHTML='<span style=&quot;color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif;margin-bottom:1.25rem;display:block&quot;>sup<span style=&quot;color:#3B7FE8&quot;>A</span>ero</span>'">
       </div>
 
@@ -786,7 +787,7 @@
 
 <!-- Floating ISO badge (homepage only) -->
 <div class="iso-float-badge">
-  <img src="Logos/9001_eng_tc_p (1).png" alt="ISO 9001" onerror="this.style.display='none'">
+  <img loading="lazy" src="Logos/9001_eng_tc_p (1).webp" alt="ISO 9001" onerror="this.style.display='none'">
   <div class="iso-float-text">
     <strong>ISO 9001</strong>
     <span>Quality Certified</span>
