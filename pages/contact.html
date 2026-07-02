@@ -112,34 +112,34 @@
       <!-- Right: Form -->
       <div>
         <h3 style="font-size:1.375rem;font-weight:700;margin-bottom:2rem;">Anfrage senden</h3>
-        <form class="contact-form" onsubmit="handleSubmit(event)">
+        <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Vorname</label>
-              <input type="text" class="form-input" placeholder="Max" required>
+              <input type="text" name="firstName" class="form-input" placeholder="Max" required>
             </div>
             <div class="form-group">
               <label class="form-label">Nachname</label>
-              <input type="text" class="form-input" placeholder="Mustermann" required>
+              <input type="text" name="lastName" class="form-input" placeholder="Mustermann" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">E-Mail *</label>
-              <input type="email" class="form-input" placeholder="max@firma.de" required>
+              <input type="email" name="email" class="form-input" placeholder="max@firma.de" required>
             </div>
             <div class="form-group">
               <label class="form-label">Telefon</label>
-              <input type="tel" class="form-input" placeholder="+49 ...">
+              <input type="tel" name="phone" class="form-input" placeholder="+49 ...">
             </div>
           </div>
           <div class="form-group">
             <label class="form-label">Firma / Organisation</label>
-            <input type="text" class="form-input" placeholder="Ihre Firma GmbH">
+            <input type="text" name="company" class="form-input" placeholder="Ihre Firma GmbH">
           </div>
           <div class="form-group">
             <label class="form-label">Betreff</label>
-            <select class="form-select">
+            <select name="subject" class="form-select">
               <option value="">— Bitte wählen —</option>
               <option value="quote">Angebot anfragen</option>
               <option value="technical">Technische Beratung</option>
@@ -150,14 +150,16 @@
           </div>
           <div class="form-group">
             <label class="form-label">Nachricht *</label>
-            <textarea class="form-textarea" placeholder="Beschreiben Sie Ihre Anforderungen — Anwendung, gewünschte Produkte, Stückzahlen..." required></textarea>
+            <textarea name="message" class="form-textarea" placeholder="Beschreiben Sie Ihre Anforderungen — Anwendung, gewünschte Produkte, Stückzahlen..." required></textarea>
           </div>
           <div style="display:flex;align-items:center;gap:.75rem;font-size:.8125rem;color:var(--gray-2);">
             <input type="checkbox" id="privacy" style="width:16px;height:16px;accent-color:var(--blue);" required>
             <label for="privacy">Ich stimme der <a href="privacy.html" style="color:var(--blue-bright);">Datenschutzerklärung</a> zu. *</label>
           </div>
-          <button type="submit" class="btn btn-primary" style="margin-top:.5rem;width:100%;justify-content:center;">
-            Anfrage absenden
+          <div id="form-error" style="display:none;padding:.75rem 1rem;background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.3);border-radius:8px;color:#fca5a5;font-size:.875rem;margin-top:.5rem;"></div>
+          <button type="submit" id="submit-btn" class="btn btn-primary" style="margin-top:.5rem;width:100%;justify-content:center;">
+            <span id="submit-label">Anfrage absenden</span>
+            <span id="submit-spinner" style="display:none;">Wird gesendet…</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </button>
         </form>
@@ -172,10 +174,53 @@
 </section>
 
 <script>
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
-  document.querySelector('.contact-form').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
+  const form = document.getElementById('contact-form');
+  const btn = document.getElementById('submit-btn');
+  const errorBox = document.getElementById('form-error');
+
+  // Loading state
+  btn.disabled = true;
+  document.getElementById('submit-label').style.display = 'none';
+  document.getElementById('submit-spinner').style.display = 'inline';
+  errorBox.style.display = 'none';
+
+  const data = {
+    firstName: form.firstName.value,
+    lastName:  form.lastName.value,
+    email:     form.email.value,
+    phone:     form.phone.value,
+    company:   form.company.value,
+    subject:   form.subject.value,
+    message:   form.message.value,
+  };
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const json = await res.json();
+
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      errorBox.textContent = json.error || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.';
+      errorBox.style.display = 'block';
+      btn.disabled = false;
+      document.getElementById('submit-label').style.display = 'inline';
+      document.getElementById('submit-spinner').style.display = 'none';
+    }
+  } catch (err) {
+    errorBox.textContent = 'Netzwerkfehler. Bitte prüfen Sie Ihre Internetverbindung.';
+    errorBox.style.display = 'block';
+    btn.disabled = false;
+    document.getElementById('submit-label').style.display = 'inline';
+    document.getElementById('submit-spinner').style.display = 'none';
+  }
 }
 </script>
 
