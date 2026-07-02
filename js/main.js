@@ -34,7 +34,7 @@ function applyTranslations(lang) {
   });
 
   // Update lang button label
-  const langInfo = { en: {flag:'🇬🇧', label:'EN'}, de: {flag:'🇩🇪', label:'DE'}, es: {flag:'🇪🇸', label:'ES'}, it: {flag:'🇮🇹', label:'IT'}, pt: {flag:'🇧🇷', label:'PT'}, zh: {flag:'🇨🇳', label:'ZH'} };
+  const langInfo = { en: {flag:'🇬🇧', label:'EN'}, de: {flag:'🇩🇪', label:'DE'}, es: {flag:'🇪🇸', label:'ES'}, it: {flag:'🇮🇹', label:'IT'}, pt: {flag:'🇵🇹', label:'PT'}, zh: {flag:'🇨🇳', label:'ZH'} };
   const btn = document.querySelector('.lang-btn');
   if (btn && langInfo[lang]) {
     btn.querySelector('.flag').textContent = langInfo[lang].flag;
