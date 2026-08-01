@@ -7,7 +7,7 @@
 
 (function () {
   const STORAGE_KEY = 'sa-consent';
-  const GA_ID = ''; // filled in when GA4 is set up
+  const GA_ID = 'G-N48RWDGSJ8';
 
   // ── Load GA4 ────────────────────────────────
   function loadGA() {
