@@ -2015,3 +2015,106 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   .about-story-grid { grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; }
   .about-values-grid { grid-template-columns: 1fr; }
 }
+
+/* ══════════════════════════════════════════
+   Cookie Consent Banner
+══════════════════════════════════════════ */
+#sa-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 0 1rem 1rem;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#sa-cookie-banner.sa-cookie-visible {
+  transform: translateY(0);
+}
+#sa-cookie-banner.sa-cookie-hiding {
+  transform: translateY(110%);
+}
+.sa-cookie-inner {
+  background: rgba(8, 16, 36, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 127, 232, 0.25);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 -4px 40px rgba(0, 0, 0, 0.4);
+}
+.sa-cookie-text {
+  flex: 1;
+  min-width: 0;
+}
+.sa-cookie-text strong {
+  display: block;
+  color: var(--white);
+  font-size: 0.9375rem;
+  margin-bottom: 0.3rem;
+}
+.sa-cookie-text p {
+  color: var(--gray-2);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.sa-cookie-text a {
+  color: var(--blue-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.sa-cookie-actions {
+  display: flex;
+  gap: 0.625rem;
+  flex-shrink: 0;
+}
+.sa-btn-primary {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.sa-btn-primary:hover { background: var(--blue-bright); }
+.sa-btn-secondary {
+  background: transparent;
+  color: var(--gray-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+.sa-btn-secondary:hover { color: var(--white); border-color: var(--gray-3); }
+
+@media (max-width: 600px) {
+  .sa-cookie-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .sa-cookie-actions {
+    flex-direction: column;
+  }
+  .sa-btn-primary, .sa-btn-secondary {
+    width: 100%;
+    padding: 0.75rem;
+    text-align: center;
+  }
+}
