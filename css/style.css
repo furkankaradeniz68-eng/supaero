@@ -1878,8 +1878,73 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   .industry-block.reverse { direction: ltr; }
   .contact-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .service-grid { grid-template-columns: 1fr; }
+  .service-grid { grid-template-columns: 1fr 1fr; }
   .angle-viewer { grid-template-columns: 1fr; }
   .angle-strip { flex-direction: row; overflow-x: auto; }
   .angle-strip .angle-thumb { flex-shrink: 0; }
+  .service-teaser-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .service-mini-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Service teaser grid (homepage) ─────────── */
+.service-teaser-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.service-mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── Mobile overrides (≤600px) ───────────────── */
+@media (max-width: 600px) {
+  /* Nav: hide quote button, lang switcher stays */
+  .nav-right .btn-primary { display: none; }
+  .nav-inner { gap: 0; }
+  .nav-logo img { height: 30px; }
+
+  /* ISO badge: icon only */
+  .iso-float-badge { padding: 0.45rem 0.6rem; gap: 0; bottom: 1rem; right: 1rem; }
+  .iso-float-badge .iso-float-text { display: none; }
+  .iso-float-badge img { height: 28px; }
+
+  /* About cert: take it out of absolute flow */
+  .about-cert { position: static; margin-top: 1.25rem; display: inline-flex; }
+
+  /* Service grid: stack on small phones */
+  .service-grid { grid-template-columns: 1fr; }
+  .service-teaser-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .service-mini-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+  /* Spec items: prevent overflow */
+  .spec-item { flex-wrap: wrap; }
+  .spec-value { font-size: 0.875rem; }
+
+  /* Featured angles: smaller thumbs */
+  .angle-thumb { width: 52px; height: 52px; }
+
+  /* Products page filter bar */
+  .product-filter-bar { gap: 0.4rem; }
+  .filter-btn { font-size: 0.8rem; padding: 0.4rem 0.75rem; }
+
+  /* Products full grid: force 1 col on narrow phones */
+  .products-full-grid { grid-template-columns: 1fr; }
+
+  /* Page hero: tighter padding */
+  .page-hero { padding: calc(var(--nav-h) + 30px) 0 50px; }
+  .page-hero h1 { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+
+  /* Industries page blocks */
+  .industry-page-grid { gap: 3rem; }
+  .industry-block-image { height: 220px; }
+
+  /* FAQ */
+  .faq-question { font-size: 0.9375rem; padding: 1rem 1.25rem; }
+
+  /* Footer */
+  .footer-grid { gap: 2rem; }
+  .footer-bottom { gap: 1rem; }
 }
