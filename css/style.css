@@ -994,6 +994,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   right: -3rem;
   top: 50%;
   transform: translateY(-50%);
+  overflow: visible;
 }
 
 .angle-thumb {
@@ -1008,8 +1009,12 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   cursor: pointer;
   transition: border-color 0.25s, background 0.25s;
   padding: 6px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+}
+.angle-thumb > img {
+  border-radius: 4px;
+  overflow: hidden;
 }
 .angle-badge {
   position: absolute;
