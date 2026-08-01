@@ -1,12 +1,52 @@
+const MAX_LENGTHS = {
+  firstName: 100,
+  lastName:  100,
+  email:     254,
+  phone:     30,
+  company:   200,
+  subject:   50,
+  message:   5000,
+};
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function truncate(val, max) {
+  if (typeof val !== 'string') return '';
+  return val.trim().slice(0, max);
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { firstName, lastName, email, phone, company, subject, message, recaptchaToken } = req.body;
+  const body = req.body || {};
 
-  // Verify reCAPTCHA v3 token
-  if (recaptchaToken && process.env.RECAPTCHA_SECRET) {
+  // Sanitise & length-limit every field
+  const firstName = truncate(body.firstName, MAX_LENGTHS.firstName);
+  const lastName  = truncate(body.lastName,  MAX_LENGTHS.lastName);
+  const email     = truncate(body.email,     MAX_LENGTHS.email);
+  const phone     = truncate(body.phone,     MAX_LENGTHS.phone);
+  const company   = truncate(body.company,   MAX_LENGTHS.company);
+  const subject   = truncate(body.subject,   MAX_LENGTHS.subject);
+  const message   = truncate(body.message,   MAX_LENGTHS.message);
+  const recaptchaToken = truncate(body.recaptchaToken, 2048);
+
+  // Validate required fields
+  if (!email || !message) {
+    return res.status(400).json({ error: 'E-Mail und Nachricht sind Pflichtfelder.' });
+  }
+
+  // Validate email format
+  if (!EMAIL_RE.test(email)) {
+    return res.status(400).json({ error: 'Ungültige E-Mail-Adresse.' });
+  }
+
+  // Verify reCAPTCHA v3 token — blocking: never skip on error
+  if (process.env.RECAPTCHA_SECRET) {
+    if (!recaptchaToken) {
+      return res.status(400).json({ error: 'Spam-Schutz fehlgeschlagen. Bitte versuchen Sie es erneut.' });
+    }
     try {
       const verify = await fetch('https://www.google.com/recaptcha/api/siteverify', {
         method: 'POST',
@@ -17,11 +57,10 @@ export default async function handler(req, res) {
       if (!result.success || result.score < 0.5) {
         return res.status(400).json({ error: 'Spam-Schutz fehlgeschlagen. Bitte versuchen Sie es erneut.' });
       }
-    } catch (_) {}
-  }
-
-  if (!email || !message) {
-    return res.status(400).json({ error: 'E-Mail und Nachricht sind Pflichtfelder.' });
+    } catch (_) {
+      // reCAPTCHA unreachable — block rather than allow through
+      return res.status(503).json({ error: 'Spam-Schutz vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.' });
+    }
   }
 
   const subjectLabels = {
@@ -32,7 +71,7 @@ export default async function handler(req, res) {
     other:    'Sonstiges',
   };
 
-  const subjectLabel = subjectLabels[subject] || subject || 'Kontaktanfrage';
+  const subjectLabel = subjectLabels[subject] || 'Kontaktanfrage';
   const fullName = [firstName, lastName].filter(Boolean).join(' ') || 'Unbekannt';
 
   const html = `
@@ -90,25 +129,25 @@ export default async function handler(req, res) {
                   <tr>
                     <td style="padding:14px 18px;border-bottom:1px solid #e2e8f0;background:#f8fafc;">
                       <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#94a3b8;text-transform:uppercase;display:block;margin-bottom:3px;">Name</span>
-                      <span style="font-size:15px;font-weight:600;color:#0f172a;">${fullName}</span>
+                      <span style="font-size:15px;font-weight:600;color:#0f172a;">${fullName.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>
                     </td>
                   </tr>
                   <tr>
                     <td style="padding:14px 18px;border-bottom:1px solid #e2e8f0;background:#ffffff;">
                       <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#94a3b8;text-transform:uppercase;display:block;margin-bottom:3px;">E-Mail</span>
-                      <a href="mailto:${email}" style="font-size:15px;font-weight:600;color:#3B7FE8;text-decoration:none;">${email}</a>
+                      <a href="mailto:${email.replace(/</g,'&lt;').replace(/>/g,'&gt;')}" style="font-size:15px;font-weight:600;color:#3B7FE8;text-decoration:none;">${email.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</a>
                     </td>
                   </tr>
                   ${phone ? `<tr>
                     <td style="padding:14px 18px;border-bottom:1px solid #e2e8f0;background:#f8fafc;">
                       <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#94a3b8;text-transform:uppercase;display:block;margin-bottom:3px;">Telefon</span>
-                      <a href="tel:${phone}" style="font-size:15px;font-weight:600;color:#0f172a;text-decoration:none;">${phone}</a>
+                      <span style="font-size:15px;font-weight:600;color:#0f172a;">${phone.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>
                     </td>
                   </tr>` : ''}
                   ${company ? `<tr>
                     <td style="padding:14px 18px;background:${phone ? '#ffffff' : '#f8fafc'};">
                       <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#94a3b8;text-transform:uppercase;display:block;margin-bottom:3px;">Firma</span>
-                      <span style="font-size:15px;font-weight:600;color:#0f172a;">${company}</span>
+                      <span style="font-size:15px;font-weight:600;color:#0f172a;">${company.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>
                     </td>
                   </tr>` : ''}
                 </table>
@@ -130,7 +169,7 @@ export default async function handler(req, res) {
           <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
               <td style="padding:0 36px 32px;" align="center">
-                <a href="mailto:${email}" style="display:inline-block;background:#3B7FE8;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;padding:12px 28px;border-radius:8px;letter-spacing:0.02em;">Direkt antworten →</a>
+                <a href="mailto:${email.replace(/</g,'&lt;').replace(/>/g,'&gt;')}" style="display:inline-block;background:#3B7FE8;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;padding:12px 28px;border-radius:8px;letter-spacing:0.02em;">Direkt antworten →</a>
               </td>
             </tr>
           </table>
