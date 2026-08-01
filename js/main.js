@@ -9,7 +9,7 @@
    ============================================= */
 
 // ── i18n ──────────────────────────────────────
-let currentLang = localStorage.getItem('sa-lang') || 'de';
+let currentLang = localStorage.getItem('sa-lang') || 'en';
 
 function applyTranslations(lang) {
   const t = TRANSLATIONS[lang];
