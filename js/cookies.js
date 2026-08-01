@@ -38,7 +38,7 @@
         <div class="sa-cookie-text">
           <strong>Cookies &amp; Datenschutz</strong>
           <p>Wir verwenden essentielle Cookies für den Betrieb der Seite und — mit Ihrer Zustimmung — Google Analytics zur Analyse des Datenverkehrs. Keine Weitergabe an Dritte.
-          <a href="pages/privacy.html">Datenschutzerklärung</a></p>
+          <a href="/pages/privacy.html">Datenschutzerklärung</a></p>
         </div>
         <div class="sa-cookie-actions">
           <button id="sa-cookie-essential" class="sa-btn-secondary">Nur Essentielle</button>
