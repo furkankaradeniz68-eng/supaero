@@ -38,74 +38,116 @@ export default async function handler(req, res) {
   const html = `
 <!DOCTYPE html>
 <html lang="de">
-<head><meta charset="UTF-8"></head>
-<body style="margin:0;padding:0;background:#0a1628;font-family:Inter,Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#0a1628;padding:40px 0;">
-    <tr><td align="center">
-      <table width="600" cellpadding="0" cellspacing="0" style="background:#0F1B2D;border:1px solid #1e3a5f;border-radius:12px;overflow:hidden;">
-        <!-- Header -->
-        <tr>
-          <td style="background:linear-gradient(135deg,#1B4F9B,#0d2d5e);padding:32px 40px;">
-            <div style="font-size:22px;font-weight:900;color:#fff;letter-spacing:-0.5px;">
-              sup<span style="color:#3B7FE8;">A</span>ero
-            </div>
-            <div style="color:#94a3b8;font-size:12px;margin-top:4px;">Superb Hydraulics</div>
-          </td>
-        </tr>
-        <!-- Title -->
-        <tr>
-          <td style="padding:32px 40px 0;">
-            <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;color:#3B7FE8;text-transform:uppercase;margin-bottom:8px;">Neue Anfrage</div>
-            <div style="font-size:22px;font-weight:700;color:#fff;">${subjectLabel}</div>
-          </td>
-        </tr>
-        <!-- Contact Info -->
-        <tr>
-          <td style="padding:24px 40px;">
-            <table width="100%" cellpadding="0" cellspacing="0" style="background:#0a1628;border:1px solid #1e3a5f;border-radius:8px;overflow:hidden;">
-              <tr>
-                <td style="padding:14px 20px;border-bottom:1px solid #1e3a5f;">
-                  <span style="font-size:11px;color:#64748b;display:block;margin-bottom:2px;">NAME</span>
-                  <span style="font-size:15px;color:#e2e8f0;font-weight:600;">${fullName}</span>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:14px 20px;border-bottom:1px solid #1e3a5f;">
-                  <span style="font-size:11px;color:#64748b;display:block;margin-bottom:2px;">E-MAIL</span>
-                  <a href="mailto:${email}" style="font-size:15px;color:#3B7FE8;font-weight:600;text-decoration:none;">${email}</a>
-                </td>
-              </tr>
-              ${phone ? `<tr>
-                <td style="padding:14px 20px;border-bottom:1px solid #1e3a5f;">
-                  <span style="font-size:11px;color:#64748b;display:block;margin-bottom:2px;">TELEFON</span>
-                  <span style="font-size:15px;color:#e2e8f0;font-weight:600;">${phone}</span>
-                </td>
-              </tr>` : ''}
-              ${company ? `<tr>
-                <td style="padding:14px 20px;">
-                  <span style="font-size:11px;color:#64748b;display:block;margin-bottom:2px;">FIRMA</span>
-                  <span style="font-size:15px;color:#e2e8f0;font-weight:600;">${company}</span>
-                </td>
-              </tr>` : ''}
-            </table>
-          </td>
-        </tr>
-        <!-- Message -->
-        <tr>
-          <td style="padding:0 40px 32px;">
-            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;color:#64748b;text-transform:uppercase;margin-bottom:12px;">Nachricht</div>
-            <div style="background:#0a1628;border:1px solid #1e3a5f;border-radius:8px;padding:20px;font-size:15px;color:#cbd5e1;line-height:1.7;white-space:pre-wrap;">${message.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
-          </td>
-        </tr>
-        <!-- Footer -->
-        <tr>
-          <td style="background:#060e1a;padding:20px 40px;border-top:1px solid #1e3a5f;">
-            <div style="font-size:12px;color:#475569;">Diese Nachricht wurde über das Kontaktformular auf <strong style="color:#94a3b8;">supaero.vercel.app</strong> gesendet.</div>
-          </td>
-        </tr>
-      </table>
-    </td></tr>
-  </table>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:Inter,-apple-system,Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:40px 16px;">
+  <tr><td align="center">
+    <table width="580" cellpadding="0" cellspacing="0" style="max-width:580px;width:100%;">
+
+      <!-- Logo Header -->
+      <tr>
+        <td style="padding:0 0 24px 0;" align="center">
+          <table cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="background:#0a1628;border-radius:12px;padding:16px 28px;">
+                <span style="font-size:26px;font-weight:900;color:#ffffff;letter-spacing:-0.5px;font-family:Inter,Arial,sans-serif;">sup<span style="color:#3B7FE8;">A</span>ero</span>
+                <span style="display:block;font-size:11px;color:#64748b;letter-spacing:0.12em;text-transform:uppercase;margin-top:2px;">Superb Hydraulics</span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Card -->
+      <tr>
+        <td style="background:#ffffff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.08);overflow:hidden;">
+
+          <!-- Blue accent bar -->
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="background:linear-gradient(90deg,#1B4F9B 0%,#3B7FE8 100%);height:4px;"></td>
+            </tr>
+          </table>
+
+          <!-- Title -->
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="padding:32px 36px 24px;">
+                <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.14em;color:#3B7FE8;text-transform:uppercase;margin-bottom:8px;">Neue Anfrage über supaero.de</span>
+                <h1 style="margin:0;font-size:24px;font-weight:800;color:#0f172a;letter-spacing:-0.3px;">${subjectLabel}</h1>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Divider -->
+          <table width="100%" cellpadding="0" cellspacing="0"><tr><td style="padding:0 36px;"><div style="height:1px;background:#e2e8f0;"></div></td></tr></table>
+
+          <!-- Contact Details -->
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="padding:24px 36px;">
+                <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
+                  <tr>
+                    <td style="padding:14px 18px;border-bottom:1px solid #e2e8f0;background:#f8fafc;">
+                      <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#94a3b8;text-transform:uppercase;display:block;margin-bottom:3px;">Name</span>
+                      <span style="font-size:15px;font-weight:600;color:#0f172a;">${fullName}</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:14px 18px;border-bottom:1px solid #e2e8f0;background:#ffffff;">
+                      <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#94a3b8;text-transform:uppercase;display:block;margin-bottom:3px;">E-Mail</span>
+                      <a href="mailto:${email}" style="font-size:15px;font-weight:600;color:#3B7FE8;text-decoration:none;">${email}</a>
+                    </td>
+                  </tr>
+                  ${phone ? `<tr>
+                    <td style="padding:14px 18px;border-bottom:1px solid #e2e8f0;background:#f8fafc;">
+                      <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#94a3b8;text-transform:uppercase;display:block;margin-bottom:3px;">Telefon</span>
+                      <a href="tel:${phone}" style="font-size:15px;font-weight:600;color:#0f172a;text-decoration:none;">${phone}</a>
+                    </td>
+                  </tr>` : ''}
+                  ${company ? `<tr>
+                    <td style="padding:14px 18px;background:${phone ? '#ffffff' : '#f8fafc'};">
+                      <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#94a3b8;text-transform:uppercase;display:block;margin-bottom:3px;">Firma</span>
+                      <span style="font-size:15px;font-weight:600;color:#0f172a;">${company}</span>
+                    </td>
+                  </tr>` : ''}
+                </table>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Message -->
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="padding:0 36px 32px;">
+                <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;color:#94a3b8;text-transform:uppercase;display:block;margin-bottom:10px;">Nachricht</span>
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-left:3px solid #3B7FE8;border-radius:8px;padding:18px;font-size:15px;color:#334155;line-height:1.75;white-space:pre-wrap;">${message.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Reply CTA -->
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="padding:0 36px 32px;" align="center">
+                <a href="mailto:${email}" style="display:inline-block;background:#3B7FE8;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;padding:12px 28px;border-radius:8px;letter-spacing:0.02em;">Direkt antworten →</a>
+              </td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td style="padding:20px 0 0;" align="center">
+          <span style="font-size:12px;color:#94a3b8;">Gesendet über das Kontaktformular auf <a href="https://supaero.de" style="color:#3B7FE8;text-decoration:none;">supaero.de</a></span>
+        </td>
+      </tr>
+
+    </table>
+  </td></tr>
+</table>
 </body>
 </html>`;
 
