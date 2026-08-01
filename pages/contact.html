@@ -9,6 +9,7 @@
   <script src="../i18n/translations.js" defer></script>
   <script src="../js/main.js" defer></script>
   <script src="../js/cookies.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcktXAtAAAAAMvmhJGaPe_1yrZAYcO-r1Sj_itB" async defer></script>
 </head>
 <body>
 
@@ -193,6 +194,12 @@ async function handleSubmit(e) {
   document.getElementById('submit-spinner').style.display = 'inline';
   errorBox.style.display = 'none';
 
+  // Get reCAPTCHA v3 token
+  let recaptchaToken = '';
+  try {
+    recaptchaToken = await grecaptcha.execute('6LcktXAtAAAAAMvmhJGaPe_1yrZAYcO-r1Sj_itB', { action: 'contact' });
+  } catch (_) {}
+
   const data = {
     firstName: form.firstName.value,
     lastName:  form.lastName.value,
@@ -201,6 +208,7 @@ async function handleSubmit(e) {
     company:   form.company.value,
     subject:   form.subject.value,
     message:   form.message.value,
+    recaptchaToken,
   };
 
   try {

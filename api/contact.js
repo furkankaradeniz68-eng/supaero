@@ -3,7 +3,22 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { firstName, lastName, email, phone, company, subject, message } = req.body;
+  const { firstName, lastName, email, phone, company, subject, message, recaptchaToken } = req.body;
+
+  // Verify reCAPTCHA v3 token
+  if (recaptchaToken && process.env.RECAPTCHA_SECRET) {
+    try {
+      const verify = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `secret=${process.env.RECAPTCHA_SECRET}&response=${recaptchaToken}`,
+      });
+      const result = await verify.json();
+      if (!result.success || result.score < 0.5) {
+        return res.status(400).json({ error: 'Spam-Schutz fehlgeschlagen. Bitte versuchen Sie es erneut.' });
+      }
+    } catch (_) {}
+  }
 
   if (!email || !message) {
     return res.status(400).json({ error: 'E-Mail und Nachricht sind Pflichtfelder.' });
