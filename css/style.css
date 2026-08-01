@@ -1035,6 +1035,46 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   background: rgba(27,79,155,0.15);
 }
 
+/* FL / PG hover dropdown on S7 thumbs */
+.angle-submenu {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(8,16,36,0.97);
+  border: 1px solid var(--border-blue);
+  border-radius: 8px;
+  padding: 4px;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 20;
+  min-width: 52px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.angle-submenu::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--border-blue);
+}
+.s7-thumb:hover .angle-submenu { display: flex; }
+.angle-subopt {
+  padding: 5px 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  color: var(--gray-2);
+  transition: background 0.15s, color 0.15s;
+}
+.angle-subopt:hover { background: var(--blue); color: #fff; }
+
 .featured-main-img {
   width: 360px;
   height: 420px;

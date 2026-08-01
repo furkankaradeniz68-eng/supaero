@@ -239,7 +239,7 @@
 
       <!-- Motorsport -->
       <div class="industry-card">
-        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/f1-8878648_1280.webp')"></div>
+        <div class="industry-card-img" style="background-image: url('Kategorie Bilder/car-racing-4394450_1280.webp')"></div>
         <div class="industry-card-overlay"></div>
         <div class="industry-card-content">
           <span class="industry-tag" data-i18n="ind1_tag">Motorsport</span>
@@ -438,26 +438,50 @@
       <div class="featured-visual">
         <div style="position:relative; display:flex; align-items:center; justify-content:center;">
           <div class="featured-glow"></div>
-          <img loading="lazy" class="featured-main-img" id="featured-img" src="Produktbilder/web/S7091FL.webp" alt="S7 Premium Series" style="transition: opacity 0.3s;">
+          <img loading="lazy" class="featured-main-img" id="featured-img" src="Produktbilder/web/S7001FL.webp" alt="S7 Premium Series" style="transition: opacity 0.3s;">
         </div>
 
-        <!-- Angle Thumbnails -->
-        <div class="featured-angles">
-          <div class="angle-thumb active">
-            <span class="angle-badge">0° FL</span>
-            <img loading="lazy" src="Produktbilder/web/S7001FL.webp" alt="S7 0° FL">
+        <!-- S7 Angle Thumbnails (with FL/PG dropdown) -->
+        <div class="featured-angles" id="thumbs-s7">
+          <div class="angle-thumb s7-thumb active" data-fl="Produktbilder/web/S7001FL.webp" data-pg="Produktbilder/web/S7001PG.webp">
+            <span class="angle-badge">0°</span>
+            <img loading="lazy" src="Produktbilder/web/S7001FL.webp" alt="S7 0°">
+            <div class="angle-submenu">
+              <div class="angle-subopt" data-src="Produktbilder/web/S7001FL.webp">FL</div>
+              <div class="angle-subopt" data-src="Produktbilder/web/S7001PG.webp">PG</div>
+            </div>
           </div>
-          <div class="angle-thumb">
-            <span class="angle-badge">90° FL</span>
-            <img loading="lazy" src="Produktbilder/web/S7091FL.webp" alt="S7 90° FL">
+          <div class="angle-thumb s7-thumb" data-fl="Produktbilder/web/S7091FL.webp" data-pg="Produktbilder/web/S7091PG.webp">
+            <span class="angle-badge">90°</span>
+            <img loading="lazy" src="Produktbilder/web/S7091FL.webp" alt="S7 90°">
+            <div class="angle-submenu">
+              <div class="angle-subopt" data-src="Produktbilder/web/S7091FL.webp">FL</div>
+              <div class="angle-subopt" data-src="Produktbilder/web/S7091PG.webp">PG</div>
+            </div>
           </div>
-          <div class="angle-thumb">
-            <span class="angle-badge">0° PG</span>
-            <img loading="lazy" src="Produktbilder/web/S7001PG.webp" alt="S7 0° PG">
+        </div>
+
+        <!-- S4 Angle Thumbnails -->
+        <div class="featured-angles" id="thumbs-s4" style="display:none;">
+          <div class="angle-thumb s4-thumb active">
+            <span class="angle-badge">0°</span>
+            <img loading="lazy" src="Produktbilder/web/S4001.webp" alt="S4 0°">
           </div>
-          <div class="angle-thumb">
-            <span class="angle-badge">90° PG</span>
-            <img loading="lazy" src="Produktbilder/web/S7091PG.webp" alt="S7 90° PG">
+          <div class="angle-thumb s4-thumb">
+            <span class="angle-badge">45°</span>
+            <img loading="lazy" src="Produktbilder/web/S4045.webp" alt="S4 45°">
+          </div>
+          <div class="angle-thumb s4-thumb">
+            <span class="angle-badge">90°</span>
+            <img loading="lazy" src="Produktbilder/web/S4090.webp" alt="S4 90°">
+          </div>
+          <div class="angle-thumb s4-thumb">
+            <span class="angle-badge">120°</span>
+            <img loading="lazy" src="Produktbilder/web/S4120.webp" alt="S4 120°">
+          </div>
+          <div class="angle-thumb s4-thumb">
+            <span class="angle-badge">180°</span>
+            <img loading="lazy" src="Produktbilder/web/S4180.webp" alt="S4 180°">
           </div>
         </div>
       </div>

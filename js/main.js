@@ -296,26 +296,68 @@ document.addEventListener('DOMContentLoaded', () => {
     ticker.innerHTML += ticker.innerHTML;
   }
 
-  // ── Variant chip toggle + image swap ────────
-  const variantImages = {
-    s7: ['Produktbilder/web/S7001FL.webp','Produktbilder/web/S7091FL.webp','Produktbilder/web/S7001PG.webp','Produktbilder/web/S7091PG.webp'],
-    s4: ['Produktbilder/web/S4001.webp','Produktbilder/web/S4045.webp','Produktbilder/web/S4090.webp','Produktbilder/web/S4120.webp'],
-  };
+  // ── Featured S7/S4 variant switching ──────────
+  const featMainImg = document.getElementById('featured-img');
+  const thumbsS7 = document.getElementById('thumbs-s7');
+  const thumbsS4 = document.getElementById('thumbs-s4');
+
+  function setFeatMain(src) {
+    if (!featMainImg) return;
+    featMainImg.style.opacity = '0';
+    setTimeout(() => { featMainImg.src = src; featMainImg.style.opacity = '1'; }, 200);
+  }
+
+  // S7 thumb click → set active, update main to FL of that angle
+  document.querySelectorAll('.s7-thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      document.querySelectorAll('.s7-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      setFeatMain(thumb.dataset.fl); // default FL on click
+    });
+  });
+
+  // S7 FL/PG subopt click
+  document.querySelectorAll('.angle-subopt').forEach(opt => {
+    opt.addEventListener('click', e => {
+      e.stopPropagation();
+      const thumb = opt.closest('.angle-thumb');
+      document.querySelectorAll('.s7-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      setFeatMain(opt.dataset.src);
+    });
+  });
+
+  // S4 thumb click
+  document.querySelectorAll('.s4-thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      document.querySelectorAll('.s4-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      const src = thumb.querySelector('img')?.src;
+      if (src) setFeatMain(src);
+    });
+  });
+
+  // Variant chip (S7 / S4) switching
   document.querySelectorAll('.variant-chip').forEach(chip => {
     chip.addEventListener('click', () => {
       document.querySelectorAll('.variant-chip').forEach(c => c.classList.remove('selected'));
       chip.classList.add('selected');
-      const variant = chip.dataset.variant;
-      const imgs = variantImages[variant];
-      if (!imgs) return;
-      const thumbs = document.querySelectorAll('.featured-angles .angle-thumb');
-      const mainImg = document.getElementById('featured-img');
-      const activeIdx = [...thumbs].findIndex(t => t.classList.contains('active'));
-      const idx = activeIdx >= 0 ? activeIdx : 0;
-      thumbs.forEach((t, i) => { if (imgs[i]) t.querySelector('img').src = imgs[i]; });
-      if (mainImg && imgs[idx]) {
-        mainImg.style.opacity = '0';
-        setTimeout(() => { mainImg.src = imgs[idx]; mainImg.style.opacity = '1'; }, 200);
+      const v = chip.dataset.variant;
+      if (v === 's7' && thumbsS7 && thumbsS4) {
+        thumbsS7.style.display = '';
+        thumbsS4.style.display = 'none';
+        document.querySelectorAll('.s7-thumb').forEach(t => t.classList.remove('active'));
+        const first = thumbsS7.querySelector('.s7-thumb');
+        if (first) { first.classList.add('active'); setFeatMain(first.dataset.fl); }
+      } else if (v === 's4' && thumbsS7 && thumbsS4) {
+        thumbsS7.style.display = 'none';
+        thumbsS4.style.display = '';
+        document.querySelectorAll('.s4-thumb').forEach(t => t.classList.remove('active'));
+        const first = thumbsS4.querySelector('.s4-thumb');
+        if (first) {
+          first.classList.add('active');
+          setFeatMain(first.querySelector('img')?.src || 'Produktbilder/web/S4001.webp');
+        }
       }
     });
   });
