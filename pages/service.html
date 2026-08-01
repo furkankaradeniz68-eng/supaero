@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="../Logos/supAero-bildlogo-W.png">
@@ -27,16 +27,16 @@
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo"><img src="../Logos/supAero-WortLogo-W.webp" alt="supAero" onerror="this.outerHTML='<span style=\'color:white;font-size:1.4rem;font-weight:900\'>sup<span style=\'color:#3B7FE8\'>A</span>ero</span>'"></a>
       <ul class="nav-links">
-        <li><a href="products.html" data-i18n="nav_products">Produkte</a></li>
-        <li><a href="industries.html" data-i18n="nav_industries">Branchen</a></li>
-        <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+        <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+        <li><a href="industries.html" data-i18n="nav_industries">Industries</a></li>
+        <li><a href="about.html" data-i18n="nav_about">About</a></li>
         <li><a href="service.html" class="active" data-i18n="nav_service">Service</a></li>
-        <li><a href="catalog.html" data-i18n="nav_catalog">Katalog</a></li>
-        <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+        <li><a href="catalog.html" data-i18n="nav_catalog">Catalog</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
       </ul>
       <div class="nav-right">
         <div class="lang-switcher">
-          <button class="lang-btn"><span class="flag">🇩🇪</span><span class="lang-label">DE</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          <button class="lang-btn"><span class="flag">🇬🇧</span><span class="lang-label">EN</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
           <div class="lang-dropdown">
             <div class="lang-option" data-lang="en"><span class="flag">🇬🇧</span> English</div>
             <div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</div>
@@ -48,7 +48,7 @@
             <div class="lang-option" data-lang="zh"><span class="flag">🇨🇳</span> 中文</div>
           </div>
         </div>
-        <a href="contact.html" class="btn btn-primary" data-i18n="nav_quote">Angebot anfragen</a>
+        <a href="contact.html" class="btn btn-primary" data-i18n="nav_quote">Request Quote</a>
       </div>
       <!-- Mobile Toggle -->
       <button class="nav-toggle" aria-label="Menu">
@@ -63,8 +63,8 @@
     <div class="page-hero-inner">
       <div class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">›</span><span data-i18n="nav_service">Service</span></div>
       <div class="page-hero-label" data-i18n="nav_service">Service</div>
-      <h1>Technischer Service &amp; Support</h1>
-      <p>Von der Beratung bis zur Sonderfertigung — wir begleiten Sie durch das gesamte Projekt.</p>
+      <h1 data-i18n="svc_hero_h1">Technical Service &amp; Support</h1>
+      <p data-i18n="svc_hero_p">From consulting to custom manufacturing — we support you throughout your entire project.</p>
     </div>
   </div>
 </div>
@@ -72,107 +72,107 @@
 <section class="section" style="padding-top:3rem;">
   <div class="container">
 
-    <!-- Technical Services from old site -->
-    <div class="section-label reveal">Unsere Dienstleistungen</div>
-    <h2 class="section-title reveal" style="margin-bottom:3rem;">Präzision bis ins Detail</h2>
+    <!-- Technical Services -->
+    <div class="section-label reveal" data-i18n="svc_services_label">Our Services</div>
+    <h2 class="section-title reveal" style="margin-bottom:3rem;" data-i18n="svc_services_title">Precision to the Last Detail</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-bottom:5rem;">
 
       <div class="reveal" style="background:var(--bg-card);border:1px solid var(--border-blue);border-radius:var(--radius);padding:2rem;">
         <div style="color:var(--blue-bright);margin-bottom:1rem;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14h16M14 6v16M10 10l8 8M18 10l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div style="font-weight:700;font-size:1.05rem;margin-bottom:.6rem;">Montage von Leitungssystemen</div>
-        <p style="color:var(--gray-2);font-size:.92rem;line-height:1.7;">Fachgerechte Montage komplexer Leitungssysteme — vom Einzelstück bis zur Serie. Präzise Verrohrung und Fittingarbeiten nach Ihren Vorgaben.</p>
+        <div style="font-weight:700;font-size:1.05rem;margin-bottom:.6rem;" data-i18n="svc1_title">Assembly of Piping Systems</div>
+        <p style="color:var(--gray-2);font-size:.92rem;line-height:1.7;" data-i18n="svc1_desc">Professional assembly of complex piping systems — from single pieces to series. Precise plumbing and fitting work to your specifications.</p>
       </div>
 
       <div class="reveal reveal-delay-1" style="background:var(--bg-card);border:1px solid var(--border-blue);border-radius:var(--radius);padding:2rem;">
         <div style="color:var(--blue-bright);margin-bottom:1rem;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M10 14l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div style="font-weight:700;font-size:1.05rem;margin-bottom:.6rem;">Crimp-Service – Leitungen nach Maß</div>
-        <p style="color:var(--gray-2);font-size:.92rem;line-height:1.7;">Moderne Crimptechnologie für Hydraulik-, Brems-, Kraft­stoff- und Ölleitungen in den Dimensionen -02 bis -32. Verschiedene Materialspezifikationen auf Anfrage.</p>
+        <div style="font-weight:700;font-size:1.05rem;margin-bottom:.6rem;" data-i18n="svc2_title">Crimp Service — Custom Lines</div>
+        <p style="color:var(--gray-2);font-size:.92rem;line-height:1.7;" data-i18n="svc2_desc">Modern crimping technology for hydraulic, brake, fuel and oil lines in sizes -02 to -32. Various material specifications on request.</p>
       </div>
 
       <div class="reveal reveal-delay-2" style="background:var(--bg-card);border:1px solid var(--border-blue);border-radius:var(--radius);padding:2rem;">
         <div style="color:var(--blue-bright);margin-bottom:1rem;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4v4M14 20v4M4 14h4M20 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="14" r="6" stroke="currentColor" stroke-width="1.5"/></svg></div>
-        <div style="font-weight:700;font-size:1.05rem;margin-bottom:.6rem;">Druck- und Bersttests bis 1500 bar</div>
-        <p style="color:var(--gray-2);font-size:.92rem;line-height:1.7;">Zertifizierte Druck- und Dichtheitsprüfungen bis 1500 bar (21.750 psi) — für maximale Betriebssicherheit unter extremen Bedingungen.</p>
+        <div style="font-weight:700;font-size:1.05rem;margin-bottom:.6rem;" data-i18n="svc3_title">Pressure &amp; Burst Tests up to 1500 bar</div>
+        <p style="color:var(--gray-2);font-size:.92rem;line-height:1.7;" data-i18n="svc3_desc">Certified pressure and leak tests up to 1500 bar (21,750 psi) — for maximum operational safety under extreme conditions.</p>
       </div>
 
       <div class="reveal" style="background:var(--bg-card);border:1px solid var(--border-blue);border-radius:var(--radius);padding:2rem;">
         <div style="color:var(--blue-bright);margin-bottom:1rem;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="6" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M9 12h10M9 16h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div style="font-weight:700;font-size:1.05rem;margin-bottom:.6rem;">Kundenspezifische Kits</div>
-        <p style="color:var(--gray-2);font-size:.92rem;line-height:1.7;">Vorkommissionierte, klar beschriftete Komponentenkits nach Ihren Spezifikationen — für eine reibungslose Montage direkt vor Ort.</p>
+        <div style="font-weight:700;font-size:1.05rem;margin-bottom:.6rem;" data-i18n="svc4_title">Custom-Specified Kits</div>
+        <p style="color:var(--gray-2);font-size:.92rem;line-height:1.7;" data-i18n="svc4_desc">Pre-commissioned, clearly labeled component kits to your specifications — for smooth on-site assembly.</p>
       </div>
 
     </div>
 
     <!-- Service Cards -->
-    <div class="section-label reveal">Was wir bieten</div>
-    <h2 class="section-title reveal" style="margin-bottom:3rem;">Unser Leistungsangebot</h2>
+    <div class="section-label reveal" data-i18n="svc_offer_label">What we offer</div>
+    <h2 class="section-title reveal" style="margin-bottom:3rem;" data-i18n="svc_offer_title">Our Service Portfolio</h2>
     <div class="service-grid" style="margin-bottom:5rem;">
       <div class="service-card reveal">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L13 8H19L14 12L16 18L11 14L6 18L8 12L3 8H9L11 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-        <div class="service-title">Technische Beratung</div>
-        <p class="service-desc">Unsere Ingenieure helfen bei der Auswahl der richtigen Komponenten — Fittingtyp, Schlauchserie, Konfiguration — für Ihre spezifische Anwendung.</p>
+        <div class="service-title" data-i18n="svc_offer1_title">Technical Consulting</div>
+        <p class="service-desc" data-i18n="svc_offer1_desc">Our engineers help select the right components — fitting type, hose series, configuration — for your specific application.</p>
       </div>
       <div class="service-card reveal reveal-delay-1">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 9h8M7 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="service-title">Angebotsanfragen</div>
-        <p class="service-desc">Individuelle Angebote für Einzelstücke und Großserien. Schnelle Rückmeldung, transparente Preisgestaltung, faire Konditionen.</p>
+        <div class="service-title" data-i18n="svc_offer2_title">Quote Requests</div>
+        <p class="service-desc" data-i18n="svc_offer2_desc">Custom quotes for single pieces and large series. Fast response, transparent pricing, fair terms.</p>
       </div>
       <div class="service-card reveal reveal-delay-2">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M8 11l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="service-title">Custom Engineering</div>
-        <p class="service-desc">Maßgeschneiderte Sonderlösungen nach Ihren Zeichnungen oder Spezifikationen. Von Prototypen bis zur Serienfertigung.</p>
+        <div class="service-title" data-i18n="svc_offer3_title">Custom Engineering</div>
+        <p class="service-desc" data-i18n="svc_offer3_desc">Bespoke solutions to your drawings or specifications. From prototypes to series production.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 14l4-4 3 3 4-5 3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="service-title">Qualitätsprüfung</div>
-        <p class="service-desc">Alle Produkte werden nach ISO 9001:2015 Qualitätsstandards gefertigt und vor dem Versand geprüft. Prüfprotokolle auf Anfrage.</p>
+        <div class="service-title" data-i18n="svc_offer4_title">Quality Inspection</div>
+        <p class="service-desc" data-i18n="svc_offer4_desc">All products manufactured and inspected to ISO 9001:2015 standards before shipment. Test reports on request.</p>
       </div>
       <div class="service-card reveal reveal-delay-1">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3v5M11 3L8 6M11 3l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M19 11H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M11 19v-5M11 19l-3-3M11 19l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="service-title">Schnelle Lieferung</div>
-        <p class="service-desc">Standardprodukte ab Lager lieferbar. Expresslieferung möglich. Weltweiter Versand in 15+ Länder.</p>
+        <div class="service-title" data-i18n="svc_offer5_title">Fast Delivery</div>
+        <p class="service-desc" data-i18n="svc_offer5_desc">Standard products available from stock. Express delivery available. Worldwide shipping to 15+ countries.</p>
       </div>
       <div class="service-card reveal reveal-delay-2">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 8h14M4 12h10M4 16h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="service-title">Technische Dokumentation</div>
-        <p class="service-desc">Vollständige Produktdokumentationen, CAD-Zeichnungen und Datenblätter auf Anfrage.</p>
+        <div class="service-title" data-i18n="svc_offer6_title">Technical Documentation</div>
+        <p class="service-desc" data-i18n="svc_offer6_desc">Complete product documentation, CAD drawings and data sheets on request.</p>
       </div>
     </div>
 
     <!-- FAQ -->
     <div class="reveal">
-      <div class="section-label">FAQ</div>
-      <h2 class="section-title" style="margin-bottom:2.5rem;">Häufig gestellte Fragen</h2>
+      <div class="section-label" data-i18n="faq_label">FAQ</div>
+      <h2 class="section-title" style="margin-bottom:2.5rem;" data-i18n="faq_title">Frequently Asked Questions</h2>
       <div style="max-width:800px;">
         <div class="faq-item">
-          <div class="faq-question">Wie lange dauert die Lieferung?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
-          <div class="faq-answer">Die Lieferzeit variiert je nach Komplexität und Produktionsauslastung. Bitte kontaktieren Sie uns für eine konkrete Einschätzung zu Ihrem Auftrag.</div>
+          <div class="faq-question"><span data-i18n="faq1_q">How long does delivery take?</span><span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer" data-i18n="faq1_a">Delivery time varies depending on complexity and production capacity. Please contact us for a specific estimate for your order.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Fertigen Sie auch nach eigenen Zeichnungen?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
-          <div class="faq-answer">Ja. Wir entwickeln und fertigen Sonderlösungen nach Ihren technischen Zeichnungen oder Spezifikationen — von Einzelprototypen bis zur Serienfertigung.</div>
+          <div class="faq-question"><span data-i18n="faq2_q">Do you manufacture from custom drawings?</span><span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer" data-i18n="faq2_a">Yes. We develop and manufacture custom solutions to your technical drawings or specifications — from individual prototypes to series production.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Welche Normen und Standards werden erfüllt?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
-          <div class="faq-answer">Unsere Produkte erfüllen die gängigen Standards: AN/MS (US-Militär), JIC 37° Flare, BSP, DIN, NPT. Qualitätsmanagementsystem nach ISO 9001:2015 zertifiziert.</div>
+          <div class="faq-question"><span data-i18n="faq3_q">Which standards and norms are met?</span><span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer" data-i18n="faq3_a">Our products meet the common standards: AN/MS (US Military), JIC 37° Flare, BSP, DIN, NPT. Quality management system certified to ISO 9001:2015.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Gibt es eine Produktgarantie?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
-          <div class="faq-answer">Ja. Alle supAero-Produkte haben eine umfassende Qualitätsgarantie. Bei Material- oder Fertigungsfehlern tauschen wir die Produkte kostenlos aus.</div>
+          <div class="faq-question"><span data-i18n="faq4_q">Is there a product warranty?</span><span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer" data-i18n="faq4_a">Yes. All supAero products carry a comprehensive quality warranty. In case of material or manufacturing defects, we replace products at no charge.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Wie erhalte ich ein Angebot?<span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
-          <div class="faq-answer">Nutzen Sie unser Kontaktformular oder schreiben Sie uns direkt an info @ supaero.de. Wir antworten in der Regel innerhalb von 24 Stunden.</div>
+          <div class="faq-question"><span data-i18n="faq5_q">How do I get a quote?</span><span class="faq-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+          <div class="faq-answer" data-i18n="faq5_a">Use our contact form or write directly to info @ supaero.de. We typically respond within 24 hours.</div>
         </div>
       </div>
     </div>
 
     <!-- CTA -->
     <div style="text-align:center;margin-top:5rem;padding:3rem;background:var(--bg-card);border:1px solid var(--border-blue);border-radius:var(--radius-lg);" class="reveal">
-      <div class="section-label">Support kontaktieren</div>
-      <h3 style="font-size:1.75rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem;">Noch Fragen?</h3>
-      <p style="color:var(--gray-2);max-width:500px;margin:0 auto 2rem;line-height:1.7;">Unser technisches Team steht Ihnen gerne zur Verfügung.</p>
-      <a href="contact.html" class="btn btn-primary">Jetzt anfragen <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <div class="section-label" data-i18n="svc_cta_label">Contact Support</div>
+      <h3 style="font-size:1.75rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem;" data-i18n="svc_cta_title">Still have questions?</h3>
+      <p style="color:var(--gray-2);max-width:500px;margin:0 auto 2rem;line-height:1.7;" data-i18n="svc_cta_sub">Our technical team is happy to help.</p>
+      <a href="contact.html" class="btn btn-primary"><span data-i18n="svc_cta_btn">Send enquiry</span> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
     </div>
 
   </div>
@@ -182,9 +182,9 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand"><img src="../Logos/supAero-WortLogo-W.webp" alt="supAero" style="height:38px;"></div>
-      <div><div class="footer-col-title" data-i18n="footer_col_pages">Seiten</div><ul class="footer-links"><li><a href="../index.html" data-i18n="footer_home">Startseite</a></li><li><a href="products.html" data-i18n="nav_products">Produkte</a></li><li><a href="catalog.html" data-i18n="nav_catalog">Katalog</a></li><li><a href="service.html" data-i18n="nav_service">Service</a></li><li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li></ul></div>
-      <div><div class="footer-col-title" data-i18n="footer_col_links">Links</div><ul class="footer-links"><li><a href="imprint.html" data-i18n="footer_imprint">Impressum</a></li><li><a href="privacy.html" data-i18n="footer_privacy">Datenschutzerklärung</a></li></ul></div>
-      <div><div class="footer-col-title" data-i18n="footer_col_contact">Kontakt</div><ul class="footer-links"><li><a href="mailto:info@supaero.de" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 4.5L7 8L13 4.5" stroke="currentColor" stroke-width="1.2"/></svg>info @ supaero.de</a></li><li><a href="tel:+4963219374179" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2H6L7 5L5.5 5.5C6.4 7.3 7.7 8.6 9.5 9.5L10 8L13 9V11C13 11 11 13 8 11C5 9 2 6 2 3L4 2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>+49 6321-9374179</a></li></ul></div>
+      <div><div class="footer-col-title" data-i18n="footer_col_pages">Pages</div><ul class="footer-links"><li><a href="../index.html" data-i18n="footer_home">Home</a></li><li><a href="products.html" data-i18n="nav_products">Products</a></li><li><a href="catalog.html" data-i18n="nav_catalog">Catalog</a></li><li><a href="service.html" data-i18n="nav_service">Service</a></li><li><a href="contact.html" data-i18n="nav_contact">Contact</a></li></ul></div>
+      <div><div class="footer-col-title" data-i18n="footer_col_links">Links</div><ul class="footer-links"><li><a href="imprint.html" data-i18n="footer_imprint">Imprint</a></li><li><a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a></li></ul></div>
+      <div><div class="footer-col-title" data-i18n="footer_col_contact">Contact</div><ul class="footer-links"><li><a href="mailto:info@supaero.de" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 4.5L7 8L13 4.5" stroke="currentColor" stroke-width="1.2"/></svg>info @ supaero.de</a></li><li><a href="tel:+4963219374179" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2H6L7 5L5.5 5.5C6.4 7.3 7.7 8.6 9.5 9.5L10 8L13 9V11C13 11 11 13 8 11C5 9 2 6 2 3L4 2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>+49 6321-9374179</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span class="footer-copy" data-i18n="footer_copy">Copyright © 2025 supAero | Powered by supAero</span><button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="scroll-top-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div>
   </div>

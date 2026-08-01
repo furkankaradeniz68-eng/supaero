@@ -43,6 +43,9 @@ function applyTranslations(lang) {
 
   // Update HTML lang attribute
   document.documentElement.lang = lang;
+
+  // Expose current translations for inline scripts
+  window.__SA_TRANSLATIONS = t;
 }
 
 // ── DOM Ready ─────────────────────────────────
