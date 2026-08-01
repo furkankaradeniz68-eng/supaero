@@ -1461,8 +1461,9 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
 
   .featured-inner { grid-template-columns: 1fr; }
-  .featured-angles { position: relative; right: auto; top: auto; transform: none; flex-direction: row; justify-content: center; margin-top: 1.5rem; }
-  .featured-main-img { width: 260px; height: 300px; }
+  .featured-visual { flex-direction: column; }
+  .featured-angles { position: relative; right: auto; top: auto; transform: none; flex-direction: row; justify-content: flex-start; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1.5rem; padding-bottom: 0.5rem; width: 100%; gap: 0.5rem; }
+  .featured-main-img { width: 240px; height: 280px; }
 
   .about-inner { grid-template-columns: 1fr; }
   .about-image-main { height: 280px; }
@@ -1659,6 +1660,14 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 }
 
 /* ── About Page ──────────────────────────────── */
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-bottom: 6rem;
+}
+
 .timeline {
   position: relative; padding-left: 2.5rem;
   border-left: 1px solid var(--border-blue);
@@ -1947,4 +1956,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   /* Footer */
   .footer-grid { gap: 2rem; }
   .footer-bottom { gap: 1rem; }
+
+  /* About story + timeline */
+  .about-story-grid { grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; }
 }
