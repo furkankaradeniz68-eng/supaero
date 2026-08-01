@@ -117,7 +117,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'supAero Kontakt <noreply@supaero.de>',
+        from: 'supAero Kontakt <onboarding@resend.dev>',
         to: ['web@supaero.de'],
         reply_to: email,
         subject: `[supAero] ${subjectLabel} — ${fullName}`,
