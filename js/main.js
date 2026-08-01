@@ -300,6 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const featMainImg = document.getElementById('featured-img');
   const thumbsS7 = document.getElementById('thumbs-s7');
   const thumbsS4 = document.getElementById('thumbs-s4');
+  let s7End = 'fl'; // tracks current FL or PG selection
 
   function setFeatMain(src) {
     if (!featMainImg) return;
@@ -307,23 +308,36 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => { featMainImg.src = src; featMainImg.style.opacity = '1'; }, 200);
   }
 
-  // S7 thumb click → set active, update main to FL of that angle
+  function applyS7End(end) {
+    s7End = end;
+    // Update thumb images to show current end type
+    document.querySelectorAll('.s7-thumb').forEach(t => {
+      const img = t.querySelector('img');
+      if (img) img.src = end === 'fl' ? t.dataset.fl : t.dataset.pg;
+    });
+    // Update main image to active thumb's current end
+    const active = document.querySelector('.s7-thumb.active');
+    if (active) setFeatMain(end === 'fl' ? active.dataset.fl : active.dataset.pg);
+    // Update subopt active state
+    document.querySelectorAll('.variant-subopt').forEach(o => {
+      o.classList.toggle('active', o.dataset.end === end);
+    });
+  }
+
+  // FL/PG subopt click on S7 chip dropdown
+  document.querySelectorAll('.variant-subopt').forEach(opt => {
+    opt.addEventListener('click', e => {
+      e.stopPropagation();
+      applyS7End(opt.dataset.end);
+    });
+  });
+
+  // S7 thumb click → set active + show correct end
   document.querySelectorAll('.s7-thumb').forEach(thumb => {
     thumb.addEventListener('click', () => {
       document.querySelectorAll('.s7-thumb').forEach(t => t.classList.remove('active'));
       thumb.classList.add('active');
-      setFeatMain(thumb.dataset.fl); // default FL on click
-    });
-  });
-
-  // S7 FL/PG subopt click
-  document.querySelectorAll('.angle-subopt').forEach(opt => {
-    opt.addEventListener('click', e => {
-      e.stopPropagation();
-      const thumb = opt.closest('.angle-thumb');
-      document.querySelectorAll('.s7-thumb').forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
-      setFeatMain(opt.dataset.src);
+      setFeatMain(s7End === 'fl' ? thumb.dataset.fl : thumb.dataset.pg);
     });
   });
 
@@ -332,8 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
     thumb.addEventListener('click', () => {
       document.querySelectorAll('.s4-thumb').forEach(t => t.classList.remove('active'));
       thumb.classList.add('active');
-      const src = thumb.querySelector('img')?.src;
-      if (src) setFeatMain(src);
+      setFeatMain(thumb.querySelector('img')?.src || '');
     });
   });
 
@@ -346,18 +359,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (v === 's7' && thumbsS7 && thumbsS4) {
         thumbsS7.style.display = '';
         thumbsS4.style.display = 'none';
-        document.querySelectorAll('.s7-thumb').forEach(t => t.classList.remove('active'));
+        document.querySelector('#s7-submenu')?.style && (document.querySelector('#s7-submenu').parentElement.style.display = 'inline-block');
         const first = thumbsS7.querySelector('.s7-thumb');
-        if (first) { first.classList.add('active'); setFeatMain(first.dataset.fl); }
+        document.querySelectorAll('.s7-thumb').forEach(t => t.classList.remove('active'));
+        if (first) { first.classList.add('active'); setFeatMain(s7End === 'fl' ? first.dataset.fl : first.dataset.pg); }
       } else if (v === 's4' && thumbsS7 && thumbsS4) {
         thumbsS7.style.display = 'none';
         thumbsS4.style.display = '';
-        document.querySelectorAll('.s4-thumb').forEach(t => t.classList.remove('active'));
         const first = thumbsS4.querySelector('.s4-thumb');
-        if (first) {
-          first.classList.add('active');
-          setFeatMain(first.querySelector('img')?.src || 'Produktbilder/web/S4001.webp');
-        }
+        document.querySelectorAll('.s4-thumb').forEach(t => t.classList.remove('active'));
+        if (first) { first.classList.add('active'); setFeatMain(first.querySelector('img')?.src || ''); }
       }
     });
   });

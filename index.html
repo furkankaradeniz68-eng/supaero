@@ -441,55 +441,31 @@
           <img loading="lazy" class="featured-main-img" id="featured-img" src="Produktbilder/web/S7001FL.webp" alt="S7 Premium Series" style="transition: opacity 0.3s;">
         </div>
 
-        <!-- S7 Angle Thumbnails (with FL/PG dropdown) -->
+        <!-- S7 Angle Thumbnails -->
         <div class="featured-angles" id="thumbs-s7">
           <div class="angle-thumb s7-thumb active" data-fl="Produktbilder/web/S7001FL.webp" data-pg="Produktbilder/web/S7001PG.webp">
             <span class="angle-badge">0°</span>
             <img loading="lazy" src="Produktbilder/web/S7001FL.webp" alt="S7 0°">
-            <div class="angle-submenu">
-              <div class="angle-subopt" data-src="Produktbilder/web/S7001FL.webp">FL</div>
-              <div class="angle-subopt" data-src="Produktbilder/web/S7001PG.webp">PG</div>
-            </div>
           </div>
           <div class="angle-thumb s7-thumb" data-fl="Produktbilder/web/S7046FL.webp" data-pg="Produktbilder/web/S7046PG.webp">
             <span class="angle-badge">45°</span>
             <img loading="lazy" src="Produktbilder/web/S7046FL.webp" alt="S7 45°">
-            <div class="angle-submenu">
-              <div class="angle-subopt" data-src="Produktbilder/web/S7046FL.webp">FL</div>
-              <div class="angle-subopt" data-src="Produktbilder/web/S7046PG.webp">PG</div>
-            </div>
           </div>
           <div class="angle-thumb s7-thumb" data-fl="Produktbilder/web/S7091FL.webp" data-pg="Produktbilder/web/S7091PG.webp">
             <span class="angle-badge">90°</span>
             <img loading="lazy" src="Produktbilder/web/S7091FL.webp" alt="S7 90°">
-            <div class="angle-submenu">
-              <div class="angle-subopt" data-src="Produktbilder/web/S7091FL.webp">FL</div>
-              <div class="angle-subopt" data-src="Produktbilder/web/S7091PG.webp">PG</div>
-            </div>
           </div>
           <div class="angle-thumb s7-thumb" data-fl="Produktbilder/web/S7120FL.webp" data-pg="Produktbilder/web/S7120PG.webp">
             <span class="angle-badge">120°</span>
             <img loading="lazy" src="Produktbilder/web/S7120FL.webp" alt="S7 120°">
-            <div class="angle-submenu">
-              <div class="angle-subopt" data-src="Produktbilder/web/S7120FL.webp">FL</div>
-              <div class="angle-subopt" data-src="Produktbilder/web/S7120PG.webp">PG</div>
-            </div>
           </div>
           <div class="angle-thumb s7-thumb" data-fl="Produktbilder/web/S7150FL.webp" data-pg="Produktbilder/web/S7150PG.webp">
             <span class="angle-badge">150°</span>
             <img loading="lazy" src="Produktbilder/web/S7150FL.webp" alt="S7 150°">
-            <div class="angle-submenu">
-              <div class="angle-subopt" data-src="Produktbilder/web/S7150FL.webp">FL</div>
-              <div class="angle-subopt" data-src="Produktbilder/web/S7150PG.webp">PG</div>
-            </div>
           </div>
           <div class="angle-thumb s7-thumb" data-fl="Produktbilder/web/S7180FL.webp" data-pg="Produktbilder/web/S7180PG.webp">
             <span class="angle-badge">180°</span>
             <img loading="lazy" src="Produktbilder/web/S7180FL.webp" alt="S7 180°">
-            <div class="angle-submenu">
-              <div class="angle-subopt" data-src="Produktbilder/web/S7180FL.webp">FL</div>
-              <div class="angle-subopt" data-src="Produktbilder/web/S7180PG.webp">PG</div>
-            </div>
           </div>
         </div>
 
@@ -542,7 +518,13 @@
         <div style="margin-top:1.5rem;">
           <div style="font-size:0.8125rem; color:var(--gray-3); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.75rem;" data-i18n="feat_variants">Series:</div>
           <div class="featured-variants">
-            <span class="variant-chip selected" data-variant="s7" data-i18n="feat_blue">S7 Series</span>
+            <div class="variant-chip-wrap">
+              <span class="variant-chip selected" data-variant="s7" data-i18n="feat_blue">S7 Series</span>
+              <div class="variant-submenu" id="s7-submenu">
+                <div class="variant-subopt active" data-end="fl">FL</div>
+                <div class="variant-subopt" data-end="pg">PG</div>
+              </div>
+            </div>
             <span class="variant-chip" data-variant="s4" data-i18n="feat_black">S4 Series</span>
           </div>
         </div>
