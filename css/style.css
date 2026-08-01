@@ -568,6 +568,9 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   font-size: 0.875rem;
   font-weight: 700;
 }
+.hero-callout span {
+  transition: opacity 0.3s ease;
+}
 .hero-callout-1 { top: 15%; right: -5%; animation-delay: 1.2s; }
 .hero-callout-2 { bottom: 25%; left: -8%; animation-delay: 1.5s; }
 .hero-callout-3 { top: 50%; right: -10%; animation-delay: 1.8s; }

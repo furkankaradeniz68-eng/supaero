@@ -34,7 +34,7 @@ function applyTranslations(lang) {
   });
 
   // Update lang button label
-  const langInfo = { en: {flag:'🇬🇧', label:'EN'}, de: {flag:'🇩🇪', label:'DE'}, es: {flag:'🇪🇸', label:'ES'}, it: {flag:'🇮🇹', label:'IT'}, pt: {flag:'🇵🇹', label:'PT'}, zh: {flag:'🇨🇳', label:'ZH'} };
+  const langInfo = { en: {flag:'🇬🇧', label:'EN'}, de: {flag:'🇩🇪', label:'DE'}, tr: {flag:'🇹🇷', label:'TR'}, ar: {flag:'🇸🇦', label:'AR'}, es: {flag:'🇪🇸', label:'ES'}, it: {flag:'🇮🇹', label:'IT'}, pt: {flag:'🇵🇹', label:'PT'}, zh: {flag:'🇨🇳', label:'ZH'} };
   const btn = document.querySelector('.lang-btn');
   if (btn && langInfo[lang]) {
     btn.querySelector('.flag').textContent = langInfo[lang].flag;
@@ -147,6 +147,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Hero angle carousel ────────────────────
   const angles = document.querySelectorAll('.product-angle');
+  const heroProducts = [
+    { c1l: 'Series', c1v: '236',       c2l: 'Type', c2v: 'AN Swivel',      c3l: 'Finish',   c3v: 'Hard Anodized'  },
+    { c1l: 'Series', c1v: '536',       c2l: 'Type', c2v: 'Performance',    c3l: 'Standard', c3v: 'JIC 37°'        },
+    { c1l: 'Series', c1v: 'S4',        c2l: 'Type', c2v: 'Straight Flare', c3l: 'End',      c3v: 'Push-On'        },
+    { c1l: 'Series', c1v: 'S7',        c2l: 'Type', c2v: 'Premium Line',   c3l: 'System',   c3v: 'High Pressure'  },
+    { c1l: 'Series', c1v: 'Pro:Spec',  c2l: 'Type', c2v: 'Quick Release',  c3l: 'Assembly', c3v: 'Tool-Free'      },
+    { c1l: 'Series', c1v: 'S750',      c2l: 'Type', c2v: 'PTFE Hose',      c3l: 'Braid',    c3v: 'Stainless Steel'},
+    { c1l: 'Series', c1v: '811/812',   c2l: 'Type', c2v: 'BSP Adapter',    c3l: 'Material', c3v: 'Aluminium'      },
+    { c1l: 'Series', c1v: 'BSP-741',   c2l: 'Type', c2v: 'Adapter',        c3l: 'Thread',   c3v: 'BSP / AN'       },
+    { c1l: 'Product',c1v: 'Firesleeve',c2l: 'Type', c2v: 'Thermal Wrap',   c3l: 'Material', c3v: 'Silicone'       },
+    { c1l: 'Series', c1v: '236 Black', c2l: 'Type', c2v: 'AN Swivel',      c3l: 'Finish',   c3v: 'Black Anodized' },
+  ];
+
+  function updateCallouts(data) {
+    const hc1l = document.getElementById('hc1-label');
+    const hc1v = document.getElementById('hc1-val');
+    const hc2l = document.getElementById('hc2-label');
+    const hc2v = document.getElementById('hc2-val');
+    const hc3l = document.getElementById('hc3-label');
+    const hc3v = document.getElementById('hc3-val');
+    if (!hc1l) return;
+    [hc1l, hc1v, hc2l, hc2v, hc3l, hc3v].forEach(el => { el.style.opacity = '0'; });
+    setTimeout(() => {
+      hc1l.textContent = data.c1l; hc1v.textContent = data.c1v;
+      hc2l.textContent = data.c2l; hc2v.textContent = data.c2v;
+      hc3l.textContent = data.c3l; hc3v.textContent = data.c3v;
+      [hc1l, hc1v, hc2l, hc2v, hc3l, hc3v].forEach(el => { el.style.opacity = '1'; });
+    }, 300);
+  }
+
   let currentAngle = 0;
   if (angles.length > 0) {
     angles[0].classList.add('active');
@@ -154,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       angles[currentAngle].classList.remove('active');
       currentAngle = (currentAngle + 1) % angles.length;
       angles[currentAngle].classList.add('active');
+      if (heroProducts[currentAngle]) updateCallouts(heroProducts[currentAngle]);
     }, 2200);
   }
 
