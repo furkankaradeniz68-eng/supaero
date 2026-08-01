@@ -298,8 +298,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Variant chip toggle + image swap ────────
   const variantImages = {
-    blue:  ['Produktbilder/web/236-01.webp','Produktbilder/web/236-45.webp','Produktbilder/web/236-90.webp','Produktbilder/web/236-120.webp','Produktbilder/web/236-150.webp','Produktbilder/web/236-180.webp'],
-    black: ['Produktbilder/web/236-01-BLK.webp','Produktbilder/web/236-45-BLK.webp','Produktbilder/web/236-90-BLK.webp','Produktbilder/web/236-120-BLK.webp','Produktbilder/web/236-150-BLK.webp','Produktbilder/web/236-180-BLK.webp']
+    s7: ['Produktbilder/web/S7001FL.webp','Produktbilder/web/S7091FL.webp','Produktbilder/web/S7001PG.webp','Produktbilder/web/S7091PG.webp'],
+    s4: ['Produktbilder/web/S4001.webp','Produktbilder/web/S4045.webp','Produktbilder/web/S4090.webp','Produktbilder/web/S4120.webp'],
   };
   document.querySelectorAll('.variant-chip').forEach(chip => {
     chip.addEventListener('click', () => {
