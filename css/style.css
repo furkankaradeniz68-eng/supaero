@@ -34,6 +34,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -1471,7 +1472,23 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   .footer-grid { grid-template-columns: 1fr 1fr; }
 
   .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--bg);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .nav-links.open a { font-size: 1.5rem; font-weight: 700; }
   .nav-toggle { display: flex; }
+  .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 }
 
 @media (max-width: 600px) {
@@ -1666,6 +1683,12 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   gap: 5rem;
   align-items: start;
   margin-bottom: 6rem;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .timeline {
@@ -1959,4 +1982,5 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 
   /* About story + timeline */
   .about-story-grid { grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .about-values-grid { grid-template-columns: 1fr; }
 }

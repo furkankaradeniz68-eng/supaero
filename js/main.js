@@ -82,6 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
   toggle?.addEventListener('click', () => {
     navLinks?.classList.toggle('open');
+    toggle.classList.toggle('active');
+  });
+  navLinks?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      toggle?.classList.remove('active');
+    });
   });
 
   // ── Custom Cursor ──────────────────────────
