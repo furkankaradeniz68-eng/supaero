@@ -80,15 +80,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Mobile menu ────────────────────────────
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
-  toggle?.addEventListener('click', () => {
-    navLinks?.classList.toggle('open');
-    toggle.classList.toggle('active');
-  });
+  // Inject close button once
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'nav-close-btn';
+  closeBtn.setAttribute('aria-label', 'Close menu');
+  closeBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 2L16 16M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  document.body.appendChild(closeBtn);
+
+  function openMenu() {
+    navLinks?.classList.add('open');
+    toggle?.classList.add('active');
+    closeBtn.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    navLinks?.classList.remove('open');
+    toggle?.classList.remove('active');
+    closeBtn.classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+
+  toggle?.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
   navLinks?.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      toggle?.classList.remove('active');
-    });
+    a.addEventListener('click', closeMenu);
   });
 
   // ── Custom Cursor ──────────────────────────
