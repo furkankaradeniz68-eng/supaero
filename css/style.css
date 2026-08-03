@@ -262,7 +262,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   border-color: rgba(255,255,255,0.2);
   background: rgba(255,255,255,0.05);
 }
-.lang-btn .flag { font-size: 1rem; }
+.lang-btn .flag { display: none; }
 
 .lang-dropdown {
   position: absolute;
@@ -302,7 +302,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   background: rgba(27,79,155,0.25);
   color: var(--white);
 }
-.lang-option .flag { font-size: 1.1rem; }
+.lang-option .flag { display: none; }
 
 /* Mobile menu toggle */
 .nav-toggle {

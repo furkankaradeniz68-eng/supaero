@@ -37,7 +37,7 @@ function applyTranslations(lang) {
   const langInfo = { en: {flag:'🇬🇧', label:'EN'}, de: {flag:'🇩🇪', label:'DE'}, tr: {flag:'🇹🇷', label:'TR'}, ar: {flag:'🇸🇦', label:'AR'}, es: {flag:'🇪🇸', label:'ES'}, it: {flag:'🇮🇹', label:'IT'}, pt: {flag:'🇵🇹', label:'PT'}, zh: {flag:'🇨🇳', label:'ZH'} };
   const btn = document.querySelector('.lang-btn');
   if (btn && langInfo[lang]) {
-    btn.querySelector('.flag').textContent = langInfo[lang].flag;
+    
     btn.querySelector('.lang-label').textContent = langInfo[lang].label;
   }
 
