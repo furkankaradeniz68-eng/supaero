@@ -36,11 +36,12 @@
 
     /* ── Left: cover preview ── */
     .dl-cover {
-      width: 300px;
+      width: 400px;
       flex-shrink: 0;
       position: relative;
       background: #0a1628;
       overflow: hidden;
+      min-height: 560px;
     }
     .dl-cover img {
       width: 100%;
@@ -48,14 +49,14 @@
       object-fit: cover;
       object-position: top center;
       display: block;
-      opacity: 0.92;
+      opacity: 0.95;
     }
     .dl-cover-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to right,
-        transparent 60%,
+        transparent 55%,
         var(--bg-card) 100%
       );
       pointer-events: none;
