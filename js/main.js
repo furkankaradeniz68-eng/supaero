@@ -34,11 +34,13 @@ function applyTranslations(lang) {
   });
 
   // Update lang button label
-  const langInfo = { en: {flag:'🇬🇧', label:'EN'}, de: {flag:'🇩🇪', label:'DE'}, tr: {flag:'🇹🇷', label:'TR'}, ar: {flag:'🇸🇦', label:'AR'}, es: {flag:'🇪🇸', label:'ES'}, it: {flag:'🇮🇹', label:'IT'}, pt: {flag:'🇵🇹', label:'PT'}, zh: {flag:'🇨🇳', label:'ZH'} };
+  const langInfo = { en: {iso:'gb', label:'EN'}, de: {iso:'de', label:'DE'}, tr: {iso:'tr', label:'TR'}, ar: {iso:'sa', label:'AR'}, es: {iso:'es', label:'ES'}, it: {iso:'it', label:'IT'}, pt: {iso:'pt', label:'PT'}, zh: {iso:'cn', label:'ZH'} };
   const btn = document.querySelector('.lang-btn');
   if (btn && langInfo[lang]) {
     
     btn.querySelector('.lang-label').textContent = langInfo[lang].label;
+    const flagEl = btn.querySelector('.fi');
+    if (flagEl) { flagEl.className = 'fi fi-' + langInfo[lang].iso; flagEl.style.cssText = 'border-radius:2px;font-size:.85em;'; }
   }
 
   // Update HTML lang attribute
