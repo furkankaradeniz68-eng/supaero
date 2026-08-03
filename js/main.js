@@ -39,8 +39,8 @@ function applyTranslations(lang) {
   if (btn && langInfo[lang]) {
     
     btn.querySelector('.lang-label').textContent = langInfo[lang].label;
-    const flagEl = btn.querySelector('.fi');
-    if (flagEl) { flagEl.className = 'fi fi-' + langInfo[lang].iso; flagEl.style.cssText = 'border-radius:2px;font-size:.85em;'; }
+    const flagImg = btn.querySelector('img');
+    if (flagImg) { flagImg.src = 'https://flagcdn.com/w16/' + langInfo[lang].iso + '.png'; }
   }
 
   // Update HTML lang attribute
