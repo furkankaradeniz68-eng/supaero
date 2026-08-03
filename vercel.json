@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/kat_download", "destination": "/kat_download.html" },
     { "source": "/(.*)", "destination": "/$1" }
   ],
   "headers": [
