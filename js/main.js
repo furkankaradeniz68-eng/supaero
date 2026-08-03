@@ -40,7 +40,7 @@ function applyTranslations(lang) {
     
     btn.querySelector('.lang-label').textContent = langInfo[lang].label;
     const flagImg = btn.querySelector('img');
-    if (flagImg) { flagImg.src = 'https://flagcdn.com/w16/' + langInfo[lang].iso + '.png'; }
+    if (flagImg) { flagImg.src = '/img/flags/' + langInfo[lang].iso + '.png'; }
   }
 
   // Update HTML lang attribute
