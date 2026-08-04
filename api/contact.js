@@ -68,6 +68,7 @@ export default async function handler(req, res) {
     product:  'Produktinformation',
     custom:   'Sonderfertigung',
     support:  'Technischer Support',
+    catalog:  'Katalog-Anfrage',
     other:    'Sonstiges',
   };
 

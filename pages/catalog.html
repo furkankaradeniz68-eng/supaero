@@ -150,11 +150,48 @@
   </div>
 </section>
 
+<script src="https://www.google.com/recaptcha/api.js?render=6LcktXAtAAAAAMvmhJGaPe_1yrZAYcO-r1Sj_itB" async defer></script>
 <script>
-function handleCatalogSubmit(e) {
+async function handleCatalogSubmit(e) {
   e.preventDefault();
-  document.getElementById('catalog-form').style.display = 'none';
-  document.getElementById('catalog-success').style.display = 'block';
+  const form = document.getElementById('catalog-form');
+  const btn = form.querySelector('button[type="submit"]');
+  const inputs = form.querySelectorAll('input,select');
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+
+  const firstName = form.querySelectorAll('input[type="text"]')[0]?.value || '';
+  const lastName  = form.querySelectorAll('input[type="text"]')[1]?.value || '';
+  const email     = form.querySelector('input[type="email"]')?.value || '';
+  const company   = form.querySelectorAll('input[type="text"]')[2]?.value || '';
+  const country   = form.querySelectorAll('input[type="text"]')[3]?.value || '';
+  const application = form.querySelector('select')?.value || '';
+
+  let recaptchaToken = '';
+  try {
+    await new Promise(r => { if (typeof grecaptcha !== 'undefined') grecaptcha.ready(r); else r(); });
+    if (typeof grecaptcha !== 'undefined') {
+      recaptchaToken = await grecaptcha.execute('6LcktXAtAAAAAMvmhJGaPe_1yrZAYcO-r1Sj_itB', { action: 'catalog' });
+    }
+  } catch (_) {}
+
+  const message = `Katalog-Anfrage\n\nLand: ${country}\nAnwendungsbereich: ${application || '—'}\n\nBitte senden Sie mir den supAero Produktkatalog zu.`;
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ firstName, lastName, email, company, subject: 'catalog', message, recaptchaToken })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler');
+    form.style.display = 'none';
+    document.getElementById('catalog-success').style.display = 'block';
+  } catch (err) {
+    alert('Fehler: ' + err.message + '\nBitte versuchen Sie es erneut.');
+    btn.disabled = false;
+    btn.style.opacity = '';
+  }
 }
 </script>
 

@@ -23,43 +23,115 @@
       padding: 2rem 1rem;
     }
 
-    .dl-card {
-      display: flex;
-      max-width: 860px;
+    .dl-wrap {
+      max-width: 900px;
       width: 100%;
+    }
+
+    /* ── Version Toggle ── */
+    .dl-toggle {
+      display: flex;
       background: var(--bg-card);
       border: 1px solid var(--border-blue);
+      border-radius: 14px;
+      padding: 5px;
+      margin-bottom: 1.5rem;
+      gap: 4px;
+      position: relative;
+    }
+    .dl-toggle-btn {
+      flex: 1;
+      padding: 0.65rem 1.25rem;
+      border-radius: 10px;
+      border: none;
+      background: transparent;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--gray-2);
+      position: relative;
+      z-index: 1;
+    }
+    .dl-toggle-btn.active {
+      color: #fff;
+    }
+    .dl-toggle-slider {
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      border-radius: 9px;
+      transition: all 0.3s cubic-bezier(.4,0,.2,1);
+      z-index: 0;
+    }
+    /* Motorsport = blue */
+    .dl-toggle-slider.ms {
+      background: linear-gradient(135deg, #1B4F9B, #3B7FE8);
+      left: 5px;
+      right: calc(50% + 2px);
+      box-shadow: 0 4px 14px rgba(59,127,232,0.4);
+    }
+    /* Military = olive/green */
+    .dl-toggle-slider.mv {
+      background: linear-gradient(135deg, #2d4a1e, #4a7a2e);
+      left: calc(50% + 2px);
+      right: 5px;
+      box-shadow: 0 4px 14px rgba(74,122,46,0.4);
+    }
+
+    /* ── Card ── */
+    .dl-card {
+      display: flex;
+      width: 100%;
+      background: var(--bg-card);
       border-radius: var(--radius-lg);
       overflow: hidden;
       box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+      transition: border-color 0.4s;
     }
+    .dl-card.ms { border: 1px solid rgba(59,127,232,0.4); }
+    .dl-card.mv { border: 1px solid rgba(74,122,46,0.4); }
 
-    /* ── Left: cover preview ── */
+    /* ── Left: cover ── */
     .dl-cover {
       width: 400px;
       flex-shrink: 0;
       position: relative;
-      background: #0a1628;
       overflow: hidden;
       min-height: 560px;
+      transition: background 0.4s;
     }
-    .dl-cover img {
+    .dl-cover.ms { background: #0a1628; }
+    .dl-cover.mv { background: #0f1a0a; }
+
+    .dl-cover-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top center;
-      display: block;
-      opacity: 0.95;
+      opacity: 0;
+      transition: opacity 0.5s ease;
     }
+    .dl-cover-img.visible { opacity: 0.95; }
+
     .dl-cover-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to right,
-        transparent 55%,
-        var(--bg-card) 100%
-      );
       pointer-events: none;
+      transition: background 0.4s;
+    }
+    .dl-cover-overlay.ms {
+      background: linear-gradient(to right, transparent 55%, var(--bg-card) 100%);
+    }
+    .dl-cover-overlay.mv {
+      background: linear-gradient(to right, transparent 55%, var(--bg-card) 100%);
     }
 
     /* ── Right: content ── */
@@ -70,11 +142,7 @@
       flex-direction: column;
     }
 
-    .dl-logo {
-      margin-bottom: 2rem;
-      display: block;
-      text-decoration: none;
-    }
+    .dl-logo { margin-bottom: 2rem; display: block; text-decoration: none; }
 
     .dl-badge {
       display: inline-flex;
@@ -84,13 +152,21 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #3B7FE8;
-      background: rgba(59,127,232,0.1);
-      border: 1px solid rgba(59,127,232,0.25);
       border-radius: 6px;
       padding: 0.35rem 0.75rem;
       margin-bottom: 1rem;
       width: fit-content;
+      transition: all 0.3s;
+    }
+    .dl-badge.ms {
+      color: #3B7FE8;
+      background: rgba(59,127,232,0.1);
+      border: 1px solid rgba(59,127,232,0.25);
+    }
+    .dl-badge.mv {
+      color: #7ab648;
+      background: rgba(74,122,46,0.12);
+      border: 1px solid rgba(74,122,46,0.3);
     }
 
     .dl-title {
@@ -100,8 +176,10 @@
       line-height: 1.2;
       color: var(--text);
       margin-bottom: 0.5rem;
+      transition: opacity 0.3s;
     }
-    .dl-title span { color: #3B7FE8; }
+    .dl-title .accent-ms { color: #3B7FE8; }
+    .dl-title .accent-mv { color: #7ab648; }
 
     .dl-sub {
       font-size: 0.9rem;
@@ -111,12 +189,7 @@
     }
 
     /* Meta chips */
-    .dl-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.625rem;
-      margin-bottom: 2rem;
-    }
+    .dl-meta { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-bottom: 2rem; }
     .dl-meta-chip {
       display: flex;
       align-items: center;
@@ -129,7 +202,9 @@
       border-radius: 8px;
       padding: 0.4rem 0.75rem;
     }
-    .dl-meta-chip svg { color: #3B7FE8; flex-shrink: 0; }
+    .dl-meta-chip svg { flex-shrink: 0; transition: color 0.3s; }
+    .ms-accent { color: #3B7FE8; }
+    .mv-accent { color: #7ab648; }
 
     /* Download button */
     .dl-btn {
@@ -137,7 +212,6 @@
       align-items: center;
       justify-content: center;
       gap: 0.6rem;
-      background: #3B7FE8;
       color: #fff;
       font-size: 1rem;
       font-weight: 700;
@@ -145,22 +219,22 @@
       padding: 0.9rem 2rem;
       border-radius: 10px;
       width: 100%;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(59,127,232,0.3);
+      transition: all 0.3s;
       margin-bottom: 0.875rem;
     }
-    .dl-btn:hover {
-      background: #2d6dd4;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 28px rgba(59,127,232,0.4);
+    .dl-btn.ms {
+      background: #3B7FE8;
+      box-shadow: 0 4px 20px rgba(59,127,232,0.3);
     }
+    .dl-btn.ms:hover { background: #2d6dd4; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(59,127,232,0.45); }
+    .dl-btn.mv {
+      background: #4a7a2e;
+      box-shadow: 0 4px 20px rgba(74,122,46,0.3);
+    }
+    .dl-btn.mv:hover { background: #3d6626; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(74,122,46,0.45); }
     .dl-btn:active { transform: translateY(0); }
 
-    .dl-note {
-      font-size: 0.725rem;
-      color: var(--gray-3, #64748b);
-      line-height: 1.55;
-    }
+    .dl-note { font-size: 0.725rem; color: var(--gray-3, #64748b); line-height: 1.55; }
     .dl-note a { color: #3B7FE8; text-decoration: none; }
     .dl-note a:hover { text-decoration: underline; }
 
@@ -177,109 +251,211 @@
     }
     .dl-back:hover { color: #3B7FE8; }
 
+    /* fade transition for content */
+    .dl-content-fade {
+      transition: opacity 0.25s ease;
+    }
+    .dl-content-fade.fading { opacity: 0; }
+
     /* ── Responsive ── */
     @media (max-width: 640px) {
       .dl-card { flex-direction: column; }
-      .dl-cover {
-        width: 100%;
-        height: 220px;
-      }
-      .dl-cover-overlay {
-        background: linear-gradient(
-          to bottom,
-          transparent 60%,
-          var(--bg-card) 100%
-        );
+      .dl-cover { width: 100%; height: 240px; min-height: unset; }
+      .dl-cover-overlay.ms, .dl-cover-overlay.mv {
+        background: linear-gradient(to bottom, transparent 55%, var(--bg-card) 100%);
       }
       .dl-body { padding: 1.75rem 1.5rem; }
       .dl-logo { margin-bottom: 1.25rem; }
+      .dl-toggle-btn { font-size: 0.8rem; padding: 0.55rem 0.75rem; }
     }
   </style>
 </head>
 <body>
 
 <div class="dl-page">
-  <div class="dl-card">
+  <div class="dl-wrap">
 
-    <!-- Cover Preview -->
-    <div class="dl-cover">
-      <img src="downloads/katalog-cover.jpg" alt="supAero Product Catalog Cover" loading="eager">
-      <div class="dl-cover-overlay"></div>
+    <!-- Version Toggle -->
+    <div class="dl-toggle" role="group" aria-label="Catalog version">
+      <div class="dl-toggle-slider ms" id="toggle-slider"></div>
+      <button class="dl-toggle-btn active" id="btn-ms" onclick="switchVersion('ms')">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M7 1L8.5 4.5H12L9.5 7L10.5 11L7 9L3.5 11L4.5 7L2 4.5H5.5L7 1Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+        Motorsport Version
+      </button>
+      <button class="dl-toggle-btn" id="btn-mv" onclick="switchVersion('mv')">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M7 2L9 5H12L9.5 7.5L10.5 11L7 9L3.5 11L4.5 7.5L2 5H5L7 2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+          <circle cx="7" cy="6.5" r="1.5" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        Military Version
+      </button>
     </div>
 
-    <!-- Content -->
-    <div class="dl-body">
+    <!-- Card -->
+    <div class="dl-card ms" id="dl-card">
 
-      <a href="/" class="dl-logo">
-        <img src="Logos/supAero-WortLogo-W.webp" alt="supAero" style="height:36px;width:auto;display:block;">
-      </a>
-
-      <div class="dl-badge">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M6 1v7M6 8l-2.5-2.5M6 8l2.5-2.5M2 11h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Product Catalog
+      <!-- Cover -->
+      <div class="dl-cover ms" id="dl-cover">
+        <img src="downloads/katalog-cover.jpg" alt="Motorsport Catalog Cover" loading="eager" class="dl-cover-img visible" id="cover-ms">
+        <img src="downloads/katalog-mv-cover.jpg" alt="Military Catalog Cover" loading="lazy" class="dl-cover-img" id="cover-mv" onerror="this.style.display='none'">
+        <div class="dl-cover-overlay ms" id="dl-overlay"></div>
       </div>
 
-      <h1 class="dl-title">
-        High Performance<br><span>Fluid Transfer Systems</span>
-      </h1>
+      <!-- Content -->
+      <div class="dl-body">
 
-      <p class="dl-sub">
-        Complete AN fittings, Stahlflex braided hoses, push-lock connectors, adapters and accessories — with technical specifications, dimensions and order codes.
-      </p>
+        <a href="/" class="dl-logo">
+          <img src="Logos/supAero-WortLogo-W.webp" alt="supAero" style="height:36px;width:auto;display:block;">
+        </a>
 
-      <div class="dl-meta">
-        <div class="dl-meta-chip">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-            <rect x="2" y="1.5" width="9" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
-            <path d="M4.5 5h4M4.5 7h4M4.5 9h2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <div class="dl-content-fade" id="dl-content">
+
+          <div class="dl-badge ms" id="dl-badge">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v7M6 8l-2.5-2.5M6 8l2.5-2.5M2 11h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span id="badge-text">Product Catalog</span>
+          </div>
+
+          <h1 class="dl-title" id="dl-title">
+            High Performance<br><span class="accent-ms" id="title-accent">Fluid Transfer Systems</span>
+          </h1>
+
+          <p class="dl-sub" id="dl-sub">
+            Complete AN fittings, Stahlflex braided hoses, push-lock connectors, adapters and accessories — with technical specifications, dimensions and order codes.
+          </p>
+
+          <div class="dl-meta">
+            <div class="dl-meta-chip">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2" y="1.5" width="9" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 5h4M4.5 7h4M4.5 9h2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <span id="chip-pages">202 Pages</span>
+            </div>
+            <div class="dl-meta-chip">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 4v2.5l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <span id="chip-size">PDF · ~20 MB</span>
+            </div>
+            <div class="dl-meta-chip">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5L7.8 4.5H11L8.5 6.5L9.5 9.5L6.5 7.5L3.5 9.5L4.5 6.5L2 4.5H5.2L6.5 1.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+              Free
+            </div>
+            <div class="dl-meta-chip">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 6.5h6M2 9h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <span id="chip-ver">V5 · 2025</span>
+            </div>
+          </div>
+
+          <a href="downloads/supaero-katalog-ms-v5.pdf" download="supAero-Katalog-MS-V5.pdf" class="dl-btn ms" id="dl-btn">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3 15h12M9 3v8M9 11l-3.5-3.5M9 11l3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span id="btn-text">Download Catalog (PDF)</span>
+          </a>
+
+        </div><!-- /dl-content-fade -->
+
+        <p class="dl-note">
+          By downloading you agree to our <a href="/pages/privacy.html">Privacy Policy</a>.
+          For personal and business use only — not for redistribution.
+        </p>
+
+        <a href="/" class="dl-back">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          202 Pages
-        </div>
-        <div class="dl-meta-chip">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-            <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.2"/>
-            <path d="M6.5 4v2.5l1.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
-          PDF · ~20 MB
-        </div>
-        <div class="dl-meta-chip">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-            <path d="M6.5 1.5L7.8 4.5H11L8.5 6.5L9.5 9.5L6.5 7.5L3.5 9.5L4.5 6.5L2 4.5H5.2L6.5 1.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-          </svg>
-          Free
-        </div>
-        <div class="dl-meta-chip">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-            <path d="M2 4h9M2 6.5h6M2 9h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
-          V5 · 2025
-        </div>
+          Back to supaero.de
+        </a>
+
       </div>
-
-      <a href="downloads/supaero-katalog-ms-v5.pdf" download="supAero-Katalog-MS-V5.pdf" class="dl-btn">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-          <path d="M3 15h12M9 3v8M9 11l-3.5-3.5M9 11l3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Download Catalog (PDF)
-      </a>
-
-      <p class="dl-note">
-        By downloading you agree to our <a href="/pages/privacy.html">Privacy Policy</a>.
-        For personal and business use only — not for redistribution.
-      </p>
-
-      <a href="/" class="dl-back">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Back to supaero.de
-      </a>
-
     </div>
   </div>
 </div>
+
+<script>
+const VERSIONS = {
+  ms: {
+    badgeClass: 'ms',
+    badgeText: 'Product Catalog',
+    title: 'High Performance',
+    accent: 'Fluid Transfer Systems',
+    accentClass: 'accent-ms',
+    sub: 'Complete AN fittings, Stahlflex braided hoses, push-lock connectors, adapters and accessories — with technical specifications, dimensions and order codes.',
+    pages: '202 Pages',
+    size: 'PDF · ~20 MB',
+    ver: 'V5 · 2025',
+    btnText: 'Download Motorsport Catalog (PDF)',
+    btnHref: 'downloads/supaero-katalog-ms-v5.pdf',
+    btnDl: 'supAero-Katalog-MS-V5.pdf',
+  },
+  mv: {
+    badgeClass: 'mv',
+    badgeText: 'Military Version',
+    title: 'Defense & Military',
+    accent: 'Fluid Transfer Systems',
+    accentClass: 'accent-mv',
+    sub: 'Military-grade AN fittings, MIL-spec hoses, Adel Wiggins couplings and defense-certified hydraulic components — with full technical specifications and part numbers.',
+    pages: '182 Pages',
+    size: 'PDF · ~18 MB',
+    ver: 'MV · 2025',
+    btnText: 'Download Military Catalog (PDF)',
+    btnHref: 'downloads/supaero-katalog-mv.pdf',
+    btnDl: 'supAero-Katalog-MV.pdf',
+  }
+};
+
+let current = 'ms';
+
+function switchVersion(v) {
+  if (v === current) return;
+  current = v;
+
+  const d = VERSIONS[v];
+  const content = document.getElementById('dl-content');
+
+  // Fade out
+  content.classList.add('fading');
+
+  // Toggle slider
+  const slider = document.getElementById('toggle-slider');
+  slider.className = 'dl-toggle-slider ' + v;
+
+  // Toggle buttons
+  document.getElementById('btn-ms').classList.toggle('active', v === 'ms');
+  document.getElementById('btn-mv').classList.toggle('active', v === 'mv');
+
+  // Cover images
+  document.getElementById('cover-ms').classList.toggle('visible', v === 'ms');
+  document.getElementById('cover-mv').classList.toggle('visible', v === 'mv');
+
+  // Card / cover / overlay classes
+  document.getElementById('dl-card').className = 'dl-card ' + v;
+  document.getElementById('dl-cover').className = 'dl-cover ' + v;
+  document.getElementById('dl-overlay').className = 'dl-cover-overlay ' + v;
+
+  setTimeout(() => {
+    // Update content
+    document.getElementById('dl-badge').className = 'dl-badge ' + d.badgeClass;
+    document.getElementById('badge-text').textContent = d.badgeText;
+    document.getElementById('dl-title').childNodes[0].textContent = d.title;
+    const accent = document.getElementById('title-accent');
+    accent.textContent = d.accent;
+    accent.className = d.accentClass;
+    document.getElementById('dl-sub').textContent = d.sub;
+    document.getElementById('chip-pages').textContent = d.pages;
+    document.getElementById('chip-size').textContent = d.size;
+    document.getElementById('chip-ver').textContent = d.ver;
+
+    const btn = document.getElementById('dl-btn');
+    btn.className = 'dl-btn ' + v;
+    btn.href = d.btnHref;
+    btn.setAttribute('download', d.btnDl);
+    document.getElementById('btn-text').textContent = d.btnText;
+
+    content.classList.remove('fading');
+  }, 250);
+}
+</script>
 
 </body>
 </html>
