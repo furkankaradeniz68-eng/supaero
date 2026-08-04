@@ -1643,6 +1643,9 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 #s4 .pfc-image img {
   transform: scale(1.9);
 }
+#s4-plug .pfc-image img {
+  transform: scale(2.2);
+}
 
 .pfc-body { padding: 1.5rem; }
 .pfc-series {
