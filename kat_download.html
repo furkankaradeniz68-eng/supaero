@@ -21,7 +21,22 @@
       justify-content: center;
       background: var(--bg-1);
       padding: 2rem 1rem;
+      transition: background 0.6s ease;
     }
+
+    /* Military full-page theme */
+    body.theme-mv {
+      background: #0d1a08;
+    }
+    body.theme-mv .dl-page {
+      background: radial-gradient(ellipse at 30% 20%, #1a2e0e 0%, #0d1a08 60%);
+    }
+    body.theme-mv .dl-toggle {
+      background: #111f08;
+      border-color: rgba(122,182,72,0.3);
+    }
+    body.theme-mv .dl-note a { color: #7ab648; }
+    body.theme-mv .dl-back:hover { color: #7ab648; }
 
     .dl-wrap {
       max-width: 900px;
@@ -412,6 +427,9 @@ function switchVersion(v) {
 
   const d = VERSIONS[v];
   const content = document.getElementById('dl-content');
+
+  // Full-page theme
+  document.body.className = v === 'mv' ? 'theme-mv' : '';
 
   // Fade out
   content.classList.add('fading');
