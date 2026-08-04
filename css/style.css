@@ -1647,6 +1647,10 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   transform: scale(2.2);
 }
 
+.product-full-card:nth-child(n+5) {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
 .pfc-body { padding: 1.5rem; }
 .pfc-series {
   font-size: .6875rem; font-weight: 700; text-transform: uppercase;
