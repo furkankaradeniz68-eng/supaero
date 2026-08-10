@@ -43,10 +43,8 @@ export default async function handler(req, res) {
   }
 
   // Verify reCAPTCHA v3 token
-  console.log('[DEBUG] secret prefix:', process.env.RECAPTCHA_SECRET?.slice(0,15), '| token prefix:', recaptchaToken?.slice(0,10), '| token length:', recaptchaToken?.length ?? 0);
   if (process.env.RECAPTCHA_SECRET) {
     if (!recaptchaToken) {
-      console.log('[DEBUG] no token');
       return res.status(400).json({ error: 'Spam-Schutz fehlgeschlagen. Bitte versuchen Sie es erneut.' });
     }
     try {
@@ -56,12 +54,11 @@ export default async function handler(req, res) {
         body: `secret=${process.env.RECAPTCHA_SECRET}&response=${recaptchaToken}`,
       });
       const result = await verify.json();
-      console.log('[DEBUG] siteverify:', JSON.stringify(result));
       if (!result.success || result.score < 0.5) {
         return res.status(400).json({ error: 'Spam-Schutz fehlgeschlagen. Bitte versuchen Sie es erneut.' });
       }
     } catch (err) {
-      console.error('[DEBUG] fetch error:', err.message);
+      console.error('reCAPTCHA verify error:', err.message);
       return res.status(503).json({ error: 'Spam-Schutz vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.' });
     }
   }
