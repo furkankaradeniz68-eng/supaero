@@ -42,38 +42,22 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Ungültige E-Mail-Adresse.' });
   }
 
-  // Verify reCAPTCHA Enterprise token — blocking: never skip on error
-  if (process.env.RECAPTCHA_GCP_KEY) {
+  // Verify reCAPTCHA v3 token
+  if (process.env.RECAPTCHA_SECRET) {
     if (!recaptchaToken) {
       return res.status(400).json({ error: 'Spam-Schutz fehlgeschlagen. Bitte versuchen Sie es erneut.' });
     }
     try {
-      const projectId = process.env.RECAPTCHA_PROJECT_ID || 'my-project-4828-1785608529061';
-      const verify = await fetch(
-        `https://recaptchaenterprise.googleapis.com/v1/projects/${projectId}/assessments?key=${process.env.RECAPTCHA_GCP_KEY}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            event: {
-              token: recaptchaToken,
-              siteKey: '6LfnyX4tAAAAANHTYnfTKBD_Igwjr7r9-q89DseG',
-              expectedAction: truncate(body.subject, 50) || 'contact',
-            },
-          }),
-        }
-      );
+      const verify = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `secret=${process.env.RECAPTCHA_SECRET}&response=${recaptchaToken}`,
+      });
       const result = await verify.json();
-      const tp = result?.tokenProperties ?? {};
-      console.log('[reCAPTCHA] valid:', tp.valid, '| reason:', tp.invalidReason, '| hostname:', tp.hostname, '| action:', tp.action, '| score:', result?.riskAnalysis?.score);
-      const score = result?.riskAnalysis?.score ?? 0;
-      const valid = tp.valid ?? false;
-      if (!valid || score < 0.5) {
-        console.log('[reCAPTCHA] blocked — valid:', valid, 'reason:', tp.invalidReason, 'score:', score);
+      if (!result.success || result.score < 0.5) {
         return res.status(400).json({ error: 'Spam-Schutz fehlgeschlagen. Bitte versuchen Sie es erneut.' });
       }
-    } catch (err) {
-      console.error('[reCAPTCHA] exception:', err);
+    } catch (_) {
       return res.status(503).json({ error: 'Spam-Schutz vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.' });
     }
   }
