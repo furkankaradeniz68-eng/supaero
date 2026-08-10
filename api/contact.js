@@ -64,12 +64,15 @@ export default async function handler(req, res) {
         }
       );
       const result = await verify.json();
+      console.log('[reCAPTCHA Enterprise]', JSON.stringify(result));
       const score = result?.riskAnalysis?.score ?? result?.score ?? 0;
       const valid = result?.tokenProperties?.valid ?? false;
       if (!valid || score < 0.5) {
+        console.log('[reCAPTCHA] blocked — valid:', valid, 'score:', score);
         return res.status(400).json({ error: 'Spam-Schutz fehlgeschlagen. Bitte versuchen Sie es erneut.' });
       }
-    } catch (_) {
+    } catch (err) {
+      console.error('[reCAPTCHA] exception:', err);
       return res.status(503).json({ error: 'Spam-Schutz vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.' });
     }
   }
