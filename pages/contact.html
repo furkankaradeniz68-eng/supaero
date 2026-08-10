@@ -11,7 +11,7 @@
   <script src="../i18n/translations.js" defer></script>
   <script src="../js/main.js" defer></script>
   <script src="../js/cookies.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js?render=6LcktXAtAAAAAMvmhJGaPe_1yrZAYcO-r1Sj_itB" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfnyX4tAAAAANHTYnfTKBD_Igwjr7r9-q89DseG" async defer></script>
 </head>
 <body>
 
@@ -188,7 +188,7 @@ async function handleSubmit(e) {
 
   let recaptchaToken = '';
   try {
-    recaptchaToken = await grecaptcha.execute('6LcktXAtAAAAAMvmhJGaPe_1yrZAYcO-r1Sj_itB', { action: 'contact' });
+    recaptchaToken = await grecaptcha.execute('6LfnyX4tAAAAANHTYnfTKBD_Igwjr7r9-q89DseG', { action: 'contact' });
   } catch (_) {}
 
   const data = {
