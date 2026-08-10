@@ -1188,7 +1188,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .iso-float-badge {
   position: fixed;
   bottom: 1.5rem;
-  right: 1.5rem;
+  left: 1.5rem;
   z-index: 900;
   background: var(--bg-card);
   border: 1px solid var(--border-blue);
@@ -1986,7 +1986,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   .nav-logo img { height: 30px; }
 
   /* ISO badge: icon only */
-  .iso-float-badge { padding: 0.45rem 0.6rem; gap: 0; bottom: 1rem; right: 1rem; }
+  .iso-float-badge { padding: 0.45rem 0.6rem; gap: 0; bottom: 1rem; left: 1rem; }
   .iso-float-badge .iso-float-text { display: none; }
   .iso-float-badge img { height: 28px; }
 
