@@ -30,7 +30,7 @@ export default async function handler(req, res) {
   const company   = truncate(body.company,   MAX_LENGTHS.company);
   const subject   = truncate(body.subject,   MAX_LENGTHS.subject);
   const message   = truncate(body.message,   MAX_LENGTHS.message);
-  const recaptchaToken = truncate(body.recaptchaToken, 2048);
+  const recaptchaToken = truncate(body.recaptchaToken, 8192);
 
   // Validate required fields
   if (!email || !message) {
