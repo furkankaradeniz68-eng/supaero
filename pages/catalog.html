@@ -150,7 +150,7 @@
   </div>
 </section>
 
-<script src="https://www.google.com/recaptcha/api.js?render=6LfnyX4tAAAAANHTYnfTKBD_Igwjr7r9-q89DseG" async defer></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LfnyX4tAAAAANHTYnfTKBD_Igwjr7r9-q89DseG" async defer></script>
 <script>
 async function handleCatalogSubmit(e) {
   e.preventDefault();
@@ -169,9 +169,9 @@ async function handleCatalogSubmit(e) {
 
   let recaptchaToken = '';
   try {
-    await new Promise(r => { if (typeof grecaptcha !== 'undefined') grecaptcha.ready(r); else r(); });
+    await new Promise(r => { if (typeof grecaptcha !== 'undefined') grecaptcha.enterprise.ready(r); else r(); });
     if (typeof grecaptcha !== 'undefined') {
-      recaptchaToken = await grecaptcha.execute('6LfnyX4tAAAAANHTYnfTKBD_Igwjr7r9-q89DseG', { action: 'catalog' });
+      recaptchaToken = await grecaptcha.enterprise.execute('6LfnyX4tAAAAANHTYnfTKBD_Igwjr7r9-q89DseG', { action: 'catalog' });
     }
   } catch (_) {}
 

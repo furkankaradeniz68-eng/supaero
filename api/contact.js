@@ -42,23 +42,34 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Ungültige E-Mail-Adresse.' });
   }
 
-  // Verify reCAPTCHA v3 token — blocking: never skip on error
-  if (process.env.RECAPTCHA_SECRET) {
+  // Verify reCAPTCHA Enterprise token — blocking: never skip on error
+  if (process.env.RECAPTCHA_GCP_KEY) {
     if (!recaptchaToken) {
       return res.status(400).json({ error: 'Spam-Schutz fehlgeschlagen. Bitte versuchen Sie es erneut.' });
     }
     try {
-      const verify = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `secret=${process.env.RECAPTCHA_SECRET}&response=${recaptchaToken}`,
-      });
+      const projectId = process.env.RECAPTCHA_PROJECT_ID || 'my-project-4828-1785608529061';
+      const verify = await fetch(
+        `https://recaptchaenterprise.googleapis.com/v1/projects/${projectId}/assessments?key=${process.env.RECAPTCHA_GCP_KEY}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event: {
+              token: recaptchaToken,
+              siteKey: '6LfnyX4tAAAAANHTYnfTKBD_Igwjr7r9-q89DseG',
+              expectedAction: truncate(body.subject, 50) || 'contact',
+            },
+          }),
+        }
+      );
       const result = await verify.json();
-      if (!result.success || result.score < 0.5) {
+      const score = result?.riskAnalysis?.score ?? result?.score ?? 0;
+      const valid = result?.tokenProperties?.valid ?? false;
+      if (!valid || score < 0.5) {
         return res.status(400).json({ error: 'Spam-Schutz fehlgeschlagen. Bitte versuchen Sie es erneut.' });
       }
     } catch (_) {
-      // reCAPTCHA unreachable — block rather than allow through
       return res.status(503).json({ error: 'Spam-Schutz vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.' });
     }
   }
