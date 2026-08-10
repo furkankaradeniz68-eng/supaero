@@ -43,7 +43,7 @@ export default async function handler(req, res) {
   }
 
   // Verify reCAPTCHA v3 token
-  console.log('[DEBUG] secret set:', !!process.env.RECAPTCHA_SECRET, '| token length:', recaptchaToken?.length ?? 0);
+  console.log('[DEBUG] secret prefix:', process.env.RECAPTCHA_SECRET?.slice(0,15), '| token prefix:', recaptchaToken?.slice(0,10), '| token length:', recaptchaToken?.length ?? 0);
   if (process.env.RECAPTCHA_SECRET) {
     if (!recaptchaToken) {
       console.log('[DEBUG] no token');
