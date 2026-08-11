@@ -173,18 +173,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ── Hero angle carousel ────────────────────
-  const angles = document.querySelectorAll('.product-angle');
+  const angles = Array.from(document.querySelectorAll('.product-angle'));
+  // Shuffle images into random order on each page load (Fisher-Yates)
+  const wrap = angles[0]?.parentNode;
+  if (wrap) {
+    for (let i = angles.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      wrap.insertBefore(angles[j], angles[i]);
+    }
+  }
+  const shuffledAngles = Array.from(document.querySelectorAll('.product-angle'));
   const heroProducts = [
-    { c1l: 'Series', c1v: '236',       c2l: 'Type', c2v: 'AN Swivel',      c3l: 'Finish',   c3v: 'Hard Anodized'  },
-    { c1l: 'Series', c1v: '536',       c2l: 'Type', c2v: 'Performance',    c3l: 'Standard', c3v: 'JIC 37°'        },
-    { c1l: 'Series', c1v: 'S4',        c2l: 'Type', c2v: 'Straight Flare', c3l: 'End',      c3v: 'Push-On'        },
-    { c1l: 'Series', c1v: 'S7',        c2l: 'Type', c2v: 'Premium Line',   c3l: 'System',   c3v: 'High Pressure'  },
-    { c1l: 'Series', c1v: 'Pro:Spec',  c2l: 'Type', c2v: 'Quick Release',  c3l: 'Assembly', c3v: 'Tool-Free'      },
-    { c1l: 'Series', c1v: 'S750',      c2l: 'Type', c2v: 'PTFE Hose',      c3l: 'Braid',    c3v: 'Stainless Steel'},
-    { c1l: 'Series', c1v: '811/812',   c2l: 'Type', c2v: 'BSP Adapter',    c3l: 'Material', c3v: 'Aluminium'      },
-    { c1l: 'Series', c1v: 'BSP-741',   c2l: 'Type', c2v: 'Adapter',        c3l: 'Thread',   c3v: 'BSP / AN'       },
-    { c1l: 'Product',c1v: 'Firesleeve',c2l: 'Type', c2v: 'Thermal Wrap',   c3l: 'Material', c3v: 'Silicone'       },
-    { c1l: 'Series', c1v: '236 Black', c2l: 'Type', c2v: 'AN Swivel',      c3l: 'Finish',   c3v: 'Black Anodized' },
+    { c1l: 'Series', c1v: 'S-Series',    c2l: 'Type', c2v: 'PTFE Hose',       c3l: 'Braid',    c3v: 'Stainless Steel' },
+    { c1l: 'Series', c1v: 'S7',          c2l: 'Type', c2v: 'Wiggins Fitting',  c3l: 'Finish',   c3v: 'Hard Anodized'   },
+    { c1l: 'Series', c1v: '236',         c2l: 'Type', c2v: 'AN Swivel',        c3l: 'Standard', c3v: 'JIC 37°'         },
+    { c1l: 'Series', c1v: '536',         c2l: 'Type', c2v: 'Performance',      c3l: 'Standard', c3v: 'JIC 37°'         },
+    { c1l: 'Series', c1v: 'S4',          c2l: 'Type', c2v: 'Straight & Flare', c3l: 'End',      c3v: 'Push-On'         },
+    { c1l: 'Series', c1v: 'BSP',         c2l: 'Type', c2v: 'Adapter',          c3l: 'Thread',   c3v: 'BSP / AN'        },
+    { c1l: 'Series', c1v: 'JIC-NPT',     c2l: 'Type', c2v: 'Adapter',          c3l: 'Standard', c3v: 'JIC / NPT'       },
+    { c1l: 'Product', c1v: 'Adel Wiggins',c2l: 'Type', c2v: 'Coupling',        c3l: 'Material', c3v: 'Aluminium'       },
+    { c1l: 'Series', c1v: 'Pro:Spec',    c2l: 'Type', c2v: 'Quick Release',    c3l: 'Assembly', c3v: 'Tool-Free'       },
+    { c1l: 'Series', c1v: 'Metric',      c2l: 'Type', c2v: 'Adapter',          c3l: 'Standard', c3v: 'DIN / Metric'    },
+    { c1l: 'Series', c1v: 'Brake',       c2l: 'Type', c2v: 'Fitting',          c3l: 'Standard', c3v: 'AN / BSP'        },
+    { c1l: 'Series', c1v: '811/812',     c2l: 'Type', c2v: 'Adapter',          c3l: 'Material', c3v: 'Aluminium'       },
+    { c1l: 'Series', c1v: 'JIC Unequal', c2l: 'Type', c2v: 'Adapter',          c3l: 'Standard', c3v: 'JIC 37°'         },
+    { c1l: 'Series', c1v: 'NPT',         c2l: 'Type', c2v: 'Adapter',          c3l: 'Thread',   c3v: 'NPT / AN'        },
+    { c1l: 'Product', c1v: 'Accessories',c2l: 'Type', c2v: 'Accessory',        c3l: 'Material', c3v: 'Aluminium'       },
+    { c1l: 'Series', c1v: 'Banjo',       c2l: 'Type', c2v: 'Fitting',          c3l: 'Standard', c3v: 'AN / BSP'        },
+    { c1l: 'Product', c1v: 'Firesleeve', c2l: 'Type', c2v: 'Thermal Wrap',     c3l: 'Material', c3v: 'Silicone'        },
+    { c1l: 'Series', c1v: 'Push-Lock',   c2l: 'Type', c2v: 'Connector',        c3l: 'Assembly', c3v: 'Tool-Free'       },
+    { c1l: 'Series', c1v: '236 Black',   c2l: 'Type', c2v: 'AN Swivel',        c3l: 'Finish',   c3v: 'Black Anodized'  },
+    { c1l: 'Series', c1v: 'S4 Plug',     c2l: 'Type', c2v: 'End Plug',         c3l: 'Material', c3v: 'Aluminium'       },
   ];
 
   function updateCallouts(data) {
@@ -205,12 +224,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let currentAngle = 0;
-  if (angles.length > 0) {
-    angles[0].classList.add('active');
+  if (shuffledAngles.length > 0) {
+    shuffledAngles.forEach(a => a.classList.remove('active'));
+    shuffledAngles[0].classList.add('active');
+    if (heroProducts[0]) updateCallouts(heroProducts[0]);
     setInterval(() => {
-      angles[currentAngle].classList.remove('active');
-      currentAngle = (currentAngle + 1) % angles.length;
-      angles[currentAngle].classList.add('active');
+      shuffledAngles[currentAngle].classList.remove('active');
+      currentAngle = (currentAngle + 1) % shuffledAngles.length;
+      shuffledAngles[currentAngle].classList.add('active');
       if (heroProducts[currentAngle]) updateCallouts(heroProducts[currentAngle]);
     }, 2200);
   }
