@@ -183,30 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   const shuffledAngles = Array.from(document.querySelectorAll('.product-angle'));
-  const heroProducts = [
-    { c1l: 'Series', c1v: 'S-Series',    c2l: 'Type', c2v: 'PTFE Hose',       c3l: 'Braid',    c3v: 'Stainless Steel' },
-    { c1l: 'Series', c1v: 'S7',          c2l: 'Type', c2v: 'Wiggins Fitting',  c3l: 'Finish',   c3v: 'Hard Anodized'   },
-    { c1l: 'Series', c1v: '236',         c2l: 'Type', c2v: 'AN Swivel',        c3l: 'Standard', c3v: 'JIC 37°'         },
-    { c1l: 'Series', c1v: '536',         c2l: 'Type', c2v: 'Performance',      c3l: 'Standard', c3v: 'JIC 37°'         },
-    { c1l: 'Series', c1v: 'S4',          c2l: 'Type', c2v: 'Straight & Flare', c3l: 'End',      c3v: 'Push-On'         },
-    { c1l: 'Series', c1v: 'BSP',         c2l: 'Type', c2v: 'Adapter',          c3l: 'Thread',   c3v: 'BSP / AN'        },
-    { c1l: 'Series', c1v: 'JIC-NPT',     c2l: 'Type', c2v: 'Adapter',          c3l: 'Standard', c3v: 'JIC / NPT'       },
-    { c1l: 'Product', c1v: 'Adel Wiggins',c2l: 'Type', c2v: 'Coupling',        c3l: 'Material', c3v: 'Aluminium'       },
-    { c1l: 'Series', c1v: 'Pro:Spec',    c2l: 'Type', c2v: 'Quick Release',    c3l: 'Assembly', c3v: 'Tool-Free'       },
-    { c1l: 'Series', c1v: 'Metric',      c2l: 'Type', c2v: 'Adapter',          c3l: 'Standard', c3v: 'DIN / Metric'    },
-    { c1l: 'Series', c1v: 'Brake',       c2l: 'Type', c2v: 'Fitting',          c3l: 'Standard', c3v: 'AN / BSP'        },
-    { c1l: 'Series', c1v: '811/812',     c2l: 'Type', c2v: 'Adapter',          c3l: 'Material', c3v: 'Aluminium'       },
-    { c1l: 'Series', c1v: 'JIC Unequal', c2l: 'Type', c2v: 'Adapter',          c3l: 'Standard', c3v: 'JIC 37°'         },
-    { c1l: 'Series', c1v: 'NPT',         c2l: 'Type', c2v: 'Adapter',          c3l: 'Thread',   c3v: 'NPT / AN'        },
-    { c1l: 'Product', c1v: 'Accessories',c2l: 'Type', c2v: 'Accessory',        c3l: 'Material', c3v: 'Aluminium'       },
-    { c1l: 'Series', c1v: 'Banjo',       c2l: 'Type', c2v: 'Fitting',          c3l: 'Standard', c3v: 'AN / BSP'        },
-    { c1l: 'Product', c1v: 'Firesleeve', c2l: 'Type', c2v: 'Thermal Wrap',     c3l: 'Material', c3v: 'Silicone'        },
-    { c1l: 'Series', c1v: 'Push-Lock',   c2l: 'Type', c2v: 'Connector',        c3l: 'Assembly', c3v: 'Tool-Free'       },
-    { c1l: 'Series', c1v: '236 Black',   c2l: 'Type', c2v: 'AN Swivel',        c3l: 'Finish',   c3v: 'Black Anodized'  },
-    { c1l: 'Series', c1v: 'S4 Plug',     c2l: 'Type', c2v: 'End Plug',         c3l: 'Material', c3v: 'Aluminium'       },
-  ];
 
-  function updateCallouts(data) {
+  function updateCallouts(img) {
     const hc1l = document.getElementById('hc1-label');
     const hc1v = document.getElementById('hc1-val');
     const hc2l = document.getElementById('hc2-label');
@@ -216,9 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!hc1l) return;
     [hc1l, hc1v, hc2l, hc2v, hc3l, hc3v].forEach(el => { el.style.opacity = '0'; });
     setTimeout(() => {
-      hc1l.textContent = data.c1l; hc1v.textContent = data.c1v;
-      hc2l.textContent = data.c2l; hc2v.textContent = data.c2v;
-      hc3l.textContent = data.c3l; hc3v.textContent = data.c3v;
+      hc1l.textContent = img.dataset.c1l || ''; hc1v.textContent = img.dataset.c1v || '';
+      hc2l.textContent = img.dataset.c2l || ''; hc2v.textContent = img.dataset.c2v || '';
+      hc3l.textContent = img.dataset.c3l || ''; hc3v.textContent = img.dataset.c3v || '';
       [hc1l, hc1v, hc2l, hc2v, hc3l, hc3v].forEach(el => { el.style.opacity = '1'; });
     }, 300);
   }
@@ -227,12 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (shuffledAngles.length > 0) {
     shuffledAngles.forEach(a => a.classList.remove('active'));
     shuffledAngles[0].classList.add('active');
-    if (heroProducts[0]) updateCallouts(heroProducts[0]);
+    updateCallouts(shuffledAngles[0]);
     setInterval(() => {
       shuffledAngles[currentAngle].classList.remove('active');
       currentAngle = (currentAngle + 1) % shuffledAngles.length;
       shuffledAngles[currentAngle].classList.add('active');
-      if (heroProducts[currentAngle]) updateCallouts(heroProducts[currentAngle]);
+      updateCallouts(shuffledAngles[currentAngle]);
     }, 2200);
   }
 
@@ -338,17 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.stat-item').forEach(el => statsObserver.observe(el));
 
-  // ── Category track nav ────────────────────
-  const catTrack = document.getElementById('cat-track');
-  const catPrev = document.getElementById('cat-prev');
-  const catNext = document.getElementById('cat-next');
-  if (catTrack && catNext) {
-    const scrollAmt = () => catTrack.offsetWidth * 0.75;
-    catNext.addEventListener('click', () => catTrack.scrollBy({ left: scrollAmt(), behavior: 'smooth' }));
-    catPrev.addEventListener('click', () => catTrack.scrollBy({ left: -scrollAmt(), behavior: 'smooth' }));
-  }
-
-  // ── Ticker duplicate for seamless loop ────
+// ── Ticker duplicate for seamless loop ────
   const ticker = document.querySelector('.ticker-track');
   if (ticker) {
     ticker.innerHTML += ticker.innerHTML;
