@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catalog Download — supAero</title>
+  <title>Catalog Download - supAero</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="css/style.css">
   <script src="i18n/translations.js" defer></script>
@@ -145,7 +145,7 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center top;
       opacity: 0;
       transition: opacity 0.5s ease;
@@ -365,7 +365,7 @@
           </h1>
 
           <p class="dl-sub" id="dl-sub">
-            Complete AN fittings, PTFE braided hoses, push-lock connectors, adapters and accessories — with technical specifications, dimensions and order codes.
+            Complete AN fittings, PTFE braided hoses, push-lock connectors, adapters and accessories - with technical specifications, dimensions and order codes.
           </p>
 
           <div class="dl-meta">
@@ -404,7 +404,7 @@
 
         <p class="dl-note">
           By downloading you agree to our <a href="/pages/privacy.html">Privacy Policy</a>.
-          For personal and business use only — not for redistribution.
+          For personal and business use only - not for redistribution.
         </p>
 
         <div style="display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:1.25rem;opacity:.55;">
@@ -445,7 +445,7 @@ const VERSIONS = {
     title: 'High Performance',
     accent: 'Fluid Transfer Systems',
     accentClass: 'accent-ms',
-    sub: 'Complete AN fittings, PTFE braided hoses, push-lock connectors, adapters and accessories — with technical specifications, dimensions and order codes.',
+    sub: 'Complete AN fittings, PTFE braided hoses, push-lock connectors, adapters and accessories - with technical specifications, dimensions and order codes.',
     pages: '56 Pages',
     size: 'PDF · ~20 MB',
     ver: 'V5 · 2025',
@@ -459,7 +459,7 @@ const VERSIONS = {
     title: 'Aerospace & Defence',
     accent: 'Fluid Transfer Systems',
     accentClass: 'accent-mv',
-    sub: 'AN fittings, MIL-spec hoses, Adel Wiggins couplings and defense-certified hydraulic components — with full technical specifications and part numbers.',
+    sub: 'AN fittings, MIL-spec hoses, Adel Wiggins couplings and defense-certified hydraulic components - with full technical specifications and part numbers.',
     pages: '56 Pages',
     size: 'PDF · ~18 MB',
     ver: 'MV · 2025',
@@ -531,9 +531,11 @@ function togglePreview() {
   const btn = document.getElementById('preview-btn');
   previewOpen = !previewOpen;
   if (previewOpen) {
-    const pdfSrc = VERSIONS[current].btnHref;
-    // Use browser native PDF viewer via #view=FitH param
-    iframe.src = pdfSrc + '#view=FitH';
+    const pdfPath = VERSIONS[current].btnHref;
+    // Absolute URL needed for Google Docs viewer
+    const absoluteUrl = window.location.origin + '/' + pdfPath;
+    // Google Docs viewer works on all devices/browsers without X-Frame issues
+    iframe.src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(absoluteUrl) + '&embedded=true';
     panel.style.display = 'block';
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Close Preview';

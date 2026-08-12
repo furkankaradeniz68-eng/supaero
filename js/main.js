@@ -338,6 +338,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.stat-item').forEach(el => statsObserver.observe(el));
 
+  // ── Category track nav ────────────────────
+  const catTrack = document.getElementById('cat-track');
+  const catPrev = document.getElementById('cat-prev');
+  const catNext = document.getElementById('cat-next');
+  if (catTrack && catNext) {
+    const scrollAmt = () => catTrack.offsetWidth * 0.75;
+    catNext.addEventListener('click', () => catTrack.scrollBy({ left: scrollAmt(), behavior: 'smooth' }));
+    catPrev.addEventListener('click', () => catTrack.scrollBy({ left: -scrollAmt(), behavior: 'smooth' }));
+  }
+
   // ── Ticker duplicate for seamless loop ────
   const ticker = document.querySelector('.ticker-track');
   if (ticker) {
