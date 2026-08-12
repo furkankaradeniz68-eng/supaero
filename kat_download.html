@@ -431,7 +431,7 @@
           Close
         </button>
       </div>
-      <iframe id="pdf-iframe" src="" style="width:100%;height:80vh;border:none;display:block;" title="Catalog Preview"></iframe>
+      <embed id="pdf-iframe" src="" type="application/pdf" style="width:100%;height:80vh;border:none;display:block;">
     </div>
 
   </div>
@@ -535,14 +535,14 @@ function togglePreview() {
     // Absolute URL needed for Google Docs viewer
     const absoluteUrl = window.location.origin + '/' + pdfPath;
     // Google Docs viewer works on all devices/browsers without X-Frame issues
-    iframe.src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(absoluteUrl) + '&embedded=true';
+    iframe.setAttribute('src', absoluteUrl);
     panel.style.display = 'block';
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Close Preview';
     document.getElementById('preview-title').textContent = (current === 'mv' ? 'Aerospace & Defence' : 'Motorsport') + ' Catalog Preview';
   } else {
     panel.style.display = 'none';
-    iframe.src = '';
+    iframe.setAttribute('src', '');
     btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8C2 8 4.5 3 8 3s6 5 6 5-2.5 5-6 5-6-5-6-5Z" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/></svg> Preview Catalog';
   }
 }

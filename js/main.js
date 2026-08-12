@@ -207,11 +207,16 @@ document.addEventListener('DOMContentLoaded', () => {
     shuffledAngles[0].classList.add('active');
     updateCallouts(shuffledAngles[0]);
     setInterval(() => {
-      shuffledAngles[currentAngle].classList.remove('active');
+      const prev = shuffledAngles[currentAngle];
       currentAngle = (currentAngle + 1) % shuffledAngles.length;
-      shuffledAngles[currentAngle].classList.add('active');
-      updateCallouts(shuffledAngles[currentAngle]);
-    }, 2200);
+      const next = shuffledAngles[currentAngle];
+      // Fade out old, then overlap fade-in of new after a short delay
+      prev.classList.remove('active');
+      setTimeout(() => {
+        next.classList.add('active');
+        updateCallouts(next);
+      }, 200);
+    }, 3800);
   }
 
   // ── Featured product angle switcher ───────
