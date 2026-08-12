@@ -54,7 +54,7 @@
     body.theme-mv .dl-back:hover { color: #C4BEA6; }
 
     .dl-wrap {
-      max-width: 900px;
+      max-width: 1060px;
       width: 100%;
     }
 
@@ -129,12 +129,12 @@
 
     /* ── Left: cover ── */
     .dl-cover {
-      width: 400px;
+      width: 480px;
       flex-shrink: 0;
       position: relative;
       overflow: hidden;
-      /* aspect ratio of cover images ~848:1200 ≈ 0.707 → at 400px wide = 566px tall */
-      min-height: 566px;
+      /* aspect ratio of cover images ~848:1200 ≈ 0.707 → at 480px wide = 680px tall */
+      min-height: 680px;
       transition: background 0.4s;
     }
     .dl-cover.ms { background: #0a1628; }
@@ -145,8 +145,8 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      object-position: center center;
+      object-fit: cover;
+      object-position: center top;
       opacity: 0;
       transition: opacity 0.5s ease;
     }

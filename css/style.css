@@ -604,6 +604,8 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   width: 340px;
   height: 340px;
   object-fit: contain;
+  transform: scale(2);
+  transform-origin: 50% 50%;
   filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(27,79,155,0.35));
   opacity: 0;
   transition: opacity 0.8s ease;
