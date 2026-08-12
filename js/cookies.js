@@ -29,8 +29,17 @@
     if (choice === 'all') loadGA();
   }
 
+  // ── Lock / unlock scroll ─────────────────────
+  function lockScroll()   { document.body.classList.add('sa-no-scroll'); }
+  function unlockScroll() { document.body.classList.remove('sa-no-scroll'); }
+
   // ── Build banner HTML ────────────────────────
   function buildBanner() {
+    // Overlay — blocks all clicks on page content
+    const overlay = document.createElement('div');
+    overlay.id = 'sa-cookie-overlay';
+    document.body.appendChild(overlay);
+
     const banner = document.createElement('div');
     banner.id = 'sa-cookie-banner';
     banner.innerHTML = `
@@ -48,25 +57,33 @@
     `;
     document.body.appendChild(banner);
 
+    // Lock scroll immediately
+    lockScroll();
+
     // Animate in after a short delay
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => { banner.classList.add('sa-cookie-visible'); });
+      requestAnimationFrame(() => {
+        overlay.classList.add('sa-overlay-visible');
+        banner.classList.add('sa-cookie-visible');
+      });
     });
 
     document.getElementById('sa-cookie-all').addEventListener('click', () => {
       applyConsent('all');
-      hideBanner(banner);
+      hideBanner(banner, overlay);
     });
     document.getElementById('sa-cookie-essential').addEventListener('click', () => {
       applyConsent('essential');
-      hideBanner(banner);
+      hideBanner(banner, overlay);
     });
   }
 
-  function hideBanner(banner) {
+  function hideBanner(banner, overlay) {
+    unlockScroll();
     banner.classList.remove('sa-cookie-visible');
     banner.classList.add('sa-cookie-hiding');
-    setTimeout(() => banner.remove(), 400);
+    overlay.classList.remove('sa-overlay-visible');
+    setTimeout(() => { banner.remove(); overlay.remove(); }, 400);
   }
 
   // ── Init ─────────────────────────────────────

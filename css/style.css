@@ -2101,13 +2101,35 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 /* ══════════════════════════════════════════
    Cookie Consent Banner
 ══════════════════════════════════════════ */
+/* Backdrop overlay behind banner — blocks all interaction */
+#sa-cookie-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(4, 10, 24, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+#sa-cookie-overlay.sa-overlay-visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Scroll lock on <body> while banner is shown */
+body.sa-no-scroll {
+  overflow: hidden;
+}
+
 #sa-cookie-banner {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 9999;
-  padding: 0 1rem 1rem;
+  padding: 0 1rem 1.25rem;
   transform: translateY(100%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
