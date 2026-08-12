@@ -531,41 +531,72 @@ function switchVersion(v) {
 }
 
 // ── PDF.js preview ─────────────────────────────
-if (typeof pdfjsLib !== 'undefined') {
-  pdfjsLib.GlobalWorkerOptions.workerSrc =
-    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+const PDFJS_VERSION = '3.11.174';
+const PDFJS_CDN = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDFJS_VERSION}`;
+
+// Initialise worker as soon as the script is available
+function initPDFWorker() {
+  if (typeof pdfjsLib !== 'undefined') {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = `${PDFJS_CDN}/pdf.worker.min.js`;
+    return true;
+  }
+  return false;
 }
 
 let previewOpen = false;
-let previewLoaded = '';  // track which PDF is currently rendered
+let previewLoaded = '';
+let pdfDoc = null;       // cached pdf document
+const BATCH = 10;        // pages per batch
+
+function setLoadingMsg(msg) {
+  const wrap = document.getElementById('pdf-canvas-wrap');
+  if (wrap) wrap.innerHTML = `<div style="color:#c8d3e8;padding:3rem;font-size:.9rem;opacity:.7;text-align:center;">${msg}</div>`;
+}
+
+async function renderPages(from, to) {
+  const wrap = document.getElementById('pdf-canvas-wrap');
+  if (!wrap || !pdfDoc) return;
+  for (let i = from; i <= Math.min(to, pdfDoc.numPages); i++) {
+    const page = await pdfDoc.getPage(i);
+    const viewport = page.getViewport({ scale: 1.5 });
+    const canvas = document.createElement('canvas');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    canvas.style.cssText = 'width:100%;max-width:700px;border-radius:6px;box-shadow:0 4px 20px rgba(0,0,0,.5);display:block;flex-shrink:0;';
+    // Remove "Load more" button if present, then re-append after new canvases
+    const loadMoreBtn = wrap.querySelector('#load-more-btn');
+    if (loadMoreBtn) wrap.removeChild(loadMoreBtn);
+    wrap.appendChild(canvas);
+    await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+    // Update progress label
+    const prog = document.getElementById('pdf-progress');
+    if (prog) prog.textContent = `Page ${i} / ${pdfDoc.numPages}`;
+    // Re-add "Load more" button if pages remain
+    if (i === Math.min(to, pdfDoc.numPages) && i < pdfDoc.numPages) {
+      const btn = document.createElement('button');
+      btn.id = 'load-more-btn';
+      btn.textContent = `Load more pages (${pdfDoc.numPages - i} remaining)`;
+      btn.style.cssText = 'margin:1rem auto;padding:.65rem 1.5rem;border-radius:8px;border:1px solid rgba(59,127,232,.4);background:rgba(59,127,232,.12);color:#7eb3f5;font-size:.85rem;font-weight:600;cursor:pointer;display:block;';
+      btn.onclick = () => renderPages(i + 1, i + BATCH);
+      wrap.appendChild(btn);
+    }
+  }
+}
 
 async function renderPDF(url) {
-  const wrap = document.getElementById('pdf-canvas-wrap');
-  const loading = document.getElementById('pdf-loading');
-  wrap.innerHTML = '<div id="pdf-loading" style="color:#c8d3e8;padding:3rem;font-size:.9rem;opacity:.7;">Loading preview…</div>';
-
+  if (!initPDFWorker()) {
+    setLoadingMsg('PDF.js library not yet loaded – please try again in a moment.');
+    return;
+  }
+  setLoadingMsg('Loading PDF… <span id="pdf-progress"></span>');
   try {
-    if (typeof pdfjsLib === 'undefined') throw new Error('PDF.js not loaded');
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-    const pdf = await pdfjsLib.getDocument(url).promise;
-    wrap.innerHTML = '';
-    const pagesToRender = Math.min(pdf.numPages, 56);
-
-    for (let i = 1; i <= pagesToRender; i++) {
-      const page = await pdf.getPage(i);
-      const viewport = page.getViewport({ scale: 1.6 });
-      const canvas = document.createElement('canvas');
-      canvas.width = viewport.width;
-      canvas.height = viewport.height;
-      canvas.style.cssText = 'width:100%;max-width:680px;border-radius:6px;box-shadow:0 4px 20px rgba(0,0,0,.5);display:block;';
-      wrap.appendChild(canvas);
-      await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
-    }
+    pdfDoc = await pdfjsLib.getDocument({ url, cMapPacked: true }).promise;
+    const wrap = document.getElementById('pdf-canvas-wrap');
+    wrap.innerHTML = '<div id="pdf-progress" style="color:#c8d3e8;font-size:.8rem;margin-bottom:.5rem;text-align:center;"></div>';
+    await renderPages(1, BATCH);
     previewLoaded = url;
   } catch (err) {
-    wrap.innerHTML = '<div style="color:#ef4444;padding:2rem;font-size:.875rem;">Preview failed to load. Please use the download button.</div>';
+    setLoadingMsg('Preview failed. <a href="' + url + '" target="_blank" style="color:#3B7FE8;text-decoration:underline;">Open PDF in new tab</a>');
     console.error('PDF.js error:', err);
   }
 }
@@ -580,7 +611,7 @@ function togglePreview() {
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Close Preview';
     document.getElementById('preview-title').textContent = (current === 'mv' ? 'Aerospace & Defence' : 'Motorsport') + ' Catalog Preview';
-    if (previewLoaded !== pdfUrl) renderPDF(pdfUrl);
+    if (previewLoaded !== pdfUrl) { pdfDoc = null; previewLoaded = ''; renderPDF(pdfUrl); }
   } else {
     panel.style.display = 'none';
     btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8C2 8 4.5 3 8 3s6 5 6 5-2.5 5-6 5-6-5-6-5Z" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/></svg> Preview Catalog';
