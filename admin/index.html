@@ -5,92 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow">
   <title>supAero Admin</title>
+  <style>
+    body { margin: 0; display: flex; align-items: center; justify-content: center;
+           min-height: 100vh; font-family: system-ui, sans-serif; background: #1a1f2e; }
+    #msg { color: #9ca3af; font-size: 0.95rem; text-align: center; }
+    #msg strong { display: block; color: #fff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+  </style>
 </head>
 <body>
+  <div id="msg"><strong>supAero Admin</strong>Wird geladen…</div>
+
   <!--
-    netlify-cms 2.x (React 16) — placed at end of <body> so document.body
-    exists when CMS.init() runs. React 16 handles existing body children fine;
-    the removeChild crash only affects decap-cms 3.x (React 18 createRoot).
+    Decap CMS 3.x — PKCE flow (Proof Key for Code Exchange).
+    No server-side secret, no popup, no postMessage needed.
+    GitHub redirects back to this page with ?code=…; the CMS
+    handles the token exchange entirely in the browser.
+
+    Fix for React 18 "removeChild" bug:
+    document.body.innerHTML = '' clears all child nodes before
+    CMS.init() so ReactDOM.createRoot() mounts on an empty body.
+    The CMS script is already evaluated at that point (it ran
+    synchronously), so the global CMS object is still available.
   -->
-  <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
+  <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
   <script>
-    CMS.init({
-      config: {
-        backend: {
-          name: 'github',
-          repo: 'furkankaradeniz68-eng/supaero',
-          branch: 'main',
-          base_url: 'https://supaero.de',
-          auth_endpoint: '/api/auth'
-        },
-        media_folder: 'img/uploads',
-        public_folder: '/img/uploads',
-        locale: 'de',
-        collections: [
+    fetch('/api/client-id')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.error) { throw new Error(data.error); }
 
-          /* ── Einstellungen ─────────────────────────────── */
-          {
-            name: 'einstellungen',
-            label: '⚙️ Einstellungen',
-            files: [
-              {
-                name: 'kontakt',
-                label: 'Kontakt & Unternehmen',
-                file: '_data/settings.json',
-                format: 'json',
-                fields: [
-                  { label: 'E-Mail Adresse',    name: 'email',         widget: 'string', hint: 'Erscheint im Footer und auf der Kontaktseite' },
-                  { label: 'Telefonnummer',      name: 'phone',         widget: 'string', hint: 'Format: +49 6321 9374179' },
-                  { label: 'Firmenname',         name: 'company_name',  widget: 'string' },
-                  { label: 'ISO Zertifizierung', name: 'iso_label',     widget: 'string', default: 'ISO 9001:2015 Zertifiziert' },
-                  { label: 'Jahre Erfahrung',    name: 'years_exp',     widget: 'string', default: '15+' },
-                  { label: 'Anzahl Produkte',    name: 'product_count', widget: 'string', default: '2000+' },
-                  { label: 'Belieferte Länder',  name: 'countries',     widget: 'string', default: '15+' }
-                ]
-              }
-            ]
-          },
+        // Clear ALL body content so React 18 createRoot mounts cleanly.
+        document.body.innerHTML = '';
 
-          /* ── Produkte ──────────────────────────────────── */
-          {
-            name: 'produkte',
-            label: '📦 Produkte',
-            files: [
+        CMS.init({
+          config: {
+            backend: {
+              name: 'github',
+              repo: 'furkankaradeniz68-eng/supaero',
+              branch: 'main',
+              /* PKCE: GitHub handles auth in the main window and
+                 redirects back to this page — no popup, no proxy. */
+              auth_type: 'pkce',
+              app_id: data.clientId
+            },
+            media_folder: 'img/uploads',
+            public_folder: '/img/uploads',
+            locale: 'de',
+            collections: [
+
+              /* ── Einstellungen ─────────────────────────────── */
               {
-                name: 'produktliste',
-                label: 'Alle 20 Produktkategorien',
-                file: '_data/products.json',
-                format: 'json',
-                fields: [
+                name: 'einstellungen',
+                label: '⚙️ Einstellungen',
+                files: [
                   {
-                    label: 'Produkte',
-                    name: 'products',
-                    widget: 'list',
-                    summary: '{{fields.series}} — {{fields.name_de}}',
+                    name: 'kontakt',
+                    label: 'Kontakt & Unternehmen',
+                    file: '_data/settings.json',
+                    format: 'json',
                     fields: [
-                      { label: 'Interne ID (nicht ändern)', name: 'id',      widget: 'string', hint: 'z.B. cat-01 — bitte nicht verändern' },
-                      { label: 'Serie',                     name: 'series',  widget: 'string', hint: 'z.B. S-Series, S7 Series, JIC Adaptors' },
-                      { label: 'Name (Deutsch)',             name: 'name_de', widget: 'string' },
-                      { label: 'Name (Englisch)',            name: 'name_en', widget: 'string' },
-                      { label: 'Beschreibung (Deutsch)',     name: 'desc_de', widget: 'text',   hint: 'Kurze Beschreibung für die Produktkarte (max. 120 Zeichen)' },
-                      { label: 'Beschreibung (Englisch)',    name: 'desc_en', widget: 'text' },
+                      { label: 'E-Mail Adresse',    name: 'email',         widget: 'string', hint: 'Erscheint im Footer und auf der Kontaktseite' },
+                      { label: 'Telefonnummer',      name: 'phone',         widget: 'string', hint: 'Format: +49 6321 9374179' },
+                      { label: 'Firmenname',         name: 'company_name',  widget: 'string' },
+                      { label: 'ISO Zertifizierung', name: 'iso_label',     widget: 'string', default: 'ISO 9001:2015 Zertifiziert' },
+                      { label: 'Jahre Erfahrung',    name: 'years_exp',     widget: 'string', default: '15+' },
+                      { label: 'Anzahl Produkte',    name: 'product_count', widget: 'string', default: '2000+' },
+                      { label: 'Belieferte Länder',  name: 'countries',     widget: 'string', default: '15+' }
+                    ]
+                  }
+                ]
+              },
+
+              /* ── Produkte ──────────────────────────────────── */
+              {
+                name: 'produkte',
+                label: '📦 Produkte',
+                files: [
+                  {
+                    name: 'produktliste',
+                    label: 'Alle 20 Produktkategorien',
+                    file: '_data/products.json',
+                    format: 'json',
+                    fields: [
                       {
-                        label: 'Tags',
-                        name: 'tags',
+                        label: 'Produkte',
+                        name: 'products',
                         widget: 'list',
-                        hint: 'Kurze Stichwörter, z.B. PTFE, AN, Wiggins',
-                        field: { label: 'Tag', name: 'tag', widget: 'string' }
+                        summary: '{{fields.series}} — {{fields.name_de}}',
+                        fields: [
+                          { label: 'Interne ID (nicht ändern)', name: 'id',      widget: 'string', hint: 'z.B. cat-01 — bitte nicht verändern' },
+                          { label: 'Serie',                     name: 'series',  widget: 'string', hint: 'z.B. S-Series, S7 Series, JIC Adaptors' },
+                          { label: 'Name (Deutsch)',             name: 'name_de', widget: 'string' },
+                          { label: 'Name (Englisch)',            name: 'name_en', widget: 'string' },
+                          { label: 'Beschreibung (Deutsch)',     name: 'desc_de', widget: 'text',   hint: 'Kurze Beschreibung (max. 120 Zeichen)' },
+                          { label: 'Beschreibung (Englisch)',    name: 'desc_en', widget: 'text' },
+                          {
+                            label: 'Tags',
+                            name: 'tags',
+                            widget: 'list',
+                            hint: 'Kurze Stichwörter, z.B. PTFE, AN, Wiggins',
+                            field: { label: 'Tag', name: 'tag', widget: 'string' }
+                          }
+                        ]
                       }
                     ]
                   }
                 ]
               }
+
             ]
           }
-
-        ]
-      }
-    });
+        });
+      })
+      .catch(function (err) {
+        document.body.innerHTML =
+          '<div style="color:#ef4444;font-family:sans-serif;padding:2rem;max-width:480px;margin:auto">' +
+          '<h2 style="margin-top:0">Admin konnte nicht geladen werden</h2>' +
+          '<p>' + err.message + '</p>' +
+          '<p><a href="/admin" style="color:#3b7fe8">Neu versuchen</a></p></div>';
+      });
   </script>
 </body>
 </html>
