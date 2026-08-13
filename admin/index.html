@@ -5,17 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow">
   <title>supAero Admin</title>
-  <style>
-    body { margin: 0; }
-  </style>
+</head>
+<body>
   <!--
-    netlify-cms 2.x (= Decap CMS 2.x, React 16).
-    Decap CMS 3.x uses React 18 createRoot() which throws a removeChild error
-    when document.body has any child nodes at mount time.
-    netlify-cms 2.x uses ReactDOM.render() and does not have this issue.
-    API is identical — CMS.init() works the same way.
+    netlify-cms 2.x (React 16) — placed at end of <body> so document.body
+    exists when CMS.init() runs. React 16 handles existing body children fine;
+    the removeChild crash only affects decap-cms 3.x (React 18 createRoot).
   -->
-  <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+  <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
   <script>
     CMS.init({
       config: {
@@ -95,6 +92,5 @@
       }
     });
   </script>
-</head>
-<body></body>
+</body>
 </html>
