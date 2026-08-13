@@ -29,25 +29,22 @@
   -->
   <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
   <script>
-    fetch('/api/client-id')
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (data.error) { throw new Error(data.error); }
+    // Client ID is public (appears in every OAuth URL) — safe to embed here.
+    (function () {
+      // Clear ALL body content so React 18 createRoot mounts cleanly.
+      document.body.innerHTML = '';
 
-        // Clear ALL body content so React 18 createRoot mounts cleanly.
-        document.body.innerHTML = '';
-
-        CMS.init({
-          config: {
-            backend: {
-              name: 'github',
-              repo: 'furkankaradeniz68-eng/supaero',
-              branch: 'main',
-              /* PKCE: GitHub handles auth in the main window and
-                 redirects back to this page — no popup, no proxy. */
-              auth_type: 'pkce',
-              app_id: data.clientId
-            },
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'furkankaradeniz68-eng/supaero',
+            branch: 'main',
+            /* PKCE: GitHub redirects back to /admin/ after auth.
+               No popup, no postMessage, no server secret needed. */
+            auth_type: 'pkce',
+            app_id: 'Ov23lilgE6vautmC6hzI'
+          },
             media_folder: 'img/uploads',
             public_folder: '/img/uploads',
             locale: 'de',
@@ -116,14 +113,7 @@
             ]
           }
         });
-      })
-      .catch(function (err) {
-        document.body.innerHTML =
-          '<div style="color:#ef4444;font-family:sans-serif;padding:2rem;max-width:480px;margin:auto">' +
-          '<h2 style="margin-top:0">Admin konnte nicht geladen werden</h2>' +
-          '<p>' + err.message + '</p>' +
-          '<p><a href="/admin" style="color:#3b7fe8">Neu versuchen</a></p></div>';
-      });
+    }());
   </script>
 </body>
 </html>
