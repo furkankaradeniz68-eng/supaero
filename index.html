@@ -21,6 +21,64 @@
   <script src="i18n/translations.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/cookies.js"></script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://supaero.de/#organization",
+        "name": "supAero Superb Hydraulics",
+        "url": "https://supaero.de",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://supaero.de/Logos/supAero-WortLogo-W.webp"
+        },
+        "description": "Specialist in AN fittings, PTFE hydraulic hoses, banjo fittings and high-pressure connectors for motorsport, aerospace, UAV and industrial applications. ISO 9001:2015 certified.",
+        "email": "info@supaero.de",
+        "telephone": "+4963219374179",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "DE"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "supAero Product Catalog",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "S-Series PTFE Braided Hydraulic Hose AN3-AN16"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "S7 Series AN Hydraulic Fittings"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "S4 Series PTFE Hose Assembly"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Series 236 PTFE Hose Assembly"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "JIC AN815 AN816 Fittings and Adaptors"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "BSP CPL Hydraulic Adaptors"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "776 Series Metric Banjo Fittings"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Adel Wiggins AG Series Quick Disconnect Couplings"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Pro:Spec PSQR Quick Release Couplings"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "S900 Firesleeve Fire Protection Sleeving"}}
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://supaero.de/#website",
+        "url": "https://supaero.de",
+        "name": "supAero Superb Hydraulics",
+        "publisher": {"@id": "https://supaero.de/#organization"}
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://supaero.de/#webpage",
+        "url": "https://supaero.de",
+        "name": "supAero — AN Fittings, PTFE Hydraulic Hose & Motorsport Connectors",
+        "isPartOf": {"@id": "https://supaero.de/#website"},
+        "about": {"@id": "https://supaero.de/#organization"},
+        "description": "High-performance AN fittings, PTFE braided hoses, banjo fittings and hydraulic connectors for motorsport, aerospace, UAV and industrial applications."
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
