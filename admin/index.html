@@ -6,99 +6,98 @@
   <meta name="robots" content="noindex, nofollow">
   <title>supAero Admin</title>
   <style>
-    body { margin: 0; background: #1a1f2e; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, sans-serif; }
-    #cms-loading { text-align: center; color: #9ca3af; }
-    #cms-loading .mark { width: 48px; height: 48px; background: #3B7FE8; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 900; color: white; margin: 0 auto 16px; }
-    #cms-loading p { font-size: 14px; margin-top: 8px; }
+    /* Minimal reset — Decap CMS owns the body once loaded */
+    body { margin: 0; }
   </style>
 </head>
 <body>
-  <div id="cms-loading">
-    <div class="mark">sA</div>
-    <strong style="color:white;font-size:16px;">supAero Admin</strong>
-    <p>Wird geladen…</p>
-  </div>
-
-  <!-- Decap CMS — loaded synchronously so CMS.init() runs right after -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!--
+    Decap CMS — pinned to 3.3.3 (stable).
+    Loaded synchronously (no defer) so CMS global is available immediately.
+    CMS.init() is deferred one tick (setTimeout 0) to avoid a React
+    removeChild bug that occurs when DOM nodes exist at mount time.
+  -->
+  <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
   <script>
-    CMS.init({
-      config: {
-        backend: {
-          name: 'github',
-          repo: 'furkankaradeniz68-eng/supaero',
-          branch: 'main',
-          base_url: 'https://supaero.de',
-          auth_endpoint: '/api/auth'
-        },
-        media_folder: 'img/uploads',
-        public_folder: '/img/uploads',
-        locale: 'de',
-        collections: [
-
-          /* ── Einstellungen ───────────────────────────────── */
-          {
-            name: 'einstellungen',
-            label: '⚙️ Einstellungen',
-            files: [
-              {
-                name: 'kontakt',
-                label: 'Kontakt & Unternehmen',
-                file: '_data/settings.json',
-                format: 'json',
-                fields: [
-                  { label: 'E-Mail Adresse',   name: 'email',        widget: 'string', hint: 'Erscheint im Footer und auf der Kontaktseite' },
-                  { label: 'Telefonnummer',     name: 'phone',        widget: 'string', hint: 'Format: +49 6321 9374179' },
-                  { label: 'Firmenname',        name: 'company_name', widget: 'string' },
-                  { label: 'ISO Zertifizierung',name: 'iso_label',    widget: 'string', default: 'ISO 9001:2015 Zertifiziert' },
-                  { label: 'Jahre Erfahrung',   name: 'years_exp',    widget: 'string', default: '15+' },
-                  { label: 'Anzahl Produkte',   name: 'product_count',widget: 'string', default: '2000+' },
-                  { label: 'Belieferte Länder', name: 'countries',    widget: 'string', default: '15+' }
-                ]
-              }
-            ]
+    setTimeout(function () {
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'furkankaradeniz68-eng/supaero',
+            branch: 'main',
+            base_url: 'https://supaero.de',
+            auth_endpoint: '/api/auth'
           },
+          media_folder: 'img/uploads',
+          public_folder: '/img/uploads',
+          locale: 'de',
+          collections: [
 
-          /* ── Produkte ────────────────────────────────────── */
-          {
-            name: 'produkte',
-            label: '📦 Produkte',
-            files: [
-              {
-                name: 'produktliste',
-                label: 'Alle 20 Produktkategorien',
-                file: '_data/products.json',
-                format: 'json',
-                fields: [
-                  {
-                    label: 'Produkte',
-                    name: 'products',
-                    widget: 'list',
-                    summary: '{{fields.series}} — {{fields.name_de}}',
-                    fields: [
-                      { label: 'Interne ID (nicht ändern)', name: 'id',      widget: 'string', hint: 'z.B. cat-01 — bitte nicht verändern' },
-                      { label: 'Serie',                     name: 'series',  widget: 'string', hint: 'z.B. S-Series, S7 Series, JIC Adaptors' },
-                      { label: 'Name (Deutsch)',             name: 'name_de', widget: 'string' },
-                      { label: 'Name (Englisch)',            name: 'name_en', widget: 'string' },
-                      { label: 'Beschreibung (Deutsch)',     name: 'desc_de', widget: 'text',   hint: 'Kurze Beschreibung für die Produktkarte (max. 120 Zeichen)' },
-                      { label: 'Beschreibung (Englisch)',    name: 'desc_en', widget: 'text' },
-                      {
-                        label: 'Tags',
-                        name: 'tags',
-                        widget: 'list',
-                        hint: 'Kurze Stichwörter, z.B. PTFE, AN, Wiggins',
-                        field: { label: 'Tag', name: 'tag', widget: 'string' }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
+            /* ── Einstellungen ─────────────────────────────── */
+            {
+              name: 'einstellungen',
+              label: '⚙️ Einstellungen',
+              files: [
+                {
+                  name: 'kontakt',
+                  label: 'Kontakt & Unternehmen',
+                  file: '_data/settings.json',
+                  format: 'json',
+                  fields: [
+                    { label: 'E-Mail Adresse',    name: 'email',         widget: 'string', hint: 'Erscheint im Footer und auf der Kontaktseite' },
+                    { label: 'Telefonnummer',      name: 'phone',         widget: 'string', hint: 'Format: +49 6321 9374179' },
+                    { label: 'Firmenname',         name: 'company_name',  widget: 'string' },
+                    { label: 'ISO Zertifizierung', name: 'iso_label',     widget: 'string', default: 'ISO 9001:2015 Zertifiziert' },
+                    { label: 'Jahre Erfahrung',    name: 'years_exp',     widget: 'string', default: '15+' },
+                    { label: 'Anzahl Produkte',    name: 'product_count', widget: 'string', default: '2000+' },
+                    { label: 'Belieferte Länder',  name: 'countries',     widget: 'string', default: '15+' }
+                  ]
+                }
+              ]
+            },
 
-        ]
-      }
-    });
+            /* ── Produkte ──────────────────────────────────── */
+            {
+              name: 'produkte',
+              label: '📦 Produkte',
+              files: [
+                {
+                  name: 'produktliste',
+                  label: 'Alle 20 Produktkategorien',
+                  file: '_data/products.json',
+                  format: 'json',
+                  fields: [
+                    {
+                      label: 'Produkte',
+                      name: 'products',
+                      widget: 'list',
+                      summary: '{{fields.series}} — {{fields.name_de}}',
+                      fields: [
+                        { label: 'Interne ID (nicht ändern)', name: 'id',      widget: 'string', hint: 'z.B. cat-01 — bitte nicht verändern' },
+                        { label: 'Serie',                     name: 'series',  widget: 'string', hint: 'z.B. S-Series, S7 Series, JIC Adaptors' },
+                        { label: 'Name (Deutsch)',             name: 'name_de', widget: 'string' },
+                        { label: 'Name (Englisch)',            name: 'name_en', widget: 'string' },
+                        { label: 'Beschreibung (Deutsch)',     name: 'desc_de', widget: 'text',   hint: 'Kurze Beschreibung für die Produktkarte (max. 120 Zeichen)' },
+                        { label: 'Beschreibung (Englisch)',    name: 'desc_en', widget: 'text' },
+                        {
+                          label: 'Tags',
+                          name: 'tags',
+                          widget: 'list',
+                          hint: 'Kurze Stichwörter, z.B. PTFE, AN, Wiggins',
+                          field: { label: 'Tag', name: 'tag', widget: 'string' }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+
+          ]
+        }
+      });
+    }, 0);
   </script>
 </body>
 </html>
