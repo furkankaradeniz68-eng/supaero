@@ -80,6 +80,8 @@
     });
   </script>
   <script src="../js/cookies.js" defer></script>
+  <!-- content-loader.js: hydrates product cards & contact info from CMS-managed JSON -->
+  <script src="../js/content-loader.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -428,7 +430,7 @@
     <div class="products-full-grid">
 
       <!-- 01 THE NEW S-SERIES (Hoses) -->
-      <div class="product-full-card reveal" data-cat="hoses" id="hoses">
+      <div class="product-full-card reveal" data-cat="hoses" id="hoses" data-pid="cat-01">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="eager" class="pfc-main-img" src="../Produktbilder/web/cat-01.webp" alt="supAero S-Series PTFE Braided Hydraulic Hose — New Generation AN3 to AN16" style="transition:opacity .3s;">
@@ -445,7 +447,7 @@
       </div>
 
       <!-- 02 S7 SERIES WIGGINS / PLUG-INS -->
-      <div class="product-full-card reveal reveal-delay-1" data-cat="connectors" id="s7-plug">
+      <div class="product-full-card reveal reveal-delay-1" data-cat="connectors" id="s7-plug" data-pid="cat-02">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="eager" class="pfc-main-img" src="../Produktbilder/web/cat-02.webp" alt="supAero S7 Series Wiggins Plug-In Quick Connect Hydraulic Coupling" style="transition:opacity .3s;">
@@ -460,7 +462,7 @@
       </div>
 
       <!-- 03 S7 SERIES -20 & -24 -->
-      <div class="product-full-card reveal reveal-delay-2" data-cat="fittings" id="s7">
+      <div class="product-full-card reveal reveal-delay-2" data-cat="fittings" id="s7" data-pid="cat-03">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="eager" class="pfc-main-img" src="../Produktbilder/web/cat-03.webp" alt="supAero S7 Series Large Bore AN20 AN24 Hydraulic Fitting" style="transition:opacity .3s;">
@@ -477,7 +479,7 @@
       </div>
 
       <!-- 04 910 & 811 SERIES -->
-      <div class="product-full-card reveal" data-cat="hoses" id="s910">
+      <div class="product-full-card reveal" data-cat="hoses" id="s910" data-pid="cat-04">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="eager" class="pfc-main-img" src="../Produktbilder/web/cat-04.webp" alt="supAero 910 Series 811 Series AN Adaptor Hydraulic Fitting" style="transition:opacity .3s;">
@@ -494,7 +496,7 @@
       </div>
 
       <!-- 05 S4 SERIES -->
-      <div class="product-full-card reveal reveal-delay-1" data-cat="fittings" id="s4">
+      <div class="product-full-card reveal reveal-delay-1" data-cat="fittings" id="s4" data-pid="cat-05">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-05.webp" alt="supAero S4 Series PTFE Hydraulic Hose Straight 45 90 120 150 180 Degree" style="transition:opacity .3s;">
@@ -511,7 +513,7 @@
       </div>
 
       <!-- 06 S4 SERIES WIGGINS / PLUG-INS -->
-      <div class="product-full-card reveal reveal-delay-2" data-cat="connectors" id="s4-plug">
+      <div class="product-full-card reveal reveal-delay-2" data-cat="connectors" id="s4-plug" data-pid="cat-06">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-06.webp" alt="supAero S4 Series Wiggins Plug-In Quick Disconnect Coupling" style="transition:opacity .3s;">
@@ -526,7 +528,7 @@
       </div>
 
       <!-- 07 811 & 812 SERIES -->
-      <div class="product-full-card reveal" data-cat="fittings" id="811">
+      <div class="product-full-card reveal" data-cat="fittings" id="811" data-pid="cat-07">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-07.webp" alt="supAero Series 811 812 AN Adaptor Fitting Motorsport Aerospace" style="transition:opacity .3s;">
@@ -543,7 +545,7 @@
       </div>
 
       <!-- 08 ADEL WIGGINS COUPLINGS -->
-      <div class="product-full-card reveal reveal-delay-1" data-cat="connectors" id="adel">
+      <div class="product-full-card reveal reveal-delay-1" data-cat="connectors" id="adel" data-pid="cat-08">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-08.webp" alt="supAero Adel Wiggins AG Series Quick Disconnect Dry-Break Coupling" style="transition:opacity .3s;">
@@ -558,7 +560,7 @@
       </div>
 
       <!-- 09 PRO:SPEC NO NUT QUICK RELEASE FITTINGS SYSTEM -->
-      <div class="product-full-card reveal reveal-delay-2" data-cat="connectors" id="prospec">
+      <div class="product-full-card reveal reveal-delay-2" data-cat="connectors" id="prospec" data-pid="cat-09">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-09.webp" alt="supAero Pro:Spec PSQR Quick Release AN Coupling Racing Aerospace" style="transition:opacity .3s;">
@@ -575,7 +577,7 @@
       </div>
 
       <!-- 10 JIC TO JIC ADAPTORS -->
-      <div class="product-full-card reveal" data-cat="fittings" id="jic-jic">
+      <div class="product-full-card reveal" data-cat="fittings" id="jic-jic" data-pid="cat-10">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-10.webp" alt="supAero JIC AN815 AN816 Male to Male Female Adaptor AN3 to AN16" style="transition:opacity .3s;">
@@ -590,7 +592,7 @@
       </div>
 
       <!-- 11 JIC UNEQUAL & MALE TO FEMALE -->
-      <div class="product-full-card reveal reveal-delay-1" data-cat="fittings" id="jic-unequal">
+      <div class="product-full-card reveal reveal-delay-1" data-cat="fittings" id="jic-unequal" data-pid="cat-11">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-11.webp" alt="supAero JIC Unequal AN819 Male to Female AN Reducer Adaptor" style="transition:opacity .3s;">
@@ -605,7 +607,7 @@
       </div>
 
       <!-- 12 SPECIAL ADAPTORS (BSP) -->
-      <div class="product-full-card reveal reveal-delay-2" data-cat="fittings" id="bsp">
+      <div class="product-full-card reveal reveal-delay-2" data-cat="fittings" id="bsp" data-pid="cat-12">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-12.webp" alt="supAero BSP CPL 45 90 Degree Special Adaptor Hydraulic Fitting" style="transition:opacity .3s;">
@@ -622,7 +624,7 @@
       </div>
 
       <!-- 13 JIC TO NPT ADAPTORS -->
-      <div class="product-full-card reveal" data-cat="fittings" id="jic-npt">
+      <div class="product-full-card reveal" data-cat="fittings" id="jic-npt" data-pid="cat-13">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-13.webp" alt="supAero JIC to NPT AN823 AN832 Adaptor Fitting" style="transition:opacity .3s;">
@@ -637,7 +639,7 @@
       </div>
 
       <!-- 14 NPT ADAPTORS -->
-      <div class="product-full-card reveal reveal-delay-1" data-cat="fittings" id="npt">
+      <div class="product-full-card reveal reveal-delay-1" data-cat="fittings" id="npt" data-pid="cat-14">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-14.webp" alt="supAero NPT Male Female AN819 AN837 AN843 Hydraulic Adaptor" style="transition:opacity .3s;">
@@ -652,7 +654,7 @@
       </div>
 
       <!-- 15 METRIC & METRIC SPECIAL ADAPTORS -->
-      <div class="product-full-card reveal reveal-delay-2" data-cat="fittings" id="metric">
+      <div class="product-full-card reveal reveal-delay-2" data-cat="fittings" id="metric" data-pid="cat-15">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-15.webp" alt="supAero Metric 306 Series M10 M12 M14 M16 M18 M22 M24 Banjo Adaptor" style="transition:opacity .3s;">
@@ -667,7 +669,7 @@
       </div>
 
       <!-- 16 JIC/UNF & METRIC BANJO ADAPTORS & BANJOS -->
-      <div class="product-full-card reveal" data-cat="fittings" id="banjo">
+      <div class="product-full-card reveal" data-cat="fittings" id="banjo" data-pid="cat-16">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-16.webp" alt="supAero 776 Series Metric Banjo Fitting Single Double Hydraulic" style="transition:opacity .3s;">
@@ -682,7 +684,7 @@
       </div>
 
       <!-- 17 BRAKE SYSTEM REUSABLE -->
-      <div class="product-full-card reveal reveal-delay-1" data-cat="hoses" id="brake">
+      <div class="product-full-card reveal reveal-delay-1" data-cat="hoses" id="brake" data-pid="cat-17">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-17.webp" alt="supAero 600 Series Reusable Brake Hose Fitting Motorsport" style="transition:opacity .3s;">
@@ -697,7 +699,7 @@
       </div>
 
       <!-- 18 236 FUEL SYSTEM -->
-      <div class="product-full-card reveal reveal-delay-2" data-cat="fittings" id="236">
+      <div class="product-full-card reveal reveal-delay-2" data-cat="fittings" id="236" data-pid="cat-18">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-18.webp" alt="supAero Series 236 PTFE Hose Assembly 0 45 90 120 150 180 Degree Fuel Oil Brake" style="transition:opacity .3s;">
@@ -714,7 +716,7 @@
       </div>
 
       <!-- 19 536 SERIES -->
-      <div class="product-full-card reveal" data-cat="fittings" id="536">
+      <div class="product-full-card reveal" data-cat="fittings" id="536" data-pid="cat-19">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-19.webp" alt="supAero Series 536 PTFE Hose Fitting Assembly Racing" style="transition:opacity .3s;">
@@ -731,7 +733,7 @@
       </div>
 
       <!-- 20 FIRE SLEEVE -->
-      <div class="product-full-card reveal reveal-delay-1" data-cat="accessories" id="accessories">
+      <div class="product-full-card reveal reveal-delay-1" data-cat="accessories" id="accessories" data-pid="cat-20">
         <div class="pfc-image pfc-viewer">
           <div class="pfc-image-inner">
           <img loading="lazy" class="pfc-main-img" src="../Produktbilder/web/cat-20.webp" alt="supAero S900 Firesleeve Fire Protection Sleeve AN4 AN6 AN8 AN10 AN12 AN16 AN20" style="transition:opacity .3s;">

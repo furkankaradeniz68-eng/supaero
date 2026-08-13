@@ -1,0 +1,102 @@
+backend:
+  name: github
+  repo: furkankaradeniz68-eng/supaero
+  branch: main
+  base_url: https://supaero.de
+  auth_endpoint: /api/auth
+
+# Medien-Uploads
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+# Sprache der Admin-Oberfläche
+locale: 'de'
+
+# ─────────────────────────────────────────────
+# COLLECTIONS
+# ─────────────────────────────────────────────
+collections:
+
+  # ── Einstellungen ──────────────────────────
+  - name: "einstellungen"
+    label: "⚙️ Einstellungen"
+    files:
+
+      - name: "kontakt"
+        label: "Kontakt & Unternehmen"
+        file: "_data/settings.json"
+        format: json
+        fields:
+          - label: "E-Mail Adresse"
+            name: "email"
+            widget: "string"
+            hint: "Erscheint im Footer und auf der Kontaktseite"
+          - label: "Telefonnummer"
+            name: "phone"
+            widget: "string"
+            hint: "Format: +49 6321 9374179"
+          - label: "Firmenname"
+            name: "company_name"
+            widget: "string"
+          - label: "ISO Zertifizierung"
+            name: "iso_label"
+            widget: "string"
+            default: "ISO 9001:2015 Zertifiziert"
+            hint: "Erscheint auf der Startseite"
+          - label: "Jahre Erfahrung"
+            name: "years_exp"
+            widget: "string"
+            default: "15+"
+          - label: "Anzahl Produkte"
+            name: "product_count"
+            widget: "string"
+            default: "2000+"
+          - label: "Belieferte Länder"
+            name: "countries"
+            widget: "string"
+            default: "15+"
+
+  # ── Produkte ───────────────────────────────
+  - name: "produkte"
+    label: "📦 Produkte"
+    files:
+
+      - name: "produktliste"
+        label: "Alle 20 Produktkategorien"
+        file: "_data/products.json"
+        format: json
+        fields:
+          - label: "Produkte"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.series}} — {{fields.name_de}}"
+            fields:
+              - label: "Interne ID (nicht ändern)"
+                name: "id"
+                widget: "string"
+                hint: "z.B. cat-01 — bitte nicht verändern"
+              - label: "Serie"
+                name: "series"
+                widget: "string"
+                hint: "z.B. S-Series, S7 Series, JIC Adapters"
+              - label: "Name (Deutsch)"
+                name: "name_de"
+                widget: "string"
+              - label: "Name (Englisch)"
+                name: "name_en"
+                widget: "string"
+              - label: "Beschreibung (Deutsch)"
+                name: "desc_de"
+                widget: "text"
+                hint: "Kurze Beschreibung für die Produktkarte (max. 120 Zeichen)"
+              - label: "Beschreibung (Englisch)"
+                name: "desc_en"
+                widget: "text"
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                hint: "Kurze Stichwörter, z.B. PTFE, AN, Wiggins"
+                field:
+                  label: "Tag"
+                  name: "tag"
+                  widget: "string"
