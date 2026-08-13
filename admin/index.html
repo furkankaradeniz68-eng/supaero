@@ -3,117 +3,707 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow" />
   <title>supAero Admin</title>
   <style>
-    body { margin: 0; display: flex; align-items: center; justify-content: center;
-           min-height: 100vh; font-family: system-ui, sans-serif; background: #1a1f2e; }
-    #msg { color: #9ca3af; font-size: 0.95rem; text-align: center; }
-    #msg strong { display: block; color: #fff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0f1219;
+      --surface:  #1a1f2e;
+      --surface2: #232838;
+      --border:   #2d3348;
+      --blue:     #3B7FE8;
+      --blue-dk:  #2d66c8;
+      --text:     #e2e8f0;
+      --muted:    #8892a4;
+      --green:    #34d399;
+      --red:      #f87171;
+      --r:        8px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* ── Login ─────────────────────────────────────────────── */
+    #login-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .login-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.5rem 2.25rem;
+      text-align: center;
+      max-width: 380px;
+      width: 100%;
+    }
+
+    .login-logo {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -.02em;
+      margin-bottom: .3rem;
+    }
+
+    .login-sub {
+      color: var(--muted);
+      font-size: .88rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Admin shell ───────────────────────────────────────── */
+    #admin-panel { display: none; }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .hdr-logo { font-weight: 700; font-size: 1.05rem; color: var(--blue); }
+    .hdr-logo span { color: var(--muted); font-weight: 400; font-size: .82rem; margin-left: .6rem; }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* ── Tabs ──────────────────────────────────────────────── */
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      color: var(--muted);
+      font-size: .92rem;
+      padding: .75rem 1.25rem;
+      cursor: pointer;
+      transition: color .15s, border-color .15s;
+    }
+    .tab-btn.active       { color: var(--blue); border-bottom-color: var(--blue); }
+    .tab-btn:hover:not(.active) { color: var(--text); }
+
+    .tab-panel         { display: none; }
+    .tab-panel.active  { display: block; }
+
+    /* ── Cards / forms ─────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: .95rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .field { margin-bottom: 1.2rem; }
+
+    label {
+      display: block;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: .4rem;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      color: var(--text);
+      font-size: .92rem;
+      font-family: inherit;
+      padding: .58rem .85rem;
+      outline: none;
+      transition: border-color .15s;
+    }
+    input[type="text"]:focus, textarea:focus { border-color: var(--blue); }
+    textarea { resize: vertical; min-height: 76px; }
+
+    .hint { font-size: .76rem; color: var(--muted); margin-top: .3rem; }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-footer {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    /* ── Buttons ───────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      padding: .6rem 1.3rem;
+      border-radius: var(--r);
+      font-size: .92rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      transition: opacity .15s, background .15s;
+      white-space: nowrap;
+    }
+    .btn:disabled { opacity: .45; cursor: not-allowed; }
+
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: var(--blue-dk); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover:not(:disabled) { color: var(--text); border-color: var(--muted); }
+
+    .btn-danger {
+      background: transparent;
+      color: var(--red);
+      border: 1px solid transparent;
+    }
+    .btn-danger:hover { border-color: var(--red); }
+
+    /* ── Product accordion ─────────────────────────────────── */
+    .prod-list { display: flex; flex-direction: column; gap: .4rem; }
+
+    .prod-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+
+    .prod-hdr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .8rem 1.1rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background .15s;
+    }
+    .prod-hdr:hover { background: var(--surface2); }
+
+    .prod-hdr-l { display: flex; align-items: center; gap: .65rem; }
+
+    .prod-id {
+      font-size: .72rem;
+      color: var(--muted);
+      background: var(--surface2);
+      padding: .12rem .45rem;
+      border-radius: 4px;
+      font-family: monospace;
+      flex-shrink: 0;
+    }
+
+    .prod-series { font-size: .75rem; color: var(--blue); line-height: 1.2; }
+    .prod-name-hdr { font-size: .9rem; font-weight: 500; }
+
+    .chevron {
+      color: var(--muted);
+      font-size: .7rem;
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+    .prod-item.open .chevron { transform: rotate(180deg); }
+
+    .prod-body {
+      display: none;
+      padding: 1.2rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .prod-item.open .prod-body { display: block; }
+
+    /* Tags */
+    .tag-row { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .4rem; }
+    .tag {
+      background: var(--surface2);
+      color: var(--muted);
+      font-size: .72rem;
+      padding: .1rem .45rem;
+      border-radius: 4px;
+    }
+
+    /* ── Status toast ──────────────────────────────────────── */
+    #toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: .65rem 1.25rem;
+      border-radius: var(--r);
+      font-size: .9rem;
+      font-weight: 500;
+      display: none;
+      z-index: 300;
+      box-shadow: 0 4px 24px rgba(0,0,0,.45);
+      white-space: nowrap;
+    }
+    #toast.ok  { background: #064e3b; color: var(--green); border: 1px solid #065f46; }
+    #toast.err { background: #450a0a; color: var(--red);   border: 1px solid #7f1d1d; }
+
+    /* ── Error banners ─────────────────────────────────────── */
+    .err-banner {
+      background: #450a0a;
+      color: var(--red);
+      border: 1px solid #7f1d1d;
+      border-radius: var(--r);
+      padding: .9rem 1.1rem;
+      font-size: .88rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Spinner ───────────────────────────────────────────── */
+    .spin {
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .65s linear infinite;
+      display: inline-block;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .field-row { grid-template-columns: 1fr; }
+      main { padding: 1rem; }
+      header { padding: 0 1rem; }
+      .prod-hdr { padding: .7rem .85rem; }
+    }
   </style>
 </head>
 <body>
-  <div id="msg"><strong>supAero Admin</strong>Wird geladen…</div>
 
-  <!--
-    Decap CMS 3.x — PKCE flow (Proof Key for Code Exchange).
-    No server-side secret, no popup, no postMessage needed.
-    GitHub redirects back to this page with ?code=…; the CMS
-    handles the token exchange entirely in the browser.
+<!-- ════════════════════════════════════════════════════════════
+     LOGIN SCREEN
+     ════════════════════════════════════════════════════════════ -->
+<div id="login-screen" style="display:none">
+  <div class="login-card">
+    <div class="login-logo">supAero</div>
+    <div class="login-sub">Admin-Bereich — Inhalte bearbeiten</div>
+    <div id="login-err" class="err-banner" style="display:none"></div>
+    <button class="btn btn-primary" onclick="login()" style="width:100%">
+      Mit GitHub anmelden
+    </button>
+    <p style="color:var(--muted);font-size:.78rem;margin-top:1rem">
+      Sie werden zu GitHub weitergeleitet und kehren automatisch zurück.
+    </p>
+  </div>
+</div>
 
-    Fix for React 18 "removeChild" bug:
-    document.body.innerHTML = '' clears all child nodes before
-    CMS.init() so ReactDOM.createRoot() mounts on an empty body.
-    The CMS script is already evaluated at that point (it ran
-    synchronously), so the global CMS object is still available.
-  -->
-  <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
-  <script>
-    // Client ID is public (appears in every OAuth URL) — safe to embed here.
-    (function () {
-      // Clear ALL body content so React 18 createRoot mounts cleanly.
-      document.body.innerHTML = '';
+<!-- ════════════════════════════════════════════════════════════
+     ADMIN PANEL
+     ════════════════════════════════════════════════════════════ -->
+<div id="admin-panel">
+  <header>
+    <div class="hdr-logo">supAero <span>Admin</span></div>
+    <button class="btn btn-danger" onclick="logout()">Abmelden</button>
+  </header>
 
-      CMS.init({
-        config: {
-          backend: {
-            name: 'github',
-            repo: 'furkankaradeniz68-eng/supaero',
-            branch: 'main',
-            /* PKCE: GitHub redirects back to /admin/ after auth.
-               No popup, no postMessage, no server secret needed. */
-            auth_type: 'pkce',
-            app_id: 'Ov23lilgE6vautmC6hzI'
-          },
-            media_folder: 'img/uploads',
-            public_folder: '/img/uploads',
-            locale: 'de',
-            collections: [
+  <main>
+    <div id="top-err" class="err-banner" style="display:none"></div>
 
-              /* ── Einstellungen ─────────────────────────────── */
-              {
-                name: 'einstellungen',
-                label: '⚙️ Einstellungen',
-                files: [
-                  {
-                    name: 'kontakt',
-                    label: 'Kontakt & Unternehmen',
-                    file: '_data/settings.json',
-                    format: 'json',
-                    fields: [
-                      { label: 'E-Mail Adresse',    name: 'email',         widget: 'string', hint: 'Erscheint im Footer und auf der Kontaktseite' },
-                      { label: 'Telefonnummer',      name: 'phone',         widget: 'string', hint: 'Format: +49 6321 9374179' },
-                      { label: 'Firmenname',         name: 'company_name',  widget: 'string' },
-                      { label: 'ISO Zertifizierung', name: 'iso_label',     widget: 'string', default: 'ISO 9001:2015 Zertifiziert' },
-                      { label: 'Jahre Erfahrung',    name: 'years_exp',     widget: 'string', default: '15+' },
-                      { label: 'Anzahl Produkte',    name: 'product_count', widget: 'string', default: '2000+' },
-                      { label: 'Belieferte Länder',  name: 'countries',     widget: 'string', default: '15+' }
-                    ]
-                  }
-                ]
-              },
+    <!-- Tabs -->
+    <nav class="tabs">
+      <button class="tab-btn active" onclick="switchTab('settings', this)">⚙️ Einstellungen</button>
+      <button class="tab-btn"        onclick="switchTab('products', this)">📦 Produkte</button>
+    </nav>
 
-              /* ── Produkte ──────────────────────────────────── */
-              {
-                name: 'produkte',
-                label: '📦 Produkte',
-                files: [
-                  {
-                    name: 'produktliste',
-                    label: 'Alle 20 Produktkategorien',
-                    file: '_data/products.json',
-                    format: 'json',
-                    fields: [
-                      {
-                        label: 'Produkte',
-                        name: 'products',
-                        widget: 'list',
-                        summary: '{{fields.series}} — {{fields.name_de}}',
-                        fields: [
-                          { label: 'Interne ID (nicht ändern)', name: 'id',      widget: 'string', hint: 'z.B. cat-01 — bitte nicht verändern' },
-                          { label: 'Serie',                     name: 'series',  widget: 'string', hint: 'z.B. S-Series, S7 Series, JIC Adaptors' },
-                          { label: 'Name (Deutsch)',             name: 'name_de', widget: 'string' },
-                          { label: 'Name (Englisch)',            name: 'name_en', widget: 'string' },
-                          { label: 'Beschreibung (Deutsch)',     name: 'desc_de', widget: 'text',   hint: 'Kurze Beschreibung (max. 120 Zeichen)' },
-                          { label: 'Beschreibung (Englisch)',    name: 'desc_en', widget: 'text' },
-                          {
-                            label: 'Tags',
-                            name: 'tags',
-                            widget: 'list',
-                            hint: 'Kurze Stichwörter, z.B. PTFE, AN, Wiggins',
-                            field: { label: 'Tag', name: 'tag', widget: 'string' }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
+    <!-- ── Settings tab ───────────────────────────────────── -->
+    <div id="tab-settings" class="tab-panel active">
+      <div class="card">
+        <div class="section-title">Kontakt &amp; Unternehmen</div>
+        <form id="settings-form" onsubmit="saveSettings(event)">
 
-            ]
-          }
-        });
-    }());
-  </script>
+          <div class="field">
+            <label>E-Mail-Adresse</label>
+            <input type="text" name="email" placeholder="info@supaero.de" />
+            <div class="hint">Erscheint im Footer und auf der Kontaktseite</div>
+          </div>
+
+          <div class="field">
+            <label>Telefonnummer</label>
+            <input type="text" name="phone" placeholder="+49 6321 9374179" />
+          </div>
+
+          <div class="field">
+            <label>Firmenname</label>
+            <input type="text" name="company_name" />
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label>ISO-Zertifizierung</label>
+              <input type="text" name="iso_label" />
+            </div>
+            <div class="field">
+              <label>Jahre Erfahrung</label>
+              <input type="text" name="years_exp" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label>Anzahl Produkte</label>
+              <input type="text" name="product_count" />
+            </div>
+            <div class="field">
+              <label>Belieferte Länder</label>
+              <input type="text" name="countries" />
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn btn-primary" id="s-save-btn">Speichern</button>
+            <button type="button" class="btn btn-ghost"   onclick="loadSettings()">Zurücksetzen</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ── Products tab ───────────────────────────────────── -->
+    <div id="tab-products" class="tab-panel">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
+        <div class="section-title" style="margin:0">20 Produktkategorien</div>
+        <button class="btn btn-primary" id="p-save-btn" onclick="saveProducts()">Alle speichern</button>
+      </div>
+      <div id="prod-list" class="prod-list">
+        <div style="color:var(--muted);padding:2rem;text-align:center">Wird geladen…</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Toast notification -->
+<div id="toast"></div>
+
+<script>
+'use strict';
+
+/* ── Config ──────────────────────────────────────────────────── */
+const REPO   = 'furkankaradeniz68-eng/supaero';
+const BRANCH = 'main';
+const GH_API = 'https://api.github.com/repos/' + REPO + '/contents/';
+const TOKEN_KEY = 'gh_admin_token';
+
+/* ── State ───────────────────────────────────────────────────── */
+let settingsSha = null;
+let productsSha = null;
+let productsArr = null;  // the raw products array
+
+/* ══════════════════════════════════════════════════════════════
+   BOOT — runs immediately on page load
+   ══════════════════════════════════════════════════════════════ */
+(function boot() {
+  const p     = new URLSearchParams(location.search);
+  const token = p.get('auth');
+  const error = p.get('error');
+
+  /* Token delivered via redirect from /api/callback */
+  if (token) {
+    sessionStorage.setItem(TOKEN_KEY, token);
+    history.replaceState(null, '', location.pathname);
+  }
+
+  /* Error delivered via redirect */
+  if (error) {
+    sessionStorage.removeItem(TOKEN_KEY);
+    history.replaceState(null, '', location.pathname);
+    showLoginErr(decodeURIComponent(error));
+  }
+
+  if (sessionStorage.getItem(TOKEN_KEY)) {
+    showAdmin();
+  } else {
+    document.getElementById('login-screen').style.display = 'flex';
+  }
+})();
+
+/* ── Auth ────────────────────────────────────────────────────── */
+function login()  { location.href = '/api/auth'; }
+function logout() { sessionStorage.removeItem(TOKEN_KEY); location.href = '/admin/'; }
+function token()  { return sessionStorage.getItem(TOKEN_KEY); }
+
+/* ── UI ──────────────────────────────────────────────────────── */
+function showAdmin() {
+  document.getElementById('login-screen').style.display  = 'none';
+  document.getElementById('admin-panel').style.display   = 'block';
+  loadSettings();
+  loadProducts();
+}
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+function showLoginErr(msg) {
+  const el = document.getElementById('login-err');
+  el.textContent = 'Anmelde-Fehler: ' + msg;
+  el.style.display = 'block';
+  document.getElementById('login-screen').style.display = 'flex';
+}
+
+function setTopErr(msg) {
+  const el = document.getElementById('top-err');
+  if (msg) { el.textContent = msg; el.style.display = 'block'; }
+  else      { el.style.display = 'none'; }
+}
+
+function toast(msg, type) {
+  const el = document.getElementById('toast');
+  el.textContent  = msg;
+  el.className    = type || 'ok';
+  el.style.display = 'block';
+  clearTimeout(el._t);
+  el._t = setTimeout(() => { el.style.display = 'none'; }, 3800);
+}
+
+function setLoading(id, on) {
+  const btn = document.getElementById(id);
+  if (!btn) return;
+  if (on) {
+    btn.disabled = true;
+    btn._txt = btn.innerHTML;
+    btn.innerHTML = '<span class="spin"></span>';
+  } else {
+    btn.disabled = false;
+    btn.innerHTML = btn._txt || btn.innerHTML;
+  }
+}
+
+/* ── GitHub Contents API ─────────────────────────────────────── */
+async function ghGet(path) {
+  const res = await fetch(GH_API + path + '?ref=' + BRANCH, {
+    headers: {
+      Authorization: 'Bearer ' + token(),
+      Accept: 'application/vnd.github.v3+json',
+    },
+  });
+  if (res.status === 401) { logout(); throw new Error('Session abgelaufen — bitte neu anmelden'); }
+  if (!res.ok) throw new Error('GitHub-Fehler ' + res.status + ' beim Laden von ' + path);
+  const data = await res.json();
+  // GitHub encodes content as base64 with newlines — strip them before decoding
+  const json = JSON.parse(atob(data.content.replace(/\n/g, '')));
+  return { content: json, sha: data.sha };
+}
+
+async function ghPut(path, sha, content, message) {
+  // Encode JSON → UTF-8 bytes → base64 (handles umlauts / special chars)
+  const jsonStr = JSON.stringify(content, null, 2);
+  const encoded = btoa(unescape(encodeURIComponent(jsonStr)));
+
+  const res = await fetch(GH_API + path, {
+    method: 'PUT',
+    headers: {
+      Authorization: 'Bearer ' + token(),
+      'Content-Type': 'application/json',
+      Accept: 'application/vnd.github.v3+json',
+    },
+    body: JSON.stringify({ message, content: encoded, sha, branch: BRANCH }),
+  });
+  if (res.status === 401) { logout(); throw new Error('Session abgelaufen — bitte neu anmelden'); }
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || 'GitHub-Fehler ' + res.status + ' beim Speichern');
+  }
+  return res.json();
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SETTINGS
+   ══════════════════════════════════════════════════════════════ */
+const SETTINGS_KEYS = ['email','phone','company_name','iso_label','years_exp','product_count','countries'];
+
+async function loadSettings() {
+  try {
+    const { content, sha } = await ghGet('_data/settings.json');
+    settingsSha = sha;
+    const form = document.getElementById('settings-form');
+    SETTINGS_KEYS.forEach(k => {
+      const el = form.elements[k];
+      if (el) el.value = content[k] || '';
+    });
+    setTopErr(null);
+  } catch (e) {
+    setTopErr(e.message);
+  }
+}
+
+async function saveSettings(evt) {
+  evt.preventDefault();
+  setLoading('s-save-btn', true);
+  try {
+    const form = document.getElementById('settings-form');
+    const content = {};
+    SETTINGS_KEYS.forEach(k => {
+      content[k] = (form.elements[k]?.value || '').trim();
+    });
+    const result = await ghPut(
+      '_data/settings.json', settingsSha, content,
+      'Admin: Einstellungen aktualisiert'
+    );
+    settingsSha = result.content.sha;
+    toast('✓ Einstellungen gespeichert — Website aktualisiert in ~30 Sek.', 'ok');
+  } catch (e) {
+    toast('Fehler: ' + e.message, 'err');
+  }
+  setLoading('s-save-btn', false);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PRODUCTS
+   ══════════════════════════════════════════════════════════════ */
+async function loadProducts() {
+  const list = document.getElementById('prod-list');
+  try {
+    const { content, sha } = await ghGet('_data/products.json');
+    productsSha = sha;
+    productsArr = content.products;   // { products: [...] }
+    renderProducts();
+  } catch (e) {
+    list.innerHTML = '<div class="err-banner">' + esc(e.message) + '</div>';
+  }
+}
+
+function renderProducts() {
+  const list = document.getElementById('prod-list');
+  if (!productsArr) return;
+
+  list.innerHTML = productsArr.map((p, i) => `
+    <div class="prod-item" id="pi${i}">
+      <div class="prod-hdr" onclick="toggleProd(${i})">
+        <div class="prod-hdr-l">
+          <span class="prod-id">${esc(p.id)}</span>
+          <div>
+            <div class="prod-series">${esc(p.series)}</div>
+            <div class="prod-name-hdr">${esc(p.name_de)}</div>
+          </div>
+        </div>
+        <span class="chevron">&#9660;</span>
+      </div>
+      <div class="prod-body">
+        <div class="field-row">
+          <div class="field">
+            <label>Name (Deutsch)</label>
+            <input type="text" id="p${i}_name_de" value="${esc(p.name_de)}" />
+          </div>
+          <div class="field">
+            <label>Name (Englisch)</label>
+            <input type="text" id="p${i}_name_en" value="${esc(p.name_en)}" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Beschreibung (Deutsch)</label>
+            <textarea id="p${i}_desc_de">${esc(p.desc_de)}</textarea>
+          </div>
+          <div class="field">
+            <label>Beschreibung (Englisch)</label>
+            <textarea id="p${i}_desc_en">${esc(p.desc_en)}</textarea>
+          </div>
+        </div>
+        ${p.tags && p.tags.length ? `
+        <div class="field">
+          <label>Tags</label>
+          <div class="tag-row">${p.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+        </div>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleProd(i) {
+  document.getElementById('pi' + i).classList.toggle('open');
+}
+
+async function saveProducts() {
+  setLoading('p-save-btn', true);
+  try {
+    // Read current form values back into productsArr (in-place)
+    productsArr.forEach((p, i) => {
+      p.name_de = val('p' + i + '_name_de') || p.name_de;
+      p.name_en = val('p' + i + '_name_en') || p.name_en;
+      p.desc_de = val('p' + i + '_desc_de') || p.desc_de;
+      p.desc_en = val('p' + i + '_desc_en') || p.desc_en;
+    });
+
+    const result = await ghPut(
+      '_data/products.json', productsSha,
+      { products: productsArr },
+      'Admin: Produktdaten aktualisiert'
+    );
+    productsSha = result.content.sha;
+
+    // Re-render accordion headers (names may have changed)
+    renderProducts();
+    toast('✓ Produkte gespeichert — Website aktualisiert in ~30 Sek.', 'ok');
+  } catch (e) {
+    toast('Fehler: ' + e.message, 'err');
+  }
+  setLoading('p-save-btn', false);
+}
+
+/* ── Helpers ─────────────────────────────────────────────────── */
+function val(id) {
+  const el = document.getElementById(id);
+  return el ? el.value.trim() : '';
+}
+
+function esc(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+</script>
 </body>
 </html>
