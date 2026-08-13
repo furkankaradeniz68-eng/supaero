@@ -12,6 +12,7 @@
 let currentLang = localStorage.getItem('sa-lang') || 'en';
 
 function applyTranslations(lang) {
+  if (typeof TRANSLATIONS === 'undefined') return; // translations.js not loaded (EN users)
   const t = TRANSLATIONS[lang];
   if (!t) return;
   currentLang = lang;

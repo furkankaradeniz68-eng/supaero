@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- DNS + Connection: highest priority, must be first -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Preload LCP hero image -->
+  <link rel="preload" as="image" href="Produktbilder/web/cat-01.webp" fetchpriority="high">
   <title>supAero — AN Fittings, PTFE Hydraulic Hose & Motorsport Connectors</title>
   <meta name="description" content="supAero: High-performance AN fittings, PTFE braided hoses, banjo fittings and hydraulic connectors for motorsport, aerospace, UAV and industrial applications. ISO 9001:2015 certified.">
   <meta name="keywords" content="AN fittings, PTFE hose, hydraulic hose, braided hose, banjo fitting, motorsport hydraulics, aerospace fittings, S-Series hose, AN Verschraubung, Hydraulikschlauch, Bremsleitung, push-lock fitting, Series 236, JIC fitting, firesleeve">
@@ -25,16 +32,30 @@
   <meta name="twitter:title" content="supAero — AN Fittings, PTFE Hydraulic Hose & Motorsport Connectors">
   <meta name="twitter:description" content="High-performance AN fittings, PTFE braided hoses and hydraulic connectors for motorsport, aerospace and industrial applications.">
   <meta name="twitter:image" content="https://supaero.de/img/og-image.jpg">
+  <!-- Google Fonts: load via <link> not @import for parallel loading -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
   <link rel="stylesheet" href="css/style.css">
 
   <!-- GSAP for premium animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
-  <!-- Translations & Main JS -->
-  <script src="i18n/translations.js" defer></script>
+  <!-- Translations: only load if non-English language is stored (saves 162KB for EN users) -->
+  <script>
+    (function(){
+      var l = localStorage.getItem('sa-lang');
+      if (l && l !== 'en') {
+        var s = document.createElement('script');
+        s.src = 'i18n/translations.js';
+        s.defer = true;
+        document.head.appendChild(s);
+      }
+    })();
+  </script>
   <script src="js/main.js" defer></script>
-  <script src="js/cookies.js"></script>
+  <!-- cookies.js: deferred — banner appears after DOM ready, which is correct -->
+  <script src="js/cookies.js" defer></script>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
