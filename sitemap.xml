@@ -306,32 +306,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/S7150-06</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-08</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-10</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-12</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-16</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/S7180-04</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S7150-06</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -341,7 +321,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/S7150-08</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/S7180-08</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S7150-10</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -351,7 +341,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/S7150-12</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/S7180-12</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S7150-16</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -466,376 +466,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/S7001-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7120-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7150-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7180-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S701-20</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S701-24</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-20-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7001-24-28FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-20-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7046-24-28FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-20-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S7091-24-28FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/S7001-20</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -862,6 +492,46 @@
   </url>
   <url>
     <loc>https://supaero.de/parts/S7091-24</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S7120-20</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S7120-24</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S7150-20</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S7180-20</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S7150-24</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S7180-24</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S701-20</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S701-24</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1121,42 +791,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/S4150-06</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-08</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-10</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-12</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-16</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-20</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-24</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/S4180-04</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S4150-06</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1166,7 +806,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/S4150-08</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/S4180-08</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S4150-10</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1176,7 +826,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/S4150-12</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/S4180-12</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S4150-16</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1186,7 +846,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/S4150-20</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/S4180-20</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/S4150-24</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1297,311 +967,6 @@
   </url>
   <url>
     <loc>https://supaero.de/parts/S444-16</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-08-08FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-10-10FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-16-16FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-20-20FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-24-24FL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4001-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4046-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4091-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4120-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4120-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4120-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4120-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4120-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4120-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4150-24-24PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-08-08PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-10-10PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-12-12PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-16-16PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-20-20PG</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/S4180-24-24PG</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1891,12 +1256,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN815-04VC</loc>
+    <loc>https://supaero.de/parts/AN813-03D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN813-03D</loc>
+    <loc>https://supaero.de/parts/AN815-04VC</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1936,42 +1301,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN813-04FD</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN813-06FD</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN8113-08FD</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN813-10FD</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN813-12FD</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN813-16FD</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN813-20FD</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/AN821-03D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN813-04FD</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1981,7 +1316,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN813-06FD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN821-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN8113-08FD</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1991,7 +1336,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN813-10FD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN821-10D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN813-12FD</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2001,7 +1356,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN813-16FD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN821-16D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN813-20FD</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2096,42 +1461,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN832-04D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN832-06D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN832-08D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN832-10D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN832-12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN832-16D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN832-20D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/AN837-03D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN832-04D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2141,7 +1476,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN832-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN837-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN832-08D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2151,7 +1496,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN832-10D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN837-10D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN832-12D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2161,7 +1516,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN832-16D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN837-16D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN832-20D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2176,42 +1541,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN833-04D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN833-06D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN833-08D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN833-10D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN833-12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN833-16D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN833-20D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/AN833-03FD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN833-04D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2221,7 +1556,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN833-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN833-06FD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN833-08D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2231,7 +1576,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN833-10D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN833-10FD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN833-12D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2241,7 +1596,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN833-16D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN833-16FD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN833-20D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2331,42 +1696,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN806-04D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN806-06D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN806-08D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN806-10D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN806-12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN806-16D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN806-20D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/AN814-03SD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN806-04D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2376,7 +1711,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN806-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN814-06SD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN806-08D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2386,7 +1731,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN806-10D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN814-10SD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN806-12D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2396,7 +1751,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN806-16D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN814-16SD</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN806-20D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2411,42 +1776,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN814-04D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN814-06D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN814-08D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN814-10D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN814-12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN814-16D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN814-20D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/AN929-03D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN814-04D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2456,7 +1791,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN814-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN929-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN814-08D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2466,7 +1811,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN814-10D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN929-10D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN814-12D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2476,7 +1831,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN814-16D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN929-16D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN814-20D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2596,37 +1961,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN818-04D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN818-06D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN818-08D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN818-10D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN818-12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN818-16D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/AN819-03D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN818-04D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2636,7 +1976,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN818-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN819-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN818-08D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2646,12 +1996,27 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN818-10D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN819-10D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN818-12D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN819-12D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN818-16D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2986,42 +2351,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/CPL-9104D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-9106D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-9108D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-9110D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-9112D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-9116D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-9120D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/CPL-1503D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-9104D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3031,7 +2366,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-9106D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-1506D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-9108D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3041,7 +2386,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-9110D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-1510D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-9112D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3051,7 +2406,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-9116D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-1516D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-9120D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3066,42 +2431,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/CPL-1204D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-1206D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-1208D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-1210D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-1212D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-1216D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL12-20D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/CPL-1803D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-1204D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3111,7 +2446,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-1206D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-1806D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-1208D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3121,7 +2466,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-1210D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-1810D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-1212D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3131,7 +2486,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-1216D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-1816D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL12-20D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3216,37 +2581,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/CPL-823-04D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-823-06D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-823-08D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-823-10D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-823-12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-823-16D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/CPL-903D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-823-04D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3256,7 +2596,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-823-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-906D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-823-08D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3266,12 +2616,27 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-823-10D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-910D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-823-12D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-912D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-823-16D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3286,37 +2651,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/CPL-4504D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-4506D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-4508D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-4510D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-4512D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/CPL-4516D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/CPL-9003D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-4504D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3326,7 +2666,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-4506D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-9006D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-4508D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3336,12 +2686,27 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-4510D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-9010D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/CPL-4512D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-9012D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/CPL-4516D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4526,32 +3891,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN910-02D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN910-03D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN910-04D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN910-05D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN910-06D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/AN915-01D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN910-02D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4561,7 +3906,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN910-03D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN915-03D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN910-04D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4571,7 +3926,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN910-05D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN915-05D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN910-06D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4591,32 +3956,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN916-02D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN916-03D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN916-04D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN916-05D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN916-06D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/AN917-01D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN916-02D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4626,7 +3971,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN916-03D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN917-03D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN916-04D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4636,7 +3991,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN916-05D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN917-05D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN916-06D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4721,7 +4086,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-04</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN842-05D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-05</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4732,6 +4107,11 @@
   </url>
   <url>
     <loc>https://supaero.de/parts/AN842-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-06</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4751,12 +4131,22 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-08</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/AN842-08-08D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://supaero.de/parts/AN842-10-06D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-10</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4772,6 +4162,11 @@
   </url>
   <url>
     <loc>https://supaero.de/parts/AN842-12-08D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-12</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5266,12 +4661,22 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/AN908-06</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/CPL-171-06-M12D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://supaero.de/parts/CPL-171-06-M14D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN908-08</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5301,62 +4706,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/AN908-06-M12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN908-06-M18D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN908-08-M12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN908-08-M18D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN909-06-M12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN909-06-M14D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN909-06-M16D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN909-06-M18D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN909-08-M12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN909-08-M14D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN909-08-M16D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/AN909-08-M18D</loc>
+    <loc>https://supaero.de/parts/AN909-06</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5377,6 +4727,11 @@
   </url>
   <url>
     <loc>https://supaero.de/parts/AN814-M161D</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/AN909-08</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5427,46 +4782,6 @@
   </url>
   <url>
     <loc>https://supaero.de/parts/992-35C</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-M121D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-122D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-M12D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-M142D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-M14D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-M16D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-M18D</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-M22D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5726,11 +5041,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/BN506-1C</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/BN510C</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -5757,21 +5067,6 @@
   </url>
   <url>
     <loc>https://supaero.de/parts/992-03-32LC</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-M121C</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-M122C</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/992-M12C</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6041,12 +5336,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/44515</loc>
+    <loc>https://supaero.de/parts/44516</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/44516</loc>
+    <loc>https://supaero.de/parts/44515</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6116,32 +5411,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/236-0106</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-0108</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-0110</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-0112</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-0116</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/236-0104BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-0106</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6151,7 +5426,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-0108</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-0108BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-0110</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6161,7 +5446,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-0112</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-0112BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-0116</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6176,32 +5471,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/236-3006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-3008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-3010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-3012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-3016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/236-3004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-3006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6211,7 +5486,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-3008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-3008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-3010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6221,7 +5506,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-3012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-3012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-3016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6236,32 +5531,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/236-4506</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-4508</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-4510</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-4512</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-4516</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/236-4504BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-4506</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6271,7 +5546,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-4508</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-4508BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-4510</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6281,7 +5566,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-4512</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-4512BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-4516</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6296,32 +5591,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/236-6006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-6008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-6010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-6012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-6016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/236-6004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-6006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6331,7 +5606,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-6008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-6008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-6010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6341,7 +5626,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-6012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-6012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-6016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6356,32 +5651,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/236-9006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-9008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-9010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-9012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-9016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/236-9004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-9006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6391,7 +5666,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-9008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-9008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-9010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6401,7 +5686,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-9012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-9012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-9016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6416,32 +5711,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/236-12006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-12008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-12010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-12012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-12016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/236-12004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-12006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6451,7 +5726,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-12008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-12008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-12010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6461,7 +5746,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-12012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-12012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-12016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6476,32 +5771,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/236-15006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-15008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-15010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-15012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-15016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/236-15004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-15006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6511,7 +5786,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-15008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-15008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-15010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6521,7 +5806,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-15012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-15012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-15016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6536,32 +5831,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/236-18006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-18008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-18010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-18012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/236-18016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/236-18004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-18006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6571,7 +5846,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-18008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-18008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-18010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6581,7 +5866,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/236-18012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/236-18012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/236-18016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6596,32 +5891,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/336-4506</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/336-4508</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/336-4510</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/336-4512</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/336-4516</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/336-4504BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/336-4506</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6631,7 +5906,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/336-4508</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/336-4508BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/336-4510</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6641,7 +5926,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/336-4512</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/336-4512BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/336-4516</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6656,32 +5951,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/336-9006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/336-9008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/336-9010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/336-9012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/336-9016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/336-9004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/336-9006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6691,7 +5966,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/336-9008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/336-9008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/336-9010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6701,37 +5986,22 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/336-9012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/336-9012BK</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/336-9016</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/336-9016BK</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-04</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-06</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-08</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-10</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-12</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6776,32 +6046,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/536-0106</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-0108</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-0110</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-0112</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-0116</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/536-0104BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-0106</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6811,7 +6061,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-0108</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-0108BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-0110</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6821,7 +6081,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-0112</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-0112BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-0116</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6836,32 +6106,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/536-3006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-3008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-3010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-3012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-3016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/536-3004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-3006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6871,7 +6121,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-3008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-3008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-3010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6881,7 +6141,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-3012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-3012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-3016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6896,32 +6166,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/536-4506</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-4508</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-4510</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-4512</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-4516</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/536-4504BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-4506</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6931,7 +6181,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-4508</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-4508BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-4510</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6941,7 +6201,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-4512</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-4512BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-4516</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6956,32 +6226,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/536-6006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-6008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-6010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-6012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-6016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/536-6004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-6006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6991,7 +6241,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-6008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-6008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-6010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7001,7 +6261,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-6012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-6012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-6016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7016,32 +6286,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/536-9006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-9008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-9010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-9012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-9016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/536-9004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-9006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7051,7 +6301,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-9008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-9008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-9010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7061,7 +6321,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-9012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-9012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-9016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7076,32 +6346,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/536-12006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-12008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-12010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-12012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-12016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/536-12004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-12006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7111,7 +6361,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-12008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-12008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-12010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7121,7 +6381,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-12012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-12012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-12016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7136,32 +6406,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/536-15006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-15008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-15010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-15012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-15016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/536-15004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-15006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7171,7 +6421,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-15008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-15008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-15010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7181,7 +6441,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-15012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-15012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-15016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7196,32 +6466,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://supaero.de/parts/536-18006</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-18008</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-18010</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-18012</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://supaero.de/parts/536-18016</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://supaero.de/parts/536-18004BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-18006</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7231,7 +6481,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-18008</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-18008BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-18010</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7241,7 +6501,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://supaero.de/parts/536-18012</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://supaero.de/parts/536-18012BK</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/536-18016</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7302,6 +6572,16 @@
   </url>
   <url>
     <loc>https://supaero.de/parts/S900-32</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/BN506-1C</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://supaero.de/parts/992-M122D</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
