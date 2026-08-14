@@ -7,24 +7,7 @@
       "name_en": "The New S-Series",
       "desc_de": "Aus hochwertigem PTFE mit Edelstahlgeflecht gefertigt. Ideal für Motorsport und Aerospace. Verfügbar in S700FC, S701, S710, S740 und S750 — AN3 bis AN16.",
       "desc_en": "Crafted from high-quality PTFE with stainless steel braid, the S-Series delivers optimal performance in motorsport and aerospace. Available in S700FC, S701, S710, S740 and S750 — AN3 to AN16.",
-      "tags": [
-        "S700-04","S700-06","S700-08","S700-10","S700-12","S700-16",
-        "S700-06FC","S700-08FC",
-        "S710-04","S710-06","S710-08","S710-10","S710-12","S710-16",
-        "S740-06","S740-08","S740-10","S740-12","S740-16","S740-20",
-        "S750-06","S750-08","S750-10","S750-12","S750-16","S750-20",
-        "S7001-04","S7001-06","S7001-08","S7001-10","S7001-12","S7001-16",
-        "S7046-04","S7046-06","S7046-08","S7046-10","S7046-12","S7046-16",
-        "S7091-04","S7091-06","S7091-08","S7091-10","S7091-12","S7091-16",
-        "S7120-04","S7120-06","S7120-08","S7120-10","S7120-12","S7120-16",
-        "S7150-04","S7150-06","S7150-08","S7150-10","S7150-12","S7150-16",
-        "S7180-04","S7180-06","S7180-08","S7180-10","S7180-12","S7180-16",
-        "S7045-04","S7045-06","S7045-08","S7045-10","S7045-12","S7045-16",
-        "S7090-04","S7090-06","S7090-08","S7090-10","S7090-12","S7090-16",
-        "S7001-06M14","S7091-06M14",
-        "S7001-04","S7701-08",
-        "S777-04","S777-06","S777-08","S777-10","S777-12","S777-16"
-      ]
+      "tags": []
     },
     {
       "id": "cat-02",
@@ -33,20 +16,7 @@
       "name_en": "S7 Series Wiggins / Plug-Ins",
       "desc_de": "Ideal für schnelle Verbindungen zwischen flexiblen Schläuchen und Starrrohren mit Adel Wiggins/Hydraflow Steckern. Bestens geeignet für S7 PG-Verschraubungen.",
       "desc_en": "Perfect for quick connections and disconnections between flexible hoses and rigid tubing using Adel Wiggins/Hydraflow connectors. Best used with S7 PG fittings.",
-      "tags": [
-        "S7001-08-08FL","S7001-10-10FL","S7001-10-10FL","S7001-16-16FL","S7001-20-20FL","S7001-24-24FL",
-        "S7046-08-08FL","S7046-10-10FL","S7046-10-10FL","S7046-16-16FL","S7046-20-20FL","S7046-24-24FL",
-        "S7091-08-08FL","S7091-10-10FL","S7091-10-10FL","S7091-16-16FL","S7091-20-20FL","S7091-24-24FL",
-        "S7120-08-08FL","S7120-10-10FL","S7120-10-10FL","S7120-16-16FL","S7120-20-20FL","S7120-24-24FL",
-        "S7150-08-08FL","S7150-10-10FL","S7150-10-10FL","S7150-16-16FL","S7150-20-20FL","S7150-24-24FL",
-        "S7180-08-08FL","S7180-10-10FL","S7180-10-10FL","S7180-16-16FL","S7180-20-20FL","S7180-24-24FL",
-        "S7001-08-08PG","S7001-10-10PG","S7001-12-12PG","S7001-16-16PG","S7001-20-20PG","S7001-24-24PG",
-        "S7046-08-08PG","S7046-10-10PG","S7046-12-12PG","S7046-16-16PG","S7046-20-20PG","S7046-24-24PG",
-        "S7091-08-08PG","S7091-10-10PG","S7091-12-12PG","S7091-16-16PG","S7091-20-20PG","S7091-24-24PG",
-        "S7120-08-08PG","S7120-10-10PG","S7120-12-12PG","S7120-16-16PG","S7120-20-20PG","S7120-24-24PG",
-        "S7150-08-08PG","S7150-10-10PG","S7150-12-12PG","S7150-16-16PG","S7150-20-20PG","S7150-24-24PG",
-        "S7180-08-08PG","S7180-10-10PG","S7180-12-12PG","S7180-16-16PG","S7180-20-20PG","S7180-24-24PG"
-      ]
+      "tags": []
     },
     {
       "id": "cat-03",
@@ -55,16 +25,7 @@
       "name_en": "S7 Series — AN-20 & AN-24",
       "desc_de": "S701 Glattbohrschlauch mit außen konvolutiertem Polypropylengeflecht. Kompatibel mit S7-Verschraubungen in AN-20 und AN-24 Größen.",
       "desc_en": "S701 smooth bore hose with outside convoluted Polypropylene braid. Compatible with S7 series fittings in AN-20 and AN-24 sizes.",
-      "tags": [
-        "S701-20","S701-24",
-        "S7001-20-20FL","S7001-20-24FL","S7001-24-24FL","S7001-24-28FL",
-        "S7046-20-20FL","S7046-20-24FL","S7046-24-24FL","S7046-24-28FL",
-        "S7091-20-20FL","S7091-20-24FL","S7091-24-24FL","S7091-24-28FL",
-        "S7001-20","S7001-24",
-        "S7046-20","S7046-24",
-        "S7091-20","S7091-24",
-        "S777-20","S777-24"
-      ]
+      "tags": []
     },
     {
       "id": "cat-04",
@@ -73,11 +34,7 @@
       "name_en": "910 & 811 Series",
       "desc_de": "Hochleistungs-PTFE-Schlauch. MWP bis 88 bar. Verfügbar in -04 bis -24 Dash-Größen. Für Kraftstoff, Öl und Pneumatik.",
       "desc_en": "High-performance PTFE hose. MWP up to 88 bar. Available in -04 to -24 dash sizes. For fuel, oil and pneumatics.",
-      "tags": [
-        "910-04","910-06","910-08","910-10","910-12","910-16","910-20","910-24",
-        "910-06FC","910-08FC",
-        "811-04","811-06","811-08","811-10","811-12","811-16"
-      ]
+      "tags": []
     },
     {
       "id": "cat-05",
@@ -86,19 +43,7 @@
       "name_en": "S4 Series",
       "desc_de": "Langlebige, leichte, präzisionsgefräste Aluminiumverschraubungen. Crimp/Quetschtyp. Kompatibel mit Schlauch: 910/811. Für Kraftstoff, Öl, Wasser, Methanol und Pneumatik.",
       "desc_en": "Durable, lightweight precision-machined aluminum fittings. Crimp/swage type. Compatible hose: 910/811. For fuel, oil, water, methanol and pneumatics.",
-      "tags": [
-        "S4001-04","S4001-06","S4001-08","S4001-10","S4001-12","S4001-16","S4001-20","S4001-24",
-        "S4046-04","S4046-06","S4046-08","S4046-10","S4046-12","S4046-16","S4046-20","S4046-24",
-        "S4091-04","S4091-06","S4091-08","S4091-10","S4091-12","S4091-16","S4091-20","S4091-24",
-        "S4120-04","S4120-06","S4120-08","S4120-10","S4120-12","S4120-16","S4120-20","S4120-24",
-        "S4150-04","S4150-06","S4150-08","S4150-10","S4150-12","S4150-16","S4150-20","S4150-24",
-        "S4180-04","S4180-06","S4180-08","S4180-10","S4180-12","S4180-16","S4180-20","S4180-24",
-        "S4045-04","S4045-06","S4045-08","S4045-10","S4045-12","S4045-16",
-        "S4090-04","S4090-06","S4090-08","S4090-10","S4090-12","S4090-16",
-        "S4001-06M14",
-        "S4401-06","S4401-08",
-        "S444-04","S444-06","S444-08","S444-10","S444-12","S444-16"
-      ]
+      "tags": []
     },
     {
       "id": "cat-06",
@@ -107,20 +52,7 @@
       "name_en": "S4 Series Wiggins / Plug-Ins",
       "desc_de": "S4 FL-Verschraubungen für schnelle Verbindungen zwischen flexiblen Schläuchen und Starrrohren mit Adel Wiggins/Hydraflow Steckern.",
       "desc_en": "S4 FL fittings for quick connections between flexible hoses and rigid tubing using Adel Wiggins/Hydraflow connectors. Best used with S4 PG fittings.",
-      "tags": [
-        "S4001-08-08FL","S4001-10-10FL","S4001-10-10FL","S4001-16-16FL","S4001-20-20FL","S4001-24-24FL",
-        "S4046-08-08FL","S4046-10-10FL","S4046-10-10FL","S4046-16-16FL","S4046-20-20FL","S4046-24-24FL",
-        "S4091-08-08FL","S4091-10-10FL","S4091-10-10FL","S4091-16-16FL","S4091-20-20FL","S4091-24-24FL",
-        "S7120-08-08FL","S7120-10-10FL","S7120-10-10FL","S7120-16-16FL","S7120-20-20FL","S7120-24-24FL",
-        "S4150-08-08FL","S4150-10-10FL","S4150-10-10FL","S4150-16-16FL","S4150-20-20FL","S4150-24-24FL",
-        "S4180-08-08FL","S4180-10-10FL","S4180-10-10FL","S4180-16-16FL","S4180-20-20FL","S4180-24-24FL",
-        "S4001-08-08PG","S4001-10-10PG","S4001-12-12PG","S4001-16-16PG","S4001-20-20PG","S4001-24-24PG",
-        "S4046-08-08PG","S4046-10-10PG","S4046-12-12PG","S4046-16-16PG","S4046-20-20PG","S4046-24-24PG",
-        "S4091-08-08PG","S4091-10-10PG","S4091-12-12PG","S4091-16-16PG","S4091-20-20PG","S4091-24-24PG",
-        "S4120-08-08PG","S4120-10-10PG","S4120-12-12PG","S4120-16-16PG","S4120-20-20PG","S4120-24-24PG",
-        "S4150-08-08PG","S4150-10-10PG","S4150-12-12PG","S4150-16-16PG","S4150-20-20PG","S4150-24-24PG",
-        "S4180-08-08PG","S4180-10-10PG","S4180-12-12PG","S4180-16-16PG","S4180-20-20PG","S4180-24-24PG"
-      ]
+      "tags": []
     },
     {
       "id": "cat-07",
@@ -129,9 +61,7 @@
       "name_en": "811 & 812 Series",
       "desc_de": "AN-Verschraubungen der Serien 811 und 812 in mehreren Winkelkonfigurationen: 0°, 45°, 90°, 120°, 150°, 180°.",
       "desc_en": "AN fittings in 811 and 812 series with multiple angle configurations: 0°, 45°, 90°, 120°, 150°, 180°.",
-      "tags": [
-        "811-0104","811-0106","811-0108","811-0110","811-0112","811-0116"
-      ]
+      "tags": []
     },
     {
       "id": "cat-08",
@@ -140,10 +70,7 @@
       "name_en": "Adel Wiggins Couplings",
       "desc_de": "Hochwertige Schnellverschlusskupplungen für Hartrohr zu Flexschlauch (0,5\" bis 4\" Durchmesser). Aerospace, Motorsport, Marine. Einhandbedienung, Sicherheitsriegel, kein Sicherungsdraht.",
       "desc_en": "High-quality quick-release couplings for hard tube to flexible hose (0.5\" to 4\" dia). Aerospace, motorsport, marine. Single-handed operation, locking latch, no safety wire needed.",
-      "tags": [
-        "W991-08DE","W991-10DE","W991-12DE","W991-16DE","W991-20DE","W991-24DE",
-        "W991-28DE","W991-32DE","W991-40DE","W991-48DE","W991-56DE"
-      ]
+      "tags": []
     },
     {
       "id": "cat-09",
@@ -152,12 +79,7 @@
       "name_en": "Pro:Spec No Nut Quick Release System",
       "desc_de": "Rennerprobt mit PTFE- und CPE-Gummischläuchen. Bis 10.000 PSI. Kompatibel mit 910, 811, S700, S710, S740 und S750.",
       "desc_en": "Race-proven reliability with PTFE and CPE rubber hoses. Up to 10,000 PSI. Compatible with 910, 811, S700, S710, S740 and S750.",
-      "tags": [
-        "S5001-04","S5001-06","S5001-08","S5001-10","S5001-12","S5001-16",
-        "S5046-04","S5046-06","S5046-08","S5046-10","S5046-12","S5046-16",
-        "S5091-04","S5091-06","S5091-08","S5091-10","S5091-12","S5091-16",
-        "S5120-04","S5120-06","S5120-08","S5120-10","S5120-12","S5120-16"
-      ]
+      "tags": []
     },
     {
       "id": "cat-10",
@@ -166,31 +88,7 @@
       "name_en": "JIC to JIC Adaptors",
       "desc_de": "AN-Adapter für anspruchsvolle Anwendungen. Verschiedene Gewindekombinationen. Sichere, leckagefreie Verbindungen. Hochwertiges eloxiertes Aluminium.",
       "desc_en": "AN adapters offering versatility for demanding applications. Variety of thread combinations. Secure, leak-free connections. High-quality anodized aluminum.",
-      "tags": [
-        "AN815-03D","AN815-04D","AN815-06D","AN815-08D","AN815-10D","AN815-12D","AN815-16D",
-        "AN815-03C","AN815-04C","AN815-06C","AN815-08C","AN815-10C","AN815-12C","AN815-16C","AN815-20C",
-        "AN815-03VC","AN815-04VC",
-        "AN813-03D","AN813-04D","AN813-06D","AN813-08D","AN813-10D","AN813-12D","AN813-16D",
-        "AN813-03FD","AN813-04FD","AN813-06FD","AN8113-08FD","AN813-10FD","AN813-12FD","AN813-16FD","AN813-20FD",
-        "AN821-03D","AN821-04D","AN821-06D","AN821-08D","AN821-10D","AN821-12D","AN821-16D","AN821-20D",
-        "AN821-03FD","AN821-04FD","AN821-06FD","AN821-08FD","AN821-10FD","AN821-12FD","AN821-16FD","AN821-20FD",
-        "AN824-03D","AN824-04D","AN824-06D","AN824-08D","AN824-10D","AN824-12D","AN824-16D","AN824-20D",
-        "AN832-03D","AN832-04D","AN832-06D","AN832-08D","AN832-10D","AN832-12D","AN832-16D","AN832-20D",
-        "AN837-03D","AN837-04D","AN837-06D","AN837-08D","AN837-10D","AN837-12D","AN837-16D","AN837-20D",
-        "AN833-03D","AN833-04D","AN833-06D","AN833-08D","AN833-10D","AN833-12D","AN833-16D","AN833-20D",
-        "AN833-03FD","AN833-04FD","AN833-06FD","AN833-08FD","AN833-10FD","AN833-12FD","AN833-16FD",
-        "AN804-03D","AN804-04D","AN804-06D","AN804-08D","AN804-10D","AN804-12D","AN804-16D","AN804-20D",
-        "AN834-03D","AN834-04D","AN834-06D","AN834-08D","AN834-10D","AN834-12D","AN834-16D","AN834-20D",
-        "AN806-03D","AN806-04D","AN806-06D","AN806-08D","AN806-10D","AN806-12D","AN806-16D","AN806-20D",
-        "AN814-03SD","AN814-04SD","AN814-06SD","AN814-08SD","AN814-10SD","AN814-12SD","AN814-16SD","AN814-20SD",
-        "AN814-03D","AN814-04D","AN814-06D","AN814-08D","AN814-10D","AN814-12D","AN814-16D","AN814-20D",
-        "AN929-03D","AN929-04D","AN929-06D","AN929-08D","AN929-10D","AN929-12D","AN929-16D",
-        "AN820-03D","AN820-04D","AN820-06D","AN820-08D","AN820-10D","AN820-12D","AN820-16D",
-        "AN820-03BD","AN820-04BD","AN820-06BD","AN820-08BD","AN820-10BD","AN820-12BD","AN820-16BD",
-        "AN924-03D","AN924-04D","AN924-06D","AN924-08D","AN924-10D","AN924-12D","AN924-16D","AN924-20D",
-        "AN818-03D","AN818-04D","AN818-06D","AN818-08D","AN818-10D","AN818-12D","AN818-16D",
-        "AN819-03D","AN819-04D","AN819-06D","AN819-08D","AN819-10D","AN819-12D","AN819-16D"
-      ]
+      "tags": []
     },
     {
       "id": "cat-11",
@@ -199,17 +97,7 @@
       "name_en": "JIC Unequal & Male to Female",
       "desc_de": "Weiblich-zu-männlich Erweiterer mit O-Ring (AN951-Serie). Männlich-zu-männlich ungleich AN919. Vollständige Größenpalette für Hydrauliksystem-Routing.",
       "desc_en": "Female-to-male expanders with O-ring (AN951 series). Male-to-male unequal AN919. Full size range for hydraulic system routing and adaptation.",
-      "tags": [
-        "AN919-02D","AN919-03D","AN919-06D-03D","AN919-06D","AN919-07D","AN919-08D-04D",
-        "AN919-12D","AN919-14D","AN919-15D","AN919-18D","AN919-19D","AN919-20D",
-        "AN919-22D","AN919-23D","AN919-25D","AN919-26D",
-        "AN950-04-03D","AN950-06-03D","AN950-06-04D","AN950-08-04D","AN950-08-06D",
-        "AN950-10-06D","AN950-10-08D","AN950-12-08D","AN950-12-10D","AN950-16-12D",
-        "AN951-03-04D","AN951-03-06D","AN951-04-06D","AN951-04-08D","AN951-06-08D","AN951-06-10D",
-        "AN951-08-10D","AN951-08-12D","AN951-10-12D","AN951-10-16D","AN951-12-16D",
-        "AN894-04-03D","AN894-06-03D","AN894-06-04D","AN894-08-04D","AN894-08-06D",
-        "AN894-10-04D","AN894-10-06D","AN894-10-08D","AN894-12-08D","AN894-12-10D","AN894-16-12D"
-      ]
+      "tags": []
     },
     {
       "id": "cat-12",
@@ -218,35 +106,7 @@
       "name_en": "Special Adaptors",
       "desc_de": "Hochwertiges eloxiertes Aluminium. CPL-Serie (45°, 90°, 120°, 150°, 180° Weibliche Kuppler). Zuverlässige Leistung in anspruchsvollen Umgebungen.",
       "desc_en": "High-quality anodized aluminum. CPL series (45°, 90°, 120°, 150°, 180° female couplers). Reliable performance in demanding environments.",
-      "tags": [
-        "CPL-03D","CPL-04D","CPL-06D","CPL-08D","CPL-10D","CPL-12D","CPL-16D","CPL-20D",
-        "CPL-4603D","CPL-4604D","CPL-4606D","CPL-4608D","CPL-4610D","CPL-4612D","CPL-4616D","CPL-4620D",
-        "CPL-9103D","CPL-9104D","CPL-9106D","CPL-9108D","CPL-9110D","CPL-9112D","CPL-9116D","CPL-9120D",
-        "CPL-1503D","CPL-1504D","CPL-1506D","CPL-1508D","CPL-1510D","CPL-1512D","CPL-1516D","CPL-1520D",
-        "CPL-1203D","CPL-1204D","CPL-1206D","CPL-1208D","CPL-1210D","CPL-1212D","CPL-1216D","CPL12-20D",
-        "CPL-1803D","CPL-1804D","CPL-1806D","CPL-1808D","CPL-1810D","CPL-1812D","CPL-1816D","CPL-1820D",
-        "CPL-826-03D","CPL-826-04D","CPL-826-06D","CPL-826-08D","CPL-826-10D","CPL-826-12D","CPL-826-16D",
-        "CPL-824-03D","CPL-824-04D","CPL-824-06D","CPL-824-08D","CPL-824-10D","CPL-824-12D","CPL-824-16D",
-        "CPL-823-03D","CPL-823-04D","CPL-823-06D","CPL-823-08D","CPL-823-10D","CPL-823-12D","CPL-823-16D",
-        "CPL-903D","CPL-904D","CPL-906D","CPL-908D","CPL-910D","CPL-912D","CPL-916D",
-        "CPL-4503D","CPL-4504D","CPL-4506D","CPL-4508D","CPL-4510D","CPL-4512D","CPL-4516D",
-        "CPL-9003D","CPL-9004D","CPL-9006D","CPL-9008D","CPL-9010D","CPL-9012D","CPL-9016D",
-        "AN920-03D","AN920-03-04D","AN920-03-06D","AN920-03-08D","AN920-04-03D","AN920-04D",
-        "AN920-04-06D","AN920-04-08D","AN920-04-10D","AN920-06-04D","AN920-06-05D","AN920-06D",
-        "AN920-06-08D","AN920-06-10D","AN920-08-06D","AN920-08D","AN920-08-10D","AN920-08-12D",
-        "AN920-10-06D","AN920-10-08D","AN920-10D","AN920-10-12D","AN920-10-16D",
-        "AN920-12-08D","AN920-12-10D","AN920-12D","AN920-12-16D",
-        "AN920-16-10D","AN920-16-12D","AN920-16D","AN920-16-20D","AN920-20-16D",
-        "AN938-03D","AN938-04D","AN938-06D","AN938-08D","AN938-10D","AN938-12D","AN938-16D",
-        "CPL-915-06-04D","CPL-915-06-05D","CPL-915-06-06D","CPL-915-06-08D","CPL-915-06-10D","CPL-915-06-11D",
-        "CPL-915-08-06D","CPL-915-08-08D","CPL-915-08-10D","CPL-915-08-11D",
-        "CPL-915-10-08D","CPL-915-10-10D","CPL-915-10-12D",
-        "CPL-915-12-10D","CPL-915-12-12D","CPL-915-16-12D","CPL-915-16-16D",
-        "CPL-918-06-04D","CPL-918-06-05D","CPL-918-06-06D","CPL-918-06-08D","CPL-918-06-10D","CPL-918-06-11D",
-        "CPl-918-08-06D","CPL-918-08-08D","CPL-918-08-10D","CPL-918-08-11D",
-        "CPL-918-10-08D","CPL-918-10-10D","CPL-918-10-12D",
-        "CPL-918-12-10D","CPL-918-12-12D","CPL-918-16-12D","CPL-918-16-16D"
-      ]
+      "tags": []
     },
     {
       "id": "cat-13",
@@ -255,32 +115,7 @@
       "name_en": "JIC to NPT Adaptors",
       "desc_de": "AN816 (0° männlich JIC zu NPT) und AN823 (45° männlich JIC zu NPT) Adapter. Vollständige Größenpalette für Verbindungen von Hydraulikverschraubungen zu NPT-Anschlüssen.",
       "desc_en": "AN816 (0° male JIC to NPT) and AN823 (45° male JIC to NPT) adaptors. Full size range for connecting hydraulic fittings to NPT ports.",
-      "tags": [
-        "AN816-03-04D","AN816-03-06D","AN816-03D","AN816-04-04D","AN816-04-06D","AN816-04D",
-        "AN816-06-02D","AN816-06-06D","AN816-06-08D","AN816-06-10D","AN816-06D","AN816-07D",
-        "AN816-08-08D","AN816-08-12D","AN816-08D","AN816-10-06D","AN816-10-12D","AN816-10D",
-        "AN816-12-08D","AN816-12-16D","AN816-12D","AN816-16-12D","AN816-16-20D","AN816-16D","AN816-20-16D",
-        "AN823-04FD","AN823-04-04FD","AN823-06-02FD","AN823-06FD","AN823-06-06FD","AN823-06-08FD",
-        "AN823-08FD","AN823-08-04FD",
-        "AN823-03D","AN823-03-04D","AN823-04D","AN823-04-04D","AN823-04-06D",
-        "AN823-06-02D","AN823-06D","AN823-06-06D","AN823-06-08D","AN823-07D",
-        "AN823-08D","AN823-08-08D","AN823-08-12D","AN823-10-06D","AN823-10D","AN823-10-12D","AN823-12-08D",
-        "AN822-03D","AN822-03-04D","AN822-04D","AN822-04-04D","AN822-04-06D",
-        "AN822-06-02D","AN822-06D","AN822-06-06D","AN822-06-08D","AN822-07D",
-        "AN822-08D","AN822-08-08D","AN822-08-12D","AN822-10-06D","AN822-10D","AN822-10-12D",
-        "AN822-04FD","AN822-04-04FD","AN822-06-02FD","AN822-06FD","AN822-06-06FD","AN822-06-08FD",
-        "AN822-08FD","AN822-08-04FD","AN822-08-08FD","AN822-10-06FD","AN822-10FD","AN822-10-12FD","AN822-12-08FD",
-        "AN825-03D","AN825-04D","AN825-06D","AN825-08D","AN825-10D","AN825-12D","AN825-16D","AN825-16-12D","AN825-20-16D",
-        "AN826-03D","AN826-04D","AN826-06D","AN826-08D","AN826-10D","AN826-12D","AN826-16D","AN826-16-12D","AN826-20-16D",
-        "CPL-816-03D","CPL-816-04D","CPL-816-04-04D","CPL-816-06-02D","CPL-816-06D","CPL-816-06-06D",
-        "CPL-816-07D","CPL-816-08D","CPL-816-08-08D","CPL-816-10-06D","CPL-816-10D","CPL-816-12-08D","CPL-816-12D",
-        "CPL-917-03D","CPL-917-04D","CPL-917-04-04D","CPL-917-06-02D","CPL-917-06D","CPL-917-06-06D",
-        "CPL-917-07D","CPL-917-08D","CPL-917-08-08D","CPL-917-10-06D","CPL-917-10D","CPL-917-12-08D","CPL-917-12D",
-        "FP-191-03D","FP-191-04D","FP-191-06D","FP-191-08D","FP-191-10D","FP-191-12D","FP-191-16D",
-        "FP-194-04-02D","FP-194-06-02D","FP-194-06-04D","FP-194-06-08D","FP-194-08-04D","FP-194-08-06D","FP-194-10-08D",
-        "FP-192-03D","FP-192-04D","FP-192-06D","FP-192-08D","FP-192-10D","FP-192-12D","FP-192-16D",
-        "AN824-06BD","AN824-08BD"
-      ]
+      "tags": []
     },
     {
       "id": "cat-14",
@@ -289,24 +124,7 @@
       "name_en": "NPT Adaptors",
       "desc_de": "AN-Adapter in einer Vielzahl von NPT-Gewindekombinationen. Sichere und leckagefreie Verbindungen. Hochwertiges eloxiertes Aluminium für Motorsport und Industrie.",
       "desc_en": "AN adapters in a variety of NPT thread combinations. Secure and leak-free connections. High-quality anodized aluminum for motorsport and industrial use.",
-      "tags": [
-        "AN911-01D","AN911-02D","AN911-03D","AN911-04D","AN911-05D","AN911-06D",
-        "AN901-04-03D","AN901-06-03D","AN901-06-04D","AN901-08-03D","AN901-08-04D","AN901-08-06D",
-        "AN901-12-04D","AN901-12-06D","AN901-12-08D",
-        "AN910-01D","AN910-02D","AN910-03D","AN910-04D","AN910-05D","AN910-06D",
-        "AN915-01D","AN915-02D","AN915-03D","AN915-04D","AN915-05D","AN915-06D","AN915-07D",
-        "AN916-01D","AN916-02D","AN916-03D","AN916-04D","AN916-05D","AN916-06D",
-        "AN917-01D","AN917-02D","AN917-03D","AN917-04D","AN917-05D","AN917-06D",
-        "AN914-01D","AN914-02D","AN914-03D","AN914-04D","AN914-05D","AN914-06D","AN914-07D",
-        "AN933-01D","AN933-02D","AN933-03D","AN933-04D","AN933-05D","AN933-06D",
-        "AN842-03D","AN842-04D","AN842-05D","AN842-05-06D","AN842-06D","AN842-06-06D","AN842-06-08D",
-        "AN842-08D","AN842-08-08D","AN842-10-06D","AN842-10-08D","AN842-10D","AN842-12-08D","AN842-12D",
-        "AN840-03D","AN840-04D","AN840-05D","AN840-05-06D","AN840-06D","AN840-06-06D","AN840-06-08D",
-        "AN840-08D","AN840-08-08D","AN840-10-06D","AN840-10-08D","AN840-10D","AN840-12-08D","AN840-12D",
-        "AN844-03D","AN844-04D","AN844-05D","AN844-05-06D","AN844-06D","AN844-06-06D","AN844-06-08D",
-        "AN844-08D","AN844-08-08D","AN844-10-06D","AN844-10-08D","AN844-10D","AN844-12-08D","AN844-12D",
-        "AN932-01D","AN932-02D","AN932-03D","AN932-04D","AN932-05D","AN932-06D"
-      ]
+      "tags": []
     },
     {
       "id": "cat-15",
@@ -315,21 +133,7 @@
       "name_en": "Metric & Metric Special Adaptors",
       "desc_de": "306 Adapter — männlich-zu-männlich mit JIC/UNF auf einer Seite und Metrischem Gewinde auf der anderen. Eloxiertes Aluminium. JIC zu metrischen konkaven Gewinden von M10 bis M24.",
       "desc_en": "306 adapters — male-to-male with JIC/UNF on one side and metric threads on the other. Anodized aluminum. JIC to metric concave threads from M10 to M24.",
-      "tags": [
-        "306-03-11D","306-03-21D","306-03-22D","306-03-31D","306-03-32D","306-03-35D","306-03-M121D","306-03-M122D",
-        "306-04-11D","306-04-21D","306-04-22D","306-04-31D","306-04-32D","306-04-35D","306-04-M121D","306-04-122D","306-04-M12D","306-04-M142D","306-04-M14D",
-        "306-06-31D","306-06-32D","306-06-35D","306-06-M121D","306-06-M122D","306-06-M12D","306-06-M142D","306-06-M14D","306-06-M16D","306-06-M18D","306-06-M20D","306-06-M22D","306-06-M24D",
-        "306-08-31D","306-08-32","306-08-35D","306-08-M122D","306-08-M12D","306-08-M142D",
-        "306-08-M14D","306-08-M16D","306-08-M18D","306-08-M20D","306-08-M22D","306-08-M24D",
-        "306-10-M121D","306-10-M122D","306-10-M12D","306-10-M14D","306-10-M16D","306-10-M18D","306-10-M20D","306-10-M22D","306-10-M24D",
-        "306-12-M121D","306-12-M122D","306-12-M12D","306-12-M14D","306-12-M16D","306-12-M18D","306-12-M20D","306-12-M22D","306-12-M24D",
-        "CPL-171-06-M121D","CPL-171-06-M12D","CPL-171-06-M14D","CPL-171-06-M16D",
-        "CPL-171-08-M121D","CPL-171-08-M12D","CPL-171-08-M14D","CPL-171-08-M16D",
-        "AN908-06-M12D","AN908-06-M18D","AN908-08-M12D","AN908-08-M18D",
-        "AN909-06-M12D","AN909-06-M14D","AN909-06-M16D","AN909-06-M18D",
-        "AN909-08-M12D","AN909-08-M14D","AN909-08-M16D","AN909-08-M18D",
-        "AN814-M12D","AN814-M14D","AN814-M16D","AN814-M161D"
-      ]
+      "tags": []
     },
     {
       "id": "cat-16",
@@ -338,17 +142,7 @@
       "name_en": "JIC/UNF & Metric Banjo Adaptors & Banjos",
       "desc_de": "776-Serie Einzel- und Doppel-Banjo-Adapter. JIC/UNF und metrische Gewindeoptionen. Entwickelt für Brems- und Kraftstoffsysteme in Motorsport und Automobilanwendungen.",
       "desc_en": "776 series single and double banjo adaptors. JIC/UNF and metric thread options. Designed for brake and fuel systems in motorsport and automotive applications.",
-      "tags": [
-        "775-31C","775-32C","775-35C","775-03C","775-04D","775-44C",
-        "992-21C","992-22C","992-31C","992-35C","992-M121D","992-122D","992-M12D","992-M142D","992-M14D","992-M16D","992-M18D","992-M22D","992-44C",
-        "721-03C","721-04D","721-06D",
-        "776-03-85C","776-03-11C","776-03-12C","776-03-14C",
-        "776-04-M8D","776-04-M10D","776-04-M12D","776-04-105D","776-04-11D","776-04-13D","776-04-145D",
-        "776-06-121D","776-06-105D","776-06-123D","776-06-125D","776-06-13D","776-06-145D","776-06-165D","776-06-185D",
-        "776-08-105D","776-08-125D","776-08-145D","776-08-165D","776-08-185D","776-08-M22D",
-        "776-10-165D","776-10-185D","776-10-M22D",
-        "776-12-185D","776-12-M22D"
-      ]
+      "tags": []
     },
     {
       "id": "cat-17",
@@ -357,34 +151,7 @@
       "name_en": "Brake System Reusable",
       "desc_de": "600 Serie PTFE-Liner mit Edelstahlgeflecht. Entwickelt für Brems- und Kupplungsanwendungen. Hoher Druck- und Temperaturwiderstand. DOT-zugelassen.",
       "desc_en": "600 Series PTFE liner with stainless steel braid. Designed for brake and clutch applications. High pressure and temperature resistance. DOT approved.",
-      "tags": [
-        "600-03",
-        "832-03C","832-04C",
-        "815-03C","815-04C",
-        "306-03-31C","306-03-32C","306-03-35C","306-03-M121C","306-03-M122C","306-03-M12C",
-        "837-03C",
-        "833-03C",
-        "834-03C",
-        "924-03","924-04C",
-        "BN506C","BN506-1C","BN510C","BN512C",
-        "992-03-31C","992-03-31LC","992-03-32C","992-03-32LC","992-M121C","992-M122C","992-M12C",
-        "775-03C","775-03LC","775-04C","775-04LC",
-        "6001-03C","6001-02-03C","6001-03-04C","6001-04C","6001-31C","6001-32C","6001-35C",
-        "6645-03C","6645-03-04C","6645-04C","6645-31C","6645-32C","6645-35C",
-        "6690-03C","6690-03-04C","6690-04C","6690-31C","6690-32C","6690-35C","6690-06D",
-        "5091-03C","5091-03-04C",
-        "5092-03C","5092-03-04C",
-        "5093-03C","5093-03-04C",
-        "5094-03C","5094-03-04C",
-        "5099-03C","5099-03-04C",
-        "758-03-03C","758-03-31C","758-03-32C","758-03-35C",
-        "759-03-03C","759-03-31C","759-03-32C","759-03-35C",
-        "445-03C","445-31C","445-32C",
-        "5130-03C","5131-03C","5132-03C","5135-03C","5136-03C",
-        "1205-03B","1205-04B",
-        "1206-03C","1206-04C",
-        "44515","44516"
-      ]
+      "tags": []
     },
     {
       "id": "cat-18",
@@ -393,30 +160,7 @@
       "name_en": "236 Fuel System",
       "desc_de": "Wiederverwendbare Verschraubungen für Edelstahl- oder Nylongeflochtene Gummischläuche. Kompatibel mit 200 und 210 Serie. Für Flüssigkeit, Öl, Kühlmittel, Methanol und Wasser.",
       "desc_en": "Reusable fittings for stainless steel or nylon braided rubber hoses. Compatible hose: 200 and 210 series. For fluid, oil, coolant, methanol and water.",
-      "tags": [
-        "200-04","200-06","200-08","200-10","200-12","200-16",
-        "210-04","210-06","210-08","210-10","210-12","210-16",
-        "236-0104","236-0106","236-0108","236-0110","236-0112","236-0116",
-        "236-0104BK","236-0106BK","236-0108BK","236-0110BK","236-0112BK","236-0116BK",
-        "236-3004","236-3006","236-3008","236-3010","236-3012","236-3016",
-        "236-3004BK","236-3006BK","236-3008BK","236-3010BK","236-3012BK","236-3016BK",
-        "236-4504","236-4506","236-4508","236-4510","236-4512","236-4516",
-        "236-4504BK","236-4506BK","236-4508BK","236-4510BK","236-4512BK","236-4516BK",
-        "236-6004","236-6006","236-6008","236-6010","236-6012","236-6016",
-        "236-6004BK","236-6006BK","236-6008BK","236-6010BK","236-6012BK","236-6016BK",
-        "236-9004","236-9006","236-9008","236-9010","236-9012","236-9016",
-        "236-9004BK","236-9006BK","236-9008BK","236-9010BK","236-9012BK","236-9016BK",
-        "236-12004","236-12006","236-12008","236-12010","236-12012","236-12016",
-        "236-12004BK","236-12006BK","236-12008BK","236-12010BK","236-12012BK","236-12016BK",
-        "236-15004","236-15006","236-15008","236-15010","236-15012","236-15016",
-        "236-15004BK","236-15006BK","236-15008BK","236-15010BK","236-15012BK","236-15016BK",
-        "236-18004","236-18006","236-18008","236-18010","236-18012","236-18016",
-        "236-18004BK","236-18006BK","236-18008BK","236-18010BK","236-18012BK","236-18016BK",
-        "336-4504","336-4506","336-4508","336-4510","336-4512","336-4516",
-        "336-4504BK","336-4506BK","336-4508BK","336-4510BK","336-4512BK","336-4516BK",
-        "336-9004","336-9006","336-9008","336-9010","336-9012","336-9016",
-        "336-9004BK","336-9006BK","336-9008BK","336-9010BK","336-9012BK","336-9016BK"
-      ]
+      "tags": []
     },
     {
       "id": "cat-19",
@@ -425,26 +169,7 @@
       "name_en": "536 Series",
       "desc_de": "Niederdruck-Push-Fit-System. Textilbewehrter Gummischlauch, Nitril und PVC. Für Öl, Kühlmittel, Luft, Wasser und Kraftstoffanwendungen.",
       "desc_en": "Low-pressure push-fit system. Textile-reinforced rubber hose, Nitrile and PVC. For oil, coolant, air, water and fuel applications.",
-      "tags": [
-        "536-04","536-06","536-08","536-10","536-12","536-16",
-        "536-04BK","536-06BK","536-08BK","536-10BK","536-12BK","536-16BK",
-        "536-0104","536-0106","536-0108","536-0110","536-0112","536-0116",
-        "536-0104BK","536-0106BK","536-0108BK","536-0110BK","536-0112BK","536-0116BK",
-        "536-3004","536-3006","536-3008","536-3010","536-3012","536-3016",
-        "536-3004BK","536-3006BK","536-3008BK","536-3010BK","536-3012BK","536-3016BK",
-        "536-4504","536-4506","536-4508","536-4510","536-4512","536-4516",
-        "536-4504BK","536-4506BK","536-4508BK","536-4510BK","536-4512BK","536-4516BK",
-        "536-6004","536-6006","536-6008","536-6010","536-6012","536-6016",
-        "536-6004BK","536-6006BK","536-6008BK","536-6010BK","536-6012BK","536-6016BK",
-        "536-9004","536-9006","536-9008","536-9010","536-9012","536-9016",
-        "536-9004BK","536-9006BK","536-9008BK","536-9010BK","536-9012BK","536-9016BK",
-        "536-12004","536-12006","536-12008","536-12010","536-12012","536-12016",
-        "536-12004BK","536-12006BK","536-12008BK","536-12010BK","536-12012BK","536-12016BK",
-        "536-15004","536-15006","536-15008","536-15010","536-15012","536-15016",
-        "536-15004BK","536-15006BK","536-15008BK","536-15010BK","536-15012BK","536-15016BK",
-        "536-18004","536-18006","536-18008","536-18010","536-18012","536-18016",
-        "536-18004BK","536-18006BK","536-18008BK","536-18010BK","536-18012BK","536-18016BK"
-      ]
+      "tags": []
     },
     {
       "id": "cat-20",
@@ -453,10 +178,7 @@
       "name_en": "Fire Sleeve",
       "desc_de": "S900 Glasfaserhülle. Behält 75% Zugfestigkeit bei 343°C. Beständig gegen Phosphatester-Hydraulikflüssigkeiten, Kerosin und Hydraulikflüssigkeit.",
       "desc_en": "S900 fiberglass sleeve. Retains 75% tensile strength at 343°C. Resistant to phosphate ester hydraulic fluids, jet fuel and hydraulic fluid.",
-      "tags": [
-        "S900-03","S900-04","S900-06","S900-08","S900-10","S900-12",
-        "S900-16","S900-20","S900-24","S900-28","S900-32"
-      ]
+      "tags": []
     }
   ]
 }
