@@ -7,7 +7,7 @@
       "name_en": "The New S-Series",
       "desc_de": "Aus hochwertigem PTFE mit Edelstahlgeflecht gefertigt. Ideal für Motorsport und Aerospace. Verfügbar in S700FC, S701, S710, S740 und S750 — AN3 bis AN16.",
       "desc_en": "Crafted from high-quality PTFE with stainless steel braid, the S-Series delivers optimal performance in motorsport and aerospace. Available in S700FC, S701, S710, S740 and S750 — AN3 to AN16.",
-      "tags": ["PTFE", "SS Braid", "Fuel", "Brake"]
+      "tags": ["S700", "S700FC", "S710", "S740", "S750", "S7001", "S7046", "S7091", "S7120", "S7150", "S7180", "S7045", "S7090", "S7701", "S777"]
     },
     {
       "id": "cat-02",
@@ -16,7 +16,7 @@
       "name_en": "S7 Series Wiggins / Plug-Ins",
       "desc_de": "Ideal für schnelle Verbindungen zwischen flexiblen Schläuchen und Starrrohren mit Adel Wiggins/Hydraflow Steckern. Bestens geeignet für S7 PG-Verschraubungen.",
       "desc_en": "Perfect for quick connections and disconnections between flexible hoses and rigid tubing using Adel Wiggins/Hydraflow connectors. Best used with S7 PG fittings.",
-      "tags": ["S7", "Plug-In", "Quick-Connect"]
+      "tags": ["S7001-FL", "S7046-FL", "S7091-FL", "S7120-FL", "S7150-FL", "S7180-FL", "S7001-PG", "S7046-PG", "S7091-PG", "S7120-PG", "S7150-PG", "S7180-PG"]
     },
     {
       "id": "cat-03",
@@ -25,7 +25,7 @@
       "name_en": "S7 Series — AN-20 & AN-24",
       "desc_de": "S701 Glattbohrschlauch mit außen konvolutiertem Polypropylengeflecht. Kompatibel mit S7-Verschraubungen in AN-20 und AN-24 Größen.",
       "desc_en": "S701 smooth bore hose with outside convoluted Polypropylene braid. Compatible with S7 series fittings in AN-20 and AN-24 sizes.",
-      "tags": ["S7", "AN-20", "AN-24", "Aerospace"]
+      "tags": ["S701", "S7001-FL", "S7046-FL", "S7091-FL", "S7001", "S7046", "S7091", "S777"]
     },
     {
       "id": "cat-04",
@@ -34,7 +34,7 @@
       "name_en": "910 & 811 Series",
       "desc_de": "Hochleistungs-PTFE-Schlauch. MWP bis 88 bar. Verfügbar in -04 bis -24 Dash-Größen. Für Kraftstoff, Öl und Pneumatik.",
       "desc_en": "High-performance PTFE hose. MWP up to 88 bar. Available in -04 to -24 dash sizes. For fuel, oil and pneumatics.",
-      "tags": ["PTFE", "SS Braid", "High-Perf."]
+      "tags": ["910", "910FC", "811"]
     },
     {
       "id": "cat-05",
@@ -43,7 +43,7 @@
       "name_en": "S4 Series",
       "desc_de": "Langlebige, leichte, präzisionsgefräste Aluminiumverschraubungen. Crimp/Quetschtyp. Kompatibel mit Schlauch: 910/811. Für Kraftstoff, Öl, Wasser, Methanol und Pneumatik.",
       "desc_en": "Durable, lightweight precision-machined aluminum fittings. Crimp/swage type. Compatible hose: 910/811. For fuel, oil, water, methanol and pneumatics.",
-      "tags": ["S4", "Flare", "Push-On"]
+      "tags": ["S4001", "S4046", "S4091", "S4120", "S4150", "S4180", "S4045", "S4090", "S4401", "S444"]
     },
     {
       "id": "cat-06",
@@ -52,7 +52,7 @@
       "name_en": "S4 Series Wiggins / Plug-Ins",
       "desc_de": "S4 FL-Verschraubungen für schnelle Verbindungen zwischen flexiblen Schläuchen und Starrrohren mit Adel Wiggins/Hydraflow Steckern.",
       "desc_en": "S4 FL fittings for quick connections between flexible hoses and rigid tubing using Adel Wiggins/Hydraflow connectors. Best used with S4 PG fittings.",
-      "tags": ["S4", "Plug-In", "Quick-Connect"]
+      "tags": ["S4001-FL", "S4046-FL", "S4091-FL", "S4120-FL", "S4150-FL", "S4180-FL", "S4001-PG", "S4046-PG", "S4091-PG", "S4120-PG", "S4150-PG", "S4180-PG"]
     },
     {
       "id": "cat-07",
@@ -61,7 +61,7 @@
       "name_en": "811 & 812 Series",
       "desc_de": "AN-Verschraubungen der Serien 811 und 812 in mehreren Winkelkonfigurationen: 0°, 45°, 90°, 120°, 150°, 180°.",
       "desc_en": "AN fittings in 811 and 812 series with multiple angle configurations: 0°, 45°, 90°, 120°, 150°, 180°.",
-      "tags": ["AN", "811", "812"]
+      "tags": ["811-01", "812-45", "811-45", "812-90", "811-90", "811-120", "811-150", "811-180"]
     },
     {
       "id": "cat-08",
@@ -70,7 +70,7 @@
       "name_en": "Adel Wiggins Couplings",
       "desc_de": "Hochwertige Schnellverschlusskupplungen für Hartrohr zu Flexschlauch (0,5\" bis 4\" Durchmesser). Aerospace, Motorsport, Marine. Einhandbedienung, Sicherheitsriegel, kein Sicherungsdraht.",
       "desc_en": "High-quality quick-release couplings for hard tube to flexible hose (0.5\" to 4\" dia). Aerospace, motorsport, marine. Single-handed operation, locking latch, no safety wire needed.",
-      "tags": ["Aerospace", "MIL-Spec", "Self-Sealing"]
+      "tags": ["W991-08DE", "W991-10DE", "W991-12DE", "W991-16DE", "W991-20DE", "W991-24DE", "W991-28DE", "W991-32DE", "W991-40DE", "W991-48DE", "W991-56DE"]
     },
     {
       "id": "cat-09",
@@ -79,7 +79,7 @@
       "name_en": "Pro:Spec No Nut Quick Release System",
       "desc_de": "Rennerprobt mit PTFE- und CPE-Gummischläuchen. Bis 10.000 PSI. Kompatibel mit 910, 811, S700, S710, S740 und S750.",
       "desc_en": "Race-proven reliability with PTFE and CPE rubber hoses. Up to 10,000 PSI. Compatible with 910, 811, S700, S710, S740 and S750.",
-      "tags": ["Push-Lock", "Titanium", "No Nut", "UAV"]
+      "tags": ["S5001", "S5046", "S5091", "S5120"]
     },
     {
       "id": "cat-10",
@@ -88,7 +88,7 @@
       "name_en": "JIC to JIC Adaptors",
       "desc_de": "AN-Adapter für anspruchsvolle Anwendungen. Verschiedene Gewindekombinationen. Sichere, leckagefreie Verbindungen. Hochwertiges eloxiertes Aluminium.",
       "desc_en": "AN adapters offering versatility for demanding applications. Variety of thread combinations. Secure, leak-free connections. High-quality anodized aluminum.",
-      "tags": ["JIC", "37°", "Adaptor"]
+      "tags": ["AN815", "AN813", "AN813F", "AN821", "AN821F", "AN824", "AN832", "AN837", "AN833", "AN833F", "AN804", "AN834", "AN806", "AN814S", "AN814", "AN929", "AN820B", "AN820", "AN924", "AN818", "AN819"]
     },
     {
       "id": "cat-11",
@@ -97,7 +97,7 @@
       "name_en": "JIC Unequal & Male to Female",
       "desc_de": "Weiblich-zu-männlich Erweiterer mit O-Ring (AN951-Serie). Männlich-zu-männlich ungleich AN919. Vollständige Größenpalette für Hydrauliksystem-Routing.",
       "desc_en": "Female-to-male expanders with O-ring (AN951 series). Male-to-male unequal AN919. Full size range for hydraulic system routing and adaptation.",
-      "tags": ["JIC", "Unequal", "Reducer"]
+      "tags": ["AN919", "AN950", "AN951", "AN814", "AN894"]
     },
     {
       "id": "cat-12",
@@ -106,7 +106,7 @@
       "name_en": "Special Adaptors",
       "desc_de": "Hochwertiges eloxiertes Aluminium. CPL-Serie (45°, 90°, 120°, 150°, 180° Weibliche Kuppler). Zuverlässige Leistung in anspruchsvollen Umgebungen.",
       "desc_en": "High-quality anodized aluminum. CPL series (45°, 90°, 120°, 150°, 180° female couplers). Reliable performance in demanding environments.",
-      "tags": ["BSP", "Special", "Industrial"]
+      "tags": ["CPL", "CPL46", "CPL91", "CPL120", "CPL150", "CPL180", "CPL826", "CPL824", "CPL823", "CPL9", "CPL45", "CPL90", "AN920", "AN938", "CPL915", "CPL918"]
     },
     {
       "id": "cat-13",
@@ -115,7 +115,7 @@
       "name_en": "JIC to NPT Adaptors",
       "desc_de": "AN816 (0° männlich JIC zu NPT) und AN823 (45° männlich JIC zu NPT) Adapter. Vollständige Größenpalette für Verbindungen von Hydraulikverschraubungen zu NPT-Anschlüssen.",
       "desc_en": "AN816 (0° male JIC to NPT) and AN823 (45° male JIC to NPT) adaptors. Full size range for connecting hydraulic fittings to NPT ports.",
-      "tags": ["JIC", "NPT", "Adaptor"]
+      "tags": ["AN816", "AN823", "AN822", "AN825", "AN826", "CPL816", "CPL917", "FP191", "FP192", "FP194", "AN824B"]
     },
     {
       "id": "cat-14",
@@ -124,7 +124,7 @@
       "name_en": "NPT Adaptors",
       "desc_de": "AN-Adapter in einer Vielzahl von NPT-Gewindekombinationen. Sichere und leckagefreie Verbindungen. Hochwertiges eloxiertes Aluminium für Motorsport und Industrie.",
       "desc_en": "AN adapters in a variety of NPT thread combinations. Secure and leak-free connections. High-quality anodized aluminum for motorsport and industrial use.",
-      "tags": ["NPT", "Tapered Thread", "Adaptor"]
+      "tags": ["AN911", "AN901", "AN910", "AN915", "AN916", "AN917", "AN914", "AN933", "AN842", "AN840", "AN844", "AN932"]
     },
     {
       "id": "cat-15",
@@ -133,7 +133,7 @@
       "name_en": "Metric & Metric Special Adaptors",
       "desc_de": "306 Adapter — männlich-zu-männlich mit JIC/UNF auf einer Seite und Metrischem Gewinde auf der anderen. Eloxiertes Aluminium. JIC zu metrischen konkaven Gewinden von M10 bis M24.",
       "desc_en": "306 adapters — male-to-male with JIC/UNF on one side and metric threads on the other. Anodized aluminum. JIC to metric concave threads from M10 to M24.",
-      "tags": ["Metric", "M10–M22", "DIN"]
+      "tags": ["306", "CPL171", "AN908", "AN909", "AN814M"]
     },
     {
       "id": "cat-16",
@@ -142,7 +142,7 @@
       "name_en": "JIC/UNF & Metric Banjo Adaptors & Banjos",
       "desc_de": "776-Serie Einzel- und Doppel-Banjo-Adapter. JIC/UNF und metrische Gewindeoptionen. Entwickelt für Brems- und Kraftstoffsysteme in Motorsport und Automobilanwendungen.",
       "desc_en": "776 series single and double banjo adaptors. JIC/UNF and metric thread options. Designed for brake and fuel systems in motorsport and automotive applications.",
-      "tags": ["Banjo", "JIC/UNF", "Metric"]
+      "tags": ["775", "992", "721", "776"]
     },
     {
       "id": "cat-17",
@@ -151,7 +151,7 @@
       "name_en": "Brake System Reusable",
       "desc_de": "600 Serie PTFE-Liner mit Edelstahlgeflecht. Entwickelt für Brems- und Kupplungsanwendungen. Hoher Druck- und Temperaturwiderstand. DOT-zugelassen.",
       "desc_en": "600 Series PTFE liner with stainless steel braid. Designed for brake and clutch applications. High pressure and temperature resistance. DOT approved.",
-      "tags": ["Brake", "DOT", "Reusable", "Motorsport"]
+      "tags": ["600-03", "832", "815", "306", "837", "833", "834", "924", "BN506C", "BN506-1C", "BN510C", "BN512C", "775", "992", "6001", "6645", "6690", "5091", "5092", "5093", "5094", "5099", "758", "759", "445", "5130", "5131", "5132", "5135", "5136", "1205", "1206", "44515", "44516"]
     },
     {
       "id": "cat-18",
@@ -160,7 +160,7 @@
       "name_en": "236 Fuel System",
       "desc_de": "Wiederverwendbare Verschraubungen für Edelstahl- oder Nylongeflochtene Gummischläuche. Kompatibel mit 200 und 210 Serie. Für Flüssigkeit, Öl, Kühlmittel, Methanol und Wasser.",
       "desc_en": "Reusable fittings for stainless steel or nylon braided rubber hoses. Compatible hose: 200 and 210 series. For fluid, oil, coolant, methanol and water.",
-      "tags": ["AN", "JIC 37°", "6061-T6", "Motorsport"]
+      "tags": ["200", "210", "236-01", "236-30", "236-45", "236-60", "236-90", "236-120", "236-150", "236-180", "336-45", "336-90"]
     },
     {
       "id": "cat-19",
@@ -169,7 +169,7 @@
       "name_en": "536 Series",
       "desc_de": "Niederdruck-Push-Fit-System. Textilbewehrter Gummischlauch, Nitril und PVC. Für Öl, Kühlmittel, Luft, Wasser und Kraftstoffanwendungen.",
       "desc_en": "Low-pressure push-fit system. Textile-reinforced rubber hose, Nitrile and PVC. For oil, coolant, air, water and fuel applications.",
-      "tags": ["AN", "High-Perf.", "Motorsport"]
+      "tags": ["536", "536BK", "536-01", "536-30", "536-45", "536-60", "536-90", "536-120", "536-150", "536-180"]
     },
     {
       "id": "cat-20",
@@ -178,7 +178,7 @@
       "name_en": "Fire Sleeve",
       "desc_de": "S900 Glasfaserhülle. Behält 75% Zugfestigkeit bei 343°C. Beständig gegen Phosphatester-Hydraulikflüssigkeiten, Kerosin und Hydraulikflüssigkeit.",
       "desc_en": "S900 fiberglass sleeve. Retains 75% tensile strength at 343°C. Resistant to phosphate ester hydraulic fluids, jet fuel and hydraulic fluid.",
-      "tags": ["Silicone", "Thermal", "260°C", "Safety"]
+      "tags": ["S900-03", "S900-04", "S900-06", "S900-08", "S900-10", "S900-12", "S900-16", "S900-20", "S900-24", "S900-28", "S900-32"]
     }
   ]
 }
