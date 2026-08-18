@@ -449,7 +449,7 @@ const TRANSLATIONS = {
   tr: {
     nav_products: "Ürünler", nav_industries: "Sektörler", nav_about: "Hakkımızda",
     nav_service: "Servis", nav_catalog: "Katalog", nav_contact: "İletişim", nav_quote: "Teklif İste",
-    hero_title_1: "AN Fitting, Çelik Örgülü Hortum",
+    hero_title_1: "AN Fitting, PTFE Hortum",
     hero_title_2: "& Hidrolik Sistemlerde",
     hero_title_3: "Uzman Tedarikçiniz",
     hero_sub: "Motorsport, havacılık, İHA ve endüstriyel uygulamalar için profesyonel AN fitting, çelik örgülü hortum ve push-lock bağlantı sistemleri. Stoktan hızlı teslimat.",
