@@ -12,7 +12,17 @@
 let currentLang = localStorage.getItem('sa-lang') || 'en';
 
 function applyTranslations(lang) {
-  if (typeof TRANSLATIONS === 'undefined') return; // translations.js not loaded (EN users)
+  // translations.js is lazy-loaded only for non-EN sessions.
+  // If it hasn't arrived yet, load it now and re-call once it's ready.
+  if (typeof TRANSLATIONS === 'undefined') {
+    if (lang === 'en') return; // English needs no translations file
+    var base = window.location.pathname.indexOf('/pages/') !== -1 ? '../' : '';
+    var s = document.createElement('script');
+    s.src = base + 'i18n/translations.js';
+    s.onload = function () { applyTranslations(lang); };
+    document.head.appendChild(s);
+    return;
+  }
   const t = TRANSLATIONS[lang];
   if (!t) return;
   currentLang = lang;
