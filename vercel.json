@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.supaero.de" }],
+      "destination": "https://supaero.de/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/kat_download", "destination": "/kat_download.html" },
     { "source": "/(.*)", "destination": "/$1" }
