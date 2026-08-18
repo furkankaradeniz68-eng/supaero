@@ -99,15 +99,24 @@
   }
 
   /* ── Bootstrap ──────────────────────────────────────────── */
+  var cachedProductsData = null;
+
   function run() {
     Promise.all([
       fetchJSON(base + '_data/settings.json'),
       fetchJSON(base + '_data/products.json')
     ]).then(function (results) {
       applySettings(results[0]);
+      cachedProductsData = results[1];
       applyProducts(results[1]);
     });
   }
+
+  // Allow main.js to trigger a re-apply after a language switch
+  window.__SA_reloadProducts = function () {
+    lang = (localStorage.getItem('sa-lang') || 'en').toLowerCase();
+    if (cachedProductsData) applyProducts(cachedProductsData);
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', run);

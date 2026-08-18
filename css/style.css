@@ -342,6 +342,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   transform: translateY(-8px);
   transition: opacity 0.25s, transform 0.25s;
   backdrop-filter: blur(20px);
+  z-index: 1010;
 }
 .lang-switcher:hover .lang-dropdown,
 .lang-switcher.open .lang-dropdown {

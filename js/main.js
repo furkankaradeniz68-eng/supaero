@@ -49,6 +49,9 @@ function applyTranslations(lang) {
 
   // Expose current translations for inline scripts
   window.__SA_TRANSLATIONS = t;
+
+  // Re-apply product card content in the new language (content-loader caches the data)
+  if (typeof window.__SA_reloadProducts === 'function') window.__SA_reloadProducts();
 }
 
 // ── DOM Ready ─────────────────────────────────
