@@ -1,7 +1,15 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/kat_download", "destination": "/kat_download.html" },
+    { "source": "/parts/:path+", "destination": "/parts/index.html" },
     { "source": "/(.*)", "destination": "/$1" }
+  ],
+  "redirects": [
+    { "source": "/:lang(en|tr|ko|es|ru|fr|pt|zh-CN|zh|startseite)/:path*", "destination": "/", "permanent": true },
+    { "source": "/:lang(en|tr|ko|es|ru|fr|pt|zh-CN|zh|startseite)", "destination": "/", "permanent": true },
+    { "source": "/wp-json/:path*", "destination": "/", "permanent": true },
+    { "source": "/index.php", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
