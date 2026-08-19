@@ -27,7 +27,11 @@
     .parts-hero { padding: 6rem 0 3rem; background: var(--bg-2); border-bottom: 1px solid var(--border); }
     .parts-intro { max-width: 700px; margin-bottom: 1rem; color: var(--gray-2); line-height: 1.7; }
     .pn-numbers { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .5rem; }
-    .pn-chip { font-size: .6875rem; font-weight: 600; font-family: 'Courier New', monospace; background: rgba(59,127,232,.1); border: 1px solid rgba(59,127,232,.25); color: var(--blue-bright); border-radius: 5px; padding: .2rem .5rem; white-space: nowrap; }
+    .pn-chip { font-size: .6875rem; font-weight: 600; font-family: 'Courier New', monospace; background: rgba(59,127,232,.1); border: 1px solid rgba(59,127,232,.25); color: var(--blue-bright); border-radius: 5px; padding: .2rem .5rem; white-space: nowrap; transition: background .2s, box-shadow .2s; }
+    .pn-chip--active { background: rgba(59,127,232,.35) !important; border-color: var(--blue-bright) !important; color: #fff !important; box-shadow: 0 0 0 3px rgba(59,127,232,.4); transform: scale(1.08); }
+    .pn-highlight-banner { display: flex; align-items: center; gap: .5rem; background: rgba(59,127,232,.12); border: 1px solid rgba(59,127,232,.4); border-radius: var(--radius); padding: .65rem 1rem; margin-bottom: 1.5rem; font-size: .875rem; color: var(--text-muted); }
+    .pn-highlight-banner strong { color: var(--blue-bright); font-family: 'Courier New', monospace; }
+    .pn-highlight-banner a { color: var(--blue-bright); margin-left: .5rem; }
     .section-divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
     .parts-cta { background: var(--bg-card); border: 1px solid var(--border-blue); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; margin: 3rem 0; }
     .jump-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
@@ -281,5 +285,72 @@
   </div>
 </footer>
 
+<script>
+/* ── Part-number deep-link handler ──────────────────────────────
+   When Google (or a user) visits /parts/S7001-08-08FL, Vercel's
+   rewrite serves this page. This script:
+   1. Reads the part number from the URL path
+   2. Gives the page a unique <title> and <meta description>
+   3. Updates the canonical tag to the specific URL
+   4. Highlights and scrolls to that chip in the list
+   5. Shows a "Showing: S7001-08-08FL · View all" banner
+────────────────────────────────────────────────────────────── */
+(function () {
+  var segments = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/');
+  // segments[0] = 'parts', segments[1] = part number (if any)
+  if (segments.length < 2 || !segments[1]) return;
+
+  var pn = decodeURIComponent(segments[1]);
+
+  // ── Meta updates (run immediately, before paint) ──
+  document.title = pn + ' — supAero Part Number | AN Fittings & Hydraulic Components';
+
+  var desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.content = pn + ' — Military-grade AN fitting, PTFE hose or hydraulic adapter by supAero. Part of the supAero Military-Version catalog. Request a quote or check availability.';
+
+  var canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.href = 'https://supaero.de/parts/' + encodeURIComponent(pn);
+
+  var ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.content = pn + ' | supAero Part Numbers';
+
+  var ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl) ogUrl.content = 'https://supaero.de/parts/' + encodeURIComponent(pn);
+
+  // ── DOM highlight (runs after parse) ──
+  function highlight() {
+    // Find matching chip
+    var target = null;
+    document.querySelectorAll('.pn-chip').forEach(function (chip) {
+      if (chip.textContent.trim() === pn) {
+        chip.classList.add('pn-chip--active');
+        target = chip;
+      }
+    });
+
+    // Banner above the hero content
+    var banner = document.createElement('div');
+    banner.className = 'pn-highlight-banner';
+    banner.innerHTML = '→ Part number: <strong>' + pn + '</strong>'
+      + (target ? '' : ' &nbsp;<em style="color:var(--text-muted);font-size:.8em">(not found in current catalog)</em>')
+      + '<a href="/parts/">View all parts →</a>';
+    var heroContainer = document.querySelector('.parts-hero .container');
+    if (heroContainer) heroContainer.insertBefore(banner, heroContainer.firstChild);
+
+    // Scroll to highlighted chip
+    if (target) {
+      setTimeout(function () {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 400);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', highlight);
+  } else {
+    highlight();
+  }
+})();
+</script>
 </body>
 </html>
