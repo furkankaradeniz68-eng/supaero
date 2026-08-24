@@ -2,8 +2,7 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/kat_download", "destination": "/kat_download.html" },
-    { "source": "/parts/:path+", "destination": "/parts/index.html" },
-    { "source": "/(.*)", "destination": "/$1" }
+    { "source": "/parts/:path+", "destination": "/parts/index.html" }
   ],
   "redirects": [
     { "source": "/:lang(en|tr|ko|es|ru|fr|pt|zh-CN|zh|it|uk|startseite)/:path*", "destination": "/", "permanent": true },
