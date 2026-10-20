@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D-Modell — supAero Portal</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="portal.css">
+  <!-- model-viewer web component -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+<div id="portal-nav"></div>
+
+<main>
+  <div class="page-wrap">
+
+    <div class="model-detail-header">
+      <a href="/portal/models.html" class="back-btn">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M10 7H2M2 7L6 3M2 7L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Alle Modelle
+      </a>
+    </div>
+
+    <div class="model-layout" id="model-layout">
+      <!-- filled by JS -->
+    </div>
+
+  </div>
+</main>
+
+<script src="portal.js"></script>
+<script>
+  requireAuth();
+  initPortalNav('models');
+
+  const id      = location.hash.slice(1) || new URLSearchParams(location.search).get('id');
+  const product = getProduct(id);
+
+  if (!product) {
+    window.location.href = '/portal/models.html';
+  } else {
+    document.title = `${product.name} — supAero Portal`;
+
+    const specsHTML = Object.entries(product.specs)
+      .map(([k, v]) => `
+        <div class="spec-row">
+          <span class="spec-key">${k}</span>
+          <span class="spec-val">${v}</span>
+        </div>`)
+      .join('');
+
+    const badgeHTML = product.badge
+      ? `<span class="product-card-badge${product.badge === 'Neu' ? ' badge-neu' : ''}">${product.badge}</span>`
+      : '';
+
+    document.getElementById('model-layout').innerHTML = `
+      <div class="model-viewer-wrap">
+        <model-viewer
+          src="${product.model}"
+          alt="${product.name} — interaktives 3D-Modell"
+          camera-controls
+          auto-rotate
+          auto-rotate-delay="2000"
+          rotation-per-second="20deg"
+          shadow-intensity="1.2"
+          exposure="1"
+          environment-image="neutral"
+          loading="eager"
+        ></model-viewer>
+        <div class="model-viewer-hint">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M4.5 7C4.5 7 5.5 5 7 5s2.5 2 2.5 2-1 2-2.5 2S4.5 7 4.5 7z" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="7" cy="7" r="1" fill="currentColor"/>
+          </svg>
+          Klicken &amp; Ziehen zum Drehen · Scrollen zum Zoomen
+        </div>
+        ${badgeHTML}
+      </div>
+
+      <div class="model-info">
+        <div>
+          <p class="model-cat">${product.category}</p>
+          <h1>${product.name}</h1>
+        </div>
+        <p class="model-desc">${product.description}</p>
+        <div class="specs-block">
+          <h4>Technische Daten</h4>
+          ${specsHTML}
+        </div>
+      </div>
+    `;
+  }
+</script>
+</body>
+</html>

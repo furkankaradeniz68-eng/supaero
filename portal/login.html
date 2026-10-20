@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Login — supAero</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="login-page">
+
+<div class="login-shell">
+
+  <!-- Left: decorative visual -->
+  <div class="login-visual">
+    <div class="login-visual-rings">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="login-visual-text">
+      <h2>Exklusive 3D-Produktansichten für Ihre Planung</h2>
+      <p>Erkunden Sie unsere Präzisionskomponenten vollständig interaktiv — drehen, zoomen und prüfen Sie jedes Detail aus jedem Winkel.</p>
+    </div>
+    <div class="login-visual-cert">ISO 9001:2015 zertifiziert · Seit 1997</div>
+  </div>
+
+  <!-- Right: login form -->
+  <div class="login-form-side">
+    <div class="login-form-logo">
+      <img src="/Logos/supAero-WortLogo-B.webp" alt="supAero">
+    </div>
+
+    <div class="login-access-badge">Exklusiver Kundenbereich</div>
+
+    <h1>Anmelden</h1>
+    <p class="login-sub">Melden Sie sich an, um Zugang zu den interaktiven 3D-Produktmodellen zu erhalten.</p>
+
+    <form id="login-form" novalidate>
+      <div class="field">
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" id="email" placeholder="name@firma.de" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="password">Passwort</label>
+        <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required>
+      </div>
+      <div id="error-msg" class="error-msg" style="display:none"></div>
+      <button type="submit" class="btn-primary" id="login-btn">Anmelden</button>
+    </form>
+
+    <p class="login-hint">Noch keinen Zugang? Wenden Sie sich an Ihren supAero-Ansprechpartner, um Ihre persönlichen Zugangsdaten zu erhalten.</p>
+  </div>
+
+</div>
+
+<script src="portal.js"></script>
+<script>
+  redirectIfAuthed();
+
+  document.getElementById('login-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn    = document.getElementById('login-btn');
+    const errEl  = document.getElementById('error-msg');
+    const email  = document.getElementById('email').value;
+    const pass   = document.getElementById('password').value;
+
+    errEl.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Wird überprüft …';
+
+    const result = await portalLogin(email, pass);
+
+    if (result.ok) {
+      window.location.href = '/portal/welcome.html';
+    } else {
+      errEl.textContent = result.error;
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Anmelden';
+    }
+  });
+</script>
+</body>
+</html>

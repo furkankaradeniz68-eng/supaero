@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D-Modelle — supAero Portal</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+
+<div id="portal-nav"></div>
+
+<main>
+  <div class="page-wrap">
+
+    <div class="models-header">
+      <h1>3D-Modelle</h1>
+      <p>Wählen Sie ein Produkt, um das interaktive 3D-Modell mit vollständigen Spezifikationen zu öffnen.</p>
+    </div>
+
+    <div class="models-grid" id="models-grid">
+      <!-- filled by JS -->
+    </div>
+
+  </div>
+</main>
+
+<script src="portal.js"></script>
+<script>
+  requireAuth();
+  initPortalNav('models');
+
+  const grid = document.getElementById('models-grid');
+
+  PRODUCTS.forEach(p => {
+    const badgeHTML = p.badge
+      ? `<span class="product-card-badge${p.badge === 'Neu' ? ' badge-neu' : ''}">${p.badge}</span>`
+      : '';
+
+    grid.insertAdjacentHTML('beforeend', `
+      <a href="/portal/model.html#${p.id}" class="product-card">
+        <div class="product-card-visual">
+          ${badgeHTML}
+          <div class="product-3d-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M14 3L3 8.5v11L14 25l11-5.5v-11L14 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M3 8.5l11 5.5m0 0l11-5.5m-11 5.5V25" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-cat">${p.category}</p>
+          <h3>${p.name}</h3>
+          <p>${p.shortDesc}</p>
+          <span class="product-card-cta">
+            Modell ansehen
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+    `);
+  });
+</script>
+</body>
+</html>

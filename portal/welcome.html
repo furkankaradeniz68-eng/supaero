@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Willkommen — supAero Portal</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+
+<div id="portal-nav"></div>
+
+<main>
+  <div class="page-wrap">
+
+    <!-- Hero -->
+    <section class="welcome-hero">
+      <p class="welcome-eyebrow">Exklusiver Kundenbereich</p>
+      <h1>Willkommen im<br><em>supAero Portal</em></h1>
+      <p>Hier erhalten Sie exklusiven Zugang zu interaktiven 3D-Modellen unserer Präzisionskomponenten — entwickelt, um Ihre Planung und Integration zu erleichtern.</p>
+      <a href="/portal/models.html" class="btn-blue">
+        Zu den 3D-Modellen
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- Features -->
+    <section class="welcome-features">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2L2 6v8l8 4 8-4V6l-8-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M2 6l8 4m0 0l8-4m-8 4v8" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Interaktive 3D-Ansicht</h3>
+        <p>Drehen, zoomen und erkunden Sie jedes Produkt aus beliebigem Winkel — direkt im Browser, ohne zusätzliche Software.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Vollständige Spezifikationen</h3>
+        <p>Alle technischen Kennwerte — Gewinde, Material, Druckbereich, Zertifizierungen — übersichtlich direkt neben dem Modell.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Immer aktuell</h3>
+        <p>Neue Produkte und Revisionen werden direkt in Ihrem Portal ergänzt — Sie erhalten automatisch Zugang zu allen Updates.</p>
+      </div>
+    </section>
+
+    <!-- About supAero -->
+    <section class="welcome-about">
+      <div class="welcome-about-text">
+        <h2>Über supAero</h2>
+        <p>supAero entwickelt und fertigt hochpräzise Hydraulikkomponenten für Motorsport, Luftfahrt und industrielle Anwendungen. Alle Produkte entsprechen geltenden Luftfahrt- und Industrienormen (MIL, AN, AS) und werden in ISO 9001:2015 zertifizierten Prozessen hergestellt. Seit 1997 vertrauen Teams von der Rennstrecke bis zur UAV-Entwicklung auf unsere Bauteile.</p>
+      </div>
+      <div class="welcome-about-stats">
+        <div class="about-stat">
+          <strong>15+</strong>
+          <span>Jahre Erfahrung</span>
+        </div>
+        <div class="about-stat">
+          <strong>1997</strong>
+          <span>Produktpalette</span>
+        </div>
+        <div class="about-stat">
+          <strong>15+</strong>
+          <span>Länder</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="portal.js"></script>
+<script>
+  requireAuth();
+  initPortalNav('welcome');
+</script>
+</body>
+</html>
