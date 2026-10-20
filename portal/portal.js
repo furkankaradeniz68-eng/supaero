@@ -1,12 +1,20 @@
 'use strict';
 
-// ─── Config ────────────────────────────────────────────────────
-// Set mockMode: false and add Supabase credentials to go live
-const PORTAL_CONFIG = {
-  mockMode: true,
-  // supabaseUrl: 'https://xxx.supabase.co',
-  // supabaseKey: 'eyJ...',
-};
+// ─── Supabase Config ───────────────────────────────────────────
+const SUPABASE_URL = 'https://yacwkxstvqvdgiiffwos.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_JAGI28ms4nmK_dDoS1BLzA_O8locPZk';
+
+// Supabase client — available once the CDN script loads
+let _sb = null;
+function getSB() {
+  if (!_sb && typeof supabase !== 'undefined') {
+    _sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  }
+  return _sb;
+}
+
+// ─── Mock fallback (set true while testing without Supabase users) ─
+const PORTAL_CONFIG = { mockMode: false };
 
 // ─── Demo Users (mock only) ────────────────────────────────────
 const MOCK_USERS = [
@@ -134,14 +142,26 @@ async function portalLogin(email, password) {
     }
     return { ok: false, error: 'E-Mail-Adresse oder Passwort ist nicht korrekt.' };
   }
-  // Supabase swap:
-  // const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-  // if (error) return { ok: false, error: error.message };
-  // localStorage.setItem('sa_portal_session', JSON.stringify({ email: data.user.email, name: data.user.email }));
-  // return { ok: true };
+
+  const sb = getSB();
+  if (!sb) return { ok: false, error: 'Verbindungsfehler. Bitte Seite neu laden.' };
+
+  const { data, error } = await sb.auth.signInWithPassword({ email: email.trim(), password });
+  if (error) {
+    const msg = error.message.includes('Invalid login') || error.message.includes('invalid_grant')
+      ? 'E-Mail-Adresse oder Passwort ist nicht korrekt.'
+      : error.message;
+    return { ok: false, error: msg };
+  }
+
+  const name = data.user.user_metadata?.name || data.user.email.split('@')[0];
+  localStorage.setItem('sa_portal_session', JSON.stringify({ email: data.user.email, name }));
+  return { ok: true };
 }
 
-function portalLogout() {
+async function portalLogout() {
+  const sb = getSB();
+  if (sb) await sb.auth.signOut();
   localStorage.removeItem('sa_portal_session');
   window.location.href = '/portal/login.html';
 }
@@ -164,6 +184,13 @@ function initPortalNav(activePage) {
         <a href="/portal/models.html"  class="${activePage === 'models'  ? 'active' : ''}">3D-Modelle</a>
       </nav>
       <div class="pnav-right">
+        <a href="/" class="pnav-back-site">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M8 2L4 6.5L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          supaero.de
+        </a>
+        <span class="pnav-divider"></span>
         <span class="pnav-name">${session?.name || session?.email || ''}</span>
         <button onclick="portalLogout()" class="pnav-logout-btn">Abmelden</button>
       </div>

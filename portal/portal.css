@@ -118,6 +118,27 @@ body {
   background: var(--bg-2);
 }
 
+.pnav-back-site {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: color 0.18s, background 0.18s;
+}
+.pnav-back-site:hover { color: var(--text-2); background: var(--bg-2); }
+
+.pnav-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
 /* ─── Login Page ───────────────────────────────────────────── */
 body.login-page {
   min-height: 100vh;

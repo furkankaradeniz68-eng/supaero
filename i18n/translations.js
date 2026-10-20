@@ -5,7 +5,7 @@ const TRANSLATIONS = {
     nav_about: "About",
     nav_service: "Service",
     nav_catalog: "Catalog",
-    nav_contact: "Contact",
+    nav_contact: "Contact", nav_portal: "Portal",
     nav_quote: "Request Quote",
     hero_title_1: "Specialist in",
     hero_title_2: "Lightweight Fluid & Hydraulic Systems,",
@@ -252,7 +252,7 @@ const TRANSLATIONS = {
 
   de: {
     nav_products: "Produkte", nav_industries: "Branchen", nav_about: "Über uns",
-    nav_service: "Service", nav_catalog: "Katalog", nav_contact: "Kontakt", nav_quote: "Angebot anfragen",
+    nav_service: "Service", nav_catalog: "Katalog", nav_contact: "Kontakt", nav_portal: "Portal", nav_quote: "Angebot anfragen",
     hero_title_1: "Ihr Spezialist für",
     hero_title_2: "AN Fittings, PTFE-Schläuche & Hydrauliksysteme",
     hero_title_3: "für Motorsport, Luftfahrt & Industrie",
@@ -452,7 +452,7 @@ const TRANSLATIONS = {
 
   tr: {
     nav_products: "Ürünler", nav_industries: "Sektörler", nav_about: "Hakkımızda",
-    nav_service: "Servis", nav_catalog: "Katalog", nav_contact: "İletişim", nav_quote: "Teklif İste",
+    nav_service: "Servis", nav_catalog: "Katalog", nav_contact: "İletişim", nav_portal: "Portal", nav_quote: "Teklif İste",
     hero_title_1: "AN Fitting, PTFE Hortum",
     hero_title_2: "& Hidrolik Sistemlerde",
     hero_title_3: "Uzman Tedarikçiniz",
@@ -622,7 +622,7 @@ const TRANSLATIONS = {
 
   ar: {
     nav_products: "المنتجات", nav_industries: "الصناعات", nav_about: "من نحن",
-    nav_service: "الخدمة", nav_catalog: "الكتالوج", nav_contact: "اتصل بنا", nav_quote: "طلب عرض سعر",
+    nav_service: "الخدمة", nav_catalog: "الكتالوج", nav_contact: "اتصل بنا", nav_portal: "Portal", nav_quote: "طلب عرض سعر",
     hero_title_1: "وصلات AN الهيدروليكية،",
     hero_title_2: "خراطيم مضفرة بالفولاذ",
     hero_title_3: "وأنظمة هيدروليكية احترافية",
@@ -792,7 +792,7 @@ const TRANSLATIONS = {
 
   es: {
     nav_products: "Productos", nav_industries: "Industrias", nav_about: "Nosotros",
-    nav_service: "Servicio", nav_catalog: "Catálogo", nav_contact: "Contacto", nav_quote: "Solicitar Cotización",
+    nav_service: "Servicio", nav_catalog: "Catálogo", nav_contact: "Contacto", nav_portal: "Portal", nav_quote: "Solicitar Cotización",
     hero_title_1: "Racores AN, Mangueras de Acero Trenzado",
     hero_title_2: "& Sistemas Hidráulicos",
     hero_title_3: "para Motorsport, Aviación e Industria",
@@ -960,7 +960,7 @@ const TRANSLATIONS = {
 
   it: {
     nav_products: "Prodotti", nav_industries: "Settori", nav_about: "Chi Siamo",
-    nav_service: "Servizio", nav_catalog: "Catalogo", nav_contact: "Contatto", nav_quote: "Richiedi Preventivo",
+    nav_service: "Servizio", nav_catalog: "Catalogo", nav_contact: "Contatto", nav_portal: "Portal", nav_quote: "Richiedi Preventivo",
     hero_title_1: "Raccordi AN, Tubi Intrecciati in Acciaio",
     hero_title_2: "& Sistemi Idraulici",
     hero_title_3: "per Motorsport, Aviazione e Industria",
@@ -1128,7 +1128,7 @@ const TRANSLATIONS = {
 
   pt: {
     nav_products: "Produtos", nav_industries: "Indústrias", nav_about: "Sobre",
-    nav_service: "Serviço", nav_catalog: "Catálogo", nav_contact: "Contacto", nav_quote: "Solicitar Orçamento",
+    nav_service: "Serviço", nav_catalog: "Catálogo", nav_contact: "Contacto", nav_portal: "Portal", nav_quote: "Solicitar Orçamento",
     hero_title_1: "Racores AN, Mangueiras de Aço Trançado",
     hero_title_2: "& Sistemas Hidráulicos",
     hero_title_3: "para Motorsport, Aviação e Indústria",
@@ -1296,7 +1296,7 @@ const TRANSLATIONS = {
 
   zh: {
     nav_products: "产品", nav_industries: "行业", nav_about: "关于我们",
-    nav_service: "服务", nav_catalog: "目录", nav_contact: "联系", nav_quote: "申请报价",
+    nav_service: "服务", nav_catalog: "目录", nav_contact: "联系", nav_portal: "Portal", nav_quote: "申请报价",
     hero_title_1: "AN管接头、钢丝编织软管",
     hero_title_2: "及液压系统",
     hero_title_3: "专业供应商",
