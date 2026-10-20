@@ -1,8 +1,8 @@
 'use strict';
 
 // ─── Supabase Config ───────────────────────────────────────────
-const SUPABASE_URL = 'https://yacwkxstvqvdgiiffwos.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_JAGI28ms4nmK_dDoS1BLzA_O8locPZk';
+const SUPABASE_URL = 'https://xsilgbtakvkhkpkltgwj.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_FFIgE8oqaH4pE_0IOSDqhQ_V4wdfJv5';
 
 // Supabase client — initialized eagerly after CDN loads
 let _sb = null;
