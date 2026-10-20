@@ -10,20 +10,20 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:          #050B18;
-  --bg-2:        #0A1428;
-  --bg-card:     #0D1830;
+  --bg:          #FFFFFF;
+  --bg-2:        #F3F6FB;
+  --bg-card:     #EBF0F9;
   --blue:        #1B4F9B;
   --blue-mid:    #2563C8;
   --blue-bright: #3B7FE8;
   --blue-glow:   rgba(37, 99, 200, 0.25);
   --red:         #D42B2B;
   --white:       #FFFFFF;
-  --gray-1:      rgba(255,255,255,0.85);
-  --gray-2:      rgba(255,255,255,0.55);
-  --gray-3:      rgba(255,255,255,0.25);
-  --border:      rgba(255,255,255,0.07);
-  --border-blue: rgba(27,79,155,0.4);
+  --gray-1:      rgba(10,20,40,0.88);
+  --gray-2:      rgba(10,20,40,0.56);
+  --gray-3:      rgba(10,20,40,0.38);
+  --border:      rgba(10,20,40,0.10);
+  --border-blue: rgba(27,79,155,0.28);
   --nav-h:       92px;
   --font:        'Inter', 'Axiforma', system-ui, sans-serif;
   --radius:      12px;
@@ -40,7 +40,7 @@ html {
 body {
   font-family: var(--font);
   background: var(--bg);
-  color: var(--white);
+  color: #0F172A;
   overflow-x: hidden;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -90,8 +90,8 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 }
 .cat-card:hover {
   border-color: var(--border-blue);
-  background: rgba(59,127,232,.07);
-  color: var(--white);
+  background: rgba(27,79,155,.07);
+  color: var(--blue);
 }
 .cat-card-img {
   width: 100%;
@@ -210,12 +210,12 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 
 .btn-outline {
   background: transparent;
-  color: var(--white);
-  border: 1.5px solid var(--border);
+  color: #0F172A;
+  border: 1.5px solid rgba(10,20,40,0.2);
 }
 .btn-outline:hover {
-  border-color: rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.05);
+  border-color: rgba(10,20,40,0.4);
+  background: rgba(10,20,40,0.04);
   transform: translateY(-2px);
 }
 
@@ -225,7 +225,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   padding: 0;
   font-size: 0.875rem;
 }
-.btn-ghost:hover { color: var(--white); }
+.btn-ghost:hover { color: var(--blue); }
 
 .btn svg { transition: transform 0.25s; }
 .btn:hover svg { transform: translateX(3px); }
@@ -242,7 +242,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 }
 
 #nav.scrolled {
-  background: rgba(5, 11, 24, 0.88);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 1px 0 var(--border);
@@ -282,8 +282,8 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   transition: color 0.25s, background 0.25s;
 }
 .nav-links a:hover, .nav-links a.active {
-  color: var(--white);
-  background: rgba(255,255,255,0.06);
+  color: var(--blue);
+  background: rgba(27,79,155,0.08);
 }
 
 .nav-right {
@@ -313,9 +313,9 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   transition: color 0.25s, border-color 0.25s, background 0.25s;
 }
 .lang-btn:hover {
-  color: var(--white);
-  border-color: rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.05);
+  color: var(--blue);
+  border-color: rgba(27,79,155,0.3);
+  background: rgba(27,79,155,0.06);
 }
 .lang-btn .flag { display: none; }
 
@@ -333,7 +333,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   top: calc(100% + 8px);
   right: 0;
   min-width: 180px;
-  background: #0F1D38;
+  background: #FFFFFF;
   border: 1px solid var(--border-blue);
   border-radius: var(--radius);
   padding: 0.5rem;
@@ -381,7 +381,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   display: block;
   width: 24px;
   height: 1.5px;
-  background: var(--white);
+  background: #0F172A;
   transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -498,7 +498,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .hero-spec-num {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--white);
+  color: #0F172A;
   letter-spacing: -0.02em;
 }
 .hero-spec-label {
@@ -588,7 +588,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   position: absolute;
   width: 320px;
   height: auto;
-  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(27,79,155,0.4));
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18)) drop-shadow(0 0 30px rgba(27,79,155,0.4));
   animation: product-float 6s ease-in-out infinite;
   cursor: none;
   transition: transform 0.1s ease-out;
@@ -608,7 +608,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   object-fit: contain;
   transform: scale(1.45);
   transform-origin: 50% 50%;
-  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(27,79,155,0.35));
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18)) drop-shadow(0 0 30px rgba(27,79,155,0.35));
   opacity: 0;
   transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -619,7 +619,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 /* Spec callouts */
 .hero-callout {
   position: absolute;
-  background: rgba(10, 20, 40, 0.85);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-blue);
   border-radius: 10px;
@@ -627,7 +627,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   font-size: 0.75rem;
   font-weight: 600;
   white-space: nowrap;
-  color: var(--white);
+  color: #0F172A;
   opacity: 0;
   animation: callout-in 0.6s ease forwards;
 }
@@ -905,8 +905,8 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .product-card-img-inner {
   width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(27,79,155,0.05);
+  border: 1px solid rgba(27,79,155,0.12);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1124,14 +1124,14 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   min-width: 72px;
 }
 .variant-submenu-inner {
-  background: rgba(8,16,36,0.97);
+  background: rgba(255,255,255,0.97);
   border: 1px solid var(--border-blue);
   border-radius: 8px;
   padding: 4px;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 .variant-chip-wrap:hover .variant-submenu { display: flex; }
 .variant-subopt {
@@ -1151,7 +1151,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   width: 360px;
   height: 420px;
   object-fit: contain;
-  filter: drop-shadow(0 30px 70px rgba(0,0,0,0.6)) drop-shadow(0 0 50px rgba(27,79,155,0.3));
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15)) drop-shadow(0 0 40px rgba(27,79,155,0.3));
   transition: opacity 0.4s;
 }
 
@@ -1195,7 +1195,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .spec-value {
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--white);
+  color: #0F172A;
 }
 
 .featured-variants {
@@ -1477,7 +1477,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   z-index: 9999;
   transform: translate(-50%, -50%);
   transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
-  mix-blend-mode: exclusion;
+  mix-blend-mode: normal;
 }
 .cursor-ring {
   position: fixed;
@@ -1548,7 +1548,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
     flex-direction: column;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(4, 9, 22, 0.97);
+    background: rgba(255,255,255,0.97);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     z-index: 999;
@@ -1562,27 +1562,27 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   .nav-links.open a {
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--gray-2);
+    color: rgba(10,20,40,0.56);
     letter-spacing: -0.01em;
     transition: color 0.2s;
   }
   .nav-links.open a:hover,
-  .nav-links.open a.active { color: var(--white); }
+  .nav-links.open a.active { color: var(--blue); }
   .nav-close-btn {
     display: none;
     position: fixed;
     top: 1.25rem;
     right: 1.25rem;
     z-index: 1000;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(10,20,40,0.06);
+    border: 1px solid rgba(10,20,40,0.12);
     border-radius: 50%;
     width: 44px;
     height: 44px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: var(--white);
+    color: #0F172A;
   }
   .nav-close-btn.visible { display: flex; }
   .nav-toggle { display: flex; }
@@ -1642,7 +1642,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   font-size: .8125rem; color: var(--gray-3); margin-bottom: 2rem;
 }
 .breadcrumb a { color: var(--gray-3); transition: color .2s; }
-.breadcrumb a:hover { color: var(--white); }
+.breadcrumb a:hover { color: var(--blue); }
 .breadcrumb-sep { opacity: .4; }
 
 /* ── Products Page ───────────────────────────── */
@@ -1690,8 +1690,8 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .pfc-image-inner {
   width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(27,79,155,0.05);
+  border: 1px solid rgba(27,79,155,0.12);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1753,7 +1753,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 20px 50px rgba(0,0,0,.6)) drop-shadow(0 0 30px rgba(27,79,155,.25));
+  filter: drop-shadow(0 12px 30px rgba(0,0,0,.15)) drop-shadow(0 0 25px rgba(27,79,155,.25));
   transition: opacity .3s;
 }
 .angle-strip {
@@ -1853,8 +1853,8 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   font-size: .75rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .1em; color: var(--gray-3); margin-bottom: .35rem;
 }
-.contact-info-value { font-size: 1rem; font-weight: 600; color: var(--white); }
-.contact-info-value a { color: var(--white); transition: color .25s; }
+.contact-info-value { font-size: 1rem; font-weight: 600; color: #0F172A; }
+.contact-info-value a { color: #0F172A; transition: color .25s; }
 .contact-info-value a:hover { color: var(--blue-bright); }
 
 .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
@@ -1867,7 +1867,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .form-input, .form-textarea, .form-select {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: 8px; padding: .75rem 1rem;
-  font-size: .9375rem; color: var(--white); font-family: var(--font);
+  font-size: .9375rem; color: #0F172A; font-family: var(--font);
   transition: border-color .25s, box-shadow .25s; outline: none; width: 100%;
 }
 .form-input:focus, .form-textarea:focus, .form-select:focus {
@@ -2003,11 +2003,11 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   font-size: .9375rem; color: var(--gray-2); line-height: 1.8;
 }
 .legal-content h2 {
-  font-size: 1.375rem; font-weight: 700; color: var(--white);
+  font-size: 1.375rem; font-weight: 700; color: #0F172A;
   margin: 2.5rem 0 .75rem;
 }
 .legal-content h3 {
-  font-size: 1.0625rem; font-weight: 700; color: var(--white);
+  font-size: 1.0625rem; font-weight: 700; color: #0F172A;
   margin: 1.75rem 0 .5rem;
 }
 .legal-content p { margin-bottom: 1rem; }
@@ -2034,7 +2034,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 }
 
 /* ── Shared nav active on subpages ───────────── */
-.nav-links a.active { color: var(--white); background: rgba(255,255,255,.06); }
+.nav-links a.active { color: var(--blue); background: rgba(27,79,155,.08); }
 
 @media (max-width: 900px) {
   .industry-block { grid-template-columns: 1fr; }
