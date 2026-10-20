@@ -4,14 +4,21 @@
 const SUPABASE_URL = 'https://yacwkxstvqvdgiiffwos.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_JAGI28ms4nmK_dDoS1BLzA_O8locPZk';
 
-// Supabase client — available once the CDN script loads
+// Supabase client — initialized eagerly after CDN loads
 let _sb = null;
-function getSB() {
-  if (!_sb && typeof supabase !== 'undefined') {
-    _sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+try {
+  // eslint-disable-next-line no-undef
+  const _lib = (typeof supabase !== 'undefined' && supabase)
+             || (typeof window !== 'undefined' && window.supabase);
+  if (_lib && typeof _lib.createClient === 'function') {
+    _sb = _lib.createClient(SUPABASE_URL, SUPABASE_KEY);
+  } else {
+    console.warn('[portal] Supabase UMD not found on window.supabase');
   }
-  return _sb;
+} catch (e) {
+  console.error('[portal] Supabase init failed:', e);
 }
+function getSB() { return _sb; }
 
 // ─── Mock fallback (set true while testing without Supabase users) ─
 const PORTAL_CONFIG = { mockMode: false };
