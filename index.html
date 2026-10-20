@@ -71,7 +71,7 @@
         "url": "https://supaero.de",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://supaero.de/Logos/supAero-WortLogo-W.webp"
+          "url": "https://supaero.de/Logos/supAero-WortLogo-B.webp"
         },
         "description": "Specialist in AN fittings, PTFE hydraulic hoses, banjo fittings and high-pressure connectors for motorsport, aerospace, UAV and industrial applications. ISO 9001:2015 certified.",
         "email": "info@supaero.de",
@@ -132,7 +132,7 @@
 
       <!-- Logo -->
       <a href="/" class="nav-logo">
-        <img src="Logos/supAero-WortLogo-W.webp" alt="supAero" onerror="this.style.cssText='color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif'; this.outerHTML='<span style=\'color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif\'>sup<span style=\'color:#3B7FE8\'>A</span>ero</span>'">
+        <img src="Logos/supAero-WortLogo-B.webp" alt="supAero" onerror="this.style.cssText='color:#1B4F9B;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif'; this.outerHTML='<span style=\'color:#1B4F9B;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif\'>sup<span style=\'color:#3B7FE8\'>A</span>ero</span>'">
       </a>
 
       <!-- Main Links -->
@@ -143,7 +143,6 @@
         <li><a href="#service" data-i18n="nav_service">Service</a></li>
         <li><a href="#cta" data-i18n="nav_catalog">Catalog</a></li>
         <li><a href="pages/contact.html" data-i18n="nav_contact">Contact</a></li>
-        <li class="nav-portal-item"><a href="/portal/login.html" data-i18n="nav_portal">Portal</a></li>
       </ul>
 
       <!-- Right side -->
@@ -169,7 +168,7 @@
         </div>
 
         <!-- CTA Button -->
-        <a href="pages/contact.html" class="btn btn-primary" data-i18n="nav_quote">Request Quote</a>
+        <a href="/portal/login.html" class="btn-nav-login" id="nav-login-btn" data-i18n="nav_login">Login</a><a href="pages/contact.html" class="btn btn-primary" id="nav-quote-btn" data-i18n="nav_quote">Request Quote</a><a href="/portal/welcome.html" class="btn btn-primary" id="nav-portal-btn" style="display:none" data-i18n="nav_portal_cta">Portal &#x2192;</a><button onclick="saSignOut()" class="btn-nav-login" id="nav-signout-btn" style="display:none" data-i18n="nav_signout">Abmelden</button>
 
         <!-- Mobile Toggle -->
         <button class="nav-toggle" aria-label="Menu">
@@ -179,6 +178,7 @@
 
     </div>
   </div>
+<script>!function(){try{var s=JSON.parse(localStorage.getItem('sa_portal_session')||'null');if(s){document.getElementById('nav-login-btn').style.display='none';document.getElementById('nav-quote-btn').style.display='none';document.getElementById('nav-portal-btn').style.display='';document.getElementById('nav-signout-btn').style.display='';}}catch(e){}}();function saSignOut(){try{Object.keys(localStorage).filter(function(k){return k.startsWith('sb-')}).forEach(function(k){localStorage.removeItem(k)});}catch(e){}localStorage.removeItem('sa_portal_session');window.location.href='/';};</script>
 </nav>
 
 <!-- ══════════════════════════════════════════
@@ -994,8 +994,8 @@
 
       <!-- Brand Column -->
       <div class="footer-brand">
-        <img src="Logos/supAero-WortLogo-W.webp" alt="supAero"
-          onerror="this.outerHTML='<span style=&quot;color:white;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif;margin-bottom:1.25rem;display:block&quot;>sup<span style=&quot;color:#3B7FE8&quot;>A</span>ero</span>'">
+        <img src="Logos/supAero-WortLogo-B.webp" alt="supAero"
+          onerror="this.outerHTML='<span style=&quot;color:#1B4F9B;font-size:1.4rem;font-weight:900;font-family:Inter,sans-serif;margin-bottom:1.25rem;display:block&quot;>sup<span style=&quot;color:#3B7FE8&quot;>A</span>ero</span>'">
       </div>
 
       <!-- Seiten Column -->
@@ -1007,7 +1007,6 @@
           <li><a href="pages/catalog.html" data-i18n="nav_catalog">Katalog</a></li>
           <li><a href="pages/service.html" data-i18n="nav_service">Service</a></li>
           <li><a href="pages/contact.html" data-i18n="nav_contact">Kontakt</a></li>
-        <li class="nav-portal-item"><a href="/portal/login.html" data-i18n="nav_portal">Portal</a></li>
         </ul>
       </div>
 

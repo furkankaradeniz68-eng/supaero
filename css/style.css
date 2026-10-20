@@ -286,17 +286,24 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   background: rgba(27,79,155,0.08);
 }
 
-.nav-portal-item a {
-  color: var(--blue) !important;
-  border: 1px solid var(--border-blue);
-  background: rgba(27,79,155,0.06);
-  font-size: 0.8rem !important;
-  padding: 0.3rem 0.85rem !important;
-  letter-spacing: 0.02em;
+.btn-nav-login {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  font-family: inherit;
+  line-height: 1;
 }
-.nav-portal-item a:hover {
-  background: rgba(27,79,155,0.14) !important;
-  border-color: var(--blue-bright);
+.btn-nav-login:hover {
+  color: var(--blue);
+  background: rgba(27,79,155,0.07);
 }
 
 .nav-right {
