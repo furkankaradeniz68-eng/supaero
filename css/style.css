@@ -789,11 +789,12 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 0.6rem;
+  color: #ffffff;
 }
 
 .industry-desc {
   font-size: 0.875rem;
-  color: var(--gray-2);
+  color: rgba(255,255,255,0.75);
   line-height: 1.6;
   max-width: 340px;
   margin-bottom: 1.25rem;
@@ -992,13 +993,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, transparent 100%);
 }
 #stats::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
+  display: none;
 }
 
 .stats-grid {
@@ -1208,8 +1203,8 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   cursor: pointer;
   transition: all 0.25s;
 }
-.variant-chip.black { border-color: rgba(255,255,255,0.15); }
-.variant-chip:hover { border-color: var(--blue-bright); color: var(--white); }
+.variant-chip.black { border-color: rgba(10,20,40,0.15); }
+.variant-chip:hover { border-color: var(--blue-bright); color: var(--blue); }
 .variant-chip.selected { border-color: var(--blue-bright); background: rgba(27,79,155,0.25); color: var(--blue-bright); }
 
 /* ── About Section ──────────────────────────── */
@@ -1365,14 +1360,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 
 /* Subtle texture overlay */
 #footer::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
+  display: none;
 }
 
 .footer-grid {
