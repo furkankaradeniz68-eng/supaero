@@ -10,48 +10,84 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="portal.css">
+  <style>
+    /* Centered logo in blue panel */
+    .login-visual-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .login-visual-logo img {
+      width: 200px;
+      max-width: 55%;
+      opacity: 0.95;
+    }
+    /* Language switcher placement on form side */
+    .login-form-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+    .login-form-logo img { height: 28px; }
+  </style>
 </head>
 <body class="login-page">
 
 <div class="login-shell">
 
-  <!-- Left: decorative visual -->
+  <!-- Left: blue visual -->
   <div class="login-visual">
     <div class="login-visual-rings">
       <span></span><span></span><span></span><span></span>
     </div>
-    <div class="login-visual-text">
-      <h2>Exklusive 3D-Produktansichten für Ihre Planung</h2>
-      <p>Erkunden Sie unsere Präzisionskomponenten vollständig interaktiv — drehen, zoomen und prüfen Sie jedes Detail aus jedem Winkel.</p>
+
+    <!-- Logo centered in blue area -->
+    <div class="login-visual-logo">
+      <img src="/Logos/supAero-WortLogo-W.webp" alt="supAero">
     </div>
-    <div class="login-visual-cert">ISO 9001:2015 zertifiziert · Seit vielen Jahren</div>
+
+    <div class="login-visual-text" style="position:relative;z-index:1">
+      <h2 data-pi18n="login_vis_h">Exklusive 3D-Produktansichten für Ihre Planung</h2>
+      <p data-pi18n="login_vis_p">Erkunden Sie unsere Präzisionskomponenten vollständig interaktiv — drehen, zoomen und prüfen Sie jedes Detail aus jedem Winkel.</p>
+    </div>
+    <div class="login-visual-cert" data-pi18n="login_cert">ISO 9001:2015 zertifiziert · Seit vielen Jahren</div>
   </div>
 
   <!-- Right: login form -->
   <div class="login-form-side">
-    <div class="login-form-logo">
-      <img src="/Logos/supAero-WortLogo-B.webp" alt="supAero">
+    <div class="login-form-header">
+      <div class="login-form-logo">
+        <img src="/Logos/supAero-WortLogo-B.webp" alt="supAero">
+      </div>
+      <div id="lang-sw-login"></div>
     </div>
 
-    <div class="login-access-badge">Exklusiver Kundenbereich</div>
+    <div class="login-access-badge" data-pi18n="login_badge">Exklusiver Kundenbereich</div>
 
-    <h1>Anmelden</h1>
-    <p class="login-sub">Melden Sie sich an, um Zugang zu den interaktiven 3D-Produktmodellen zu erhalten.</p>
+    <h1 data-pi18n="login_title">Anmelden</h1>
+    <p class="login-sub" data-pi18n="login_sub">Melden Sie sich an, um Zugang zu den interaktiven 3D-Produktmodellen zu erhalten.</p>
 
     <form id="login-form" novalidate>
       <div class="field">
-        <label for="email">E-Mail-Adresse</label>
-        <input type="email" id="email" placeholder="name@firma.de" autocomplete="email" required>
+        <label for="email" data-pi18n="login_email_lbl">E-Mail-Adresse</label>
+        <input type="email" id="email" data-pi18n="login_email_ph" data-pi18n-attr="placeholder" placeholder="name@firma.de" autocomplete="email" required>
       </div>
       <div class="field">
-        <label for="password">Passwort</label>
+        <label for="password" data-pi18n="login_pw_lbl">Passwort</label>
         <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required>
       </div>
       <div id="error-msg" class="error-msg" style="display:none"></div>
-      <button type="submit" class="btn-primary" id="login-btn">Anmelden</button>
+      <button type="submit" class="btn-primary" id="login-btn" data-pi18n="login_btn">Anmelden</button>
     </form>
 
-    <p class="login-hint">Noch keinen Zugang? Wenden Sie sich an Ihren supAero-Ansprechpartner, um Ihre persönlichen Zugangsdaten zu erhalten.</p>
+    <p class="login-hint" data-pi18n="login_hint">Noch keinen Zugang? Wenden Sie sich an Ihren supAero-Ansprechpartner, um Ihre persönlichen Zugangsdaten zu erhalten.</p>
   </div>
 
 </div>
@@ -59,19 +95,24 @@
 <script>window.global = window;</script>
 <script src="supabase.min.js"></script>
 <script src="portal.js"></script>
+<script src="portal-i18n.js"></script>
 <script>
+  // Apply stored language immediately
+  applyLang(getLang());
+  initPortalLangSwitcher('lang-sw-login');
+
   redirectIfAuthed();
 
   document.getElementById('login-form').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const btn    = document.getElementById('login-btn');
-    const errEl  = document.getElementById('error-msg');
-    const email  = document.getElementById('email').value;
-    const pass   = document.getElementById('password').value;
+    const btn   = document.getElementById('login-btn');
+    const errEl = document.getElementById('error-msg');
+    const email = document.getElementById('email').value;
+    const pass  = document.getElementById('password').value;
 
     errEl.style.display = 'none';
     btn.disabled = true;
-    btn.textContent = 'Wird überprüft …';
+    btn.textContent = t('login_checking');
 
     const result = await portalLogin(email, pass);
 
@@ -81,7 +122,7 @@
       errEl.textContent = result.error;
       errEl.style.display = 'block';
       btn.disabled = false;
-      btn.textContent = 'Anmelden';
+      btn.textContent = t('login_btn');
     }
   });
 </script>

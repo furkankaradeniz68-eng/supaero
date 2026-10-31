@@ -225,13 +225,10 @@
 
     <div class="agr-header">
       <div class="agr-header-top">
-        <div class="agr-title" id="agr-title">CAD-Daten-Nutzungsvereinbarung</div>
-        <div class="agr-lang">
-          <button id="lang-de" class="active" onclick="setLang('de')">DE</button>
-          <button id="lang-en" onclick="setLang('en')">EN</button>
-        </div>
+        <div class="agr-title" id="agr-title" data-pi18n="agr_title">CAD-Daten-Nutzungsvereinbarung</div>
+        <div id="agr-lang-sw"></div>
       </div>
-      <div class="agr-subtitle" id="agr-subtitle">Bitte lesen Sie die Vereinbarung vollständig und akzeptieren Sie diese, um Zugang zum Portal zu erhalten.</div>
+      <div class="agr-subtitle" id="agr-subtitle" data-pi18n="agr_sub">Bitte lesen Sie die Vereinbarung vollständig und akzeptieren Sie diese, um Zugang zum Portal zu erhalten.</div>
     </div>
 
     <div class="agr-progress-wrap">
@@ -475,6 +472,7 @@
 <script>window.global = window;</script>
 <script src="supabase.min.js"></script>
 <script src="portal.js"></script>
+<script src="portal-i18n.js"></script>
 <script>
   let _user = null;
   let _scrolled = false;
@@ -533,37 +531,31 @@
     }
   });
 
-  // Language toggle
-  function setLang(lang) {
-    _lang = lang;
-    document.getElementById('text-de').classList.toggle('visible', lang === 'de');
-    document.getElementById('text-en').classList.toggle('visible', lang === 'en');
-    document.getElementById('lang-de').classList.toggle('active', lang === 'de');
-    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-
-    const isDE = lang === 'de';
-    document.getElementById('agr-title').textContent = isDE
-      ? 'CAD-Daten-Nutzungsvereinbarung'
-      : 'CAD Data Usage Agreement';
-    document.getElementById('agr-subtitle').textContent = isDE
-      ? 'Bitte lesen Sie die Vereinbarung vollständig und akzeptieren Sie diese, um Zugang zum Portal zu erhalten.'
-      : 'Please read the agreement in full and accept it to gain access to the portal.';
-    document.getElementById('agr-check-label').textContent = isDE
-      ? 'Ich habe die CAD-Daten-Nutzungsvereinbarung vollständig gelesen und akzeptiere diese verbindlich.'
-      : 'I have read the CAD Data Usage Agreement in full and accept it as binding.';
-    btn.innerHTML = isDE
-      ? 'Vereinbarung akzeptieren &amp; Zugang öffnen'
-      : 'Accept Agreement &amp; Open Access';
-
-    // Reset scroll tracking when switching language
+  // Language toggle — integrated with portal-i18n
+  function switchAgrContent(lang) {
+    // Agreement text: DE for German, EN for all others
+    const textLang = (lang === 'de') ? 'de' : 'en';
+    _lang = textLang;
+    document.getElementById('text-de').classList.toggle('visible', textLang === 'de');
+    document.getElementById('text-en').classList.toggle('visible', textLang === 'en');
+    // UI strings via portal-i18n
+    document.getElementById('agr-check-label').textContent = t('agr_check');
+    btn.textContent = t('agr_btn');
+    // Reset scroll
     _scrolled = false;
     check.checked = false;
     check.disabled = true;
     btn.disabled = true;
     body.scrollTop = 0;
     fill.style.width = '0%';
-    plabel.textContent = isDE ? '0 % gelesen' : '0 % read';
+    plabel.textContent = '0 ' + t('agr_progress');
   }
+
+  // Init lang switcher + connect to portal-i18n
+  applyLang(getLang());
+  initPortalLangSwitcher('agr-lang-sw');
+  onLangChange(switchAgrContent);
+  switchAgrContent(getLang());
 </script>
 </body>
 </html>

@@ -267,6 +267,8 @@ async function initPortalNav(activePage) {
         ${adminLink}
       </nav>
       <div class="pnav-right">
+        <div id="pnav-lang-sw"></div>
+        <span class="pnav-divider"></span>
         <a href="/" class="pnav-back-site">
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
             <path d="M8 2L4 6.5L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -275,8 +277,18 @@ async function initPortalNav(activePage) {
         </a>
         <span class="pnav-divider"></span>
         <span class="pnav-name">${name}</span>
-        <button onclick="portalLogout()" class="pnav-logout-btn">Abmelden</button>
+        <button onclick="portalLogout()" class="pnav-logout-btn" id="pnav-logout-btn">Abmelden</button>
       </div>
     </div>
   `;
+  // Init lang switcher if portal-i18n.js is loaded
+  if (typeof initPortalLangSwitcher === 'function') {
+    initPortalLangSwitcher('pnav-lang-sw');
+    if (typeof onLangChange === 'function') {
+      onLangChange(() => {
+        const logoutBtn = document.getElementById('pnav-logout-btn');
+        if (logoutBtn && typeof t === 'function') logoutBtn.textContent = t('nav_logout');
+      });
+    }
+  }
 }
