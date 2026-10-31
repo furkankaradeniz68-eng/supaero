@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutzungsvereinbarung — supAero Portal</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="portal.css">
+  <style>
+    body { background: var(--bg-2); }
+
+    .agr-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 16px 60px;
+    }
+
+    .agr-logo {
+      margin-bottom: 32px;
+    }
+    .agr-logo img { height: 28px; }
+
+    .agr-card {
+      width: 100%;
+      max-width: 780px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .agr-header {
+      padding: 28px 36px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .agr-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .agr-title { font-size: 18px; font-weight: 700; color: var(--text); }
+
+    .agr-lang {
+      display: flex;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .agr-lang button {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .agr-lang button.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+
+    .agr-subtitle {
+      font-size: 13px;
+      color: var(--text-2);
+    }
+
+    .agr-progress-wrap {
+      padding: 0 36px;
+      padding-top: 16px;
+    }
+    .agr-progress-bar {
+      height: 3px;
+      background: var(--bg-2);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .agr-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--blue-bright);
+      border-radius: 2px;
+      transition: width .2s;
+    }
+    .agr-progress-label {
+      font-size: 11px;
+      color: var(--text-3);
+      margin-top: 5px;
+      text-align: right;
+    }
+
+    .agr-body {
+      height: 420px;
+      overflow-y: auto;
+      padding: 28px 36px;
+      scroll-behavior: smooth;
+    }
+    .agr-body::-webkit-scrollbar { width: 6px; }
+    .agr-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .agr-text { display: none; }
+    .agr-text.visible { display: block; }
+
+    .agr-text h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      margin-top: 0;
+    }
+    .agr-text .agr-parties {
+      font-size: 13px;
+      color: var(--text-2);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .agr-text .agr-section {
+      margin-bottom: 20px;
+    }
+    .agr-text .agr-section h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .agr-text .agr-section p,
+    .agr-text .agr-section li {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+    .agr-text .agr-section ul, .agr-text .agr-section ol {
+      padding-left: 20px;
+    }
+    .agr-text .agr-section ol { list-style: decimal; }
+
+    .agr-footer {
+      padding: 20px 36px 28px;
+      border-top: 1px solid var(--border);
+    }
+    .agr-check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .agr-check-row input[type="checkbox"] {
+      width: 17px; height: 17px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--blue);
+      cursor: pointer;
+    }
+    .agr-check-row input[type="checkbox"]:disabled { opacity: 0.4; cursor: not-allowed; }
+    .agr-check-label {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+      cursor: pointer;
+    }
+
+    .agr-scroll-hint {
+      font-size: 12px;
+      color: var(--blue-bright);
+      margin-bottom: 16px;
+      display: none;
+    }
+    .agr-scroll-hint.visible { display: block; }
+
+    .btn-agr-accept {
+      width: 100%;
+      padding: 13px;
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s, opacity .15s;
+    }
+    .btn-agr-accept:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .btn-agr-accept:not(:disabled):hover { background: var(--blue-mid); }
+
+    .agr-logout {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-3);
+    }
+    .agr-logout a { color: var(--text-2); }
+
+    @media (max-width: 600px) {
+      .agr-header, .agr-body, .agr-footer, .agr-progress-wrap { padding-left: 20px; padding-right: 20px; }
+      .agr-body { height: 340px; }
+    }
+  </style>
+</head>
+<body>
+<div class="agr-shell">
+
+  <div class="agr-logo">
+    <img src="/Logos/supAero-WortLogo-B.webp" alt="supAero"
+      onerror="this.outerHTML='<span style=\'color:#1B4F9B;font-size:1.2rem;font-weight:900;font-family:Inter,sans-serif\'>sup<span style=\'color:#3B7FE8\'>A</span>ero</span>'">
+  </div>
+
+  <div class="agr-card">
+
+    <div class="agr-header">
+      <div class="agr-header-top">
+        <div class="agr-title" id="agr-title">CAD-Daten-Nutzungsvereinbarung</div>
+        <div class="agr-lang">
+          <button id="lang-de" class="active" onclick="setLang('de')">DE</button>
+          <button id="lang-en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+      <div class="agr-subtitle" id="agr-subtitle">Bitte lesen Sie die Vereinbarung vollständig und akzeptieren Sie diese, um Zugang zum Portal zu erhalten.</div>
+    </div>
+
+    <div class="agr-progress-wrap">
+      <div class="agr-progress-bar"><div class="agr-progress-fill" id="agr-progress"></div></div>
+      <div class="agr-progress-label" id="agr-progress-label">0 % gelesen</div>
+    </div>
+
+    <div class="agr-body" id="agr-body">
+
+      <!-- DEUTSCH -->
+      <div class="agr-text visible" id="text-de">
+        <h2>CAD-Daten-Nutzungsvereinbarung (Deutsch)</h2>
+        <p class="agr-parties">zwischen <strong>SUPAERO GmbH</strong>, Sitz: Neustadt/Weinstraße, Deutschland – nachfolgend „Lieferant" –<br>und dem nachfolgend eingeloggten Nutzer – nachfolgend „Kunde" –</p>
+
+        <div class="agr-section">
+          <h3>1. Gegenstand und Zweck</h3>
+          <p>Der Lieferant stellt dem Kunden die angefragten CAD-Daten ausschließlich zur internen technischen Planung, Konstruktion sowie zur Integration in Projekte des Kunden zur Verfügung, soweit diese Projekte eine Verwendung von Produkten/Komponenten des Lieferanten vorsehen („zulässiger Zweck").</p>
+        </div>
+        <div class="agr-section">
+          <h3>2. Rechteinhaberschaft, Lizenz</h3>
+          <ol>
+            <li>Sämtliche Eigentums-, Urheber- und sonstigen Schutzrechte sowie Rechte an Geschäftsgeheimnissen an den CAD-Daten und den darin enthaltenen Informationen verbleiben ausschließlich beim Lieferanten.</li>
+            <li>Der Lieferant räumt dem Kunden für die Laufzeit dieser Vereinbarung eine widerrufliche, nicht-exklusive, nicht übertragbare und nicht unterlizenzierbare Lizenz ein, die CAD-Daten ausschließlich für den zulässigen Zweck zu nutzen. Weitergehende Rechte werden nicht eingeräumt.</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>3. Nutzungsbeschränkungen</h3>
+          <p>Der Kunde verpflichtet sich, die CAD-Daten</p>
+          <ul>
+            <li>nicht an Dritte weiterzugeben oder Dritten zugänglich zu machen,</li>
+            <li>nicht zu verändern, außer soweit dies zur internen Integration in eigene Projekte zwingend erforderlich ist,</li>
+            <li>nicht zu verwenden, um Produkte oder Bauteile bei anderen Herstellern fertigen zu lassen (einschließlich 3D-Druck, CNC, Guss etc.),</li>
+            <li>nicht für Serien- oder Massenfertigung sowie nicht für die Fertigung zugunsten Dritter zu verwenden,</li>
+            <li>nicht für Reverse Engineering, zur Ableitung geschützter Konstruktionsmerkmale oder zur Entwicklung/Herstellung wettbewerblicher Produkte zu nutzen,</li>
+            <li>technische Details, Maße oder sonstige Inhalte ohne vorherige schriftliche Zustimmung nicht an externe Stellen zu kommunizieren,</li>
+            <li>nicht in öffentlich zugängliche Systeme, Repositorien oder generative KI-Systeme hochzuladen.</li>
+          </ul>
+          <p>Schutzrechtsvermerke, Copyright-Hinweise, Wasserzeichen und Metadaten dürfen nicht entfernt, verändert oder unkenntlich gemacht werden.</p>
+        </div>
+        <div class="agr-section">
+          <h3>4. Interne Nutzung; keine Weitergabe</h3>
+          <ol>
+            <li>Der Kunde darf die CAD-Daten ausschließlich solchen eigenen Mitarbeitern zugänglich machen, die diese für den zulässigen Zweck benötigen.</li>
+            <li>Jede Weitergabe an externe Dienstleister oder verbundene Unternehmen ist ohne vorherige schriftliche Zustimmung des Lieferanten untersagt.</li>
+            <li>Der Kunde stellt sicher, dass seine Mitarbeiter die Pflichten aus dieser Vereinbarung einhalten.</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>5. Vertraulichkeit und Schutzmaßnahmen</h3>
+          <ol>
+            <li>Die CAD-Daten und sämtliche darin enthaltenen Informationen sind vertraulich zu behandeln und angemessen gegen unbefugten Zugriff zu schützen.</li>
+            <li>Der Kunde trifft hierfür geeignete technische und organisatorische Maßnahmen.</li>
+            <li>Bei Verdacht oder Eintritt einer unbefugten Offenlegung informiert der Kunde den Lieferanten unverzüglich.</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>6. Bearbeitungen / abgeleitete Dateien</h3>
+          <p>Soweit Bearbeitungen zur internen Integration zulässig sind, dürfen diese ausschließlich für den zulässigen Zweck verwendet werden. Rechte des Lieferanten an den zugrundeliegenden Inhalten bleiben unberührt.</p>
+        </div>
+        <div class="agr-section">
+          <h3>7. Keine Fertigungsunterlagen</h3>
+          <p>Die CAD-Daten stellen keine vollständigen Fertigungsunterlagen dar. Für Herstellung und Lieferung maßgeblich sind ausschließlich die technischen Spezifikationen und Dokumente, die der Lieferant im Rahmen einer Bestellung bereitstellt.</p>
+        </div>
+        <div class="agr-section">
+          <h3>8. Gewährleistung</h3>
+          <p>Die CAD-Daten werden „wie bereitgestellt" zur Verfügung gestellt. Eine Gewähr für Aktualität, Vollständigkeit, Maßhaltigkeit oder Eignung für einen bestimmten Zweck wird – soweit rechtlich zulässig – nicht übernommen. Der Kunde prüft die CAD-Daten eigenverantwortlich vor jeder Verwendung.</p>
+        </div>
+        <div class="agr-section">
+          <h3>9. Haftung</h3>
+          <ol>
+            <li>Der Lieferant haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei Verletzung von Leben, Körper oder Gesundheit.</li>
+            <li>Bei einfacher Fahrlässigkeit haftet der Lieferant nur bei Verletzung wesentlicher Vertragspflichten; die Haftung ist auf den vorhersehbaren, typischen Schaden begrenzt.</li>
+            <li>Eine Haftung für mittelbare Schäden und Folgeschäden ist – soweit rechtlich zulässig – ausgeschlossen.</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>10. Laufzeit und Beendigung</h3>
+          <ol>
+            <li>Die Vereinbarung tritt mit Akzeptanz in Kraft und kann von jeder Partei mit einer Frist von 14 Tagen gekündigt werden.</li>
+            <li>Das Recht zur fristlosen Kündigung aus wichtigem Grund bleibt unberührt; ein wichtiger Grund liegt insbesondere bei Verstößen gegen die Ziffern 3 bis 5 vor.</li>
+            <li>Nach Beendigung ist jede Nutzung unverzüglich einzustellen.</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>11. Rückgabe / Löschung</h3>
+          <p>Auf Anforderung des Lieferanten, spätestens mit Beendigung der Vereinbarung, hat der Kunde sämtliche Kopien der CAD-Daten (einschließlich Sicherungskopien sowie abgeleiteter Dateien) zu löschen oder an den Lieferanten zurückzugeben.</p>
+        </div>
+        <div class="agr-section">
+          <h3>12. Exportkontrolle / Sanktionen</h3>
+          <p>Der Kunde sichert zu, alle anwendbaren Exportkontroll-, Sanktions- und Embargovorschriften einzuhalten und die CAD-Daten nicht an verbotene Empfänger, in verbotene Länder oder für verbotene Endverwendungen zu übertragen.</p>
+        </div>
+        <div class="agr-section">
+          <h3>13. Unterlassung</h3>
+          <p>Der Kunde erkennt an, dass Verstöße gegen diese Vereinbarung zu schwerwiegenden Nachteilen führen können. Der Lieferant ist berechtigt, neben sonstigen Ansprüchen Unterlassung und einstweiligen Rechtsschutz geltend zu machen.</p>
+        </div>
+        <div class="agr-section">
+          <h3>14. Recht, Gerichtsstand, Mitteilungen</h3>
+          <ol>
+            <li>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG).</li>
+            <li>Ausschließlicher Gerichtsstand ist Neustadt/Weinstraße, Deutschland.</li>
+            <li>Mitteilungen erfolgen in Textform (E-Mail ausreichend).</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>15. Schlussbestimmungen</h3>
+          <ol>
+            <li>Änderungen und Ergänzungen bedürfen der Schriftform.</li>
+            <li>Der Kunde darf Rechte oder Pflichten aus dieser Vereinbarung ohne Zustimmung des Lieferanten nicht abtreten.</li>
+            <li>Sollte eine Bestimmung unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</li>
+            <li>Diese Vereinbarung wird zweisprachig (Deutsch/Englisch) bereitgestellt. Bei Auslegungsunterschieden ist die deutsche Fassung maßgeblich.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- ENGLISH -->
+      <div class="agr-text" id="text-en">
+        <h2>CAD Data Usage Agreement (English)</h2>
+        <p class="agr-parties">between <strong>SUPAERO GmbH</strong>, seat: Neustadt/Weinstraße, Germany – "Supplier" –<br>and the logged-in user – "Customer" –</p>
+
+        <div class="agr-section">
+          <h3>1. Subject Matter and Purpose</h3>
+          <p>Supplier provides the requested CAD data solely for Customer's internal technical planning, design and integration into Customer projects contemplating the use of Supplier's products/components (the "Permitted Purpose").</p>
+        </div>
+        <div class="agr-section">
+          <h3>2. Ownership; License</h3>
+          <ol>
+            <li>All rights (including intellectual property and trade secret rights) in the CAD data and any information contained therein remain exclusively with Supplier.</li>
+            <li>Supplier grants Customer a revocable, non-exclusive, non-transferable and non-sublicensable license to use the CAD data solely for the Permitted Purpose. No further rights are granted.</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>3. Restrictions</h3>
+          <p>Customer shall not:</p>
+          <ul>
+            <li>disclose or make the CAD data available to any third party,</li>
+            <li>modify the CAD data except to the extent strictly necessary for internal integration,</li>
+            <li>use the CAD data to manufacture or procure parts from other manufacturers (including 3D printing, CNC, casting, etc.),</li>
+            <li>use the CAD data for batch/mass production or production for third parties,</li>
+            <li>use the CAD data for reverse engineering, deriving protected design features, or developing competing products,</li>
+            <li>share technical details/dimensions derived from the CAD data externally without Supplier's prior written consent,</li>
+            <li>upload the CAD data to public systems, repositories or generative AI systems.</li>
+          </ul>
+          <p>Customer shall not remove or alter proprietary notices, watermarks or metadata.</p>
+        </div>
+        <div class="agr-section">
+          <h3>4. Internal Use Only; No Disclosure</h3>
+          <ol>
+            <li>Customer may provide access to the CAD data only to its own employees on a need-to-know basis.</li>
+            <li>Any disclosure to external contractors or Customer's affiliates is prohibited without Supplier's prior written consent.</li>
+            <li>Customer shall ensure compliance by its employees.</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>5. Confidentiality and Security</h3>
+          <ol>
+            <li>Customer shall treat the CAD data and all information therein as confidential and protect it accordingly.</li>
+            <li>Customer shall implement appropriate technical and organizational measures to prevent unauthorized access.</li>
+            <li>In the event of suspected or actual unauthorized disclosure, Customer shall notify Supplier without delay.</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>6. Modifications / Derivatives</h3>
+          <p>Any permitted derivatives may be used solely for the Permitted Purpose. No additional rights are granted; Supplier's rights in the underlying content remain unaffected.</p>
+        </div>
+        <div class="agr-section">
+          <h3>7. No Manufacturing Documentation</h3>
+          <p>The CAD data does not constitute complete manufacturing documentation. Only Supplier's specifications/drawings issued in connection with an order are binding.</p>
+        </div>
+        <div class="agr-section">
+          <h3>8. Disclaimer</h3>
+          <p>CAD data is provided "as is". To the maximum extent permitted by law, Supplier disclaims warranties of accuracy, completeness, fitness for a particular purpose, and suitability. Customer must verify prior to use.</p>
+        </div>
+        <div class="agr-section">
+          <h3>9. Liability</h3>
+          <ol>
+            <li>Supplier shall be liable without limitation for intent and gross negligence and for injury to life, body or health.</li>
+            <li>In cases of simple negligence, Supplier shall be liable only for breach of essential contractual obligations, limited to foreseeable damages typical for this type of agreement.</li>
+            <li>Indirect and consequential damages are excluded to the extent permitted by law.</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>10. Term and Termination</h3>
+          <ol>
+            <li>This Agreement is effective upon acceptance and may be terminated by either party upon 14 days' notice.</li>
+            <li>Termination for cause with immediate effect remains available, in particular in the event of breaches of Sections 3 to 5.</li>
+            <li>Upon termination, Customer shall cease all use without delay.</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>11. Return / Deletion</h3>
+          <p>Upon Supplier request, and in any event upon termination, Customer shall delete or return all copies (including backups and derivatives) and certify deletion/return upon request.</p>
+        </div>
+        <div class="agr-section">
+          <h3>12. Export Controls / Sanctions</h3>
+          <p>Customer shall comply with applicable export controls, sanctions and embargo laws/regulations and shall not transfer or make available the CAD data to prohibited parties/countries or prohibited end uses.</p>
+        </div>
+        <div class="agr-section">
+          <h3>13. Injunctive Relief</h3>
+          <p>Supplier may seek injunctive relief and interim measures in addition to any other remedies for breach.</p>
+        </div>
+        <div class="agr-section">
+          <h3>14. Governing Law; Jurisdiction; Notices</h3>
+          <ol>
+            <li>German law applies, excluding CISG.</li>
+            <li>Exclusive jurisdiction is Neustadt/Weinstraße, Germany.</li>
+            <li>Notices in text form (email sufficient).</li>
+          </ol>
+        </div>
+        <div class="agr-section">
+          <h3>15. Miscellaneous</h3>
+          <ol>
+            <li>Amendments must be in writing.</li>
+            <li>Customer may not assign or transfer any rights or obligations without Supplier's consent.</li>
+            <li>If any provision is invalid, the remainder shall remain in effect.</li>
+            <li>This Agreement is provided in German and English. In case of discrepancies, the German version shall prevail.</li>
+          </ol>
+        </div>
+      </div>
+
+    </div><!-- /agr-body -->
+
+    <div class="agr-footer">
+      <div class="agr-scroll-hint" id="agr-scroll-hint">↑ Bitte scrollen Sie nach unten, um die Vereinbarung vollständig zu lesen.</div>
+      <div class="agr-check-row">
+        <input type="checkbox" id="agr-check" disabled>
+        <label class="agr-check-label" for="agr-check" id="agr-check-label">
+          Ich habe die CAD-Daten-Nutzungsvereinbarung vollständig gelesen und akzeptiere diese verbindlich.
+        </label>
+      </div>
+      <button class="btn-agr-accept" id="agr-accept-btn" disabled>Vereinbarung akzeptieren &amp; Zugang öffnen</button>
+    </div>
+
+  </div><!-- /agr-card -->
+
+  <div class="agr-logout">
+    <a href="#" onclick="portalLogout(); return false;">Abmelden</a>
+  </div>
+
+</div>
+
+<script>window.global = window;</script>
+<script src="supabase.min.js"></script>
+<script src="portal.js"></script>
+<script>
+  let _user = null;
+  let _scrolled = false;
+  let _lang = 'de';
+
+  const body    = document.getElementById('agr-body');
+  const fill    = document.getElementById('agr-progress');
+  const plabel  = document.getElementById('agr-progress-label');
+  const check   = document.getElementById('agr-check');
+  const btn     = document.getElementById('agr-accept-btn');
+  const hint    = document.getElementById('agr-scroll-hint');
+
+  // Init: check auth, redirect if already agreed
+  (async () => {
+    _user = await requireAuth();
+    if (!_user) return;
+    if (await hasAgreement(_user.id)) {
+      window.location.href = '/portal/models.html';
+    }
+  })();
+
+  // Scroll tracking
+  body.addEventListener('scroll', () => {
+    const pct = body.scrollTop / (body.scrollHeight - body.clientHeight);
+    const p = Math.min(100, Math.round(pct * 100));
+    fill.style.width = p + '%';
+    plabel.textContent = p + ' % gelesen';
+
+    if (p >= 95 && !_scrolled) {
+      _scrolled = true;
+      check.disabled = false;
+      hint.classList.remove('visible');
+    }
+
+    if (p < 5 && !_scrolled) {
+      hint.classList.add('visible');
+    }
+  });
+
+  // Checkbox enables button
+  check.addEventListener('change', () => {
+    btn.disabled = !check.checked;
+  });
+
+  // Accept
+  btn.addEventListener('click', async () => {
+    if (!_user || !check.checked) return;
+    btn.disabled = true;
+    btn.textContent = 'Wird gespeichert …';
+    const ok = await acceptAgreement(_user.id);
+    if (ok) {
+      window.location.href = '/portal/models.html';
+    } else {
+      btn.textContent = 'Fehler — bitte Seite neu laden';
+    }
+  });
+
+  // Language toggle
+  function setLang(lang) {
+    _lang = lang;
+    document.getElementById('text-de').classList.toggle('visible', lang === 'de');
+    document.getElementById('text-en').classList.toggle('visible', lang === 'en');
+    document.getElementById('lang-de').classList.toggle('active', lang === 'de');
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+
+    const isDE = lang === 'de';
+    document.getElementById('agr-title').textContent = isDE
+      ? 'CAD-Daten-Nutzungsvereinbarung'
+      : 'CAD Data Usage Agreement';
+    document.getElementById('agr-subtitle').textContent = isDE
+      ? 'Bitte lesen Sie die Vereinbarung vollständig und akzeptieren Sie diese, um Zugang zum Portal zu erhalten.'
+      : 'Please read the agreement in full and accept it to gain access to the portal.';
+    document.getElementById('agr-check-label').textContent = isDE
+      ? 'Ich habe die CAD-Daten-Nutzungsvereinbarung vollständig gelesen und akzeptiere diese verbindlich.'
+      : 'I have read the CAD Data Usage Agreement in full and accept it as binding.';
+    btn.innerHTML = isDE
+      ? 'Vereinbarung akzeptieren &amp; Zugang öffnen'
+      : 'Accept Agreement &amp; Open Access';
+
+    // Reset scroll tracking when switching language
+    _scrolled = false;
+    check.checked = false;
+    check.disabled = true;
+    btn.disabled = true;
+    body.scrollTop = 0;
+    fill.style.width = '0%';
+    plabel.textContent = isDE ? '0 % gelesen' : '0 % read';
+  }
+</script>
+</body>
+</html>

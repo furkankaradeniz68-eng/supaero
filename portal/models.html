@@ -3,72 +3,328 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D-Modelle — supAero Portal</title>
+  <title>CAD-Modelle — supAero Portal</title>
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="portal.css">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+  <style>
+    body { overflow: hidden; }
+
+    .models-shell {
+      display: grid;
+      grid-template-columns: 280px 1fr 260px;
+      height: calc(100vh - 64px);
+      overflow: hidden;
+    }
+
+    /* ─── Left: Tree ─────────────────────────────── */
+    .tree-panel {
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .tree-search-wrap {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .tree-search { position: relative; }
+    .tree-search svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-3); pointer-events: none; }
+    .tree-search input {
+      width: 100%;
+      padding: 8px 10px 8px 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      background: var(--bg-2);
+      outline: none;
+      transition: border-color .15s;
+    }
+    .tree-search input:focus { border-color: var(--blue-bright); background: var(--bg); }
+    .tree-search input::placeholder { color: var(--text-3); }
+    .tree-count { padding: 8px 12px 4px; font-size: 11px; color: var(--text-3); flex-shrink: 0; }
+    .tree-scroll { flex: 1; overflow-y: auto; padding: 4px 0 12px; }
+    .tree-scroll::-webkit-scrollbar { width: 4px; }
+    .tree-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .tree-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: background .1s;
+    }
+    .tree-cat-header:hover { background: var(--bg-2); }
+    .tree-cat-arrow { flex-shrink: 0; transition: transform .2s; color: var(--text-3); }
+    .tree-cat.open .tree-cat-arrow { transform: rotate(90deg); }
+    .tree-cat-name { flex: 1; }
+    .tree-cat-count { font-size: 11px; font-weight: 500; color: var(--text-3); background: var(--bg-2); border: 1px solid var(--border); padding: 1px 6px; border-radius: 10px; }
+    .tree-products { display: none; padding: 2px 0; }
+    .tree-cat.open .tree-products { display: block; }
+    .tree-item {
+      display: block;
+      padding: 6px 12px 6px 28px;
+      font-size: 13px;
+      color: var(--text-2);
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: background .1s, color .1s;
+      border-left: 2px solid transparent;
+    }
+    .tree-item:hover { background: var(--bg-2); color: var(--text); }
+    .tree-item.active { background: rgba(27,79,155,0.07); color: var(--blue); font-weight: 600; border-left-color: var(--blue); }
+    .tree-empty { padding: 24px 12px; text-align: center; font-size: 13px; color: var(--text-3); }
+    .tree-loading { padding: 24px 12px; text-align: center; }
+    .spinner { width: 20px; height: 20px; border: 2px solid var(--border); border-top-color: var(--blue); border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 8px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── Middle: Viewer ─────────────────────────── */
+    .viewer-panel { display: flex; flex-direction: column; background: var(--bg-2); overflow: hidden; position: relative; }
+    .viewer-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-3); }
+    .viewer-empty svg { opacity: 0.25; }
+    .viewer-empty p { font-size: 14px; }
+    #viewer-model { flex: 1; width: 100%; display: none; flex-direction: column; }
+    #viewer-model.visible { display: flex; }
+    model-viewer { flex: 1; width: 100%; background: var(--bg-2); --poster-color: transparent; }
+    .viewer-name-bar { background: var(--bg); border-top: 1px solid var(--border); padding: 8px 16px; font-size: 13px; font-weight: 600; color: var(--text); display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .viewer-cat-chip { font-size: 11px; font-weight: 500; color: var(--blue); background: rgba(27,79,155,0.08); border: 1px solid rgba(27,79,155,0.15); padding: 2px 8px; border-radius: 10px; }
+    .viewer-no-model { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--text-3); font-size: 13px; }
+
+    /* ─── Right: Download ────────────────────────── */
+    .download-panel { border-left: 1px solid var(--border); background: var(--bg); display: flex; flex-direction: column; overflow-y: auto; }
+    .download-panel::-webkit-scrollbar { width: 4px; }
+    .download-panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .dl-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-3); padding: 24px; text-align: center; font-size: 13px; }
+    .dl-empty svg { opacity: 0.2; }
+    .dl-content { padding: 20px; display: none; }
+    .dl-content.visible { display: block; }
+    .dl-section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 6px; }
+    .dl-product-name { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 4px; }
+    .dl-product-cat { font-size: 12px; color: var(--text-3); margin-bottom: 20px; }
+    .dl-divider { height: 1px; background: var(--border); margin: 16px 0; }
+    .dl-file-info { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 12px; }
+    .dl-file-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-2); }
+    .dl-file-row svg { flex-shrink: 0; color: var(--text-3); }
+    .dl-file-name { font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .btn-download { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 11px; background: var(--blue); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .15s; }
+    .btn-download:hover { background: var(--blue-mid); }
+    .btn-download.no-file { background: var(--bg-card); color: var(--text-3); cursor: default; pointer-events: none; }
+    .dl-hint { font-size: 11px; color: var(--text-3); line-height: 1.5; margin-top: 10px; }
+
+    @media (max-width: 900px) {
+      body { overflow: auto; }
+      .models-shell { grid-template-columns: 1fr; grid-template-rows: auto auto auto; height: auto; }
+      .tree-panel { height: 300px; }
+      .viewer-panel { height: 60vw; min-height: 300px; }
+    }
+  </style>
 </head>
 <body>
-
 <div id="portal-nav"></div>
 
-<main>
-  <div class="page-wrap">
+<div class="models-shell">
 
-    <div class="models-header">
-      <h1>3D-Modelle</h1>
-      <p>Wählen Sie ein Produkt, um das interaktive 3D-Modell mit vollständigen Spezifikationen zu öffnen.</p>
+  <!-- LEFT -->
+  <aside class="tree-panel">
+    <div class="tree-search-wrap">
+      <div class="tree-search">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M9.5 9.5L12 12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        <input type="text" id="tree-search" placeholder="Suchen …" autocomplete="off">
+      </div>
+    </div>
+    <div class="tree-count" id="tree-count"></div>
+    <div class="tree-scroll" id="tree-scroll">
+      <div class="tree-loading"><div class="spinner"></div><div style="font-size:12px;color:var(--text-3)">Wird geladen …</div></div>
+    </div>
+  </aside>
+
+  <!-- MIDDLE -->
+  <main class="viewer-panel">
+    <div class="viewer-empty" id="viewer-empty">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <path d="M24 6L6 15v18l18 9 18-9V15L24 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M6 15l18 9m0 0l18-9m-18 9v18" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <p>Produkt aus der Liste auswählen</p>
     </div>
 
-    <div class="models-grid" id="models-grid">
-      <!-- filled by JS -->
+    <div id="viewer-model">
+      <model-viewer id="the-viewer" camera-controls auto-rotate auto-rotate-delay="2000"
+        rotation-per-second="20deg" shadow-intensity="1.0" exposure="1"
+        environment-image="neutral" loading="eager" style="flex:1;width:100%">
+      </model-viewer>
+      <div class="viewer-name-bar">
+        <span class="viewer-cat-chip" id="v-cat"></span>
+        <span id="v-name"></span>
+      </div>
     </div>
 
-  </div>
-</main>
+    <div class="viewer-no-model" id="viewer-no-model" style="display:none">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <rect x="4" y="4" width="28" height="28" rx="4" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M4 4l28 28M32 4L4 32" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <p>Kein 3D-Modell verfügbar</p>
+    </div>
+  </main>
+
+  <!-- RIGHT -->
+  <aside class="download-panel">
+    <div class="dl-empty" id="dl-empty">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M18 4v20M10 16l8 8 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 28h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <p>Wählen Sie ein Produkt, um die Datei herunterzuladen.</p>
+    </div>
+
+    <div class="dl-content" id="dl-content">
+      <div class="dl-section-label">Ausgewähltes Produkt</div>
+      <div class="dl-product-name" id="dl-name">—</div>
+      <div class="dl-product-cat" id="dl-cat">—</div>
+      <div class="dl-divider"></div>
+      <div class="dl-section-label">CAD-Datei</div>
+      <div class="dl-file-info">
+        <div class="dl-file-row">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <rect x="2" y="1" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M4.5 5h5M4.5 7.5h5M4.5 10h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <span class="dl-file-name" id="dl-file-name">—</span>
+        </div>
+      </div>
+      <a id="dl-btn" class="btn-download" href="#" download>
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <path d="M7.5 2v8M3.5 7l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M2 12h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Datei herunterladen
+      </a>
+      <p class="dl-hint">Diese Datei unterliegt der CAD-Daten-Nutzungsvereinbarung, der Sie beim ersten Login zugestimmt haben.</p>
+    </div>
+  </aside>
+
+</div>
 
 <script>window.global = window;</script>
 <script src="supabase.min.js"></script>
 <script src="portal.js"></script>
 <script>
-  requireAuth();
-  initPortalNav('models');
+  let _products = [], _grouped = {}, _activeId = null;
+  const treeScroll  = document.getElementById('tree-scroll');
+  const treeCount   = document.getElementById('tree-count');
+  const searchInput = document.getElementById('tree-search');
 
-  const grid = document.getElementById('models-grid');
+  (async () => {
+    const user = await requireAuthAndAgreement();
+    if (!user) return;
+    await initPortalNav('models');
+    _products = await loadProducts();
+    _grouped  = groupByCategory(_products);
+    renderTree(_products, _grouped);
+    treeCount.textContent = `${_products.length} Produkte`;
+  })();
 
-  PRODUCTS.forEach(p => {
-    const badgeHTML = p.badge
-      ? `<span class="product-card-badge${p.badge === 'Neu' ? ' badge-neu' : ''}">${p.badge}</span>`
-      : '';
+  function esc(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
 
-    grid.insertAdjacentHTML('beforeend', `
-      <a href="/portal/model.html#${p.id}" class="product-card">
-        <div class="product-card-visual">
-          ${badgeHTML}
-          <div class="product-3d-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M14 3L3 8.5v11L14 25l11-5.5v-11L14 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M3 8.5l11 5.5m0 0l11-5.5m-11 5.5V25" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-          </div>
+  function renderTree(products, grouped) {
+    if (!products.length) {
+      treeScroll.innerHTML = '<div class="tree-empty">Keine Produkte gefunden.</div>';
+      return;
+    }
+    const cats = Object.keys(grouped).sort();
+    treeScroll.innerHTML = cats.map(cat => `
+      <div class="tree-cat" data-cat="${esc(cat)}">
+        <div class="tree-cat-header" onclick="toggleCat(this)">
+          <svg class="tree-cat-arrow" width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M3 2l4 3-4 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          <span class="tree-cat-name">${esc(cat)}</span>
+          <span class="tree-cat-count">${grouped[cat].length}</span>
         </div>
-        <div class="product-card-body">
-          <p class="product-cat">${p.category}</p>
-          <h3>${p.name}</h3>
-          <p>${p.shortDesc}</p>
-          <span class="product-card-cta">
-            Modell ansehen
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </span>
+        <div class="tree-products">
+          ${grouped[cat].map(p => `
+            <div class="tree-item${p.id===_activeId?' active':''}" data-id="${esc(p.id)}"
+                 title="${esc(p.name)}" onclick="selectProduct('${esc(p.id)}')">${esc(p.name)}</div>
+          `).join('')}
         </div>
-      </a>
-    `);
+      </div>`).join('');
+  }
+
+  function toggleCat(header) { header.closest('.tree-cat').classList.toggle('open'); }
+
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    if (!q) { renderTree(_products, _grouped); treeCount.textContent = `${_products.length} Produkte`; return; }
+    const filtered = _products.filter(p => p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
+    renderTree(filtered, groupByCategory(filtered));
+    treeCount.textContent = `${filtered.length} von ${_products.length}`;
+    treeScroll.querySelectorAll('.tree-cat').forEach(c => c.classList.add('open'));
   });
+
+  function selectProduct(id) {
+    const p = _products.find(x => x.id === id);
+    if (!p) return;
+    _activeId = id;
+    treeScroll.querySelectorAll('.tree-item').forEach(el => el.classList.toggle('active', el.dataset.id === id));
+    const item = treeScroll.querySelector(`.tree-item[data-id="${id}"]`);
+    if (item) item.closest('.tree-cat').classList.add('open');
+
+    document.getElementById('viewer-empty').style.display = 'none';
+    document.getElementById('viewer-no-model').style.display = 'none';
+
+    if (p.model_url) {
+      document.getElementById('viewer-model').classList.add('visible');
+      document.getElementById('the-viewer').setAttribute('src', p.model_url);
+      document.getElementById('v-cat').textContent  = p.category;
+      document.getElementById('v-name').textContent = p.name;
+    } else {
+      document.getElementById('viewer-model').classList.remove('visible');
+      document.getElementById('viewer-no-model').style.display = 'flex';
+    }
+
+    document.getElementById('dl-empty').style.display = 'none';
+    document.getElementById('dl-content').classList.add('visible');
+    document.getElementById('dl-name').textContent = p.name;
+    document.getElementById('dl-cat').textContent  = p.category;
+
+    const fname = p.download_name || (p.download_url ? p.download_url.split('/').pop() : null);
+    document.getElementById('dl-file-name').textContent = fname || 'Keine Datei hinterlegt';
+
+    const dlBtn = document.getElementById('dl-btn');
+    if (p.download_url) {
+      dlBtn.href = p.download_url;
+      dlBtn.setAttribute('download', fname || '');
+      dlBtn.classList.remove('no-file');
+      dlBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2v8M3.5 7l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M2 12h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Datei herunterladen';
+    } else {
+      dlBtn.href = '#';
+      dlBtn.classList.add('no-file');
+      dlBtn.textContent = 'Keine Datei verfügbar';
+    }
+  }
 </script>
 </body>
 </html>

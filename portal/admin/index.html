@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — supAero Portal</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../portal.css">
+  <style>
+    .admin-shell { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+    .admin-title { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .admin-sub { font-size: 13px; color: var(--text-3); margin-bottom: 32px; }
+
+    /* Tabs */
+    .admin-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 28px; }
+    .tab-btn { padding: 8px 16px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: var(--text-3); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: color .15s, border-color .15s; margin-bottom: -1px; }
+    .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+    .tab-btn:hover:not(.active) { color: var(--text); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Table */
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { background: var(--bg-2); font-weight: 600; text-align: left; padding: 9px 12px; color: var(--text-2); border-bottom: 1px solid var(--border); white-space: nowrap; }
+    td { padding: 9px 12px; color: var(--text); border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg-2); }
+    .td-id { font-size: 11px; color: var(--text-3); font-family: monospace; }
+    .td-url { font-size: 11px; color: var(--text-3); max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .btn-icon { background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px 8px; font-size: 12px; cursor: pointer; font-family: 'Inter', sans-serif; color: var(--text-2); transition: background .1s, color .1s; }
+    .btn-icon:hover { background: var(--bg-2); color: var(--text); }
+    .btn-icon.danger:hover { background: rgba(220,38,38,0.07); border-color: rgba(220,38,38,0.3); color: #dc2626; }
+    .table-actions { display: flex; gap: 6px; }
+    .loading-row td { text-align: center; color: var(--text-3); padding: 24px; }
+
+    /* Toolbar */
+    .section-toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+    .section-toolbar .spacer { flex: 1; }
+    .input-sm { padding: 7px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text); background: var(--bg); outline: none; transition: border-color .15s; }
+    .input-sm:focus { border-color: var(--blue-bright); }
+    .btn-primary-sm { padding: 7px 14px; background: var(--blue); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .15s; white-space: nowrap; }
+    .btn-primary-sm:hover { background: var(--blue-mid); }
+    .btn-secondary-sm { padding: 7px 14px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: background .15s; }
+    .btn-secondary-sm:hover { background: var(--bg-2); }
+
+    /* Toast */
+    #toast { position: fixed; bottom: 28px; right: 28px; background: var(--text); color: var(--bg); padding: 10px 18px; border-radius: var(--radius); font-size: 13px; font-weight: 500; box-shadow: 0 4px 16px rgba(0,0,0,0.15); transform: translateY(20px); opacity: 0; transition: all .25s; pointer-events: none; z-index: 999; }
+    #toast.show { transform: translateY(0); opacity: 1; }
+    #toast.error { background: #dc2626; }
+
+    /* Modal */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; z-index: 100; }
+    .modal-overlay.hidden { display: none; }
+    .modal { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; width: 100%; max-width: 520px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+    .modal-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
+    .field { margin-bottom: 14px; }
+    .field label { display: block; font-size: 12px; font-weight: 600; color: var(--text-2); margin-bottom: 5px; }
+    .field input { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text); background: var(--bg); outline: none; box-sizing: border-box; transition: border-color .15s; }
+    .field input:focus { border-color: var(--blue-bright); }
+    .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; }
+
+    /* CSV */
+    .csv-drop { border: 2px dashed var(--border); border-radius: var(--radius); padding: 40px 24px; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; }
+    .csv-drop:hover, .csv-drop.dragover { border-color: var(--blue-bright); background: rgba(27,79,155,0.04); }
+    .csv-drop p { margin: 0; font-size: 13px; color: var(--text-3); }
+    .csv-drop p strong { color: var(--blue); cursor: pointer; }
+    #csv-file-input { display: none; }
+    .csv-preview { margin-top: 20px; }
+    .csv-preview-header { font-size: 12px; font-weight: 600; color: var(--text-2); margin-bottom: 8px; }
+    .csv-error { color: #dc2626; font-size: 13px; padding: 10px; background: rgba(220,38,38,0.06); border: 1px solid rgba(220,38,38,0.2); border-radius: var(--radius-sm); margin-top: 12px; }
+    .csv-hint { font-size: 12px; color: var(--text-3); margin-top: 16px; line-height: 1.7; }
+    .csv-hint code { background: var(--bg-2); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-size: 11px; }
+    .chip { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .chip-green { background: rgba(22,163,74,0.1); color: #16a34a; border: 1px solid rgba(22,163,74,0.2); }
+    .chip-blue { background: rgba(27,79,155,0.08); color: var(--blue); border: 1px solid rgba(27,79,155,0.15); }
+    #confirm-import-btn { display: none; }
+  </style>
+</head>
+<body>
+<div id="portal-nav"></div>
+
+<div class="admin-shell">
+  <div class="admin-title">Admin</div>
+  <div class="admin-sub">Produktverwaltung · supAero Portal</div>
+
+  <div class="admin-tabs">
+    <button class="tab-btn active" onclick="switchTab('products')">Produkte</button>
+    <button class="tab-btn" onclick="switchTab('csv')">CSV-Import</button>
+    <button class="tab-btn" onclick="switchTab('add')">Produkt hinzufügen</button>
+  </div>
+
+  <!-- PRODUCTS TAB -->
+  <div id="tab-products" class="tab-panel active">
+    <div class="section-toolbar">
+      <input type="text" class="input-sm" id="prod-search" placeholder="Suchen …" style="width:220px" oninput="filterTable()">
+      <span class="spacer"></span>
+      <button class="btn-secondary-sm" onclick="loadTable()">↺ Aktualisieren</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Kategorie</th>
+            <th>Name</th>
+            <th>3D-Modell</th>
+            <th>Datei</th>
+            <th>Sort</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="prod-tbody">
+          <tr class="loading-row"><td colspan="7">Wird geladen …</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="prod-count" style="font-size:12px;color:var(--text-3);margin-top:8px"></div>
+  </div>
+
+  <!-- CSV TAB -->
+  <div id="tab-csv" class="tab-panel">
+    <div class="csv-drop" id="csv-drop" onclick="document.getElementById('csv-file-input').click()"
+         ondragover="event.preventDefault();this.classList.add('dragover')"
+         ondragleave="this.classList.remove('dragover')"
+         ondrop="handleDrop(event)">
+      <p style="font-size:32px;margin-bottom:8px">📄</p>
+      <p><strong>Datei auswählen</strong> oder hierher ziehen</p>
+      <p style="margin-top:6px">CSV-Datei (.csv)</p>
+    </div>
+    <input type="file" id="csv-file-input" accept=".csv,text/csv" onchange="handleCSVFile(this.files[0])">
+    <div id="csv-error" class="csv-error" style="display:none"></div>
+    <div id="csv-preview" class="csv-preview" style="display:none">
+      <div class="csv-preview-header" id="csv-preview-header"></div>
+      <div class="table-wrap" style="max-height:300px;overflow-y:auto">
+        <table>
+          <thead><tr id="csv-thead"></tr></thead>
+          <tbody id="csv-tbody"></tbody>
+        </table>
+      </div>
+      <div style="margin-top:16px;display:flex;gap:10px;align-items:center">
+        <button class="btn-primary-sm" id="confirm-import-btn" onclick="importCSV()">Import starten</button>
+        <button class="btn-secondary-sm" onclick="resetCSV()">Abbrechen</button>
+        <span id="import-status" style="font-size:13px;color:var(--text-3)"></span>
+      </div>
+    </div>
+    <div class="csv-hint">
+      <strong>Spalten (Pflicht: id, category, name):</strong><br>
+      <code>id</code> · <code>category</code> · <code>name</code> · <code>model_url</code> · <code>download_url</code> · <code>download_name</code> · <code>sort_order</code><br>
+      Alternativen: <code>glb_url</code> = model_url, <code>file_url</code> = download_url, <code>filename</code> = download_name<br>
+      Bestehende IDs werden aktualisiert (upsert).
+    </div>
+  </div>
+
+  <!-- ADD TAB -->
+  <div id="tab-add" class="tab-panel">
+    <form id="add-form" onsubmit="saveProduct(event)" style="max-width:500px">
+      <input type="hidden" id="edit-id">
+      <div id="add-form-title" style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:20px">Neues Produkt</div>
+      <div class="field">
+        <label>ID <span style="color:var(--text-3);font-weight:400">(eindeutig, z. B. "FAS-120")</span></label>
+        <input type="text" id="f-id" required placeholder="z. B. FAS-120">
+      </div>
+      <div class="field">
+        <label>Kategorie</label>
+        <input type="text" id="f-cat" required placeholder="z. B. Fire Sleeves">
+      </div>
+      <div class="field">
+        <label>Name</label>
+        <input type="text" id="f-name" required placeholder="z. B. Fire Sleeve Ø 120 mm">
+      </div>
+      <div class="field">
+        <label>3D-Modell URL <span style="color:var(--text-3);font-weight:400">(optional, .glb)</span></label>
+        <input type="url" id="f-model" placeholder="https://…">
+      </div>
+      <div class="field">
+        <label>Download URL <span style="color:var(--text-3);font-weight:400">(optional)</span></label>
+        <input type="url" id="f-dl-url" placeholder="https://…">
+      </div>
+      <div class="field">
+        <label>Dateiname zum Download <span style="color:var(--text-3);font-weight:400">(optional)</span></label>
+        <input type="text" id="f-dl-name" placeholder="z. B. FAS-120.stp">
+      </div>
+      <div class="field">
+        <label>Sortierreihenfolge</label>
+        <input type="number" id="f-sort" value="0" min="0">
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+        <button type="submit" class="btn-primary-sm" id="add-submit-btn">Speichern</button>
+        <button type="button" class="btn-secondary-sm" onclick="resetAddForm()">Zurücksetzen</button>
+        <span id="add-status" style="font-size:13px;color:var(--text-3)"></span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal-overlay hidden" id="edit-modal">
+  <div class="modal">
+    <div class="modal-title">Produkt bearbeiten</div>
+    <div class="field"><label>ID</label><input type="text" id="m-id" readonly style="color:var(--text-3)"></div>
+    <div class="field"><label>Kategorie</label><input type="text" id="m-cat"></div>
+    <div class="field"><label>Name</label><input type="text" id="m-name"></div>
+    <div class="field"><label>3D-Modell URL</label><input type="url" id="m-model"></div>
+    <div class="field"><label>Download URL</label><input type="url" id="m-dl-url"></div>
+    <div class="field"><label>Dateiname</label><input type="text" id="m-dl-name"></div>
+    <div class="field"><label>Sortierung</label><input type="number" id="m-sort" min="0"></div>
+    <div class="modal-actions">
+      <button class="btn-secondary-sm" onclick="closeModal()">Abbrechen</button>
+      <button class="btn-primary-sm" onclick="saveModal()">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Delete Modal -->
+<div class="modal-overlay hidden" id="del-modal">
+  <div class="modal" style="max-width:400px">
+    <div class="modal-title">Produkt löschen?</div>
+    <p style="font-size:13px;color:var(--text-2);margin:0 0 20px">Diese Aktion kann nicht rückgängig gemacht werden.</p>
+    <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;color:var(--text)" id="del-product-name"></div>
+    <div class="modal-actions">
+      <button class="btn-secondary-sm" onclick="document.getElementById('del-modal').classList.add('hidden')">Abbrechen</button>
+      <button class="btn-primary-sm" style="background:#dc2626" onclick="confirmDelete()">Löschen</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>window.global = window;</script>
+<script src="../supabase.min.js"></script>
+<script src="../portal.js"></script>
+<script>
+  let _allProducts = [], _deleteId = null;
+
+  (async () => {
+    const user = await requireAuth();
+    if (!user) return;
+    if (!isAdmin(user)) { window.location.href = '/portal/models.html'; return; }
+    await initPortalNav('admin');
+    await loadTable();
+  })();
+
+  // ─── Tabs ────────────────────────────────────────────
+  function switchTab(name) {
+    document.querySelectorAll('.tab-btn').forEach((b, i) => {
+      const names = ['products','csv','add'];
+      b.classList.toggle('active', names[i] === name);
+    });
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(`tab-${name}`).classList.add('active');
+  }
+
+  // ─── Products Table ──────────────────────────────────
+  async function loadTable() {
+    document.getElementById('prod-tbody').innerHTML =
+      '<tr class="loading-row"><td colspan="7">Wird geladen …</td></tr>';
+    _allProducts = await loadProducts();
+    renderTable(_allProducts);
+  }
+
+  function renderTable(list) {
+    const tbody = document.getElementById('prod-tbody');
+    if (!list.length) {
+      tbody.innerHTML = '<tr class="loading-row"><td colspan="7">Keine Produkte gefunden.</td></tr>';
+      document.getElementById('prod-count').textContent = '';
+      return;
+    }
+    tbody.innerHTML = list.map(p => `
+      <tr>
+        <td class="td-id">${esc(p.id)}</td>
+        <td>${esc(p.category)}</td>
+        <td>${esc(p.name)}</td>
+        <td>${p.model_url ? '<span class="chip chip-green">✓</span>' : '<span style="color:var(--text-3);font-size:11px">—</span>'}</td>
+        <td class="td-url" title="${esc(p.download_url||'')}">
+          ${p.download_url ? esc(p.download_name||p.download_url.split('/').pop()||'—') : '<span style="color:var(--text-3);font-size:11px">—</span>'}
+        </td>
+        <td>${p.sort_order||0}</td>
+        <td>
+          <div class="table-actions">
+            <button class="btn-icon" onclick="openEditModal(${JSON.stringify(p).replace(/"/g,'&quot;')})">Bearbeiten</button>
+            <button class="btn-icon danger" onclick="openDeleteModal('${esc(p.id)}','${esc(p.name)}')">Löschen</button>
+          </div>
+        </td>
+      </tr>`).join('');
+    document.getElementById('prod-count').textContent = `${list.length} Produkte`;
+  }
+
+  function filterTable() {
+    const q = document.getElementById('prod-search').value.toLowerCase();
+    if (!q) { renderTable(_allProducts); return; }
+    renderTable(_allProducts.filter(p =>
+      p.name.toLowerCase().includes(q) ||
+      p.category.toLowerCase().includes(q) ||
+      p.id.toLowerCase().includes(q)));
+  }
+
+  // ─── Edit Modal ──────────────────────────────────────
+  function openEditModal(p) {
+    document.getElementById('m-id').value       = p.id;
+    document.getElementById('m-cat').value      = p.category;
+    document.getElementById('m-name').value     = p.name;
+    document.getElementById('m-model').value    = p.model_url    || '';
+    document.getElementById('m-dl-url').value   = p.download_url || '';
+    document.getElementById('m-dl-name').value  = p.download_name|| '';
+    document.getElementById('m-sort').value     = p.sort_order   || 0;
+    document.getElementById('edit-modal').classList.remove('hidden');
+  }
+
+  function closeModal() { document.getElementById('edit-modal').classList.add('hidden'); }
+
+  async function saveModal() {
+    const product = {
+      id:            document.getElementById('m-id').value,
+      category:      document.getElementById('m-cat').value.trim(),
+      name:          document.getElementById('m-name').value.trim(),
+      model_url:     document.getElementById('m-model').value.trim()   || null,
+      download_url:  document.getElementById('m-dl-url').value.trim()  || null,
+      download_name: document.getElementById('m-dl-name').value.trim() || null,
+      sort_order:    parseInt(document.getElementById('m-sort').value)||0,
+    };
+    const res = await adminSaveProduct(product);
+    closeModal();
+    if (res.ok) { toast('Gespeichert ✓'); await loadTable(); }
+    else { toast('Fehler: ' + res.error, true); }
+  }
+
+  // ─── Delete Modal ────────────────────────────────────
+  function openDeleteModal(id, name) {
+    _deleteId = id;
+    document.getElementById('del-product-name').textContent = `${id} — ${name}`;
+    document.getElementById('del-modal').classList.remove('hidden');
+  }
+
+  async function confirmDelete() {
+    document.getElementById('del-modal').classList.add('hidden');
+    const res = await adminDeleteProduct(_deleteId);
+    if (res.ok) { toast('Gelöscht'); await loadTable(); }
+    else { toast('Fehler: ' + res.error, true); }
+  }
+
+  // ─── Add Form ────────────────────────────────────────
+  async function saveProduct(e) {
+    e.preventDefault();
+    const btn = document.getElementById('add-submit-btn');
+    btn.disabled = true; btn.textContent = 'Wird gespeichert …';
+    const product = {
+      id:            document.getElementById('f-id').value.trim(),
+      category:      document.getElementById('f-cat').value.trim(),
+      name:          document.getElementById('f-name').value.trim(),
+      model_url:     document.getElementById('f-model').value.trim()   || null,
+      download_url:  document.getElementById('f-dl-url').value.trim()  || null,
+      download_name: document.getElementById('f-dl-name').value.trim() || null,
+      sort_order:    parseInt(document.getElementById('f-sort').value)||0,
+    };
+    const res = await adminSaveProduct(product);
+    btn.disabled = false; btn.textContent = 'Speichern';
+    if (res.ok) {
+      toast('Produkt gespeichert ✓');
+      resetAddForm();
+      await loadTable();
+      switchTab('products');
+    } else {
+      document.getElementById('add-status').textContent = 'Fehler: ' + res.error;
+    }
+  }
+
+  function resetAddForm() {
+    document.getElementById('add-form').reset();
+    document.getElementById('add-status').textContent = '';
+    document.getElementById('add-form-title').textContent = 'Neues Produkt';
+  }
+
+  // ─── CSV Import ──────────────────────────────────────
+  let _csvRows = [];
+
+  function handleDrop(e) {
+    e.preventDefault();
+    document.getElementById('csv-drop').classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (file) handleCSVFile(file);
+  }
+
+  function handleCSVFile(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const { rows, error } = parseProductCSV(e.target.result);
+      const errEl = document.getElementById('csv-error');
+      const previewEl = document.getElementById('csv-preview');
+      document.getElementById('confirm-import-btn').style.display = 'none';
+      if (error) {
+        errEl.textContent = error; errEl.style.display = 'block';
+        previewEl.style.display = 'none'; return;
+      }
+      errEl.style.display = 'none';
+      _csvRows = rows;
+      showCSVPreview(rows);
+      document.getElementById('confirm-import-btn').style.display = 'inline-flex';
+    };
+    reader.readAsText(file, 'UTF-8');
+  }
+
+  function showCSVPreview(rows) {
+    const previewEl = document.getElementById('csv-preview');
+    previewEl.style.display = 'block';
+    document.getElementById('csv-preview-header').textContent =
+      `${rows.length} Produkte bereit zum Import`;
+    const headers = ['id','category','name','model_url','download_url','download_name','sort_order'];
+    document.getElementById('csv-thead').innerHTML =
+      headers.map(h => `<th>${h}</th>`).join('');
+    document.getElementById('csv-tbody').innerHTML =
+      rows.slice(0, 20).map(r => `<tr>${headers.map(h =>
+        `<td style="font-size:11px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(r[h]||'')}">${esc(r[h]||'')}</td>`
+      ).join('')}</tr>`).join('') +
+      (rows.length > 20 ? `<tr><td colspan="7" style="text-align:center;font-size:12px;color:var(--text-3)">… und ${rows.length-20} weitere</td></tr>` : '');
+  }
+
+  async function importCSV() {
+    if (!_csvRows.length) return;
+    const btn = document.getElementById('confirm-import-btn');
+    const status = document.getElementById('import-status');
+    btn.disabled = true; btn.textContent = 'Importiert …';
+    status.textContent = '';
+    const res = await adminBulkInsert(_csvRows);
+    btn.disabled = false; btn.textContent = 'Import starten';
+    if (res.ok) {
+      toast(`${_csvRows.length} Produkte importiert ✓`);
+      resetCSV();
+      await loadTable();
+      switchTab('products');
+    } else {
+      status.textContent = 'Fehler: ' + res.error;
+      toast('Import fehlgeschlagen', true);
+    }
+  }
+
+  function resetCSV() {
+    _csvRows = [];
+    document.getElementById('csv-preview').style.display = 'none';
+    document.getElementById('csv-error').style.display = 'none';
+    document.getElementById('csv-file-input').value = '';
+    document.getElementById('import-status').textContent = '';
+    document.getElementById('confirm-import-btn').style.display = 'none';
+  }
+
+  // ─── Helpers ─────────────────────────────────────────
+  function esc(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  let _toastTimer;
+  function toast(msg, isError = false) {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className = 'show' + (isError ? ' error' : '');
+    clearTimeout(_toastTimer);
+    _toastTimer = setTimeout(() => { el.className = ''; }, 3000);
+  }
+</script>
+</body>
+</html>

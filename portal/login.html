@@ -76,7 +76,7 @@
     const result = await portalLogin(email, pass);
 
     if (result.ok) {
-      window.location.href = '/portal/welcome.html';
+      window.location.href = '/portal/agreement.html';
     } else {
       errEl.textContent = result.error;
       errEl.style.display = 'block';
