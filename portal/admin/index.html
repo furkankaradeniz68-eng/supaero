@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="../portal.css">
   <style>
-    .admin-shell { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+    .admin-shell { max-width: 1140px; margin: 0 auto; padding: 32px 24px 80px; }
     .admin-title { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
-    .admin-sub { font-size: 13px; color: var(--text-3); margin-bottom: 32px; }
+    .admin-sub { font-size: 13px; color: var(--text-3); margin-bottom: 28px; }
 
     /* Tabs */
     .admin-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 28px; }
@@ -27,58 +27,91 @@
     .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th { background: var(--bg-2); font-weight: 600; text-align: left; padding: 9px 12px; color: var(--text-2); border-bottom: 1px solid var(--border); white-space: nowrap; }
-    td { padding: 9px 12px; color: var(--text); border-bottom: 1px solid var(--border); vertical-align: middle; }
+    td { padding: 9px 12px; color: var(--text); border-bottom: 1px solid var(--border); vertical-align: middle; max-width: 200px; }
     tr:last-child td { border-bottom: none; }
     tr:hover td { background: var(--bg-2); }
-    .td-id { font-size: 11px; color: var(--text-3); font-family: monospace; }
-    .td-url { font-size: 11px; color: var(--text-3); max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .btn-icon { background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px 8px; font-size: 12px; cursor: pointer; font-family: 'Inter', sans-serif; color: var(--text-2); transition: background .1s, color .1s; }
+    .td-id { font-size: 11px; color: var(--text-3); font-family: monospace; white-space: nowrap; }
+    .td-clip { font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .btn-icon { background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: 'Inter', sans-serif; color: var(--text-2); transition: background .1s, color .1s; white-space: nowrap; }
     .btn-icon:hover { background: var(--bg-2); color: var(--text); }
     .btn-icon.danger:hover { background: rgba(220,38,38,0.07); border-color: rgba(220,38,38,0.3); color: #dc2626; }
-    .table-actions { display: flex; gap: 6px; }
-    .loading-row td { text-align: center; color: var(--text-3); padding: 24px; }
+    .tbl-actions { display: flex; gap: 6px; }
+    .empty-row td { text-align: center; color: var(--text-3); padding: 28px; }
+    .chip-yes { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; background: rgba(22,163,74,0.1); color: #16a34a; border: 1px solid rgba(22,163,74,0.2); }
+    .chip-no { font-size: 11px; color: var(--text-3); }
+    .file-link { color: var(--blue); text-decoration: none; font-size: 12px; }
+    .file-link:hover { text-decoration: underline; }
 
     /* Toolbar */
-    .section-toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
-    .section-toolbar .spacer { flex: 1; }
+    .toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+    .toolbar .spacer { flex: 1; }
     .input-sm { padding: 7px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text); background: var(--bg); outline: none; transition: border-color .15s; }
     .input-sm:focus { border-color: var(--blue-bright); }
-    .btn-primary-sm { padding: 7px 14px; background: var(--blue); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .15s; white-space: nowrap; }
-    .btn-primary-sm:hover { background: var(--blue-mid); }
-    .btn-secondary-sm { padding: 7px 14px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: background .15s; }
-    .btn-secondary-sm:hover { background: var(--bg-2); }
+    .btn-p { padding: 7px 14px; background: var(--blue); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .15s; white-space: nowrap; }
+    .btn-p:hover { background: var(--blue-mid); }
+    .btn-p:disabled { opacity: .5; cursor: default; }
+    .btn-s { padding: 7px 14px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: background .15s; }
+    .btn-s:hover { background: var(--bg-2); }
 
     /* Toast */
-    #toast { position: fixed; bottom: 28px; right: 28px; background: var(--text); color: var(--bg); padding: 10px 18px; border-radius: var(--radius); font-size: 13px; font-weight: 500; box-shadow: 0 4px 16px rgba(0,0,0,0.15); transform: translateY(20px); opacity: 0; transition: all .25s; pointer-events: none; z-index: 999; }
+    #toast { position: fixed; bottom: 28px; right: 28px; background: var(--text); color: var(--bg); padding: 10px 18px; border-radius: var(--radius); font-size: 13px; font-weight: 500; box-shadow: 0 4px 16px rgba(0,0,0,0.15); transform: translateY(20px); opacity: 0; transition: all .25s; pointer-events: none; z-index: 9998; }
     #toast.show { transform: translateY(0); opacity: 1; }
     #toast.error { background: #dc2626; }
 
     /* Modal */
-    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; z-index: 100; }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 20px; }
     .modal-overlay.hidden { display: none; }
-    .modal { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; width: 100%; max-width: 520px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+    .modal { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; width: 100%; max-width: 560px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); max-height: 90vh; overflow-y: auto; }
     .modal-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
     .field { margin-bottom: 14px; }
     .field label { display: block; font-size: 12px; font-weight: 600; color: var(--text-2); margin-bottom: 5px; }
-    .field input { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text); background: var(--bg); outline: none; box-sizing: border-box; transition: border-color .15s; }
-    .field input:focus { border-color: var(--blue-bright); }
+    .field label span { font-weight: 400; color: var(--text-3); }
+    .field input, .field textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text); background: var(--bg); outline: none; box-sizing: border-box; transition: border-color .15s; }
+    .field input:focus, .field textarea:focus { border-color: var(--blue-bright); }
+    .field textarea { resize: vertical; min-height: 80px; }
     .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; }
+    .field-row { display: flex; gap: 10px; }
+    .field-row .field { flex: 1; }
+    .divider { height: 1px; background: var(--border); margin: 16px 0; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); margin-bottom: 12px; }
+
+    /* File upload widget */
+    .file-widget { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+    .file-current { display: flex; align-items: center; gap: 8px; padding: 9px 12px; background: var(--bg-2); font-size: 12px; }
+    .file-current-name { flex: 1; color: var(--text); font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .file-current-empty { color: var(--text-3); }
+    .file-actions { display: flex; gap: 6px; padding: 8px 10px; border-top: 1px solid var(--border); background: var(--bg); align-items: center; }
+    .file-upload-btn { font-size: 12px; font-weight: 500; color: var(--blue); cursor: pointer; padding: 4px 8px; border: 1px solid var(--border-blue); border-radius: 6px; background: rgba(27,79,155,0.05); transition: background .1s; }
+    .file-upload-btn:hover { background: rgba(27,79,155,0.1); }
+    .file-remove-btn { font-size: 12px; color: #dc2626; cursor: pointer; padding: 4px 8px; border: 1px solid rgba(220,38,38,0.2); border-radius: 6px; background: rgba(220,38,38,0.04); transition: background .1s; }
+    .file-remove-btn:hover { background: rgba(220,38,38,0.08); }
+    .file-progress { flex: 1; font-size: 11px; color: var(--text-3); }
+    input[type=file].hidden-file { display: none; }
 
     /* CSV */
-    .csv-drop { border: 2px dashed var(--border); border-radius: var(--radius); padding: 40px 24px; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; }
+    .csv-drop { border: 2px dashed var(--border); border-radius: var(--radius); padding: 36px 24px; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; }
     .csv-drop:hover, .csv-drop.dragover { border-color: var(--blue-bright); background: rgba(27,79,155,0.04); }
     .csv-drop p { margin: 0; font-size: 13px; color: var(--text-3); }
-    .csv-drop p strong { color: var(--blue); cursor: pointer; }
-    #csv-file-input { display: none; }
-    .csv-preview { margin-top: 20px; }
-    .csv-preview-header { font-size: 12px; font-weight: 600; color: var(--text-2); margin-bottom: 8px; }
-    .csv-error { color: #dc2626; font-size: 13px; padding: 10px; background: rgba(220,38,38,0.06); border: 1px solid rgba(220,38,38,0.2); border-radius: var(--radius-sm); margin-top: 12px; }
-    .csv-hint { font-size: 12px; color: var(--text-3); margin-top: 16px; line-height: 1.7; }
+    .csv-drop p strong { color: var(--blue); }
+    .csv-error { color: #dc2626; font-size: 13px; padding: 10px 12px; background: rgba(220,38,38,0.06); border: 1px solid rgba(220,38,38,0.2); border-radius: var(--radius-sm); margin-top: 12px; }
+    .csv-hint { font-size: 12px; color: var(--text-3); margin-top: 16px; line-height: 1.8; }
     .csv-hint code { background: var(--bg-2); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-size: 11px; }
-    .chip { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
-    .chip-green { background: rgba(22,163,74,0.1); color: #16a34a; border: 1px solid rgba(22,163,74,0.2); }
-    .chip-blue { background: rgba(27,79,155,0.08); color: var(--blue); border: 1px solid rgba(27,79,155,0.15); }
-    #confirm-import-btn { display: none; }
+
+    /* Website editor */
+    .content-grid { display: grid; gap: 12px; }
+    .content-item { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+    .content-item-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--bg-2); border-bottom: 1px solid var(--border); }
+    .content-item-label { font-size: 13px; font-weight: 600; color: var(--text); flex: 1; }
+    .content-item-key { font-size: 11px; color: var(--text-3); font-family: monospace; }
+    .content-item-section { font-size: 11px; padding: 2px 7px; border-radius: 10px; background: var(--bg-card); color: var(--text-3); border: 1px solid var(--border); }
+    .content-item-body { padding: 12px 14px; }
+    .content-item-body input, .content-item-body textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text); background: var(--bg); outline: none; box-sizing: border-box; transition: border-color .15s; }
+    .content-item-body input:focus, .content-item-body textarea:focus { border-color: var(--blue-bright); }
+    .content-item-body textarea { resize: vertical; min-height: 80px; }
+    .content-item-footer { padding: 8px 14px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 8px; align-items: center; }
+    .content-item-status { font-size: 12px; color: var(--text-3); flex: 1; }
+    .website-hint { background: rgba(27,79,155,0.05); border: 1px solid var(--border-blue); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 13px; color: var(--text-2); line-height: 1.6; margin-bottom: 20px; }
+    .website-hint code { background: rgba(27,79,155,0.08); padding: 1px 5px; border-radius: 3px; font-size: 12px; color: var(--blue); }
   </style>
 </head>
 <body>
@@ -86,84 +119,85 @@
 
 <div class="admin-shell">
   <div class="admin-title">Admin</div>
-  <div class="admin-sub">Produktverwaltung · supAero Portal</div>
+  <div class="admin-sub">Produktverwaltung & Website-Inhalte · supAero Portal</div>
 
   <div class="admin-tabs">
     <button class="tab-btn active" onclick="switchTab('products')">Produkte</button>
     <button class="tab-btn" onclick="switchTab('csv')">CSV-Import</button>
     <button class="tab-btn" onclick="switchTab('add')">Produkt hinzufügen</button>
+    <button class="tab-btn" onclick="switchTab('website')">Website-Inhalte</button>
   </div>
 
-  <!-- PRODUCTS TAB -->
+  <!-- ── PRODUCTS TAB ────────────────────────────────────────── -->
   <div id="tab-products" class="tab-panel active">
-    <div class="section-toolbar">
+    <div class="toolbar">
       <input type="text" class="input-sm" id="prod-search" placeholder="Suchen …" style="width:220px" oninput="filterTable()">
       <span class="spacer"></span>
-      <button class="btn-secondary-sm" onclick="loadTable()">↺ Aktualisieren</button>
+      <button class="btn-s" onclick="loadTable()">↺ Aktualisieren</button>
     </div>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Kategorie</th>
-            <th>Name</th>
-            <th>3D-Modell</th>
-            <th>Datei</th>
-            <th>Sort</th>
-            <th></th>
+            <th>ID</th><th>Kategorie</th><th>Name</th><th>3D-Modell</th><th>Datei</th><th>Sort</th><th></th>
           </tr>
         </thead>
         <tbody id="prod-tbody">
-          <tr class="loading-row"><td colspan="7">Wird geladen …</td></tr>
+          <tr class="empty-row"><td colspan="7">Wird geladen …</td></tr>
         </tbody>
       </table>
     </div>
     <div id="prod-count" style="font-size:12px;color:var(--text-3);margin-top:8px"></div>
   </div>
 
-  <!-- CSV TAB -->
+  <!-- ── CSV TAB ─────────────────────────────────────────────── -->
   <div id="tab-csv" class="tab-panel">
-    <div class="csv-drop" id="csv-drop" onclick="document.getElementById('csv-file-input').click()"
+    <div class="csv-drop" id="csv-drop"
+         onclick="document.getElementById('csv-file-input').click()"
          ondragover="event.preventDefault();this.classList.add('dragover')"
          ondragleave="this.classList.remove('dragover')"
          ondrop="handleDrop(event)">
       <p style="font-size:32px;margin-bottom:8px">📄</p>
       <p><strong>Datei auswählen</strong> oder hierher ziehen</p>
-      <p style="margin-top:6px">CSV-Datei (.csv)</p>
+      <p style="margin-top:4px">CSV-Datei (.csv)</p>
     </div>
-    <input type="file" id="csv-file-input" accept=".csv,text/csv" onchange="handleCSVFile(this.files[0])">
+    <input type="file" id="csv-file-input" accept=".csv,text/csv" class="hidden-file" onchange="handleCSVFile(this.files[0])">
     <div id="csv-error" class="csv-error" style="display:none"></div>
-    <div id="csv-preview" class="csv-preview" style="display:none">
-      <div class="csv-preview-header" id="csv-preview-header"></div>
-      <div class="table-wrap" style="max-height:300px;overflow-y:auto">
+    <div id="csv-preview" style="display:none;margin-top:20px">
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px" id="csv-preview-hdr"></div>
+      <div class="table-wrap" style="max-height:280px;overflow-y:auto">
         <table>
           <thead><tr id="csv-thead"></tr></thead>
           <tbody id="csv-tbody"></tbody>
         </table>
       </div>
-      <div style="margin-top:16px;display:flex;gap:10px;align-items:center">
-        <button class="btn-primary-sm" id="confirm-import-btn" onclick="importCSV()">Import starten</button>
-        <button class="btn-secondary-sm" onclick="resetCSV()">Abbrechen</button>
-        <span id="import-status" style="font-size:13px;color:var(--text-3)"></span>
+      <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+        <button class="btn-p" id="csv-import-btn" onclick="importCSV()">Import starten</button>
+        <button class="btn-s" onclick="resetCSV()">Abbrechen</button>
+        <span id="csv-status" style="font-size:13px;color:var(--text-3)"></span>
       </div>
     </div>
     <div class="csv-hint">
       <strong>Spalten (Pflicht: id, category, name):</strong><br>
       <code>id</code> · <code>category</code> · <code>name</code> · <code>model_url</code> · <code>download_url</code> · <code>download_name</code> · <code>sort_order</code><br>
-      Alternativen: <code>glb_url</code> = model_url, <code>file_url</code> = download_url, <code>filename</code> = download_name<br>
+      Alternativen: <code>glb_url</code> = model_url · <code>file_url</code> = download_url · <code>filename</code> = download_name<br>
       Bestehende IDs werden aktualisiert (upsert).
     </div>
   </div>
 
-  <!-- ADD TAB -->
+  <!-- ── ADD TAB ─────────────────────────────────────────────── -->
   <div id="tab-add" class="tab-panel">
-    <form id="add-form" onsubmit="saveProduct(event)" style="max-width:500px">
-      <input type="hidden" id="edit-id">
-      <div id="add-form-title" style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:20px">Neues Produkt</div>
-      <div class="field">
-        <label>ID <span style="color:var(--text-3);font-weight:400">(eindeutig, z. B. "FAS-120")</span></label>
-        <input type="text" id="f-id" required placeholder="z. B. FAS-120">
+    <form id="add-form" onsubmit="saveNewProduct(event)" style="max-width:520px">
+      <div class="section-label">Produktdaten</div>
+      <div class="field-row">
+        <div class="field">
+          <label>ID <span>(eindeutig, z. B. "FAS-120")</span></label>
+          <input type="text" id="f-id" required placeholder="FAS-120">
+        </div>
+        <div class="field" style="max-width:80px">
+          <label>Sort</label>
+          <input type="number" id="f-sort" value="0" min="0">
+        </div>
       </div>
       <div class="field">
         <label>Kategorie</label>
@@ -173,58 +207,137 @@
         <label>Name</label>
         <input type="text" id="f-name" required placeholder="z. B. Fire Sleeve Ø 120 mm">
       </div>
+      <div class="divider"></div>
+      <div class="section-label">3D-Modell <span style="text-transform:none;font-weight:400;font-size:11px">(optional, .glb)</span></div>
       <div class="field">
-        <label>3D-Modell URL <span style="color:var(--text-3);font-weight:400">(optional, .glb)</span></label>
+        <label>URL</label>
         <input type="url" id="f-model" placeholder="https://…">
       </div>
+      <div class="divider"></div>
+      <div class="section-label">Download-Datei <span style="text-transform:none;font-weight:400;font-size:11px">(optional)</span></div>
       <div class="field">
-        <label>Download URL <span style="color:var(--text-3);font-weight:400">(optional)</span></label>
-        <input type="url" id="f-dl-url" placeholder="https://…">
+        <label>Datei hochladen</label>
+        <div class="file-widget">
+          <div class="file-current" id="add-file-current">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;color:var(--text-3)">
+              <rect x="2" y="1" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M4.5 5h5M4.5 7.5h5M4.5 10h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <span class="file-current-empty" id="add-file-name">Noch keine Datei</span>
+          </div>
+          <div class="file-actions">
+            <label class="file-upload-btn" for="add-file-input">↑ Datei wählen</label>
+            <input type="file" id="add-file-input" class="hidden-file" onchange="handleAddFile(this.files[0])">
+            <span class="file-progress" id="add-file-progress"></span>
+            <button type="button" class="file-remove-btn" id="add-file-remove" style="display:none" onclick="removeAddFile()">✕ Entfernen</button>
+          </div>
+        </div>
       </div>
       <div class="field">
-        <label>Dateiname zum Download <span style="color:var(--text-3);font-weight:400">(optional)</span></label>
+        <label>… oder URL direkt eingeben</label>
+        <input type="url" id="f-dl-url" placeholder="https://…" oninput="syncAddUrlFromInput()">
+      </div>
+      <div class="field">
+        <label>Dateiname (Anzeige) <span>(optional)</span></label>
         <input type="text" id="f-dl-name" placeholder="z. B. FAS-120.stp">
       </div>
-      <div class="field">
-        <label>Sortierreihenfolge</label>
-        <input type="number" id="f-sort" value="0" min="0">
-      </div>
-      <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
-        <button type="submit" class="btn-primary-sm" id="add-submit-btn">Speichern</button>
-        <button type="button" class="btn-secondary-sm" onclick="resetAddForm()">Zurücksetzen</button>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:16px">
+        <button type="submit" class="btn-p" id="add-btn">Speichern</button>
+        <button type="button" class="btn-s" onclick="resetAddForm()">Zurücksetzen</button>
         <span id="add-status" style="font-size:13px;color:var(--text-3)"></span>
       </div>
     </form>
   </div>
-</div>
 
-<!-- Edit Modal -->
-<div class="modal-overlay hidden" id="edit-modal">
-  <div class="modal">
-    <div class="modal-title">Produkt bearbeiten</div>
-    <div class="field"><label>ID</label><input type="text" id="m-id" readonly style="color:var(--text-3)"></div>
-    <div class="field"><label>Kategorie</label><input type="text" id="m-cat"></div>
-    <div class="field"><label>Name</label><input type="text" id="m-name"></div>
-    <div class="field"><label>3D-Modell URL</label><input type="url" id="m-model"></div>
-    <div class="field"><label>Download URL</label><input type="url" id="m-dl-url"></div>
-    <div class="field"><label>Dateiname</label><input type="text" id="m-dl-name"></div>
-    <div class="field"><label>Sortierung</label><input type="number" id="m-sort" min="0"></div>
-    <div class="modal-actions">
-      <button class="btn-secondary-sm" onclick="closeModal()">Abbrechen</button>
-      <button class="btn-primary-sm" onclick="saveModal()">Speichern</button>
+  <!-- ── WEBSITE TAB ──────────────────────────────────────────── -->
+  <div id="tab-website" class="tab-panel">
+    <div class="website-hint">
+      Hier können Sie Texte und Bilder der öffentlichen Website bearbeiten.
+      Gespeicherte Inhalte werden automatisch per <code>data-content-key</code> auf der Website angezeigt,
+      sobald der Content-Loader auf der jeweiligen Seite eingebunden ist.
+    </div>
+    <div class="toolbar">
+      <span class="spacer"></span>
+      <button class="btn-s" onclick="loadWebsiteContent()">↺ Aktualisieren</button>
+    </div>
+    <div id="content-grid" class="content-grid">
+      <div class="empty-row" style="text-align:center;color:var(--text-3);padding:24px;font-size:13px">Wird geladen …</div>
     </div>
   </div>
 </div>
 
-<!-- Confirm Delete Modal -->
+<!-- ── EDIT MODAL ──────────────────────────────────────────────── -->
+<div class="modal-overlay hidden" id="edit-modal">
+  <div class="modal">
+    <div class="modal-title">Produkt bearbeiten</div>
+    <div class="field-row">
+      <div class="field">
+        <label>ID <span>(nicht änderbar)</span></label>
+        <input type="text" id="m-id" readonly style="color:var(--text-3);background:var(--bg-2)">
+      </div>
+      <div class="field" style="max-width:80px">
+        <label>Sort</label>
+        <input type="number" id="m-sort" min="0">
+      </div>
+    </div>
+    <div class="field">
+      <label>Kategorie</label>
+      <input type="text" id="m-cat">
+    </div>
+    <div class="field">
+      <label>Name</label>
+      <input type="text" id="m-name">
+    </div>
+    <div class="divider"></div>
+    <div class="section-label">3D-Modell</div>
+    <div class="field">
+      <label>URL <span>(.glb)</span></label>
+      <input type="url" id="m-model">
+    </div>
+    <div class="divider"></div>
+    <div class="section-label">Download-Datei</div>
+    <div class="field">
+      <label>Datei</label>
+      <div class="file-widget">
+        <div class="file-current" id="modal-file-current">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;color:var(--text-3)">
+            <rect x="2" y="1" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M4.5 5h5M4.5 7.5h5M4.5 10h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <span class="file-current-empty" id="modal-file-name">Keine Datei hinterlegt</span>
+        </div>
+        <div class="file-actions">
+          <label class="file-upload-btn" for="modal-file-input">↑ Datei ersetzen</label>
+          <input type="file" id="modal-file-input" class="hidden-file" onchange="handleModalFile(this.files[0])">
+          <span class="file-progress" id="modal-file-progress"></span>
+          <button type="button" class="file-remove-btn" id="modal-file-remove" style="display:none" onclick="removeModalFile()">✕ Entfernen</button>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>… oder URL direkt eingeben</label>
+      <input type="url" id="m-dl-url" placeholder="https://…" oninput="syncModalUrlFromInput()">
+    </div>
+    <div class="field">
+      <label>Dateiname <span>(Anzeige)</span></label>
+      <input type="text" id="m-dl-name">
+    </div>
+    <div class="modal-actions">
+      <button class="btn-s" onclick="closeEditModal()">Abbrechen</button>
+      <button class="btn-p" onclick="saveEditModal()">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── DELETE MODAL ────────────────────────────────────────────── -->
 <div class="modal-overlay hidden" id="del-modal">
   <div class="modal" style="max-width:400px">
     <div class="modal-title">Produkt löschen?</div>
-    <p style="font-size:13px;color:var(--text-2);margin:0 0 20px">Diese Aktion kann nicht rückgängig gemacht werden.</p>
-    <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;color:var(--text)" id="del-product-name"></div>
-    <div class="modal-actions">
-      <button class="btn-secondary-sm" onclick="document.getElementById('del-modal').classList.add('hidden')">Abbrechen</button>
-      <button class="btn-primary-sm" style="background:#dc2626" onclick="confirmDelete()">Löschen</button>
+    <p style="font-size:13px;color:var(--text-2);margin:0 0 16px">Diese Aktion kann nicht rückgängig gemacht werden.</p>
+    <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;color:var(--text)" id="del-info"></div>
+    <div class="modal-actions" style="margin-top:20px">
+      <button class="btn-s" onclick="document.getElementById('del-modal').classList.add('hidden')">Abbrechen</button>
+      <button class="btn-p" style="background:#dc2626" onclick="confirmDelete()">Löschen</button>
     </div>
   </div>
 </div>
@@ -235,85 +348,123 @@
 <script src="../supabase.min.js"></script>
 <script src="../portal.js"></script>
 <script>
-  let _allProducts = [], _deleteId = null;
+  let _all = [], _deleteId = null;
 
   (async () => {
     const user = await requireAuth();
     if (!user) return;
     if (!isAdmin(user)) { window.location.href = '/portal/models.html'; return; }
+    initSessionTimeout(user);
     await initPortalNav('admin');
     await loadTable();
   })();
 
-  // ─── Tabs ────────────────────────────────────────────
+  // ── Tabs ────────────────────────────────────────────────────
+  const TAB_NAMES = ['products','csv','add','website'];
   function switchTab(name) {
-    document.querySelectorAll('.tab-btn').forEach((b, i) => {
-      const names = ['products','csv','add'];
-      b.classList.toggle('active', names[i] === name);
-    });
+    document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', TAB_NAMES[i] === name));
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.getElementById(`tab-${name}`).classList.add('active');
+    if (name === 'website' && !_websiteLoaded) loadWebsiteContent();
   }
 
-  // ─── Products Table ──────────────────────────────────
+  // ── Product Table ────────────────────────────────────────────
   async function loadTable() {
-    document.getElementById('prod-tbody').innerHTML =
-      '<tr class="loading-row"><td colspan="7">Wird geladen …</td></tr>';
-    _allProducts = await loadProducts();
-    renderTable(_allProducts);
+    document.getElementById('prod-tbody').innerHTML = '<tr class="empty-row"><td colspan="7">Wird geladen …</td></tr>';
+    _all = await loadProducts();
+    renderTable(_all);
   }
 
   function renderTable(list) {
     const tbody = document.getElementById('prod-tbody');
     if (!list.length) {
-      tbody.innerHTML = '<tr class="loading-row"><td colspan="7">Keine Produkte gefunden.</td></tr>';
+      tbody.innerHTML = '<tr class="empty-row"><td colspan="7">Keine Produkte gefunden.</td></tr>';
       document.getElementById('prod-count').textContent = '';
       return;
     }
-    tbody.innerHTML = list.map(p => `
-      <tr>
+    tbody.innerHTML = list.map(p => {
+      const fname = p.download_name || (p.download_url ? decodeURIComponent(p.download_url.split('/').pop().split('?')[0]) : '');
+      const fileCell = p.download_url
+        ? `<a class="file-link" href="${esc(p.download_url)}" target="_blank" title="${esc(p.download_url)}">${esc(fname || '↓ Datei')}</a>`
+        : `<span class="chip-no">—</span>`;
+      return `<tr>
         <td class="td-id">${esc(p.id)}</td>
-        <td>${esc(p.category)}</td>
-        <td>${esc(p.name)}</td>
-        <td>${p.model_url ? '<span class="chip chip-green">✓</span>' : '<span style="color:var(--text-3);font-size:11px">—</span>'}</td>
-        <td class="td-url" title="${esc(p.download_url||'')}">
-          ${p.download_url ? esc(p.download_name||p.download_url.split('/').pop()||'—') : '<span style="color:var(--text-3);font-size:11px">—</span>'}
-        </td>
+        <td class="td-clip">${esc(p.category)}</td>
+        <td class="td-clip">${esc(p.name)}</td>
+        <td>${p.model_url ? '<span class="chip-yes">✓</span>' : '<span class="chip-no">—</span>'}</td>
+        <td class="td-clip">${fileCell}</td>
         <td>${p.sort_order||0}</td>
-        <td>
-          <div class="table-actions">
-            <button class="btn-icon" onclick="openEditModal(${JSON.stringify(p).replace(/"/g,'&quot;')})">Bearbeiten</button>
-            <button class="btn-icon danger" onclick="openDeleteModal('${esc(p.id)}','${esc(p.name)}')">Löschen</button>
-          </div>
-        </td>
-      </tr>`).join('');
+        <td><div class="tbl-actions">
+          <button class="btn-icon" onclick="openEditModal(${JSON.stringify(p).replace(/"/g,'&quot;')})">Bearbeiten</button>
+          <button class="btn-icon danger" onclick="openDelModal('${esc(p.id)}','${esc(p.name)}')">Löschen</button>
+        </div></td>
+      </tr>`;
+    }).join('');
     document.getElementById('prod-count').textContent = `${list.length} Produkte`;
   }
 
   function filterTable() {
     const q = document.getElementById('prod-search').value.toLowerCase();
-    if (!q) { renderTable(_allProducts); return; }
-    renderTable(_allProducts.filter(p =>
-      p.name.toLowerCase().includes(q) ||
-      p.category.toLowerCase().includes(q) ||
-      p.id.toLowerCase().includes(q)));
+    renderTable(q ? _all.filter(p => p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.id.toLowerCase().includes(q)) : _all);
   }
 
-  // ─── Edit Modal ──────────────────────────────────────
+  // ── Edit Modal ────────────────────────────────────────────────
   function openEditModal(p) {
-    document.getElementById('m-id').value       = p.id;
-    document.getElementById('m-cat').value      = p.category;
-    document.getElementById('m-name').value     = p.name;
-    document.getElementById('m-model').value    = p.model_url    || '';
-    document.getElementById('m-dl-url').value   = p.download_url || '';
-    document.getElementById('m-dl-name').value  = p.download_name|| '';
-    document.getElementById('m-sort').value     = p.sort_order   || 0;
+    document.getElementById('m-id').value      = p.id;
+    document.getElementById('m-sort').value    = p.sort_order || 0;
+    document.getElementById('m-cat').value     = p.category;
+    document.getElementById('m-name').value    = p.name;
+    document.getElementById('m-model').value   = p.model_url    || '';
+    document.getElementById('m-dl-url').value  = p.download_url || '';
+    document.getElementById('m-dl-name').value = p.download_name|| '';
+    document.getElementById('modal-file-input').value = '';
+    document.getElementById('modal-file-progress').textContent = '';
+    syncModalFileDisplay(p.download_url, p.download_name);
     document.getElementById('edit-modal').classList.remove('hidden');
   }
 
-  function closeModal() { document.getElementById('edit-modal').classList.add('hidden'); }
+  function syncModalFileDisplay(url, name) {
+    const nameEl  = document.getElementById('modal-file-name');
+    const removeEl = document.getElementById('modal-file-remove');
+    if (url) {
+      const label = name || decodeURIComponent(url.split('/').pop().split('?')[0]);
+      nameEl.textContent = label;
+      nameEl.className = 'file-current-name';
+      removeEl.style.display = 'inline-block';
+    } else {
+      nameEl.textContent = 'Keine Datei hinterlegt';
+      nameEl.className = 'file-current-empty';
+      removeEl.style.display = 'none';
+    }
+  }
 
-  async function saveModal() {
+  async function handleModalFile(file) {
+    if (!file) return;
+    const id = document.getElementById('m-id').value || 'misc';
+    document.getElementById('modal-file-progress').textContent = 'Wird hochgeladen …';
+    const res = await uploadProductFile(file, id);
+    document.getElementById('modal-file-progress').textContent = '';
+    if (!res.ok) { toast('Upload fehlgeschlagen: ' + res.error, true); return; }
+    document.getElementById('m-dl-url').value  = res.url;
+    document.getElementById('m-dl-name').value = document.getElementById('m-dl-name').value || res.name;
+    syncModalFileDisplay(res.url, res.name);
+    toast('Datei hochgeladen ✓');
+  }
+
+  function removeModalFile() {
+    document.getElementById('m-dl-url').value  = '';
+    document.getElementById('m-dl-name').value = '';
+    document.getElementById('modal-file-input').value = '';
+    syncModalFileDisplay('', '');
+  }
+
+  function syncModalUrlFromInput() {
+    syncModalFileDisplay(document.getElementById('m-dl-url').value, document.getElementById('m-dl-name').value);
+  }
+
+  function closeEditModal() { document.getElementById('edit-modal').classList.add('hidden'); }
+
+  async function saveEditModal() {
     const product = {
       id:            document.getElementById('m-id').value,
       category:      document.getElementById('m-cat').value.trim(),
@@ -323,16 +474,17 @@
       download_name: document.getElementById('m-dl-name').value.trim() || null,
       sort_order:    parseInt(document.getElementById('m-sort').value)||0,
     };
+    if (!product.category || !product.name) { toast('Kategorie und Name sind Pflichtfelder', true); return; }
     const res = await adminSaveProduct(product);
-    closeModal();
+    closeEditModal();
     if (res.ok) { toast('Gespeichert ✓'); await loadTable(); }
     else { toast('Fehler: ' + res.error, true); }
   }
 
-  // ─── Delete Modal ────────────────────────────────────
-  function openDeleteModal(id, name) {
+  // ── Delete ────────────────────────────────────────────────────
+  function openDelModal(id, name) {
     _deleteId = id;
-    document.getElementById('del-product-name').textContent = `${id} — ${name}`;
+    document.getElementById('del-info').textContent = `${id} — ${name}`;
     document.getElementById('del-modal').classList.remove('hidden');
   }
 
@@ -343,10 +495,47 @@
     else { toast('Fehler: ' + res.error, true); }
   }
 
-  // ─── Add Form ────────────────────────────────────────
-  async function saveProduct(e) {
+  // ── Add Form ──────────────────────────────────────────────────
+  let _addFileUrl = '', _addFileName = '';
+
+  async function handleAddFile(file) {
+    if (!file) return;
+    const id = document.getElementById('f-id').value.trim() || 'misc';
+    document.getElementById('add-file-progress').textContent = 'Wird hochgeladen …';
+    const res = await uploadProductFile(file, id);
+    document.getElementById('add-file-progress').textContent = '';
+    if (!res.ok) { toast('Upload fehlgeschlagen: ' + res.error, true); return; }
+    _addFileUrl  = res.url;
+    _addFileName = res.name;
+    document.getElementById('f-dl-url').value  = res.url;
+    if (!document.getElementById('f-dl-name').value) document.getElementById('f-dl-name').value = res.name;
+    document.getElementById('add-file-name').textContent = res.name;
+    document.getElementById('add-file-name').className = 'file-current-name';
+    document.getElementById('add-file-remove').style.display = 'inline-block';
+    toast('Datei hochgeladen ✓');
+  }
+
+  function removeAddFile() {
+    _addFileUrl = ''; _addFileName = '';
+    document.getElementById('f-dl-url').value  = '';
+    document.getElementById('add-file-input').value = '';
+    document.getElementById('add-file-name').textContent = 'Noch keine Datei';
+    document.getElementById('add-file-name').className = 'file-current-empty';
+    document.getElementById('add-file-remove').style.display = 'none';
+  }
+
+  function syncAddUrlFromInput() {
+    const url = document.getElementById('f-dl-url').value.trim();
+    if (!url) { removeAddFile(); return; }
+    _addFileUrl = url;
+    document.getElementById('add-file-name').textContent = url.split('/').pop().split('?')[0] || url;
+    document.getElementById('add-file-name').className = 'file-current-name';
+    document.getElementById('add-file-remove').style.display = 'inline-block';
+  }
+
+  async function saveNewProduct(e) {
     e.preventDefault();
-    const btn = document.getElementById('add-submit-btn');
+    const btn = document.getElementById('add-btn');
     btn.disabled = true; btn.textContent = 'Wird gespeichert …';
     const product = {
       id:            document.getElementById('f-id').value.trim(),
@@ -372,10 +561,10 @@
   function resetAddForm() {
     document.getElementById('add-form').reset();
     document.getElementById('add-status').textContent = '';
-    document.getElementById('add-form-title').textContent = 'Neues Produkt';
+    removeAddFile();
   }
 
-  // ─── CSV Import ──────────────────────────────────────
+  // ── CSV Import ────────────────────────────────────────────────
   let _csvRows = [];
 
   function handleDrop(e) {
@@ -392,51 +581,28 @@
       const { rows, error } = parseProductCSV(e.target.result);
       const errEl = document.getElementById('csv-error');
       const previewEl = document.getElementById('csv-preview');
-      document.getElementById('confirm-import-btn').style.display = 'none';
-      if (error) {
-        errEl.textContent = error; errEl.style.display = 'block';
-        previewEl.style.display = 'none'; return;
-      }
+      if (error) { errEl.textContent = error; errEl.style.display = 'block'; previewEl.style.display = 'none'; return; }
       errEl.style.display = 'none';
       _csvRows = rows;
-      showCSVPreview(rows);
-      document.getElementById('confirm-import-btn').style.display = 'inline-flex';
+      document.getElementById('csv-preview-hdr').textContent = `${rows.length} Produkte bereit zum Import`;
+      const headers = ['id','category','name','model_url','download_url','download_name','sort_order'];
+      document.getElementById('csv-thead').innerHTML = headers.map(h => `<th>${h}</th>`).join('');
+      document.getElementById('csv-tbody').innerHTML = rows.slice(0,20).map(r =>
+        `<tr>${headers.map(h => `<td style="font-size:11px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(r[h]||'')}">${esc(r[h]||'')}</td>`).join('')}</tr>`).join('') +
+        (rows.length > 20 ? `<tr><td colspan="7" style="text-align:center;font-size:12px;color:var(--text-3)">… und ${rows.length-20} weitere</td></tr>` : '');
+      previewEl.style.display = 'block';
     };
     reader.readAsText(file, 'UTF-8');
   }
 
-  function showCSVPreview(rows) {
-    const previewEl = document.getElementById('csv-preview');
-    previewEl.style.display = 'block';
-    document.getElementById('csv-preview-header').textContent =
-      `${rows.length} Produkte bereit zum Import`;
-    const headers = ['id','category','name','model_url','download_url','download_name','sort_order'];
-    document.getElementById('csv-thead').innerHTML =
-      headers.map(h => `<th>${h}</th>`).join('');
-    document.getElementById('csv-tbody').innerHTML =
-      rows.slice(0, 20).map(r => `<tr>${headers.map(h =>
-        `<td style="font-size:11px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(r[h]||'')}">${esc(r[h]||'')}</td>`
-      ).join('')}</tr>`).join('') +
-      (rows.length > 20 ? `<tr><td colspan="7" style="text-align:center;font-size:12px;color:var(--text-3)">… und ${rows.length-20} weitere</td></tr>` : '');
-  }
-
   async function importCSV() {
     if (!_csvRows.length) return;
-    const btn = document.getElementById('confirm-import-btn');
-    const status = document.getElementById('import-status');
+    const btn = document.getElementById('csv-import-btn');
     btn.disabled = true; btn.textContent = 'Importiert …';
-    status.textContent = '';
     const res = await adminBulkInsert(_csvRows);
     btn.disabled = false; btn.textContent = 'Import starten';
-    if (res.ok) {
-      toast(`${_csvRows.length} Produkte importiert ✓`);
-      resetCSV();
-      await loadTable();
-      switchTab('products');
-    } else {
-      status.textContent = 'Fehler: ' + res.error;
-      toast('Import fehlgeschlagen', true);
-    }
+    if (res.ok) { toast(`${_csvRows.length} Produkte importiert ✓`); resetCSV(); await loadTable(); switchTab('products'); }
+    else { document.getElementById('csv-status').textContent = 'Fehler: ' + res.error; toast('Import fehlgeschlagen', true); }
   }
 
   function resetCSV() {
@@ -444,17 +610,60 @@
     document.getElementById('csv-preview').style.display = 'none';
     document.getElementById('csv-error').style.display = 'none';
     document.getElementById('csv-file-input').value = '';
-    document.getElementById('import-status').textContent = '';
-    document.getElementById('confirm-import-btn').style.display = 'none';
+    document.getElementById('csv-status').textContent = '';
   }
 
-  // ─── Helpers ─────────────────────────────────────────
+  // ── Website Content Editor ────────────────────────────────────
+  let _websiteLoaded = false;
+  let _contentItems = [];
+
+  async function loadWebsiteContent() {
+    const grid = document.getElementById('content-grid');
+    grid.innerHTML = '<div style="text-align:center;color:var(--text-3);padding:24px;font-size:13px">Wird geladen …</div>';
+    _contentItems = await loadSiteContent();
+    _websiteLoaded = true;
+    if (!_contentItems.length) {
+      grid.innerHTML = `<div style="text-align:center;color:var(--text-3);padding:32px;font-size:13px">
+        Keine Inhalte gefunden.<br><span style="font-size:12px">Bitte zuerst die <code>site_content</code>-Tabelle in Supabase anlegen und befüllen.</span>
+      </div>`;
+      return;
+    }
+    grid.innerHTML = _contentItems.map(item => {
+      const inputHtml = (item.type === 'html' || (item.value && item.value.length > 120))
+        ? `<textarea id="ci-${esc(item.key)}" rows="4">${esc(item.value||'')}</textarea>`
+        : `<input type="text" id="ci-${esc(item.key)}" value="${esc(item.value||'')}">`;
+      return `<div class="content-item">
+        <div class="content-item-header">
+          <span class="content-item-label">${esc(item.label||item.key)}</span>
+          <span class="content-item-section">${esc(item.section||'')}</span>
+          <span class="content-item-key">${esc(item.key)}</span>
+        </div>
+        <div class="content-item-body">${inputHtml}</div>
+        <div class="content-item-footer">
+          <span class="content-item-status" id="ci-status-${esc(item.key)}"></span>
+          <button class="btn-s" style="padding:5px 12px;font-size:12px" onclick="saveContent('${esc(item.key)}')">Speichern</button>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  async function saveContent(key) {
+    const el = document.getElementById(`ci-${key}`);
+    const statusEl = document.getElementById(`ci-status-${key}`);
+    if (!el) return;
+    statusEl.textContent = 'Wird gespeichert …';
+    const res = await saveSiteContent(key, el.value);
+    statusEl.textContent = res.ok ? 'Gespeichert ✓' : 'Fehler: ' + res.error;
+    setTimeout(() => { statusEl.textContent = ''; }, 2500);
+  }
+
+  // ── Helpers ───────────────────────────────────────────────────
   function esc(s) {
     return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
   let _toastTimer;
-  function toast(msg, isError = false) {
+  function toast(msg, isError) {
     const el = document.getElementById('toast');
     el.textContent = msg;
     el.className = 'show' + (isError ? ' error' : '');

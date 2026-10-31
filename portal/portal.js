@@ -169,6 +169,81 @@ function parseProductCSV(text) {
   return { rows, error: null };
 }
 
+// ─── Session Timeout Bar ───────────────────────────────────────
+function initSessionTimeout(user, minutes) {
+  if (typeof minutes === 'undefined') minutes = 30;
+  const email = user?.email || '';
+
+  const style = document.createElement('style');
+  style.textContent = `
+    #session-bar { position:fixed;top:0;left:0;right:0;height:30px;background:#0f1929;
+      color:rgba(255,255,255,.72);font-family:'Inter',sans-serif;font-size:11.5px;
+      z-index:9999;display:flex;align-items:center;padding:0 20px;gap:10px;
+      border-bottom:1px solid rgba(255,255,255,.06);transition:background .4s; }
+    #session-bar.warn   { background:#78350f; }
+    #session-bar.urgent { background:#7f1d1d;animation:sb-blink .9s ease-in-out infinite; }
+    @keyframes sb-blink { 0%,100%{opacity:1}50%{opacity:.8} }
+    .sb-dot  { width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0; }
+    #session-bar.warn   .sb-dot { background:#f59e0b; }
+    #session-bar.urgent .sb-dot { background:#ef4444; }
+    .sb-email { flex:1;opacity:.7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+    .sb-timer { font-variant-numeric:tabular-nums;font-weight:600;color:#fff;
+      background:rgba(255,255,255,.08);padding:2px 9px;border-radius:20px;
+      white-space:nowrap;letter-spacing:.03em;cursor:default; }
+    #portal-nav { top:30px !important; }
+  `;
+  document.head.appendChild(style);
+
+  const bar = document.createElement('div');
+  bar.id = 'session-bar';
+  bar.innerHTML = `<span class="sb-dot"></span><span class="sb-email">${email}</span><span class="sb-timer" id="sb-timer"></span>`;
+  document.body.prepend(bar);
+
+  let remaining = minutes * 60;
+  const timerEl = document.getElementById('sb-timer');
+
+  function draw() {
+    const m = Math.floor(remaining / 60).toString().padStart(2,'0');
+    const s = (remaining % 60).toString().padStart(2,'0');
+    timerEl.textContent = `${m}:${s}`;
+    bar.className = remaining <= 60 ? 'urgent' : remaining <= 300 ? 'warn' : '';
+  }
+  function reset() { remaining = minutes * 60; }
+
+  ['mousemove','click','keydown','scroll','touchstart'].forEach(ev =>
+    document.addEventListener(ev, reset, { passive: true }));
+
+  draw();
+  const iv = setInterval(() => { remaining--; draw(); if (remaining <= 0) { clearInterval(iv); portalLogout(); } }, 1000);
+}
+
+// ─── Storage: Upload product file ─────────────────────────────
+async function uploadProductFile(file, productId) {
+  const sb = getSB();
+  if (!sb) return { ok: false, error: 'Keine Verbindung' };
+  const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+  const path = `${productId || 'misc'}/${Date.now()}_${safeName}`;
+  const { data, error } = await sb.storage.from('product-files').upload(path, file, { upsert: true });
+  if (error) return { ok: false, error: error.message };
+  const { data: urlData } = sb.storage.from('product-files').getPublicUrl(data.path);
+  return { ok: true, url: urlData.publicUrl, name: file.name };
+}
+
+// ─── Site Content ──────────────────────────────────────────────
+async function loadSiteContent() {
+  const sb = getSB();
+  if (!sb) return [];
+  const { data } = await sb.from('site_content').select('*').order('section').order('sort_order');
+  return data || [];
+}
+
+async function saveSiteContent(key, value) {
+  const sb = getSB();
+  if (!sb) return { ok: false, error: 'Keine Verbindung' };
+  const { error } = await sb.from('site_content').upsert({ key, value }, { onConflict: 'key' });
+  return !error ? { ok: true } : { ok: false, error: error.message };
+}
+
 // ─── Portal Nav ────────────────────────────────────────────────
 async function initPortalNav(activePage) {
   const el = document.getElementById('portal-nav');

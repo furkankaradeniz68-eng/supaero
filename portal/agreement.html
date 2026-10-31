@@ -491,6 +491,7 @@
   (async () => {
     _user = await requireAuth();
     if (!_user) return;
+    initSessionTimeout(_user);
     if (await hasAgreement(_user.id)) {
       window.location.href = '/portal/models.html';
     }

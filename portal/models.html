@@ -238,6 +238,7 @@
   (async () => {
     const user = await requireAuthAndAgreement();
     if (!user) return;
+    initSessionTimeout(user);
     await initPortalNav('models');
     _products = await loadProducts();
     _grouped  = groupByCategory(_products);
