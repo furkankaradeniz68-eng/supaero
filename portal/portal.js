@@ -192,8 +192,10 @@ function initSessionTimeout(user, minutes) {
       white-space:nowrap;letter-spacing:.03em;cursor:default; }
     #session-bar.warn   .sb-timer { color:#b45309; }
     #session-bar.urgent .sb-timer { color:#dc2626; }
+    body { padding-top:30px; }
     #portal-nav { top:30px !important; }
   `;
+  document.body.classList.add('has-session-bar');
   document.head.appendChild(style);
 
   const bar = document.createElement('div');
