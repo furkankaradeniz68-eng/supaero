@@ -335,6 +335,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.stat-item').forEach(el => statsObserver.observe(el));
 
+  // Fixed ISO badge would cover the footer copyright line
+  const isoBadge = document.querySelector('.iso-float-badge');
+  const footerBottom = document.querySelector('.footer-bottom');
+  if (isoBadge && footerBottom) {
+    new IntersectionObserver(([entry]) => {
+      isoBadge.classList.toggle('is-hidden', entry.isIntersecting);
+    }).observe(footerBottom);
+  }
+
 // ── Ticker duplicate for seamless loop ────
   const ticker = document.querySelector('.ticker-track');
   if (ticker) {

@@ -1274,7 +1274,12 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   gap: 0.75rem;
   box-shadow: 0 8px 32px rgba(0,0,0,0.35);
   cursor: default;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s;
+}
+.iso-float-badge.is-hidden {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
 }
 .iso-float-badge:hover {
   transform: translateY(-3px);
