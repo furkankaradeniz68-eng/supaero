@@ -1447,6 +1447,32 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
   font-size: 0.875rem;
   color: rgba(255,255,255,0.65);
 }
+.footer-copy-wrap {
+  display: grid;
+  gap: 4px;
+}
+.made-by {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.55);
+}
+.made-by a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: underline 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-thickness 0.15s;
+}
+.made-by a:hover {
+  text-decoration-thickness: 2px;
+}
+.made-by svg {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 auto;
+}
 
 /* Scroll to top button */
 .scroll-top-btn {
